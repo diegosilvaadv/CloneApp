@@ -317,6 +317,7 @@ class _PagamentoWidgetState extends State<PagamentoWidget> {
                                                                 ?.jsonBody ??
                                                             ''))
                                                     .toMap(),
+                                                pedido: widget.detalhes,
                                               ),
                                             ),
                                           ));

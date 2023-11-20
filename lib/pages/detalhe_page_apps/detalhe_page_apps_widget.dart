@@ -8,7 +8,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_animate/flutter_animate.dart';
-import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
@@ -151,10 +150,15 @@ class _DetalhePageAppsWidgetState extends State<DetalhePageAppsWidget>
 
     return FutureBuilder<List<PagamentosRow>>(
       future: PagamentosTable().querySingleRow(
-        queryFn: (q) => q.eq(
-          'user_id',
-          currentUserUid,
-        ),
+        queryFn: (q) => q
+            .eq(
+              'user_id',
+              currentUserUid,
+            )
+            .eq(
+              'link',
+              widget.paramentros?.copypage,
+            ),
       ),
       builder: (context, snapshot) {
         // Customize what your widget looks like when it's loading.
@@ -633,90 +637,95 @@ class _DetalhePageAppsWidgetState extends State<DetalhePageAppsWidget>
                   child: Column(
                     mainAxisSize: MainAxisSize.max,
                     children: [
-                      Row(
-                        mainAxisSize: MainAxisSize.max,
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Expanded(
-                            child: Text(
-                              valueOrDefault<String>(
-                                widget.paramentros?.titulo,
-                                'Titulo',
+                      Padding(
+                        padding:
+                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 50.0, 0.0),
+                        child: Row(
+                          mainAxisSize: MainAxisSize.max,
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Expanded(
+                              child: Text(
+                                valueOrDefault<String>(
+                                  widget.paramentros?.titulo,
+                                  'Titulo',
+                                ),
+                                style: FlutterFlowTheme.of(context)
+                                    .titleLarge
+                                    .override(
+                                      fontFamily: 'Rubik',
+                                      fontSize: 30.0,
+                                    ),
                               ),
-                              style: FlutterFlowTheme.of(context)
-                                  .titleLarge
-                                  .override(
-                                    fontFamily: 'Rubik',
-                                    fontSize: 30.0,
+                            ),
+                            if (detalhePageAppsPagamentosRow?.comprado !=
+                                'approved')
+                              FFButtonWidget(
+                                onPressed: () async {
+                                  context.pushNamed(
+                                    'Pagamento',
+                                    queryParameters: {
+                                      'detalhes': serializeParam(
+                                        widget.paramentros,
+                                        ParamType.SupabaseRow,
+                                      ),
+                                    }.withoutNulls,
+                                  );
+                                },
+                                text: 'Comprar Projeto',
+                                options: FFButtonOptions(
+                                  height: 40.0,
+                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                      24.0, 0.0, 24.0, 0.0),
+                                  iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                      0.0, 0.0, 0.0, 0.0),
+                                  color: Color(0xFF09D707),
+                                  textStyle: FlutterFlowTheme.of(context)
+                                      .titleSmall
+                                      .override(
+                                        fontFamily: 'Readex Pro',
+                                        color: Colors.black,
+                                        fontWeight: FontWeight.w500,
+                                      ),
+                                  elevation: 3.0,
+                                  borderSide: BorderSide(
+                                    color: Colors.transparent,
+                                    width: 1.0,
                                   ),
-                            ),
-                          ),
-                          if (detalhePageAppsPagamentosRow?.comprado !=
-                              'approved')
-                            FFButtonWidget(
-                              onPressed: () async {
-                                context.pushNamed(
-                                  'Pagamento',
-                                  queryParameters: {
-                                    'detalhes': serializeParam(
-                                      widget.paramentros,
-                                      ParamType.SupabaseRow,
-                                    ),
-                                  }.withoutNulls,
-                                );
-                              },
-                              text: 'Comprar Projeto',
-                              options: FFButtonOptions(
-                                height: 40.0,
-                                padding: EdgeInsetsDirectional.fromSTEB(
-                                    24.0, 0.0, 24.0, 0.0),
-                                iconPadding: EdgeInsetsDirectional.fromSTEB(
-                                    0.0, 0.0, 0.0, 0.0),
-                                color: Color(0xFF1A9E8F),
-                                textStyle: FlutterFlowTheme.of(context)
-                                    .titleSmall
-                                    .override(
-                                      fontFamily: 'Readex Pro',
-                                      color: Colors.white,
-                                    ),
-                                elevation: 3.0,
-                                borderSide: BorderSide(
-                                  color: Colors.transparent,
-                                  width: 1.0,
+                                  borderRadius: BorderRadius.circular(8.0),
                                 ),
-                                borderRadius: BorderRadius.circular(8.0),
                               ),
-                            ),
-                          if (detalhePageAppsPagamentosRow?.comprado ==
-                              'approved')
-                            FFButtonWidget(
-                              onPressed: () async {
-                                await launchURL(
-                                    detalhePageAppsPagamentosRow!.link!);
-                              },
-                              text: 'Acessar Proejto',
-                              options: FFButtonOptions(
-                                height: 40.0,
-                                padding: EdgeInsetsDirectional.fromSTEB(
-                                    24.0, 0.0, 24.0, 0.0),
-                                iconPadding: EdgeInsetsDirectional.fromSTEB(
-                                    0.0, 0.0, 0.0, 0.0),
-                                color: Color(0xFF10DA26),
-                                textStyle: FlutterFlowTheme.of(context)
-                                    .titleSmall
-                                    .override(
-                                      fontFamily: 'Readex Pro',
-                                      color: Colors.white,
-                                    ),
-                                elevation: 3.0,
-                                borderSide: BorderSide(
-                                  color: Colors.transparent,
-                                  width: 1.0,
+                            if (detalhePageAppsPagamentosRow?.comprado ==
+                                'approved')
+                              FFButtonWidget(
+                                onPressed: () async {
+                                  await launchURL(
+                                      detalhePageAppsPagamentosRow!.link!);
+                                },
+                                text: 'Acessar Projeto',
+                                options: FFButtonOptions(
+                                  height: 40.0,
+                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                      24.0, 0.0, 24.0, 0.0),
+                                  iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                      0.0, 0.0, 0.0, 0.0),
+                                  color: Color(0xFF10DAD3),
+                                  textStyle: FlutterFlowTheme.of(context)
+                                      .titleSmall
+                                      .override(
+                                        fontFamily: 'Readex Pro',
+                                        color: Color(0xFF131313),
+                                      ),
+                                  elevation: 3.0,
+                                  borderSide: BorderSide(
+                                    color: Colors.transparent,
+                                    width: 1.0,
+                                  ),
+                                  borderRadius: BorderRadius.circular(8.0),
                                 ),
-                                borderRadius: BorderRadius.circular(8.0),
                               ),
-                            ),
-                        ],
+                          ],
+                        ),
                       ),
                       Padding(
                         padding:
@@ -747,50 +756,51 @@ class _DetalhePageAppsWidgetState extends State<DetalhePageAppsWidget>
                             EdgeInsetsDirectional.fromSTEB(0.0, 6.0, 50.0, 0.0),
                         child: Row(
                           mainAxisSize: MainAxisSize.max,
-                          mainAxisAlignment: MainAxisAlignment.start,
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            FaIcon(
-                              FontAwesomeIcons.tag,
-                              color: FlutterFlowTheme.of(context).secondaryText,
-                              size: 24.0,
-                            ),
-                            Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
-                                  8.0, 0.0, 0.0, 0.0),
-                              child: Text(
-                                valueOrDefault<String>(
-                                  widget.paramentros?.categoria,
-                                  'tag',
+                            Row(
+                              mainAxisSize: MainAxisSize.max,
+                              children: [
+                                FaIcon(
+                                  FontAwesomeIcons.tag,
+                                  color: FlutterFlowTheme.of(context)
+                                      .secondaryText,
+                                  size: 24.0,
                                 ),
-                                style: FlutterFlowTheme.of(context)
-                                    .labelSmall
-                                    .override(
-                                      fontFamily: 'Noto Serif',
-                                      fontSize: 20.0,
-                                      fontWeight: FontWeight.bold,
-                                      fontStyle: FontStyle.italic,
+                                Padding(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                      8.0, 0.0, 0.0, 0.0),
+                                  child: Text(
+                                    valueOrDefault<String>(
+                                      widget.paramentros?.categoria,
+                                      'tag',
                                     ),
-                              ),
-                            ),
-                            Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
-                                  10.0, 0.0, 0.0, 0.0),
-                              child: RatingBar.builder(
-                                onRatingUpdate: (newValue) => setState(
-                                    () => _model.ratingBarValue = newValue),
-                                itemBuilder: (context, index) => Icon(
-                                  Icons.star_rounded,
-                                  color: FlutterFlowTheme.of(context).tertiary,
+                                    style: FlutterFlowTheme.of(context)
+                                        .labelSmall
+                                        .override(
+                                          fontFamily: 'Noto Serif',
+                                          fontSize: 20.0,
+                                          fontWeight: FontWeight.bold,
+                                          fontStyle: FontStyle.italic,
+                                        ),
+                                  ),
                                 ),
-                                direction: Axis.horizontal,
-                                initialRating: _model.ratingBarValue ??= 4.0,
-                                unratedColor:
-                                    FlutterFlowTheme.of(context).accent3,
-                                itemCount: 5,
-                                itemSize: 40.0,
-                                glowColor:
-                                    FlutterFlowTheme.of(context).tertiary,
+                              ],
+                            ),
+                            Text(
+                              formatNumber(
+                                widget.paramentros!.preco!,
+                                formatType: FormatType.custom,
+                                currency: 'R\$',
+                                format: '0.00',
+                                locale: 'pt_BR',
                               ),
+                              style: FlutterFlowTheme.of(context)
+                                  .bodyMedium
+                                  .override(
+                                    fontFamily: 'Readex Pro',
+                                    fontSize: 30.0,
+                                  ),
                             ),
                           ],
                         ),
@@ -812,7 +822,7 @@ class _DetalhePageAppsWidgetState extends State<DetalhePageAppsWidget>
                                   8.0, 0.0, 0.0, 0.0),
                               child: Text(
                                 valueOrDefault<String>(
-                                  widget.paramentros?.user,
+                                  widget.paramentros?.criadoPor,
                                   'user',
                                 ),
                                 style: FlutterFlowTheme.of(context)
@@ -834,7 +844,7 @@ class _DetalhePageAppsWidgetState extends State<DetalhePageAppsWidget>
                         padding: EdgeInsetsDirectional.fromSTEB(
                             0.0, 10.0, 10.0, 10.0),
                         child: FutureBuilder<List<TemplatesRow>>(
-                          future: TemplatesTable().queryRows(
+                          future: TemplatesTable().querySingleRow(
                             queryFn: (q) => q,
                           ),
                           builder: (context, snapshot) {
@@ -854,29 +864,42 @@ class _DetalhePageAppsWidgetState extends State<DetalhePageAppsWidget>
                             }
                             List<TemplatesRow> rowTemplatesRowList =
                                 snapshot.data!;
-                            return SingleChildScrollView(
-                              scrollDirection: Axis.horizontal,
-                              child: Row(
-                                mainAxisSize: MainAxisSize.max,
-                                children: List.generate(
-                                    rowTemplatesRowList.length, (rowIndex) {
-                                  final rowTemplatesRow =
-                                      rowTemplatesRowList[rowIndex];
-                                  return Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
-                                        0.0, 0.0, 10.0, 0.0),
-                                    child: ClipRRect(
-                                      borderRadius: BorderRadius.circular(8.0),
-                                      child: Image.network(
-                                        widget.paramentros!.img!,
-                                        width: 300.0,
-                                        height: 501.0,
-                                        fit: BoxFit.cover,
+                            final rowTemplatesRow =
+                                rowTemplatesRowList.isNotEmpty
+                                    ? rowTemplatesRowList.first
+                                    : null;
+                            return Row(
+                              mainAxisSize: MainAxisSize.max,
+                              children: [
+                                Material(
+                                  color: Colors.transparent,
+                                  elevation: 10.0,
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(12.0),
+                                  ),
+                                  child: Container(
+                                    decoration: BoxDecoration(
+                                      color: FlutterFlowTheme.of(context)
+                                          .primaryBackground,
+                                      borderRadius: BorderRadius.circular(12.0),
+                                    ),
+                                    child: Padding(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                          10.0, 10.0, 10.0, 10.0),
+                                      child: ClipRRect(
+                                        borderRadius:
+                                            BorderRadius.circular(8.0),
+                                        child: Image.network(
+                                          widget.paramentros!.img!,
+                                          width: 300.0,
+                                          height: 501.0,
+                                          fit: BoxFit.cover,
+                                        ),
                                       ),
                                     ),
-                                  );
-                                }),
-                              ),
+                                  ),
+                                ),
+                              ],
                             );
                           },
                         ),
