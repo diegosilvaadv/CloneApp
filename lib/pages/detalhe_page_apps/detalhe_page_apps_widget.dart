@@ -909,8 +909,7 @@ class _DetalhePageAppsWidgetState extends State<DetalhePageAppsWidget>
                                   ),
                                   child: Container(
                                     decoration: BoxDecoration(
-                                      color: FlutterFlowTheme.of(context)
-                                          .primaryBackground,
+                                      color: Color(0xFF2D2F31),
                                       borderRadius: BorderRadius.circular(12.0),
                                     ),
                                     child: Padding(
