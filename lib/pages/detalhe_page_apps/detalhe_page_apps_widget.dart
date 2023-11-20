@@ -890,10 +890,13 @@ class _DetalhePageAppsWidgetState extends State<DetalhePageAppsWidget>
                                         borderRadius:
                                             BorderRadius.circular(8.0),
                                         child: Image.network(
-                                          widget.paramentros!.img!,
+                                          valueOrDefault<String>(
+                                            widget.paramentros?.img,
+                                            'https://gthmauklpdygyjahreur.supabase.co/storage/v1/object/public/templates/fotos/Captura%20de%20tela%202023-11-19%20134259.png',
+                                          ),
                                           width: 300.0,
                                           height: 501.0,
-                                          fit: BoxFit.cover,
+                                          fit: BoxFit.contain,
                                         ),
                                       ),
                                     ),
