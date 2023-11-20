@@ -142,6 +142,18 @@ class _PagamentoWidgetState extends State<PagamentoWidget> {
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               Text(
+                                'Preço do Projeto: ',
+                                style: FlutterFlowTheme.of(context)
+                                    .bodyMedium
+                                    .override(
+                                      fontFamily: 'Readex Pro',
+                                      color: FlutterFlowTheme.of(context)
+                                          .primaryText,
+                                      fontSize: 31.0,
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                              ),
+                              Text(
                                 formatNumber(
                                   widget.detalhes!.preco!,
                                   formatType: FormatType.custom,
@@ -162,7 +174,7 @@ class _PagamentoWidgetState extends State<PagamentoWidget> {
                           ),
                           Padding(
                             padding: EdgeInsetsDirectional.fromSTEB(
-                                0.0, 10.0, 0.0, 0.0),
+                                0.0, 15.0, 0.0, 0.0),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
                               mainAxisAlignment: MainAxisAlignment.center,
@@ -221,7 +233,7 @@ class _PagamentoWidgetState extends State<PagamentoWidget> {
                           ),
                           Padding(
                             padding: EdgeInsetsDirectional.fromSTEB(
-                                0.0, 10.0, 0.0, 0.0),
+                                0.0, 20.0, 0.0, 0.0),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
                               mainAxisAlignment: MainAxisAlignment.center,
@@ -348,7 +360,7 @@ class _PagamentoWidgetState extends State<PagamentoWidget> {
                                   },
                                   text: 'Realizar Pagamento',
                                   options: FFButtonOptions(
-                                    height: 40.0,
+                                    height: 60.0,
                                     padding: EdgeInsetsDirectional.fromSTEB(
                                         24.0, 0.0, 24.0, 0.0),
                                     iconPadding: EdgeInsetsDirectional.fromSTEB(
@@ -359,7 +371,7 @@ class _PagamentoWidgetState extends State<PagamentoWidget> {
                                         .override(
                                           fontFamily: 'Readex Pro',
                                           color: Colors.white,
-                                          fontSize: 25.0,
+                                          fontSize: 30.0,
                                         ),
                                     elevation: 3.0,
                                     borderSide: BorderSide(

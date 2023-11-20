@@ -1242,8 +1242,8 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                       mainAxisSize: MainAxisSize.max,
                                       children: [
                                         FFButtonWidget(
-                                          onPressed: () async {
-                                            context.pushNamed('vermaisall');
+                                          onPressed: () {
+                                            print('Button pressed ...');
                                           },
                                           text: 'VER MAIS',
                                           options: FFButtonOptions(
