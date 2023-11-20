@@ -138,7 +138,7 @@ class _PagamentoWidgetState extends State<PagamentoWidget> {
                                     .override(
                                       fontFamily: 'Readex Pro',
                                       color: Color(0xFF10DA26),
-                                      fontSize: 30.0,
+                                      fontSize: 31.0,
                                       fontWeight: FontWeight.bold,
                                     ),
                               ),
@@ -242,9 +242,6 @@ class _PagamentoWidgetState extends State<PagamentoWidget> {
                                         true,
                                       ),
                                       email: currentUserEmail,
-                                      chave: random_data
-                                          .randomInteger(0, 10000)
-                                          .toString(),
                                     );
                                     if ((_model.gerarPedido?.succeeded ??
                                         true)) {
