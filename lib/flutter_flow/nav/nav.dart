@@ -98,13 +98,8 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: 'detalhePage',
           path: '/detalhePage',
           builder: (context, params) => DetalhePageWidget(
-            titulo: params.getParam('titulo', ParamType.String),
-            descricao: params.getParam('descricao', ParamType.String),
-            img: params.getParam('img', ParamType.String),
-            categoria: params.getParam('categoria', ParamType.String),
-            copypage: params.getParam('copypage', ParamType.String),
-            data: params.getParam('data', ParamType.DateTime),
-            criador: params.getParam('criador', ParamType.String),
+            detlahes: params.getParam<TemplatesRow>(
+                'detlahes', ParamType.SupabaseRow),
           ),
         ),
         FFRoute(

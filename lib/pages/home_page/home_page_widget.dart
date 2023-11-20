@@ -1379,46 +1379,11 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                                       context.pushNamed(
                                                         'detalhePage',
                                                         queryParameters: {
-                                                          'titulo':
+                                                          'detlahes':
                                                               serializeParam(
-                                                            listViewTemplatesRow
-                                                                .titulo,
-                                                            ParamType.String,
-                                                          ),
-                                                          'descricao':
-                                                              serializeParam(
-                                                            listViewTemplatesRow
-                                                                .descricao,
-                                                            ParamType.String,
-                                                          ),
-                                                          'img': serializeParam(
-                                                            listViewTemplatesRow
-                                                                .img,
-                                                            ParamType.String,
-                                                          ),
-                                                          'categoria':
-                                                              serializeParam(
-                                                            listViewTemplatesRow
-                                                                .categoria,
-                                                            ParamType.String,
-                                                          ),
-                                                          'copypage':
-                                                              serializeParam(
-                                                            listViewTemplatesRow
-                                                                .copypage,
-                                                            ParamType.String,
-                                                          ),
-                                                          'data':
-                                                              serializeParam(
-                                                            listViewTemplatesRow
-                                                                .createdAt,
-                                                            ParamType.DateTime,
-                                                          ),
-                                                          'criador':
-                                                              serializeParam(
-                                                            listViewTemplatesRow
-                                                                .criadoPor,
-                                                            ParamType.String,
+                                                            listViewTemplatesRow,
+                                                            ParamType
+                                                                .SupabaseRow,
                                                           ),
                                                         }.withoutNulls,
                                                         extra: <String,
@@ -1832,45 +1797,10 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                                     context.pushNamed(
                                                       'detalhePage',
                                                       queryParameters: {
-                                                        'titulo':
+                                                        'detlahes':
                                                             serializeParam(
-                                                          listViewTemplatesRow
-                                                              .titulo,
-                                                          ParamType.String,
-                                                        ),
-                                                        'descricao':
-                                                            serializeParam(
-                                                          listViewTemplatesRow
-                                                              .descricao,
-                                                          ParamType.String,
-                                                        ),
-                                                        'img': serializeParam(
-                                                          listViewTemplatesRow
-                                                              .img,
-                                                          ParamType.String,
-                                                        ),
-                                                        'categoria':
-                                                            serializeParam(
-                                                          listViewTemplatesRow
-                                                              .categoria,
-                                                          ParamType.String,
-                                                        ),
-                                                        'copypage':
-                                                            serializeParam(
-                                                          listViewTemplatesRow
-                                                              .copypage,
-                                                          ParamType.String,
-                                                        ),
-                                                        'data': serializeParam(
-                                                          listViewTemplatesRow
-                                                              .createdAt,
-                                                          ParamType.DateTime,
-                                                        ),
-                                                        'criador':
-                                                            serializeParam(
-                                                          listViewTemplatesRow
-                                                              .criadoPor,
-                                                          ParamType.String,
+                                                          listViewTemplatesRow,
+                                                          ParamType.SupabaseRow,
                                                         ),
                                                       }.withoutNulls,
                                                       extra: <String, dynamic>{
@@ -2286,45 +2216,10 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                                     context.pushNamed(
                                                       'detalhePage',
                                                       queryParameters: {
-                                                        'titulo':
+                                                        'detlahes':
                                                             serializeParam(
-                                                          listViewTemplatesRow
-                                                              .titulo,
-                                                          ParamType.String,
-                                                        ),
-                                                        'descricao':
-                                                            serializeParam(
-                                                          listViewTemplatesRow
-                                                              .descricao,
-                                                          ParamType.String,
-                                                        ),
-                                                        'img': serializeParam(
-                                                          listViewTemplatesRow
-                                                              .img,
-                                                          ParamType.String,
-                                                        ),
-                                                        'categoria':
-                                                            serializeParam(
-                                                          listViewTemplatesRow
-                                                              .categoria,
-                                                          ParamType.String,
-                                                        ),
-                                                        'copypage':
-                                                            serializeParam(
-                                                          listViewTemplatesRow
-                                                              .copypage,
-                                                          ParamType.String,
-                                                        ),
-                                                        'data': serializeParam(
-                                                          listViewTemplatesRow
-                                                              .createdAt,
-                                                          ParamType.DateTime,
-                                                        ),
-                                                        'criador':
-                                                            serializeParam(
-                                                          listViewTemplatesRow
-                                                              .criadoPor,
-                                                          ParamType.String,
+                                                          listViewTemplatesRow,
+                                                          ParamType.SupabaseRow,
                                                         ),
                                                       }.withoutNulls,
                                                       extra: <String, dynamic>{

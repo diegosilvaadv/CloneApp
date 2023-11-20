@@ -1,4 +1,5 @@
 import '/auth/supabase_auth/auth_util.dart';
+import '/backend/supabase/supabase.dart';
 import '/components/criarconta_widget.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_expanded_image_view.dart';
@@ -10,7 +11,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_animate/flutter_animate.dart';
-import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:page_transition/page_transition.dart';
@@ -22,22 +22,10 @@ export 'detalhe_page_model.dart';
 class DetalhePageWidget extends StatefulWidget {
   const DetalhePageWidget({
     Key? key,
-    required this.titulo,
-    required this.descricao,
-    required this.img,
-    required this.categoria,
-    required this.copypage,
-    required this.data,
-    required this.criador,
+    required this.detlahes,
   }) : super(key: key);
 
-  final String? titulo;
-  final String? descricao;
-  final String? img;
-  final String? categoria;
-  final String? copypage;
-  final DateTime? data;
-  final String? criador;
+  final TemplatesRow? detlahes;
 
   @override
   _DetalhePageWidgetState createState() => _DetalhePageWidgetState();
@@ -135,7 +123,11 @@ class _DetalhePageWidgetState extends State<DetalhePageWidget>
     super.initState();
     _model = createModel(context, () => DetalhePageModel());
 
-    _model.textController ??= TextEditingController(text: widget.copypage);
+    _model.textController ??= TextEditingController(
+        text: valueOrDefault<String>(
+      widget.detlahes?.copypage,
+      'copy',
+    ));
     _model.textFieldFocusNode ??= FocusNode();
 
     setupAnimations(
@@ -612,7 +604,10 @@ class _DetalhePageWidgetState extends State<DetalhePageWidget>
                     children: [
                       Expanded(
                         child: Text(
-                          widget.titulo!,
+                          valueOrDefault<String>(
+                            widget.detlahes?.titulo,
+                            'titulo',
+                          ),
                           style:
                               FlutterFlowTheme.of(context).titleLarge.override(
                                     fontFamily: 'Rubik',
@@ -631,7 +626,10 @@ class _DetalhePageWidgetState extends State<DetalhePageWidget>
                       children: [
                         Flexible(
                           child: Text(
-                            widget.descricao!,
+                            valueOrDefault<String>(
+                              widget.detlahes?.descricao,
+                              'descricao',
+                            ),
                             style: FlutterFlowTheme.of(context)
                                 .labelSmall
                                 .override(
@@ -659,7 +657,10 @@ class _DetalhePageWidgetState extends State<DetalhePageWidget>
                           padding: EdgeInsetsDirectional.fromSTEB(
                               8.0, 0.0, 0.0, 0.0),
                           child: Text(
-                            widget.categoria!,
+                            valueOrDefault<String>(
+                              widget.detlahes?.categoria,
+                              'tag',
+                            ),
                             style: FlutterFlowTheme.of(context)
                                 .labelSmall
                                 .override(
@@ -668,24 +669,6 @@ class _DetalhePageWidgetState extends State<DetalhePageWidget>
                                   fontWeight: FontWeight.bold,
                                   fontStyle: FontStyle.italic,
                                 ),
-                          ),
-                        ),
-                        Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
-                              10.0, 0.0, 0.0, 0.0),
-                          child: RatingBar.builder(
-                            onRatingUpdate: (newValue) => setState(
-                                () => _model.ratingBarValue = newValue),
-                            itemBuilder: (context, index) => Icon(
-                              Icons.star_rounded,
-                              color: FlutterFlowTheme.of(context).tertiary,
-                            ),
-                            direction: Axis.horizontal,
-                            initialRating: _model.ratingBarValue ??= 4.0,
-                            unratedColor: FlutterFlowTheme.of(context).accent3,
-                            itemCount: 5,
-                            itemSize: 40.0,
-                            glowColor: FlutterFlowTheme.of(context).tertiary,
                           ),
                         ),
                       ],
@@ -707,7 +690,10 @@ class _DetalhePageWidgetState extends State<DetalhePageWidget>
                           padding: EdgeInsetsDirectional.fromSTEB(
                               8.0, 0.0, 0.0, 0.0),
                           child: Text(
-                            'criador',
+                            valueOrDefault<String>(
+                              widget.detlahes?.criadoPor,
+                              'nome',
+                            ),
                             style: FlutterFlowTheme.of(context)
                                 .labelSmall
                                 .override(
@@ -753,15 +739,15 @@ class _DetalhePageWidgetState extends State<DetalhePageWidget>
                                       fadeOutDuration:
                                           Duration(milliseconds: 500),
                                       imageUrl: valueOrDefault<String>(
-                                        widget.img,
-                                        'https://gthmauklpdygyjahreur.supabase.co/storage/v1/object/public/templates/logos/istockphoto-1248723171-612x612.jpg',
+                                        widget.detlahes?.img,
+                                        'https://images.unsplash.com/photo-1480694313141-fce5e697ee25?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NTYyMDF8MHwxfHNlYXJjaHwxfHxhcHB8ZW58MHx8fHwxNzAwNDk5ODg5fDA&ixlib=rb-4.0.3&q=80&w=1080',
                                       ),
                                       fit: BoxFit.contain,
                                     ),
                                     allowRotation: true,
                                     tag: valueOrDefault<String>(
-                                      widget.img,
-                                      'https://gthmauklpdygyjahreur.supabase.co/storage/v1/object/public/templates/logos/istockphoto-1248723171-612x612.jpg',
+                                      widget.detlahes?.img,
+                                      'https://images.unsplash.com/photo-1480694313141-fce5e697ee25?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NTYyMDF8MHwxfHNlYXJjaHwxfHxhcHB8ZW58MHx8fHwxNzAwNDk5ODg5fDA&ixlib=rb-4.0.3&q=80&w=1080',
                                     ),
                                     useHeroAnimation: true,
                                   ),
@@ -770,8 +756,8 @@ class _DetalhePageWidgetState extends State<DetalhePageWidget>
                             },
                             child: Hero(
                               tag: valueOrDefault<String>(
-                                widget.img,
-                                'https://gthmauklpdygyjahreur.supabase.co/storage/v1/object/public/templates/logos/istockphoto-1248723171-612x612.jpg',
+                                widget.detlahes?.img,
+                                'https://images.unsplash.com/photo-1480694313141-fce5e697ee25?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NTYyMDF8MHwxfHNlYXJjaHwxfHxhcHB8ZW58MHx8fHwxNzAwNDk5ODg5fDA&ixlib=rb-4.0.3&q=80&w=1080',
                               ),
                               transitionOnUserGestures: true,
                               child: ClipRRect(
@@ -780,8 +766,8 @@ class _DetalhePageWidgetState extends State<DetalhePageWidget>
                                   fadeInDuration: Duration(milliseconds: 500),
                                   fadeOutDuration: Duration(milliseconds: 500),
                                   imageUrl: valueOrDefault<String>(
-                                    widget.img,
-                                    'https://gthmauklpdygyjahreur.supabase.co/storage/v1/object/public/templates/logos/istockphoto-1248723171-612x612.jpg',
+                                    widget.detlahes?.img,
+                                    'https://images.unsplash.com/photo-1480694313141-fce5e697ee25?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NTYyMDF8MHwxfHNlYXJjaHwxfHxhcHB8ZW58MHx8fHwxNzAwNDk5ODg5fDA&ixlib=rb-4.0.3&q=80&w=1080',
                                   ),
                                   width: 1200.0,
                                   height: 900.0,
@@ -865,8 +851,8 @@ class _DetalhePageWidgetState extends State<DetalhePageWidget>
                         FFButtonWidget(
                           onPressed: () async {
                             if (currentUserEmailVerified) {
-                              await Clipboard.setData(
-                                  ClipboardData(text: widget.copypage!));
+                              await Clipboard.setData(ClipboardData(
+                                  text: widget.detlahes!.copypage!));
                               ScaffoldMessenger.of(context).showSnackBar(
                                 SnackBar(
                                   content: Text(
@@ -945,8 +931,14 @@ class _DetalhePageWidgetState extends State<DetalhePageWidget>
                           padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 0.0, 100.0, 0.0),
                           child: Text(
-                            dateTimeFormat('d/M/y', widget.data),
-                            style: FlutterFlowTheme.of(context).bodyMedium,
+                            dateTimeFormat('dd/MM/yyyy | kk:mm',
+                                widget.detlahes!.createdAt),
+                            style: FlutterFlowTheme.of(context)
+                                .bodyMedium
+                                .override(
+                                  fontFamily: 'Readex Pro',
+                                  fontSize: 20.0,
+                                ),
                           ),
                         ),
                       ],

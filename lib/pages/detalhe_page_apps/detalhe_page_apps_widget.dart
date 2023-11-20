@@ -1,6 +1,7 @@
 import '/auth/supabase_auth/auth_util.dart';
 import '/backend/supabase/supabase.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
+import '/flutter_flow/flutter_flow_expanded_image_view.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
@@ -10,6 +11,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:page_transition/page_transition.dart';
 import 'package:provider/provider.dart';
 import 'detalhe_page_apps_model.dart';
 export 'detalhe_page_apps_model.dart';
@@ -886,17 +888,54 @@ class _DetalhePageAppsWidgetState extends State<DetalhePageAppsWidget>
                                     child: Padding(
                                       padding: EdgeInsetsDirectional.fromSTEB(
                                           10.0, 10.0, 10.0, 10.0),
-                                      child: ClipRRect(
-                                        borderRadius:
-                                            BorderRadius.circular(8.0),
-                                        child: Image.network(
-                                          valueOrDefault<String>(
+                                      child: InkWell(
+                                        splashColor: Colors.transparent,
+                                        focusColor: Colors.transparent,
+                                        hoverColor: Colors.transparent,
+                                        highlightColor: Colors.transparent,
+                                        onTap: () async {
+                                          await Navigator.push(
+                                            context,
+                                            PageTransition(
+                                              type: PageTransitionType.fade,
+                                              child:
+                                                  FlutterFlowExpandedImageView(
+                                                image: Image.network(
+                                                  valueOrDefault<String>(
+                                                    widget.paramentros?.img,
+                                                    'https://gthmauklpdygyjahreur.supabase.co/storage/v1/object/public/templates/fotos/Captura%20de%20tela%202023-11-19%20134259.png',
+                                                  ),
+                                                  fit: BoxFit.contain,
+                                                ),
+                                                allowRotation: false,
+                                                tag: valueOrDefault<String>(
+                                                  widget.paramentros?.img,
+                                                  'https://gthmauklpdygyjahreur.supabase.co/storage/v1/object/public/templates/fotos/Captura%20de%20tela%202023-11-19%20134259.png',
+                                                ),
+                                                useHeroAnimation: true,
+                                              ),
+                                            ),
+                                          );
+                                        },
+                                        child: Hero(
+                                          tag: valueOrDefault<String>(
                                             widget.paramentros?.img,
                                             'https://gthmauklpdygyjahreur.supabase.co/storage/v1/object/public/templates/fotos/Captura%20de%20tela%202023-11-19%20134259.png',
                                           ),
-                                          width: 300.0,
-                                          height: 501.0,
-                                          fit: BoxFit.contain,
+                                          transitionOnUserGestures: true,
+                                          child: ClipRRect(
+                                            borderRadius:
+                                                BorderRadius.circular(8.0),
+                                            child: Image.network(
+                                              valueOrDefault<String>(
+                                                widget.paramentros?.img,
+                                                'https://gthmauklpdygyjahreur.supabase.co/storage/v1/object/public/templates/fotos/Captura%20de%20tela%202023-11-19%20134259.png',
+                                              ),
+                                              width: 300.0,
+                                              height: 501.0,
+                                              fit: BoxFit.contain,
+                                            ),
+                                          ),
                                         ),
                                       ),
                                     ),
