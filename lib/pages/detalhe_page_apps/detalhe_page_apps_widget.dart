@@ -1,5 +1,6 @@
 import '/auth/supabase_auth/auth_util.dart';
 import '/backend/supabase/supabase.dart';
+import '/components/criarconta_widget.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_expanded_image_view.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
@@ -13,6 +14,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:page_transition/page_transition.dart';
 import 'package:provider/provider.dart';
+import 'package:webviewx_plus/webviewx_plus.dart';
 import 'detalhe_page_apps_model.dart';
 export 'detalhe_page_apps_model.dart';
 
@@ -664,15 +666,41 @@ class _DetalhePageAppsWidgetState extends State<DetalhePageAppsWidget>
                                 'approved')
                               FFButtonWidget(
                                 onPressed: () async {
-                                  context.pushNamed(
-                                    'Pagamento',
-                                    queryParameters: {
-                                      'detalhes': serializeParam(
-                                        widget.paramentros,
-                                        ParamType.SupabaseRow,
-                                      ),
-                                    }.withoutNulls,
-                                  );
+                                  if (currentUserEmailVerified) {
+                                    context.pushNamed(
+                                      'Pagamento',
+                                      queryParameters: {
+                                        'detalhes': serializeParam(
+                                          widget.paramentros,
+                                          ParamType.SupabaseRow,
+                                        ),
+                                      }.withoutNulls,
+                                    );
+                                  } else {
+                                    await showModalBottomSheet(
+                                      isScrollControlled: true,
+                                      backgroundColor: Color(0xBE14181B),
+                                      enableDrag: false,
+                                      context: context,
+                                      builder: (context) {
+                                        return WebViewAware(
+                                            child: GestureDetector(
+                                          onTap: () => _model
+                                                  .unfocusNode.canRequestFocus
+                                              ? FocusScope.of(context)
+                                                  .requestFocus(
+                                                      _model.unfocusNode)
+                                              : FocusScope.of(context)
+                                                  .unfocus(),
+                                          child: Padding(
+                                            padding: MediaQuery.viewInsetsOf(
+                                                context),
+                                            child: CriarcontaWidget(),
+                                          ),
+                                        ));
+                                      },
+                                    ).then((value) => safeSetState(() {}));
+                                  }
                                 },
                                 text: 'Comprar Projeto',
                                 options: FFButtonOptions(
