@@ -1,4 +1,5 @@
 import '/backend/api_requests/api_calls.dart';
+import '/backend/schema/structs/index.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
@@ -147,7 +148,7 @@ class _CompPageWidgetState extends State<CompPageWidget> {
                                   .bodyMedium
                                   .override(
                                     fontFamily: 'Readex Pro',
-                                    fontSize: 5.0,
+                                    fontSize: 15.0,
                                   ),
                               maxLines: 10,
                               validator: _model.textControllerValidator
@@ -242,6 +243,11 @@ class _CompPageWidgetState extends State<CompPageWidget> {
                       children: [
                         FFButtonWidget(
                           onPressed: () async {
+                            setState(() {
+                              FFAppState().updatePagRedStruct(
+                                (e) => e..status = widget.status?.toString(),
+                              );
+                            });
                             setState(() => _model.apiRequestCompleter = null);
                             await _model.waitForApiRequestCompleted();
                           },
@@ -270,7 +276,7 @@ class _CompPageWidgetState extends State<CompPageWidget> {
                         if (FFAppState().PagRed.status == 'approved')
                           FFButtonWidget(
                             onPressed: () async {
-                              context.pushNamed('HomePage');
+                              context.goNamed('perfil');
                             },
                             text: 'Acessar Projeto',
                             options: FFButtonOptions(
