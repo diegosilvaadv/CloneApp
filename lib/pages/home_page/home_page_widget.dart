@@ -825,8 +825,8 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                       mainAxisSize: MainAxisSize.max,
                                       children: [
                                         FFButtonWidget(
-                                          onPressed: () async {
-                                            context.pushNamed('vermaisall');
+                                          onPressed: () {
+                                            print('Button pressed ...');
                                           },
                                           text: 'VER MAIS',
                                           options: FFButtonOptions(
@@ -1249,8 +1249,18 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                         mainAxisSize: MainAxisSize.max,
                                         children: [
                                           FFButtonWidget(
-                                            onPressed: () {
-                                              print('Button pressed ...');
+                                            onPressed: () async {
+                                              context.pushNamed(
+                                                'vermaisall',
+                                                extra: <String, dynamic>{
+                                                  kTransitionInfoKey:
+                                                      TransitionInfo(
+                                                    hasTransition: true,
+                                                    transitionType:
+                                                        PageTransitionType.fade,
+                                                  ),
+                                                },
+                                              );
                                             },
                                             text: 'VER MAIS',
                                             options: FFButtonOptions(
