@@ -78,7 +78,23 @@ class _PagamentoWidgetState extends State<PagamentoWidget> {
         backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
         appBar: AppBar(
           backgroundColor: FlutterFlowTheme.of(context).primary,
+          iconTheme:
+              IconThemeData(color: FlutterFlowTheme.of(context).primaryText),
           automaticallyImplyLeading: true,
+          leading: InkWell(
+            splashColor: Colors.transparent,
+            focusColor: Colors.transparent,
+            hoverColor: Colors.transparent,
+            highlightColor: Colors.transparent,
+            onTap: () async {
+              context.safePop();
+            },
+            child: Icon(
+              Icons.arrow_back_outlined,
+              color: FlutterFlowTheme.of(context).primaryText,
+              size: 24.0,
+            ),
+          ),
           title: Text(
             valueOrDefault<String>(
               widget.detalhes?.titulo,
@@ -242,6 +258,13 @@ class _PagamentoWidgetState extends State<PagamentoWidget> {
                                         true,
                                       ),
                                       email: currentUserEmail,
+                                      chave: random_data.randomString(
+                                        10,
+                                        13,
+                                        false,
+                                        false,
+                                        true,
+                                      ),
                                     );
                                     if ((_model.gerarPedido?.succeeded ??
                                         true)) {
