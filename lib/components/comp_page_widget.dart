@@ -108,7 +108,7 @@ class _CompPageWidgetState extends State<CompPageWidget> {
                               readOnly: true,
                               obscureText: false,
                               decoration: InputDecoration(
-                                labelText: 'Label here...',
+                                labelText: 'QrCode',
                                 labelStyle:
                                     FlutterFlowTheme.of(context).labelMedium,
                                 hintStyle:
@@ -143,7 +143,12 @@ class _CompPageWidgetState extends State<CompPageWidget> {
                                   borderRadius: BorderRadius.circular(8.0),
                                 ),
                               ),
-                              style: FlutterFlowTheme.of(context).bodyMedium,
+                              style: FlutterFlowTheme.of(context)
+                                  .bodyMedium
+                                  .override(
+                                    fontFamily: 'Readex Pro',
+                                    fontSize: 5.0,
+                                  ),
                               maxLines: 10,
                               validator: _model.textControllerValidator
                                   .asValidator(context),
@@ -213,7 +218,9 @@ class _CompPageWidgetState extends State<CompPageWidget> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Text(
-                              FFAppState().PagRed.status,
+                              StatusPixCall.status(
+                                rowStatusPixResponse.jsonBody,
+                              ).toString(),
                               style: FlutterFlowTheme.of(context)
                                   .bodyMedium
                                   .override(
