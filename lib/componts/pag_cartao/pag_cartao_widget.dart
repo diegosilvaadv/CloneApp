@@ -310,7 +310,7 @@ class _PagCartaoWidgetState extends State<PagCartaoWidget> {
                                             Form(
                                               key: _model.formKey2,
                                               autovalidateMode:
-                                                  AutovalidateMode.disabled,
+                                                  AutovalidateMode.always,
                                               child: Padding(
                                                 padding: EdgeInsetsDirectional
                                                     .fromSTEB(
@@ -1393,69 +1393,6 @@ class _PagCartaoWidgetState extends State<PagCartaoWidget> {
                             ),
                           ],
                         ),
-                      ),
-                      Column(
-                        mainAxisSize: MainAxisSize.max,
-                        children: [
-                          Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
-                                20.0, 20.0, 20.0, 20.0),
-                            child: Row(
-                              mainAxisSize: MainAxisSize.max,
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
-                                      0.0, 0.0, 6.0, 0.0),
-                                  child: Icon(
-                                    Icons.paid,
-                                    color: FlutterFlowTheme.of(context)
-                                        .primaryText,
-                                    size: 24.0,
-                                  ),
-                                ),
-                                Text(
-                                  'Pagamento Pendente...',
-                                  style: FlutterFlowTheme.of(context)
-                                      .bodyMedium
-                                      .override(
-                                        fontFamily: 'Readex Pro',
-                                        fontSize: 30.0,
-                                      ),
-                                ),
-                              ],
-                            ),
-                          ),
-                          Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
-                                20.0, 20.0, 20.0, 20.0),
-                            child: Row(
-                              mainAxisSize: MainAxisSize.max,
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
-                                      0.0, 0.0, 6.0, 0.0),
-                                  child: Icon(
-                                    Icons.paid,
-                                    color: FlutterFlowTheme.of(context)
-                                        .primaryText,
-                                    size: 24.0,
-                                  ),
-                                ),
-                                Text(
-                                  'Pagamento Aprovado com Sucesso!',
-                                  style: FlutterFlowTheme.of(context)
-                                      .bodyMedium
-                                      .override(
-                                        fontFamily: 'Readex Pro',
-                                        fontSize: 30.0,
-                                      ),
-                                ),
-                              ],
-                            ),
-                          ),
-                        ],
                       ),
                       Padding(
                         padding: EdgeInsetsDirectional.fromSTEB(
