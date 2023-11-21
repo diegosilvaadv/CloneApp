@@ -114,21 +114,24 @@ class _PagCartaoWidgetState extends State<PagCartaoWidget> {
                                         Text(
                                           'Nome Impresso no Cartão',
                                           style: FlutterFlowTheme.of(context)
-                                              .bodyMedium,
+                                              .bodyMedium
+                                              .override(
+                                                fontFamily: 'Readex Pro',
+                                                fontSize: 16.0,
+                                              ),
                                         ),
                                       ],
                                     ),
                                   ),
                                   Padding(
                                     padding: EdgeInsetsDirectional.fromSTEB(
-                                        8.0, 10.0, 8.0, 0.0),
+                                        8.0, 4.0, 8.0, 0.0),
                                     child: TextFormField(
                                       controller: _model.textController,
                                       focusNode: _model.textFieldFocusNode,
                                       autofocus: true,
                                       obscureText: false,
                                       decoration: InputDecoration(
-                                        labelText: 'Nome Impresso no Cartão',
                                         labelStyle: FlutterFlowTheme.of(context)
                                             .labelMedium,
                                         hintText: 'João Silva',
@@ -138,7 +141,7 @@ class _PagCartaoWidgetState extends State<PagCartaoWidget> {
                                           borderSide: BorderSide(
                                             color: FlutterFlowTheme.of(context)
                                                 .secondaryText,
-                                            width: 2.0,
+                                            width: 1.0,
                                           ),
                                           borderRadius:
                                               BorderRadius.circular(8.0),
@@ -146,8 +149,8 @@ class _PagCartaoWidgetState extends State<PagCartaoWidget> {
                                         focusedBorder: OutlineInputBorder(
                                           borderSide: BorderSide(
                                             color: FlutterFlowTheme.of(context)
-                                                .primary,
-                                            width: 2.0,
+                                                .secondary,
+                                            width: 1.0,
                                           ),
                                           borderRadius:
                                               BorderRadius.circular(8.0),
@@ -156,7 +159,7 @@ class _PagCartaoWidgetState extends State<PagCartaoWidget> {
                                           borderSide: BorderSide(
                                             color: FlutterFlowTheme.of(context)
                                                 .error,
-                                            width: 2.0,
+                                            width: 1.0,
                                           ),
                                           borderRadius:
                                               BorderRadius.circular(8.0),
@@ -165,7 +168,7 @@ class _PagCartaoWidgetState extends State<PagCartaoWidget> {
                                           borderSide: BorderSide(
                                             color: FlutterFlowTheme.of(context)
                                                 .error,
-                                            width: 2.0,
+                                            width: 1.0,
                                           ),
                                           borderRadius:
                                               BorderRadius.circular(8.0),
