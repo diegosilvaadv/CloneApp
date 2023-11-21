@@ -1569,14 +1569,7 @@ class _PagCartaoWidgetState extends State<PagCartaoWidget> {
                                           return WebViewAware(
                                               child: AlertDialog(
                                             title: Text('Falha na Validação!'),
-                                            content: Text(
-                                                '${TokemCardCall.mesagemErro(
-                                              (_model.validacaoCard?.jsonBody ??
-                                                  ''),
-                                            ).toString()} \\ ${TokemCardCall.mesagemErro(
-                                              (_model.validacaoCard?.jsonBody ??
-                                                  ''),
-                                            ).toString()}'),
+                                            content: Text('erro'),
                                             actions: [
                                               TextButton(
                                                 onPressed: () => Navigator.pop(
