@@ -92,6 +92,121 @@ class StatusPixCall {
       );
 }
 
+class TokemCardCall {
+  static Future<ApiCallResponse> call({
+    String? cardNumber = '',
+    String? cardholderName = '',
+    String? cardExpirationMonth = '',
+    String? cardExpirationYear = '',
+    String? securityCode = '',
+    String? identificationType = '',
+    String? identificationNumber = '',
+    String? accessToken = '',
+    String? publicKey = '',
+  }) async {
+    final ffApiRequestBody = '''
+{
+  "card_number": "${cardNumber}",
+  "cardholder": {
+    "name": "${cardholderName}",
+    "identification": {
+      "type": "${identificationType}",
+      "number": "${identificationNumber}"
+    }
+  },
+  "security_code": "${securityCode}",
+  "expiration_month": "${cardExpirationMonth}",
+  "expiration_year": "${cardExpirationYear}"
+}''';
+    return ApiManager.instance.makeApiCall(
+      callName: 'TokemCard',
+      apiUrl:
+          'https://api.mercadopago.com/v1/card_tokens?public_key=${publicKey}',
+      callType: ApiCallType.POST,
+      headers: {
+        'Authorization':
+            'Bearer APP_USR-2540313967326267-111909-94d7cfcc16413329acb45f48567519c7-433297459',
+      },
+      params: {},
+      body: ffApiRequestBody,
+      bodyType: BodyType.JSON,
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: false,
+      cache: false,
+    );
+  }
+
+  static dynamic token(dynamic response) => getJsonField(
+        response,
+        r'''$.id''',
+      );
+}
+
+class CartaoMPCall {
+  static Future<ApiCallResponse> call({
+    double? transactionAmount,
+    String? token = '',
+    String? firstName = '',
+    String? lastName = '',
+    String? email = '',
+    String? identificationType = '',
+    String? identificationNumber = '',
+    String? zipCode = '',
+    String? streetName = '',
+    String? streetNumber = '',
+    String? neighborhood = '',
+    String? city = '',
+    String? federalUnit = '',
+    String? description = '',
+    String? accessToken = '',
+    int? installments,
+  }) async {
+    final ffApiRequestBody = '''
+{
+  "transaction_amount": ${transactionAmount},
+  "token": "${token}",
+  "installments": ${installments},
+  "payer": {
+    "first_name": "${firstName}",
+    "last_name": "${lastName}",
+    "email": "${email}",
+    "type": "cunstomer",
+    "identification": {
+      "type": "${identificationType}",
+      "number": "${identificationNumber}"
+    },
+    "address": {
+      "zip_code": "${zipCode}",
+      "street_name": "${streetName}",
+      "street_number": "${streetNumber}",
+      "neighborhood": "${neighborhood}",
+      "city": "${city}",
+      "federal_unit": "${federalUnit}"
+    }
+  },
+  "description": "${description}"
+}''';
+    return ApiManager.instance.makeApiCall(
+      callName: 'Cartao MP',
+      apiUrl: 'https://api.mercadopago.com/v1/payments',
+      callType: ApiCallType.POST,
+      headers: {
+        'Authorization':
+            'Bearer TEST-2540313967326267-111909-fb5a28f57f4f44cf184b71afeb38980d-433297459',
+        'Content-Type': 'application/json',
+      },
+      params: {},
+      body: ffApiRequestBody,
+      bodyType: BodyType.JSON,
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: false,
+      cache: false,
+    );
+  }
+}
+
 class ApiPagingParams {
   int nextPageNumber = 0;
   int numItems = 0;

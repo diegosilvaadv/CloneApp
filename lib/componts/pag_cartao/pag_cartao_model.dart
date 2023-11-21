@@ -1,4 +1,3 @@
-import '/flutter_flow/flutter_flow_credit_card_form.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
@@ -11,15 +10,19 @@ import 'package:provider/provider.dart';
 class PagCartaoModel extends FlutterFlowModel<PagCartaoWidget> {
   ///  State fields for stateful widgets in this component.
 
-  // State field(s) for CreditCardForm widget.
-  final creditCardFormKey = GlobalKey<FormState>();
-  CreditCardModel creditCardInfo = emptyCreditCard();
+  // State field(s) for TextField widget.
+  FocusNode? textFieldFocusNode;
+  TextEditingController? textController;
+  String? Function(BuildContext, String?)? textControllerValidator;
 
   /// Initialization and disposal methods.
 
   void initState(BuildContext context) {}
 
-  void dispose() {}
+  void dispose() {
+    textFieldFocusNode?.dispose();
+    textController?.dispose();
+  }
 
   /// Action blocks are added here.
 
