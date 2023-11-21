@@ -134,7 +134,7 @@ class _PagamentoWidgetState extends State<PagamentoWidget> {
                     ),
                     child: Padding(
                       padding: EdgeInsetsDirectional.fromSTEB(
-                          10.0, 10.0, 10.0, 10.0),
+                          10.0, 20.0, 10.0, 20.0),
                       child: Column(
                         mainAxisSize: MainAxisSize.max,
                         children: [
@@ -206,78 +206,108 @@ class _PagamentoWidgetState extends State<PagamentoWidget> {
                                         .primaryBackground,
                                     borderRadius: BorderRadius.circular(8.0),
                                   ),
-                                  child: Row(
-                                    mainAxisSize: MainAxisSize.max,
-                                    children: [
-                                      Expanded(
-                                        child: Padding(
-                                          padding:
-                                              EdgeInsetsDirectional.fromSTEB(
-                                                  10.0, 10.0, 10.0, 10.0),
-                                          child: Theme(
-                                            data: ThemeData(
-                                              checkboxTheme: CheckboxThemeData(
-                                                visualDensity:
-                                                    VisualDensity.compact,
-                                                materialTapTargetSize:
-                                                    MaterialTapTargetSize
-                                                        .shrinkWrap,
-                                              ),
-                                              unselectedWidgetColor:
-                                                  FlutterFlowTheme.of(context)
+                                  child: Padding(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                        10.0, 10.0, 10.0, 10.0),
+                                    child: InkWell(
+                                      splashColor: Colors.transparent,
+                                      focusColor: Colors.transparent,
+                                      hoverColor: Colors.transparent,
+                                      highlightColor: Colors.transparent,
+                                      onTap: () async {
+                                        setState(() {
+                                          FFAppState().FormadePag = 'pix';
+                                        });
+                                      },
+                                      child: Row(
+                                        mainAxisSize: MainAxisSize.max,
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.spaceBetween,
+                                        children: [
+                                          Row(
+                                            mainAxisSize: MainAxisSize.max,
+                                            children: [
+                                              Padding(
+                                                padding: EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        0.0, 0.0, 10.0, 0.0),
+                                                child: Icon(
+                                                  Icons.pix,
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
                                                       .secondaryText,
-                                            ),
-                                            child: CheckboxListTile(
-                                              value: _model
-                                                      .checkboxListTileValue1 ??=
-                                                  FFAppState().FormadePag ==
-                                                      'pix',
-                                              onChanged: (newValue) async {
-                                                setState(() => _model
-                                                        .checkboxListTileValue1 =
-                                                    newValue!);
-                                                if (newValue!) {
-                                                  setState(() {
-                                                    FFAppState().FormadePag =
-                                                        'pix';
-                                                  });
-                                                } else {
-                                                  setState(() {
-                                                    FFAppState().FormadePag =
-                                                        'nada';
-                                                  });
-                                                }
-                                              },
-                                              title: Text(
-                                                'Pagar com Pix',
-                                                style:
-                                                    FlutterFlowTheme.of(context)
-                                                        .titleLarge,
+                                                  size: 24.0,
+                                                ),
                                               ),
-                                              subtitle: Text(
-                                                'Pagamento aprovado na hora.',
-                                                style:
-                                                    FlutterFlowTheme.of(context)
-                                                        .labelMedium,
+                                              Column(
+                                                mainAxisSize: MainAxisSize.max,
+                                                crossAxisAlignment:
+                                                    CrossAxisAlignment.start,
+                                                children: [
+                                                  Text(
+                                                    'Pagar com Pix',
+                                                    style: FlutterFlowTheme.of(
+                                                            context)
+                                                        .bodyMedium
+                                                        .override(
+                                                          fontFamily:
+                                                              'Readex Pro',
+                                                          fontSize: 25.0,
+                                                        ),
+                                                  ),
+                                                  Text(
+                                                    'Pagamento aprovado na hora.',
+                                                    style: FlutterFlowTheme.of(
+                                                            context)
+                                                        .bodyMedium
+                                                        .override(
+                                                          fontFamily:
+                                                              'Readex Pro',
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .secondaryText,
+                                                          fontSize: 15.0,
+                                                        ),
+                                                  ),
+                                                ],
                                               ),
-                                              tileColor:
-                                                  FlutterFlowTheme.of(context)
-                                                      .secondaryBackground,
-                                              activeColor:
-                                                  FlutterFlowTheme.of(context)
-                                                      .primary,
-                                              checkColor:
-                                                  FlutterFlowTheme.of(context)
-                                                      .info,
-                                              dense: false,
-                                              controlAffinity:
-                                                  ListTileControlAffinity
-                                                      .trailing,
-                                            ),
+                                            ],
                                           ),
-                                        ),
+                                          Row(
+                                            mainAxisSize: MainAxisSize.max,
+                                            children: [
+                                              if (FFAppState().FormadePag ==
+                                                  'nada')
+                                                Padding(
+                                                  padding: EdgeInsetsDirectional
+                                                      .fromSTEB(
+                                                          0.0, 0.0, 10.0, 0.0),
+                                                  child: Icon(
+                                                    Icons
+                                                        .check_box_outline_blank,
+                                                    color: FlutterFlowTheme.of(
+                                                            context)
+                                                        .secondaryText,
+                                                    size: 24.0,
+                                                  ),
+                                                ),
+                                              if (FFAppState().FormadePag ==
+                                                  'pix')
+                                                Padding(
+                                                  padding: EdgeInsetsDirectional
+                                                      .fromSTEB(
+                                                          0.0, 0.0, 10.0, 0.0),
+                                                  child: Icon(
+                                                    Icons.check_box,
+                                                    color: Color(0xFF10DA26),
+                                                    size: 24.0,
+                                                  ),
+                                                ),
+                                            ],
+                                          ),
+                                        ],
                                       ),
-                                    ],
+                                    ),
                                   ),
                                 ),
                               ],
@@ -297,78 +327,108 @@ class _PagamentoWidgetState extends State<PagamentoWidget> {
                                         .primaryBackground,
                                     borderRadius: BorderRadius.circular(8.0),
                                   ),
-                                  child: Row(
-                                    mainAxisSize: MainAxisSize.max,
-                                    children: [
-                                      Expanded(
-                                        child: Padding(
-                                          padding:
-                                              EdgeInsetsDirectional.fromSTEB(
-                                                  10.0, 10.0, 10.0, 10.0),
-                                          child: Theme(
-                                            data: ThemeData(
-                                              checkboxTheme: CheckboxThemeData(
-                                                visualDensity:
-                                                    VisualDensity.compact,
-                                                materialTapTargetSize:
-                                                    MaterialTapTargetSize
-                                                        .shrinkWrap,
-                                              ),
-                                              unselectedWidgetColor:
-                                                  FlutterFlowTheme.of(context)
+                                  child: Padding(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                        10.0, 10.0, 10.0, 10.0),
+                                    child: InkWell(
+                                      splashColor: Colors.transparent,
+                                      focusColor: Colors.transparent,
+                                      hoverColor: Colors.transparent,
+                                      highlightColor: Colors.transparent,
+                                      onTap: () async {
+                                        setState(() {
+                                          FFAppState().FormadePag = 'cartao';
+                                        });
+                                      },
+                                      child: Row(
+                                        mainAxisSize: MainAxisSize.max,
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.spaceBetween,
+                                        children: [
+                                          Row(
+                                            mainAxisSize: MainAxisSize.max,
+                                            children: [
+                                              Padding(
+                                                padding: EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        0.0, 0.0, 10.0, 0.0),
+                                                child: Icon(
+                                                  Icons.credit_card,
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
                                                       .secondaryText,
-                                            ),
-                                            child: CheckboxListTile(
-                                              value: _model
-                                                      .checkboxListTileValue2 ??=
-                                                  FFAppState().FormadePag ==
-                                                      'cartao',
-                                              onChanged: (newValue) async {
-                                                setState(() => _model
-                                                        .checkboxListTileValue2 =
-                                                    newValue!);
-                                                if (newValue!) {
-                                                  setState(() {
-                                                    FFAppState().FormadePag =
-                                                        'cartao';
-                                                  });
-                                                } else {
-                                                  setState(() {
-                                                    FFAppState().FormadePag =
-                                                        'nada';
-                                                  });
-                                                }
-                                              },
-                                              title: Text(
-                                                'Cartão de Credito',
-                                                style:
-                                                    FlutterFlowTheme.of(context)
-                                                        .titleLarge,
+                                                  size: 24.0,
+                                                ),
                                               ),
-                                              subtitle: Text(
-                                                'Pagamento aprovado na hora.',
-                                                style:
-                                                    FlutterFlowTheme.of(context)
-                                                        .labelMedium,
+                                              Column(
+                                                mainAxisSize: MainAxisSize.max,
+                                                crossAxisAlignment:
+                                                    CrossAxisAlignment.start,
+                                                children: [
+                                                  Text(
+                                                    'Pagar com Cartão de Crédito',
+                                                    style: FlutterFlowTheme.of(
+                                                            context)
+                                                        .bodyMedium
+                                                        .override(
+                                                          fontFamily:
+                                                              'Readex Pro',
+                                                          fontSize: 25.0,
+                                                        ),
+                                                  ),
+                                                  Text(
+                                                    'Pagamento aprovado na hora.',
+                                                    style: FlutterFlowTheme.of(
+                                                            context)
+                                                        .bodyMedium
+                                                        .override(
+                                                          fontFamily:
+                                                              'Readex Pro',
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .secondaryText,
+                                                          fontSize: 15.0,
+                                                        ),
+                                                  ),
+                                                ],
                                               ),
-                                              tileColor:
-                                                  FlutterFlowTheme.of(context)
-                                                      .secondaryBackground,
-                                              activeColor:
-                                                  FlutterFlowTheme.of(context)
-                                                      .primary,
-                                              checkColor:
-                                                  FlutterFlowTheme.of(context)
-                                                      .info,
-                                              dense: false,
-                                              controlAffinity:
-                                                  ListTileControlAffinity
-                                                      .trailing,
-                                            ),
+                                            ],
                                           ),
-                                        ),
+                                          Row(
+                                            mainAxisSize: MainAxisSize.max,
+                                            children: [
+                                              if (FFAppState().FormadePag ==
+                                                  'nada')
+                                                Padding(
+                                                  padding: EdgeInsetsDirectional
+                                                      .fromSTEB(
+                                                          0.0, 0.0, 10.0, 0.0),
+                                                  child: Icon(
+                                                    Icons
+                                                        .check_box_outline_blank,
+                                                    color: FlutterFlowTheme.of(
+                                                            context)
+                                                        .secondaryText,
+                                                    size: 24.0,
+                                                  ),
+                                                ),
+                                              if (FFAppState().FormadePag ==
+                                                  'cartao')
+                                                Padding(
+                                                  padding: EdgeInsetsDirectional
+                                                      .fromSTEB(
+                                                          0.0, 0.0, 10.0, 0.0),
+                                                  child: Icon(
+                                                    Icons.check_box,
+                                                    color: Color(0xFF10DA26),
+                                                    size: 24.0,
+                                                  ),
+                                                ),
+                                            ],
+                                          ),
+                                        ],
                                       ),
-                                    ],
+                                    ),
                                   ),
                                 ),
                               ],
