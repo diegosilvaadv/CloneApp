@@ -91,15 +91,15 @@ class PagCartaoModel extends FlutterFlowModel<PagCartaoWidget> {
   // State field(s) for ano_card widget.
   FocusNode? anoCardFocusNode;
   TextEditingController? anoCardController;
-  final anoCardMask = MaskTextInputFormatter(mask: '##');
+  final anoCardMask = MaskTextInputFormatter(mask: '####');
   String? Function(BuildContext, String?)? anoCardControllerValidator;
   String? _anoCardControllerValidator(BuildContext context, String? val) {
     if (val == null || val.isEmpty) {
       return 'Obrigatório';
     }
 
-    if (val.length < 2) {
-      return 'Mínimo de 2 Caracteres';
+    if (val.length < 4) {
+      return 'Mínimo de 4 Caracteres';
     }
 
     return null;
