@@ -21,6 +21,10 @@ class PagamentoModel extends FlutterFlowModel<PagamentoWidget> {
   ///  State fields for stateful widgets in this page.
 
   final unfocusNode = FocusNode();
+  // State field(s) for CheckboxListTile widget.
+  bool? checkboxListTileValue1;
+  // State field(s) for CheckboxListTile widget.
+  bool? checkboxListTileValue2;
   // Stores action output result for [Backend Call - API (Pix Mercado Pago)] action in Button widget.
   ApiCallResponse? gerarPedido;
 

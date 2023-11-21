@@ -40,6 +40,23 @@ class FFAppState extends ChangeNotifier {
   set cahveAlea(int _value) {
     _cahveAlea = _value;
   }
+
+  FormasdepagStruct _FormasdePagRef = FormasdepagStruct.fromSerializableMap(
+      jsonDecode('{\"pix\":\"pix\",\"cardaodecredito\":\"cartao\"}'));
+  FormasdepagStruct get FormasdePagRef => _FormasdePagRef;
+  set FormasdePagRef(FormasdepagStruct _value) {
+    _FormasdePagRef = _value;
+  }
+
+  void updateFormasdePagRefStruct(Function(FormasdepagStruct) updateFn) {
+    updateFn(_FormasdePagRef);
+  }
+
+  String _FormadePag = 'nada';
+  String get FormadePag => _FormadePag;
+  set FormadePag(String _value) {
+    _FormadePag = _value;
+  }
 }
 
 LatLng? _latLngFromString(String? val) {
