@@ -762,7 +762,7 @@ class _DetalhePageAppsWidgetState extends State<DetalhePageAppsWidget>
                             EdgeInsetsDirectional.fromSTEB(0.0, 6.0, 50.0, 0.0),
                         child: Row(
                           mainAxisSize: MainAxisSize.max,
-                          mainAxisAlignment: MainAxisAlignment.start,
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             Flexible(
                               child: Text(
@@ -776,6 +776,35 @@ class _DetalhePageAppsWidgetState extends State<DetalhePageAppsWidget>
                                       fontFamily: 'Noto Serif',
                                       fontSize: 20.0,
                                     ),
+                              ),
+                            ),
+                            FFButtonWidget(
+                              onPressed: () async {
+                                await launchURL(
+                                    widget.paramentros!.linkTesteProjeto!);
+                              },
+                              text: 'Testar Projeto',
+                              options: FFButtonOptions(
+                                height: 40.0,
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    24.0, 0.0, 24.0, 0.0),
+                                iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                    0.0, 0.0, 0.0, 0.0),
+                                color: FlutterFlowTheme.of(context)
+                                    .primaryBackground,
+                                textStyle: FlutterFlowTheme.of(context)
+                                    .titleSmall
+                                    .override(
+                                      fontFamily: 'Readex Pro',
+                                      color: FlutterFlowTheme.of(context)
+                                          .primaryText,
+                                    ),
+                                elevation: 3.0,
+                                borderSide: BorderSide(
+                                  color: Colors.transparent,
+                                  width: 1.0,
+                                ),
+                                borderRadius: BorderRadius.circular(8.0),
                               ),
                             ),
                           ],

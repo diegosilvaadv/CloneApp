@@ -150,7 +150,7 @@ class _PagamentoWidgetState extends State<PagamentoWidget> {
                                       fontFamily: 'Readex Pro',
                                       color: FlutterFlowTheme.of(context)
                                           .primaryText,
-                                      fontSize: 31.0,
+                                      fontSize: 35.0,
                                       fontWeight: FontWeight.bold,
                                     ),
                               ),
@@ -167,7 +167,7 @@ class _PagamentoWidgetState extends State<PagamentoWidget> {
                                     .override(
                                       fontFamily: 'Readex Pro',
                                       color: Color(0xFF10DA26),
-                                      fontSize: 31.0,
+                                      fontSize: 35.0,
                                       fontWeight: FontWeight.bold,
                                     ),
                               ),
@@ -181,12 +181,12 @@ class _PagamentoWidgetState extends State<PagamentoWidget> {
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
                                 Text(
-                                  'Forma de pagamento disponivel.',
+                                  'Formas de pagamento disponíveis.',
                                   style: FlutterFlowTheme.of(context)
                                       .bodyMedium
                                       .override(
                                         fontFamily: 'Readex Pro',
-                                        fontSize: 20.0,
+                                        fontSize: 25.0,
                                       ),
                                 ),
                               ],
@@ -194,7 +194,7 @@ class _PagamentoWidgetState extends State<PagamentoWidget> {
                           ),
                           Padding(
                             padding: EdgeInsetsDirectional.fromSTEB(
-                                0.0, 10.0, 0.0, 0.0),
+                                0.0, 20.0, 0.0, 0.0),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
                               mainAxisAlignment: MainAxisAlignment.center,
@@ -276,8 +276,8 @@ class _PagamentoWidgetState extends State<PagamentoWidget> {
                                           Row(
                                             mainAxisSize: MainAxisSize.max,
                                             children: [
-                                              if (FFAppState().FormadePag ==
-                                                  'nada')
+                                              if (FFAppState().FormadePag !=
+                                                  'pix')
                                                 Padding(
                                                   padding: EdgeInsetsDirectional
                                                       .fromSTEB(
@@ -397,8 +397,8 @@ class _PagamentoWidgetState extends State<PagamentoWidget> {
                                           Row(
                                             mainAxisSize: MainAxisSize.max,
                                             children: [
-                                              if (FFAppState().FormadePag ==
-                                                  'nada')
+                                              if (FFAppState().FormadePag !=
+                                                  'cartao')
                                                 Padding(
                                                   padding: EdgeInsetsDirectional
                                                       .fromSTEB(

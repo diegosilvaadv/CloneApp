@@ -46,4 +46,8 @@ class TemplatesRow extends SupabaseDataRow {
 
   double? get preco => getField<double>('preco');
   set preco(double? value) => setField<double>('preco', value);
+
+  String? get linkTesteProjeto => getField<String>('linkTesteProjeto');
+  set linkTesteProjeto(String? value) =>
+      setField<String>('linkTesteProjeto', value);
 }
