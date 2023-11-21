@@ -522,7 +522,7 @@ class _DashBoardWidgetState extends State<DashBoardWidget>
                                 children: [
                                   FutureBuilder<List<UsersRow>>(
                                     future: UsersTable().queryRows(
-                                      queryFn: (q) => q,
+                                      queryFn: (q) => q.order('created_at'),
                                     ),
                                     builder: (context, snapshot) {
                                       // Customize what your widget looks like when it's loading.
@@ -661,6 +661,24 @@ class _DashBoardWidgetState extends State<DashBoardWidget>
                                                                             Text(
                                                                           listViewUsersRow
                                                                               .email!,
+                                                                          style:
+                                                                              FlutterFlowTheme.of(context).bodyMedium,
+                                                                        ),
+                                                                      ),
+                                                                    ),
+                                                                    Expanded(
+                                                                      child:
+                                                                          Padding(
+                                                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                                                            0.0,
+                                                                            0.0,
+                                                                            0.0,
+                                                                            8.0),
+                                                                        child:
+                                                                            Text(
+                                                                          dateTimeFormat(
+                                                                              'dd/MM/yyyy | kk:mm',
+                                                                              listViewUsersRow.createdAt),
                                                                           style:
                                                                               FlutterFlowTheme.of(context).bodyMedium,
                                                                         ),
