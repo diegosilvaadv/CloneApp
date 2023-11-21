@@ -10,11 +10,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
-import 'comp_page_model.dart';
-export 'comp_page_model.dart';
+import 'pag_pix_model.dart';
+export 'pag_pix_model.dart';
 
-class CompPageWidget extends StatefulWidget {
-  const CompPageWidget({
+class PagPixWidget extends StatefulWidget {
+  const PagPixWidget({
     Key? key,
     required this.status,
     this.pedido,
@@ -24,11 +24,11 @@ class CompPageWidget extends StatefulWidget {
   final TemplatesRow? pedido;
 
   @override
-  _CompPageWidgetState createState() => _CompPageWidgetState();
+  _PagPixWidgetState createState() => _PagPixWidgetState();
 }
 
-class _CompPageWidgetState extends State<CompPageWidget> {
-  late CompPageModel _model;
+class _PagPixWidgetState extends State<PagPixWidget> {
+  late PagPixModel _model;
 
   @override
   void setState(VoidCallback callback) {
@@ -39,7 +39,7 @@ class _CompPageWidgetState extends State<CompPageWidget> {
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => CompPageModel());
+    _model = createModel(context, () => PagPixModel());
 
     _model.textController ??=
         TextEditingController(text: FFAppState().PagRed.chavepix);

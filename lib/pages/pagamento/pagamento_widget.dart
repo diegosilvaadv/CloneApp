@@ -2,7 +2,8 @@ import '/auth/supabase_auth/auth_util.dart';
 import '/backend/api_requests/api_calls.dart';
 import '/backend/schema/structs/index.dart';
 import '/backend/supabase/supabase.dart';
-import '/components/comp_page_widget.dart';
+import '/componts/pag_cartao/pag_cartao_widget.dart';
+import '/componts/pag_pix/pag_pix_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
@@ -463,99 +464,148 @@ class _PagamentoWidgetState extends State<PagamentoWidget> {
                                 Builder(
                                   builder: (context) => FFButtonWidget(
                                     onPressed: () async {
-                                      _model.gerarPedido =
-                                          await PixMercadoPagoCall.call(
-                                        amount: widget.detalhes?.preco,
-                                        productTitle: random_data.randomString(
-                                          10,
-                                          13,
-                                          false,
-                                          false,
-                                          true,
-                                        ),
-                                        email: currentUserEmail,
-                                        chave: random_data.randomString(
-                                          10,
-                                          13,
-                                          false,
-                                          false,
-                                          true,
-                                        ),
-                                      );
-                                      if ((_model.gerarPedido?.succeeded ??
-                                          true)) {
-                                        setState(() {
-                                          FFAppState().PagRed =
-                                              PagamentosStruct(
-                                            chavepix:
-                                                PixMercadoPagoCall.chavePix(
-                                              (_model.gerarPedido?.jsonBody ??
-                                                  ''),
-                                            ).toString(),
-                                            qRcode: PixMercadoPagoCall.qRcode(
-                                              (_model.gerarPedido?.jsonBody ??
-                                                  ''),
-                                            ).toString(),
-                                            idPedido:
-                                                PixMercadoPagoCall.idPedido(
-                                              (_model.gerarPedido?.jsonBody ??
-                                                  ''),
+                                      if (FFAppState().FormadePag == 'pix') {
+                                        _model.gerarPedido =
+                                            await PixMercadoPagoCall.call(
+                                          amount: widget.detalhes?.preco,
+                                          productTitle:
+                                              random_data.randomString(
+                                            10,
+                                            13,
+                                            false,
+                                            false,
+                                            true,
+                                          ),
+                                          email: currentUserEmail,
+                                          chave: random_data.randomString(
+                                            10,
+                                            13,
+                                            false,
+                                            false,
+                                            true,
+                                          ),
+                                        );
+                                        if ((_model.gerarPedido?.succeeded ??
+                                            true)) {
+                                          setState(() {
+                                            FFAppState().PagRed =
+                                                PagamentosStruct(
+                                              chavepix:
+                                                  PixMercadoPagoCall.chavePix(
+                                                (_model.gerarPedido?.jsonBody ??
+                                                    ''),
+                                              ).toString(),
+                                              qRcode: PixMercadoPagoCall.qRcode(
+                                                (_model.gerarPedido?.jsonBody ??
+                                                    ''),
+                                              ).toString(),
+                                              idPedido:
+                                                  PixMercadoPagoCall.idPedido(
+                                                (_model.gerarPedido?.jsonBody ??
+                                                    ''),
+                                              ),
+                                            );
+                                          });
+                                          await PagamentosTable().insert({
+                                            'user_id': currentUserUid,
+                                            'produto': widget.detalhes?.titulo,
+                                            'descricao':
+                                                widget.detalhes?.descricao,
+                                            'preco': widget.detalhes?.preco,
+                                            'link': widget.detalhes?.copypage,
+                                            'img': widget.detalhes?.img,
+                                          });
+                                          showAlignedDialog(
+                                            barrierDismissible: false,
+                                            context: context,
+                                            isGlobal: false,
+                                            avoidOverflow: true,
+                                            targetAnchor: AlignmentDirectional(
+                                                    0.0, 0.0)
+                                                .resolve(
+                                                    Directionality.of(context)),
+                                            followerAnchor:
+                                                AlignmentDirectional(0.0, 0.0)
+                                                    .resolve(Directionality.of(
+                                                        context)),
+                                            builder: (dialogContext) {
+                                              return Material(
+                                                color: Colors.transparent,
+                                                child: WebViewAware(
+                                                    child: GestureDetector(
+                                                  onTap: () => _model
+                                                          .unfocusNode
+                                                          .canRequestFocus
+                                                      ? FocusScope.of(context)
+                                                          .requestFocus(_model
+                                                              .unfocusNode)
+                                                      : FocusScope.of(context)
+                                                          .unfocus(),
+                                                  child: PagPixWidget(
+                                                    status: PagamentosStruct
+                                                            .fromMap((_model
+                                                                    .gerarPedido
+                                                                    ?.jsonBody ??
+                                                                ''))
+                                                        .toMap(),
+                                                    pedido: widget.detalhes,
+                                                  ),
+                                                )),
+                                              );
+                                            },
+                                          ).then((value) => setState(() {}));
+                                        } else {
+                                          ScaffoldMessenger.of(context)
+                                              .showSnackBar(
+                                            SnackBar(
+                                              content: Text(
+                                                'ERRRROO',
+                                                style: TextStyle(
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .primaryText,
+                                                ),
+                                              ),
+                                              duration:
+                                                  Duration(milliseconds: 4000),
+                                              backgroundColor:
+                                                  FlutterFlowTheme.of(context)
+                                                      .secondary,
                                             ),
                                           );
-                                        });
-                                        await PagamentosTable().insert({
-                                          'user_id': currentUserUid,
-                                          'produto': widget.detalhes?.titulo,
-                                          'descricao':
-                                              widget.detalhes?.descricao,
-                                          'preco': widget.detalhes?.preco,
-                                          'link': widget.detalhes?.copypage,
-                                          'img': widget.detalhes?.img,
-                                        });
-                                        showAlignedDialog(
-                                          barrierDismissible: false,
+                                        }
+                                      } else if (FFAppState().FormadePag ==
+                                          'cartao') {
+                                        await showModalBottomSheet(
+                                          isScrollControlled: true,
+                                          backgroundColor: Colors.transparent,
+                                          enableDrag: false,
                                           context: context,
-                                          isGlobal: false,
-                                          avoidOverflow: true,
-                                          targetAnchor: AlignmentDirectional(
-                                                  0.0, 0.0)
-                                              .resolve(
-                                                  Directionality.of(context)),
-                                          followerAnchor: AlignmentDirectional(
-                                                  0.0, 0.0)
-                                              .resolve(
-                                                  Directionality.of(context)),
-                                          builder: (dialogContext) {
-                                            return Material(
-                                              color: Colors.transparent,
-                                              child: WebViewAware(
-                                                  child: GestureDetector(
-                                                onTap: () => _model.unfocusNode
-                                                        .canRequestFocus
-                                                    ? FocusScope.of(context)
-                                                        .requestFocus(
-                                                            _model.unfocusNode)
-                                                    : FocusScope.of(context)
-                                                        .unfocus(),
-                                                child: CompPageWidget(
-                                                  status: PagamentosStruct
-                                                          .fromMap((_model
-                                                                  .gerarPedido
-                                                                  ?.jsonBody ??
-                                                              ''))
-                                                      .toMap(),
-                                                  pedido: widget.detalhes,
-                                                ),
-                                              )),
-                                            );
+                                          builder: (context) {
+                                            return WebViewAware(
+                                                child: GestureDetector(
+                                              onTap: () => _model.unfocusNode
+                                                      .canRequestFocus
+                                                  ? FocusScope.of(context)
+                                                      .requestFocus(
+                                                          _model.unfocusNode)
+                                                  : FocusScope.of(context)
+                                                      .unfocus(),
+                                              child: Padding(
+                                                padding:
+                                                    MediaQuery.viewInsetsOf(
+                                                        context),
+                                                child: PagCartaoWidget(),
+                                              ),
+                                            ));
                                           },
-                                        ).then((value) => setState(() {}));
+                                        ).then((value) => safeSetState(() {}));
                                       } else {
                                         ScaffoldMessenger.of(context)
                                             .showSnackBar(
                                           SnackBar(
                                             content: Text(
-                                              'ERRRROO',
+                                              'Adicione forma de pagamento!',
                                               style: TextStyle(
                                                 color:
                                                     FlutterFlowTheme.of(context)

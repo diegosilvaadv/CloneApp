@@ -1,8 +1,8 @@
 import '/auth/supabase_auth/auth_util.dart';
 import '/backend/supabase/supabase.dart';
-import '/components/add_widget.dart';
-import '/components/alterarimg_widget.dart';
-import '/components/editar_widget.dart';
+import '/componts/add/add_widget.dart';
+import '/componts/alterarimg/alterarimg_widget.dart';
+import '/componts/editar/editar_widget.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_button_tabbar.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
