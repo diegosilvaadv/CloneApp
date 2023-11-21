@@ -42,11 +42,11 @@ class PagCartaoModel extends FlutterFlowModel<PagCartaoWidget> {
       return 'Obrigatório';
     }
 
-    if (val.length < 11) {
-      return 'Requires at least 11 characters.';
+    if (val.length < 14) {
+      return 'Requires at least 14 characters.';
     }
-    if (val.length > 11) {
-      return 'Maximum 11 characters allowed, currently ${val.length}.';
+    if (val.length > 14) {
+      return 'Maximum 14 characters allowed, currently ${val.length}.';
     }
 
     return null;
@@ -60,13 +60,6 @@ class PagCartaoModel extends FlutterFlowModel<PagCartaoWidget> {
   String? _numberCartaoControllerValidator(BuildContext context, String? val) {
     if (val == null || val.isEmpty) {
       return 'Obrigatório';
-    }
-
-    if (val.length < 16) {
-      return 'Requires at least 16 characters.';
-    }
-    if (val.length > 16) {
-      return 'Maximum 16 characters allowed, currently ${val.length}.';
     }
 
     return null;
@@ -164,14 +157,14 @@ class PagCartaoModel extends FlutterFlowModel<PagCartaoWidget> {
   String? Function(BuildContext, String?)? telefoneControllerValidator;
   String? _telefoneControllerValidator(BuildContext context, String? val) {
     if (val == null || val.isEmpty) {
-      return 'Field is required';
+      return 'Obrigatório';
     }
 
-    if (val.length < 11) {
-      return 'Requires at least 11 characters.';
+    if (val.length < 15) {
+      return 'Requires at least 15 characters.';
     }
-    if (val.length > 11) {
-      return 'Maximum 11 characters allowed, currently ${val.length}.';
+    if (val.length > 15) {
+      return 'Maximum 15 characters allowed, currently ${val.length}.';
     }
 
     return null;

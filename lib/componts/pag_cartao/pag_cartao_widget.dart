@@ -169,7 +169,7 @@ class _PagCartaoWidgetState extends State<PagCartaoWidget> {
                                           Form(
                                             key: _model.formKey5,
                                             autovalidateMode:
-                                                AutovalidateMode.always,
+                                                AutovalidateMode.disabled,
                                             child: Padding(
                                               padding: EdgeInsetsDirectional
                                                   .fromSTEB(8.0, 6.0, 8.0, 0.0),
@@ -310,7 +310,7 @@ class _PagCartaoWidgetState extends State<PagCartaoWidget> {
                                             Form(
                                               key: _model.formKey2,
                                               autovalidateMode:
-                                                  AutovalidateMode.always,
+                                                  AutovalidateMode.disabled,
                                               child: Padding(
                                                 padding: EdgeInsetsDirectional
                                                     .fromSTEB(
@@ -1004,7 +1004,8 @@ class _PagCartaoWidgetState extends State<PagCartaoWidget> {
                                                   child: Form(
                                                     key: _model.formKey9,
                                                     autovalidateMode:
-                                                        AutovalidateMode.always,
+                                                        AutovalidateMode
+                                                            .disabled,
                                                     child: Padding(
                                                       padding:
                                                           EdgeInsetsDirectional
@@ -1277,7 +1278,7 @@ class _PagCartaoWidgetState extends State<PagCartaoWidget> {
                                             Form(
                                               key: _model.formKey1,
                                               autovalidateMode:
-                                                  AutovalidateMode.always,
+                                                  AutovalidateMode.disabled,
                                               child: Padding(
                                                 padding: EdgeInsetsDirectional
                                                     .fromSTEB(
