@@ -30,11 +30,14 @@ class _PagCartaoWidgetState extends State<PagCartaoWidget> {
     super.initState();
     _model = createModel(context, () => PagCartaoModel());
 
-    _model.textController1 ??= TextEditingController();
-    _model.textFieldFocusNode1 ??= FocusNode();
+    _model.nomeController ??= TextEditingController();
+    _model.nomeFocusNode ??= FocusNode();
 
-    _model.textController2 ??= TextEditingController();
-    _model.textFieldFocusNode2 ??= FocusNode();
+    _model.cpfController ??= TextEditingController();
+    _model.cpfFocusNode ??= FocusNode();
+
+    _model.numberCartaoController ??= TextEditingController();
+    _model.numberCartaoFocusNode ??= FocusNode();
 
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
@@ -136,8 +139,8 @@ class _PagCartaoWidgetState extends State<PagCartaoWidget> {
                                         padding: EdgeInsetsDirectional.fromSTEB(
                                             8.0, 4.0, 8.0, 0.0),
                                         child: TextFormField(
-                                          controller: _model.textController1,
-                                          focusNode: _model.textFieldFocusNode1,
+                                          controller: _model.nomeController,
+                                          focusNode: _model.nomeFocusNode,
                                           autofillHints: [AutofillHints.name],
                                           obscureText: false,
                                           decoration: InputDecoration(
@@ -198,10 +201,13 @@ class _PagCartaoWidgetState extends State<PagCartaoWidget> {
                                             ),
                                           ),
                                           style: FlutterFlowTheme.of(context)
-                                              .bodyMedium,
-                                          keyboardType: TextInputType.name,
+                                              .bodyMedium
+                                              .override(
+                                                fontFamily: 'Readex Pro',
+                                                fontSize: 20.0,
+                                              ),
                                           validator: _model
-                                              .textController1Validator
+                                              .nomeControllerValidator
                                               .asValidator(context),
                                         ),
                                       ),
@@ -239,14 +245,18 @@ class _PagCartaoWidgetState extends State<PagCartaoWidget> {
                                               EdgeInsetsDirectional.fromSTEB(
                                                   8.0, 4.0, 8.0, 0.0),
                                           child: TextFormField(
-                                            controller: _model.textController2,
-                                            focusNode:
-                                                _model.textFieldFocusNode2,
+                                            controller: _model.cpfController,
+                                            focusNode: _model.cpfFocusNode,
                                             obscureText: false,
                                             decoration: InputDecoration(
                                               labelStyle:
                                                   FlutterFlowTheme.of(context)
-                                                      .labelMedium,
+                                                      .labelMedium
+                                                      .override(
+                                                        fontFamily:
+                                                            'Readex Pro',
+                                                        fontSize: 14.0,
+                                                      ),
                                               hintText: '000.000.000-00',
                                               hintStyle:
                                                   FlutterFlowTheme.of(context)
@@ -297,17 +307,131 @@ class _PagCartaoWidgetState extends State<PagCartaoWidget> {
                                                   FlutterFlowTheme.of(context)
                                                       .secondaryBackground,
                                               prefixIcon: Icon(
-                                                Icons.person_sharp,
+                                                Icons.assignment_ind_rounded,
                                               ),
                                             ),
                                             style: FlutterFlowTheme.of(context)
-                                                .bodyMedium,
+                                                .bodyMedium
+                                                .override(
+                                                  fontFamily: 'Readex Pro',
+                                                  fontSize: 20.0,
+                                                ),
                                             keyboardType: TextInputType.number,
                                             validator: _model
-                                                .textController2Validator
+                                                .cpfControllerValidator
+                                                .asValidator(context),
+                                            inputFormatters: [_model.cpfMask],
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                  Padding(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                        0.0, 10.0, 0.0, 0.0),
+                                    child: Column(
+                                      mainAxisSize: MainAxisSize.max,
+                                      children: [
+                                        Padding(
+                                          padding:
+                                              EdgeInsetsDirectional.fromSTEB(
+                                                  10.0, 0.0, 0.0, 0.0),
+                                          child: Row(
+                                            mainAxisSize: MainAxisSize.max,
+                                            children: [
+                                              Text(
+                                                'Numero do Cartão',
+                                                style:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .override(
+                                                          fontFamily:
+                                                              'Readex Pro',
+                                                          fontSize: 16.0,
+                                                        ),
+                                              ),
+                                            ],
+                                          ),
+                                        ),
+                                        Padding(
+                                          padding:
+                                              EdgeInsetsDirectional.fromSTEB(
+                                                  8.0, 4.0, 8.0, 0.0),
+                                          child: TextFormField(
+                                            controller:
+                                                _model.numberCartaoController,
+                                            focusNode:
+                                                _model.numberCartaoFocusNode,
+                                            obscureText: false,
+                                            decoration: InputDecoration(
+                                              labelStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .labelMedium,
+                                              hintText: '0000 0000 0000 0000',
+                                              hintStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .labelMedium,
+                                              enabledBorder: OutlineInputBorder(
+                                                borderSide: BorderSide(
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .secondaryText,
+                                                  width: 1.0,
+                                                ),
+                                                borderRadius:
+                                                    BorderRadius.circular(8.0),
+                                              ),
+                                              focusedBorder: OutlineInputBorder(
+                                                borderSide: BorderSide(
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .secondary,
+                                                  width: 1.0,
+                                                ),
+                                                borderRadius:
+                                                    BorderRadius.circular(8.0),
+                                              ),
+                                              errorBorder: OutlineInputBorder(
+                                                borderSide: BorderSide(
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .error,
+                                                  width: 1.0,
+                                                ),
+                                                borderRadius:
+                                                    BorderRadius.circular(8.0),
+                                              ),
+                                              focusedErrorBorder:
+                                                  OutlineInputBorder(
+                                                borderSide: BorderSide(
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .error,
+                                                  width: 1.0,
+                                                ),
+                                                borderRadius:
+                                                    BorderRadius.circular(8.0),
+                                              ),
+                                              filled: true,
+                                              fillColor:
+                                                  FlutterFlowTheme.of(context)
+                                                      .secondaryBackground,
+                                              prefixIcon: Icon(
+                                                Icons.credit_card,
+                                              ),
+                                            ),
+                                            style: FlutterFlowTheme.of(context)
+                                                .bodyMedium
+                                                .override(
+                                                  fontFamily: 'Readex Pro',
+                                                  fontSize: 20.0,
+                                                ),
+                                            keyboardType: TextInputType.number,
+                                            validator: _model
+                                                .numberCartaoControllerValidator
                                                 .asValidator(context),
                                             inputFormatters: [
-                                              _model.textFieldMask2
+                                              _model.numberCartaoMask
                                             ],
                                           ),
                                         ),

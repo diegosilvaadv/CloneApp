@@ -11,26 +11,34 @@ import 'package:provider/provider.dart';
 class PagCartaoModel extends FlutterFlowModel<PagCartaoWidget> {
   ///  State fields for stateful widgets in this component.
 
-  // State field(s) for TextField widget.
-  FocusNode? textFieldFocusNode1;
-  TextEditingController? textController1;
-  String? Function(BuildContext, String?)? textController1Validator;
-  // State field(s) for TextField widget.
-  FocusNode? textFieldFocusNode2;
-  TextEditingController? textController2;
-  final textFieldMask2 = MaskTextInputFormatter(mask: '###.###.###-##');
-  String? Function(BuildContext, String?)? textController2Validator;
+  // State field(s) for nome widget.
+  FocusNode? nomeFocusNode;
+  TextEditingController? nomeController;
+  String? Function(BuildContext, String?)? nomeControllerValidator;
+  // State field(s) for cpf widget.
+  FocusNode? cpfFocusNode;
+  TextEditingController? cpfController;
+  final cpfMask = MaskTextInputFormatter(mask: '###.###.###-##');
+  String? Function(BuildContext, String?)? cpfControllerValidator;
+  // State field(s) for number_cartao widget.
+  FocusNode? numberCartaoFocusNode;
+  TextEditingController? numberCartaoController;
+  final numberCartaoMask = MaskTextInputFormatter(mask: '#### #### #### #### ');
+  String? Function(BuildContext, String?)? numberCartaoControllerValidator;
 
   /// Initialization and disposal methods.
 
   void initState(BuildContext context) {}
 
   void dispose() {
-    textFieldFocusNode1?.dispose();
-    textController1?.dispose();
+    nomeFocusNode?.dispose();
+    nomeController?.dispose();
 
-    textFieldFocusNode2?.dispose();
-    textController2?.dispose();
+    cpfFocusNode?.dispose();
+    cpfController?.dispose();
+
+    numberCartaoFocusNode?.dispose();
+    numberCartaoController?.dispose();
   }
 
   /// Action blocks are added here.
