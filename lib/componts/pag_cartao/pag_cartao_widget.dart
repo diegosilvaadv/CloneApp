@@ -230,7 +230,6 @@ class _PagCartaoWidgetState extends State<PagCartaoWidget> {
                                                                     'Readex Pro',
                                                                 fontSize: 20.0,
                                                               ),
-                                                      hintText: 'João Silva',
                                                       hintStyle:
                                                           FlutterFlowTheme.of(
                                                                   context)
@@ -370,8 +369,6 @@ class _PagCartaoWidgetState extends State<PagCartaoWidget> {
                                                                   fontSize:
                                                                       14.0,
                                                                 ),
-                                                        hintText:
-                                                            '000.000.000-00',
                                                         hintStyle:
                                                             FlutterFlowTheme.of(
                                                                     context)
@@ -517,8 +514,6 @@ class _PagCartaoWidgetState extends State<PagCartaoWidget> {
                                                             FlutterFlowTheme.of(
                                                                     context)
                                                                 .labelMedium,
-                                                        hintText:
-                                                            '0000 0000 0000 0000',
                                                         hintStyle:
                                                             FlutterFlowTheme.of(
                                                                     context)
@@ -672,7 +667,6 @@ class _PagCartaoWidgetState extends State<PagCartaoWidget> {
                                                                   FlutterFlowTheme.of(
                                                                           context)
                                                                       .labelMedium,
-                                                              hintText: 'Mês',
                                                               hintStyle:
                                                                   FlutterFlowTheme.of(
                                                                           context)
@@ -797,7 +791,6 @@ class _PagCartaoWidgetState extends State<PagCartaoWidget> {
                                                                   FlutterFlowTheme.of(
                                                                           context)
                                                                       .labelMedium,
-                                                              hintText: 'Ano',
                                                               hintStyle:
                                                                   FlutterFlowTheme.of(
                                                                           context)
@@ -922,7 +915,6 @@ class _PagCartaoWidgetState extends State<PagCartaoWidget> {
                                                                   FlutterFlowTheme.of(
                                                                           context)
                                                                       .labelMedium,
-                                                              hintText: 'CVV',
                                                               hintStyle:
                                                                   FlutterFlowTheme.of(
                                                                           context)
@@ -1086,7 +1078,6 @@ class _PagCartaoWidgetState extends State<PagCartaoWidget> {
                                                                   FlutterFlowTheme.of(
                                                                           context)
                                                                       .labelMedium,
-                                                              hintText: 'Cep',
                                                               hintStyle:
                                                                   FlutterFlowTheme.of(
                                                                           context)
@@ -1209,8 +1200,6 @@ class _PagCartaoWidgetState extends State<PagCartaoWidget> {
                                                                   FlutterFlowTheme.of(
                                                                           context)
                                                                       .labelMedium,
-                                                              hintText:
-                                                                  'Número',
                                                               hintStyle:
                                                                   FlutterFlowTheme.of(
                                                                           context)
@@ -1360,8 +1349,6 @@ class _PagCartaoWidgetState extends State<PagCartaoWidget> {
                                                             FlutterFlowTheme.of(
                                                                     context)
                                                                 .labelMedium,
-                                                        hintText:
-                                                            '(00) 00000-0000',
                                                         hintStyle:
                                                             FlutterFlowTheme.of(
                                                                     context)
@@ -1581,12 +1568,12 @@ class _PagCartaoWidgetState extends State<PagCartaoWidget> {
                                         builder: (alertDialogContext) {
                                           return WebViewAware(
                                               child: AlertDialog(
-                                            title: Text('Falha na Validadeção'),
-                                            content:
-                                                Text(TokemCardCall.mensagemErro(
+                                            title: Text('Falha na Validação!'),
+                                            content: Text(
+                                                '${TokemCardCall.mensagemErro(
                                               (_model.validacaoCard?.jsonBody ??
                                                   ''),
-                                            ).toString()),
+                                            ).toString()}'),
                                             actions: [
                                               TextButton(
                                                 onPressed: () => Navigator.pop(
