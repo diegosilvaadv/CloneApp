@@ -1570,7 +1570,10 @@ class _PagCartaoWidgetState extends State<PagCartaoWidget> {
                                               child: AlertDialog(
                                             title: Text('Falha na Validação!'),
                                             content: Text(
-                                                '${TokemCardCall.mensagemErro(
+                                                '${TokemCardCall.mesagemErro(
+                                              (_model.validacaoCard?.jsonBody ??
+                                                  ''),
+                                            ).toString()} \\ ${TokemCardCall.mesagemErro(
                                               (_model.validacaoCard?.jsonBody ??
                                                   ''),
                                             ).toString()}'),

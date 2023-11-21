@@ -141,7 +141,12 @@ class TokemCardCall {
         response,
         r'''$.id''',
       );
-  static dynamic mensagemErro(dynamic response) => getJsonField(
+  static dynamic errocard(dynamic response) => getJsonField(
+        response,
+        r'''$.cause''',
+        true,
+      );
+  static dynamic mesagemErro(dynamic response) => getJsonField(
         response,
         r'''$.message''',
       );
