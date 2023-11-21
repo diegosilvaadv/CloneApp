@@ -155,7 +155,6 @@ class PagCartaoModel extends FlutterFlowModel<PagCartaoWidget> {
   // State field(s) for celular widget.
   FocusNode? celularFocusNode;
   TextEditingController? celularController;
-  final celularMask = MaskTextInputFormatter(mask: '(##) #####-####');
   String? Function(BuildContext, String?)? celularControllerValidator;
   String? _celularControllerValidator(BuildContext context, String? val) {
     if (val == null || val.isEmpty) {

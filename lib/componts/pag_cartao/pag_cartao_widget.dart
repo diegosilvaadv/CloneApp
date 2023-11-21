@@ -1450,9 +1450,6 @@ class _PagCartaoWidgetState extends State<PagCartaoWidget> {
                                                       validator: _model
                                                           .celularControllerValidator
                                                           .asValidator(context),
-                                                      inputFormatters: [
-                                                        _model.celularMask
-                                                      ],
                                                     ),
                                                   ),
                                                 ),
