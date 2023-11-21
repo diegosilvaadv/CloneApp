@@ -57,7 +57,6 @@ class PagCartaoModel extends FlutterFlowModel<PagCartaoWidget> {
   // State field(s) for number_cartao widget.
   FocusNode? numberCartaoFocusNode;
   TextEditingController? numberCartaoController;
-  final numberCartaoMask = MaskTextInputFormatter(mask: '#### #### #### #### ');
   String? Function(BuildContext, String?)? numberCartaoControllerValidator;
   String? _numberCartaoControllerValidator(BuildContext context, String? val) {
     if (val == null || val.isEmpty) {

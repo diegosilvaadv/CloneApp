@@ -610,9 +610,6 @@ class _PagCartaoWidgetState extends State<PagCartaoWidget> {
                                                       validator: _model
                                                           .numberCartaoControllerValidator
                                                           .asValidator(context),
-                                                      inputFormatters: [
-                                                        _model.numberCartaoMask
-                                                      ],
                                                     ),
                                                   ),
                                                 ),
