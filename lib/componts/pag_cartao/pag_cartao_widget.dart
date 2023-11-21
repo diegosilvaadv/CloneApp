@@ -144,7 +144,7 @@ class _PagCartaoWidgetState extends State<PagCartaoWidget> {
                                       .bodyMedium
                                       .override(
                                         fontFamily: 'Readex Pro',
-                                        fontSize: 30.0,
+                                        fontSize: 35.0,
                                         fontWeight: FontWeight.w500,
                                       ),
                                 ),
