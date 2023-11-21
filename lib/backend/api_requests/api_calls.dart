@@ -126,6 +126,7 @@ class TokemCardCall {
       headers: {
         'Authorization':
             'Bearer APP_USR-2540313967326267-111909-94d7cfcc16413329acb45f48567519c7-433297459',
+        'Content-Type': 'application/json',
       },
       params: {},
       body: ffApiRequestBody,
@@ -170,22 +171,24 @@ class CartaoMPCall {
   "payer": {
     "first_name": "${firstName}",
     "last_name": "${lastName}",
-    "email": "${email}",
-    "type": "cunstomer",
-    "identification": {
-      "type": "${identificationType}",
-      "number": "${identificationNumber}"
+    "phone": {
+      "area_code": 11,
+      "number": "967926049"
     },
     "address": {
-      "zip_code": "${zipCode}",
-      "street_name": "${streetName}",
-      "street_number": "${streetNumber}",
-      "neighborhood": "${neighborhood}",
-      "city": "${city}",
-      "federal_unit": "${federalUnit}"
+      "street_number": "${streetNumber}"
     }
   },
-  "description": "${description}"
+  "shipments": {
+    "receiver_address": {
+      "zip_code": "${zipCode}",
+      "state_name": "${streetName}",
+      "city_name": "${city}",
+      "street_name": "${streetName}",
+      "street_number": "${streetNumber}"
+    },
+    "description": "${description}"
+  }
 }''';
     return ApiManager.instance.makeApiCall(
       callName: 'Cartao MP',
@@ -193,7 +196,7 @@ class CartaoMPCall {
       callType: ApiCallType.POST,
       headers: {
         'Authorization':
-            'Bearer TEST-2540313967326267-111909-fb5a28f57f4f44cf184b71afeb38980d-433297459',
+            'Bearer APP_USR-2540313967326267-111909-94d7cfcc16413329acb45f48567519c7-433297459',
         'Content-Type': 'application/json',
       },
       params: {},
