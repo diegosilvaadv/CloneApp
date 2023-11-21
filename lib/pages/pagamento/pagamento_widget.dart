@@ -595,7 +595,9 @@ class _PagamentoWidgetState extends State<PagamentoWidget> {
                                                 padding:
                                                     MediaQuery.viewInsetsOf(
                                                         context),
-                                                child: PagCartaoWidget(),
+                                                child: PagCartaoWidget(
+                                                  detalhes: widget.detalhes!,
+                                                ),
                                               ),
                                             ));
                                           },
@@ -623,7 +625,7 @@ class _PagamentoWidgetState extends State<PagamentoWidget> {
 
                                       setState(() {});
                                     },
-                                    text: 'Realizar Pagamento',
+                                    text: 'Ir Para Pagamento',
                                     options: FFButtonOptions(
                                       height: 60.0,
                                       padding: EdgeInsetsDirectional.fromSTEB(

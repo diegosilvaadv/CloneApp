@@ -141,6 +141,10 @@ class TokemCardCall {
         response,
         r'''$.id''',
       );
+  static dynamic mensagemErro(dynamic response) => getJsonField(
+        response,
+        r'''$.message''',
+      );
 }
 
 class CartaoMPCall {
@@ -205,6 +209,11 @@ class CartaoMPCall {
       cache: false,
     );
   }
+
+  static dynamic mensagemErro(dynamic response) => getJsonField(
+        response,
+        r'''$.message''',
+      );
 }
 
 class ApiPagingParams {

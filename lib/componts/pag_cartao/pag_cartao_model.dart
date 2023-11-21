@@ -1,12 +1,17 @@
+import '/auth/supabase_auth/auth_util.dart';
+import '/backend/api_requests/api_calls.dart';
+import '/backend/supabase/supabase.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import '/flutter_flow/random_data_util.dart' as random_data;
 import 'pag_cartao_widget.dart' show PagCartaoWidget;
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
 import 'package:provider/provider.dart';
+import 'package:webviewx_plus/webviewx_plus.dart';
 
 class PagCartaoModel extends FlutterFlowModel<PagCartaoWidget> {
   ///  State fields for stateful widgets in this component.
@@ -43,10 +48,7 @@ class PagCartaoModel extends FlutterFlowModel<PagCartaoWidget> {
     }
 
     if (val.length < 14) {
-      return 'Requires at least 14 characters.';
-    }
-    if (val.length > 14) {
-      return 'Maximum 14 characters allowed, currently ${val.length}.';
+      return 'Mínimo de 14 Caracteres';
     }
 
     return null;
@@ -60,6 +62,10 @@ class PagCartaoModel extends FlutterFlowModel<PagCartaoWidget> {
   String? _numberCartaoControllerValidator(BuildContext context, String? val) {
     if (val == null || val.isEmpty) {
       return 'Obrigatório';
+    }
+
+    if (val.length < 18) {
+      return 'Mínimo de 18 Caracteres';
     }
 
     return null;
@@ -76,10 +82,7 @@ class PagCartaoModel extends FlutterFlowModel<PagCartaoWidget> {
     }
 
     if (val.length < 2) {
-      return 'Requires at least 2 characters.';
-    }
-    if (val.length > 2) {
-      return 'Maximum 2 characters allowed, currently ${val.length}.';
+      return 'Mínimo de 2 Caracteres';
     }
 
     return null;
@@ -96,10 +99,7 @@ class PagCartaoModel extends FlutterFlowModel<PagCartaoWidget> {
     }
 
     if (val.length < 2) {
-      return 'Requires at least 2 characters.';
-    }
-    if (val.length > 2) {
-      return 'Maximum 2 characters allowed, currently ${val.length}.';
+      return 'Mínimo de 2 Caracteres';
     }
 
     return null;
@@ -115,11 +115,8 @@ class PagCartaoModel extends FlutterFlowModel<PagCartaoWidget> {
       return 'Obrigatório';
     }
 
-    if (val.length < 2) {
-      return 'Requires at least 2 characters.';
-    }
-    if (val.length > 2) {
-      return 'Maximum 2 characters allowed, currently ${val.length}.';
+    if (val.length < 3) {
+      return 'Mínimo de 3 Caracteres';
     }
 
     return null;
@@ -135,6 +132,10 @@ class PagCartaoModel extends FlutterFlowModel<PagCartaoWidget> {
       return 'Obrigatório';
     }
 
+    if (val.length < 8) {
+      return 'Mínimo de 8 Caracteres';
+    }
+
     return null;
   }
 
@@ -147,15 +148,19 @@ class PagCartaoModel extends FlutterFlowModel<PagCartaoWidget> {
       return 'Obrigatório';
     }
 
+    if (val.length > 10) {
+      return 'Máximo de 14 Caracteres';
+    }
+
     return null;
   }
 
-  // State field(s) for telefone widget.
-  FocusNode? telefoneFocusNode;
-  TextEditingController? telefoneController;
-  final telefoneMask = MaskTextInputFormatter(mask: '(##) #####-####');
-  String? Function(BuildContext, String?)? telefoneControllerValidator;
-  String? _telefoneControllerValidator(BuildContext context, String? val) {
+  // State field(s) for celular widget.
+  FocusNode? celularFocusNode;
+  TextEditingController? celularController;
+  final celularMask = MaskTextInputFormatter(mask: '(##) #####-####');
+  String? Function(BuildContext, String?)? celularControllerValidator;
+  String? _celularControllerValidator(BuildContext context, String? val) {
     if (val == null || val.isEmpty) {
       return 'Obrigatório';
     }
@@ -170,6 +175,11 @@ class PagCartaoModel extends FlutterFlowModel<PagCartaoWidget> {
     return null;
   }
 
+  // Stores action output result for [Backend Call - API (TokemCard)] action in Button widget.
+  ApiCallResponse? validacaoCard;
+  // Stores action output result for [Backend Call - API (Cartao MP)] action in Button widget.
+  ApiCallResponse? realizarPagamento;
+
   /// Initialization and disposal methods.
 
   void initState(BuildContext context) {
@@ -181,7 +191,7 @@ class PagCartaoModel extends FlutterFlowModel<PagCartaoWidget> {
     cvvCardControllerValidator = _cvvCardControllerValidator;
     cepControllerValidator = _cepControllerValidator;
     numeroControllerValidator = _numeroControllerValidator;
-    telefoneControllerValidator = _telefoneControllerValidator;
+    celularControllerValidator = _celularControllerValidator;
   }
 
   void dispose() {
@@ -209,8 +219,8 @@ class PagCartaoModel extends FlutterFlowModel<PagCartaoWidget> {
     numeroFocusNode?.dispose();
     numeroController?.dispose();
 
-    telefoneFocusNode?.dispose();
-    telefoneController?.dispose();
+    celularFocusNode?.dispose();
+    celularController?.dispose();
   }
 
   /// Action blocks are added here.
