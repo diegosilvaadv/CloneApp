@@ -8,7 +8,6 @@ import 'package:easy_debounce/easy_debounce.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
 import 'package:provider/provider.dart';
 import 'add_model.dart';
 export 'add_model.dart';
@@ -458,10 +457,8 @@ class _AddWidgetState extends State<AddWidget> {
                                 ),
                               ),
                               style: FlutterFlowTheme.of(context).bodyMedium,
-                              keyboardType: TextInputType.number,
                               validator: _model.categoriaControllerValidator
                                   .asValidator(context),
-                              inputFormatters: [_model.categoriaMask],
                             ),
                           ),
                         ),

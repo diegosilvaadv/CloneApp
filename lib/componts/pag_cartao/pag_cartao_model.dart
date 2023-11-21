@@ -40,7 +40,6 @@ class PagCartaoModel extends FlutterFlowModel<PagCartaoWidget> {
   // State field(s) for cpf widget.
   FocusNode? cpfFocusNode;
   TextEditingController? cpfController;
-  final cpfMask = MaskTextInputFormatter(mask: '###.###.###-##');
   String? Function(BuildContext, String?)? cpfControllerValidator;
   String? _cpfControllerValidator(BuildContext context, String? val) {
     if (val == null || val.isEmpty) {
@@ -124,7 +123,6 @@ class PagCartaoModel extends FlutterFlowModel<PagCartaoWidget> {
   // State field(s) for cep widget.
   FocusNode? cepFocusNode;
   TextEditingController? cepController;
-  final cepMask = MaskTextInputFormatter(mask: '#####-###');
   String? Function(BuildContext, String?)? cepControllerValidator;
   String? _cepControllerValidator(BuildContext context, String? val) {
     if (val == null || val.isEmpty) {

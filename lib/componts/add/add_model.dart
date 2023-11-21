@@ -9,7 +9,6 @@ import 'package:easy_debounce/easy_debounce.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
 import 'package:provider/provider.dart';
 
 class AddModel extends FlutterFlowModel<AddWidget> {
@@ -31,7 +30,6 @@ class AddModel extends FlutterFlowModel<AddWidget> {
   // State field(s) for categoria widget.
   FocusNode? categoriaFocusNode;
   TextEditingController? categoriaController;
-  final categoriaMask = MaskTextInputFormatter(mask: '### ###');
   String? Function(BuildContext, String?)? categoriaControllerValidator;
   // State field(s) for codpag widget.
   FocusNode? codpagFocusNode;

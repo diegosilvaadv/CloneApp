@@ -461,9 +461,6 @@ class _PagCartaoWidgetState extends State<PagCartaoWidget> {
                                                       validator: _model
                                                           .cpfControllerValidator
                                                           .asValidator(context),
-                                                      inputFormatters: [
-                                                        _model.cpfMask
-                                                      ],
                                                     ),
                                                   ),
                                                 ),
@@ -1180,9 +1177,6 @@ class _PagCartaoWidgetState extends State<PagCartaoWidget> {
                                                                 .cepControllerValidator
                                                                 .asValidator(
                                                                     context),
-                                                            inputFormatters: [
-                                                              _model.cepMask
-                                                            ],
                                                           ),
                                                         ),
                                                       ),
