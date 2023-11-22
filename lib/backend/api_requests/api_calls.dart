@@ -92,25 +92,27 @@ class StatusPixCall {
       );
 }
 
-class TokemCardCall {
+class ObterTokemCardCall {
   static Future<ApiCallResponse> call({
+    String? publicKey = 'TEST-e81a0a4e-19f1-42ac-8e10-ca3906256a32',
+    String? accessToken =
+        'TEST-2540313967326267-111909-fb5a28f57f4f44cf184b71afeb38980d-433297459',
     String? cardNumber = '',
     String? cardholderName = '',
-    String? cardExpirationMonth = '',
-    String? cardExpirationYear = '',
-    String? securityCode = '',
-    String? identificationType = '',
+    String? identification = '',
     String? identificationNumber = '',
-    String? accessToken = '',
-    String? publicKey = '',
+    String? securityCode = '',
+    int? cardExpirationMonth,
+    int? cardExpirationYear,
+    String? chave = '',
   }) async {
     final ffApiRequestBody = '''
 {
   "card_number": "${cardNumber}",
-  "cardholder": {
+  "cardhold": {
     "name": "${cardholderName}",
     "identification": {
-      "type": "${identificationType}",
+      "type": "${identification}",
       "number": "${identificationNumber}"
     }
   },
@@ -119,14 +121,13 @@ class TokemCardCall {
   "expiration_year": "${cardExpirationYear}"
 }''';
     return ApiManager.instance.makeApiCall(
-      callName: 'TokemCard',
+      callName: 'Obter Tokem Card',
       apiUrl:
           'https://api.mercadopago.com/v1/card_tokens?public_key=${publicKey}',
       callType: ApiCallType.POST,
       headers: {
-        'Authorization':
-            'Bearer APP_USR-2540313967326267-111909-94d7cfcc16413329acb45f48567519c7-433297459',
-        'Content-Type': 'application/json',
+        'Authorization': 'Bearer ${accessToken}',
+        'X-Idempotency-Key': '0d5020ed-1af6-469c-ae06-${chave}',
       },
       params: {},
       body: ffApiRequestBody,
@@ -142,61 +143,62 @@ class TokemCardCall {
         response,
         r'''$.id''',
       );
+  static dynamic ultimos4digitos(dynamic response) => getJsonField(
+        response,
+        r'''$.last_four_digits''',
+      );
 }
 
-class CartaoMPCall {
+class CriarPagMPCall {
   static Future<ApiCallResponse> call({
+    String? accessToken =
+        'TEST-2540313967326267-111909-fb5a28f57f4f44cf184b71afeb38980d-433297459',
     double? transactionAmount,
-    String? token = '',
     String? firstName = '',
     String? lastName = '',
     String? email = '',
     String? identificationType = '',
     String? identificationNumber = '',
     String? zipCode = '',
-    String? streetName = '',
     String? streetNumber = '',
     String? neighborhood = '',
     String? city = '',
     String? federalUnit = '',
     String? description = '',
-    String? accessToken = '',
-    int? installments,
+    String? token = '',
+    String? chave = '',
   }) async {
     final ffApiRequestBody = '''
 {
   "transaction_amount": ${transactionAmount},
   "token": "${token}",
-  "installments": ${installments},
+  "installments": 1,
   "payer": {
     "first_name": "${firstName}",
     "last_name": "${lastName}",
-    "phone": {
-      "area_code": 11,
-      "number": "967926049"
+    "email": "${email}",
+    "type": "customer",
+    "identification": {
+      "type": "${identificationType}",
+      "number": "${identificationNumber}"
     },
     "address": {
-      "street_number": "${streetNumber}"
+      "zip_code": "${zipCode}",
+      "street_name": "${streetNumber}",
+      "neighborhood": "${neighborhood}",
+      "city": "${city}",
+      "federal_unit": "${federalUnit}"
     }
   },
-  "shipments": {
-    "receiver_address": {
-      "zip_code": "${zipCode}",
-      "state_name": "${streetName}",
-      "city_name": "${city}",
-      "street_name": "${streetName}",
-      "street_number": "${streetNumber}"
-    },
-    "description": "${description}"
-  }
+  "description": "${description}"
 }''';
     return ApiManager.instance.makeApiCall(
-      callName: 'Cartao MP',
+      callName: 'CriarPag MP',
       apiUrl: 'https://api.mercadopago.com/v1/payments',
       callType: ApiCallType.POST,
       headers: {
-        'Authorization':
-            'Bearer APP_USR-2540313967326267-111909-94d7cfcc16413329acb45f48567519c7-433297459',
+        'Authorization': 'Bearer ${accessToken}',
+        'X-Idempotency-Key': '0d5020ed-1af6-469c-ae06-${chave}',
         'Content-Type': 'application/json',
       },
       params: {},
@@ -208,11 +210,6 @@ class CartaoMPCall {
       cache: false,
     );
   }
-
-  static dynamic mensagemErro(dynamic response) => getJsonField(
-        response,
-        r'''$.message''',
-      );
 }
 
 class ApiPagingParams {

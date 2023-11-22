@@ -144,7 +144,7 @@ class _PagCartaoWidgetState extends State<PagCartaoWidget> {
                                       .bodyMedium
                                       .override(
                                         fontFamily: 'Readex Pro',
-                                        fontSize: 35.0,
+                                        fontSize: 30.0,
                                         fontWeight: FontWeight.w500,
                                       ),
                                 ),
@@ -1461,58 +1461,61 @@ class _PagCartaoWidgetState extends State<PagCartaoWidget> {
                                 FFButtonWidget(
                                   onPressed: () async {
                                     _model.validacaoCard =
-                                        await TokemCardCall.call(
+                                        await ObterTokemCardCall.call(
+                                      publicKey:
+                                          'APP_USR-cb9f113b-ad18-4959-812e-b75e7561c351',
+                                      accessToken:
+                                          'APP_USR-2540313967326267-111909-94d7cfcc16413329acb45f48567519c7-433297459',
                                       cardNumber:
                                           _model.numberCartaoController.text,
                                       cardholderName:
                                           _model.nomeController.text,
-                                      cardExpirationMonth:
-                                          _model.mesCardController.text,
-                                      cardExpirationYear:
-                                          _model.anoCardController.text,
-                                      securityCode:
-                                          _model.cvvCardController.text,
-                                      identificationType: 'CPF',
+                                      identification: 'CPF',
                                       identificationNumber:
                                           _model.cpfController.text,
-                                      accessToken:
-                                          'Bearer APP_USR-2540313967326267-111909-94d7cfcc16413329acb45f48567519c7-433297459',
-                                      publicKey:
-                                          'APP_USR-cb9f113b-ad18-4959-812e-b75e7561c351',
+                                      securityCode:
+                                          _model.cvvCardController.text,
+                                      cardExpirationMonth: int.tryParse(
+                                          _model.mesCardController.text),
+                                      cardExpirationYear: int.tryParse(
+                                          _model.anoCardController.text),
+                                      chave: random_data.randomString(
+                                        10,
+                                        13,
+                                        false,
+                                        false,
+                                        true,
+                                      ),
                                     );
                                     if ((_model.validacaoCard?.succeeded ??
                                         true)) {
                                       _model.realizarPagamento =
-                                          await CartaoMPCall.call(
-                                        transactionAmount:
-                                            widget.detalhes?.preco,
-                                        token: TokemCardCall.token(
+                                          await CriarPagMPCall.call(
+                                        accessToken:
+                                            'APP_USR-2540313967326267-111909-94d7cfcc16413329acb45f48567519c7-433297459',
+                                        transactionAmount: 1.0,
+                                        firstName: 'Diego',
+                                        lastName: 'Silva',
+                                        email: 'diegosilva.adv@hotmail.com',
+                                        identificationType: 'CPF',
+                                        identificationNumber: '86071121558',
+                                        zipCode: '05186230',
+                                        streetNumber: '180',
+                                        neighborhood: 'Vila Aurora',
+                                        city: 'São Paulo',
+                                        federalUnit: 'SP',
+                                        description: 'PEDIDO #515151',
+                                        token: ObterTokemCardCall.token(
                                           (_model.validacaoCard?.jsonBody ??
                                               ''),
                                         ).toString(),
-                                        firstName: 'Diego',
-                                        lastName: 'Silva',
-                                        email: columnUsersRow?.email,
-                                        identificationType: 'CPF',
-                                        identificationNumber:
-                                            _model.cpfController.text,
-                                        zipCode: _model.cepController.text,
-                                        streetName: 'Cesar Augusto Varejão',
-                                        streetNumber: '180',
-                                        neighborhood: 'vila aurora',
-                                        city: 'são paulo',
-                                        federalUnit: 'são paulo',
-                                        description:
-                                            'Pedido #${random_data.randomString(
+                                        chave: random_data.randomString(
                                           10,
-                                          12,
+                                          13,
                                           false,
                                           false,
                                           true,
-                                        )}',
-                                        accessToken:
-                                            'Bearer APP_USR-2540313967326267-111909-94d7cfcc16413329acb45f48567519c7-433297459',
-                                        installments: 1,
+                                        ),
                                       );
                                       if ((_model
                                               .realizarPagamento?.succeeded ??
@@ -1544,12 +1547,7 @@ class _PagCartaoWidgetState extends State<PagCartaoWidget> {
                                                 child: AlertDialog(
                                               title:
                                                   Text('Falha na Transação!'),
-                                              content: Text(
-                                                  CartaoMPCall.mensagemErro(
-                                                (_model.realizarPagamento
-                                                        ?.jsonBody ??
-                                                    ''),
-                                              ).toString()),
+                                              content: Text('erro pag'),
                                               actions: [
                                                 TextButton(
                                                   onPressed: () =>
@@ -1569,7 +1567,7 @@ class _PagCartaoWidgetState extends State<PagCartaoWidget> {
                                           return WebViewAware(
                                               child: AlertDialog(
                                             title: Text('Falha na Validação!'),
-                                            content: Text('erro'),
+                                            content: Text('erro validar'),
                                             actions: [
                                               TextButton(
                                                 onPressed: () => Navigator.pop(

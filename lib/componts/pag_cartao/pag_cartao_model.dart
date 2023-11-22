@@ -171,9 +171,9 @@ class PagCartaoModel extends FlutterFlowModel<PagCartaoWidget> {
     return null;
   }
 
-  // Stores action output result for [Backend Call - API (TokemCard)] action in Button widget.
+  // Stores action output result for [Backend Call - API (Obter Tokem Card)] action in Button widget.
   ApiCallResponse? validacaoCard;
-  // Stores action output result for [Backend Call - API (Cartao MP)] action in Button widget.
+  // Stores action output result for [Backend Call - API (CriarPag MP)] action in Button widget.
   ApiCallResponse? realizarPagamento;
 
   /// Initialization and disposal methods.
