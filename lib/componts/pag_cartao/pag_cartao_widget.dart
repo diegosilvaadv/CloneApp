@@ -1500,7 +1500,7 @@ class _PagCartaoWidgetState extends State<PagCartaoWidget> {
                                     logFirebaseEvent('Button_backend_call');
                                     _model.validacaoCard =
                                         await CriarPagCartaoAPIPagBankCall.call(
-                                      nomeCliente: columnUsersRow?.nome,
+                                      nomeCliente: 'João Silva',
                                       emailCliente: currentUserUid,
                                       cpf: _model.cpfController.text,
                                       dd: '11',
@@ -1571,7 +1571,12 @@ class _PagCartaoWidgetState extends State<PagCartaoWidget> {
                                           return WebViewAware(
                                               child: AlertDialog(
                                             title: Text('Erro no Pagamento'),
-                                            content: Text('ERRO'),
+                                            content: Text(
+                                                CriarPagCartaoAPIPagBankCall
+                                                    .erroMeng(
+                                              (_model.validacaoCard?.jsonBody ??
+                                                  ''),
+                                            ).toString()),
                                             actions: [
                                               TextButton(
                                                 onPressed: () => Navigator.pop(

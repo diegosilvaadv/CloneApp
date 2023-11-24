@@ -192,6 +192,11 @@ class CriarPagCartaoAPIPagBankCall {
       cache: false,
     );
   }
+
+  static dynamic erroMeng(dynamic response) => getJsonField(
+        response,
+        r'''$.error_messages[:].description''',
+      );
 }
 
 class ApiPagingParams {
