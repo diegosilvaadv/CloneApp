@@ -1,6 +1,7 @@
 import '/auth/supabase_auth/auth_util.dart';
 import '/backend/api_requests/api_calls.dart';
 import '/backend/supabase/supabase.dart';
+import '/flutter_flow/flutter_flow_credit_card_form.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
@@ -135,12 +136,13 @@ class _PagCartaoWidgetState extends State<PagCartaoWidget> {
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
                                 Text(
-                                  'Cartão de Crédito ou Débito',
+                                  'Cartão de Crédito',
                                   style: FlutterFlowTheme.of(context)
                                       .bodyMedium
                                       .override(
                                         fontFamily: 'Readex Pro',
-                                        color: const Color(0xFFE13C27),
+                                        color: FlutterFlowTheme.of(context)
+                                            .secondary,
                                         fontSize: 30.0,
                                         fontWeight: FontWeight.w500,
                                       ),
@@ -1482,6 +1484,46 @@ class _PagCartaoWidgetState extends State<PagCartaoWidget> {
                               ],
                             ),
                           ),
+                          Row(
+                            mainAxisSize: MainAxisSize.max,
+                            children: [
+                              Expanded(
+                                child: Padding(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                      12.0, 0.0, 12.0, 0.0),
+                                  child: FlutterFlowCreditCardForm(
+                                    formKey: _model.creditCardFormKey,
+                                    creditCardModel: _model.creditCardInfo,
+                                    obscureNumber: false,
+                                    obscureCvv: true,
+                                    spacing: 10.0,
+                                    textStyle: FlutterFlowTheme.of(context)
+                                        .labelMedium,
+                                    inputDecoration: InputDecoration(
+                                      enabledBorder: OutlineInputBorder(
+                                        borderSide: BorderSide(
+                                          color: FlutterFlowTheme.of(context)
+                                              .alternate,
+                                          width: 2.0,
+                                        ),
+                                        borderRadius:
+                                            BorderRadius.circular(8.0),
+                                      ),
+                                      focusedBorder: OutlineInputBorder(
+                                        borderSide: BorderSide(
+                                          color: FlutterFlowTheme.of(context)
+                                              .alternate,
+                                          width: 2.0,
+                                        ),
+                                        borderRadius:
+                                            BorderRadius.circular(8.0),
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
                           Padding(
                             padding: const EdgeInsetsDirectional.fromSTEB(
                                 20.0, 15.0, 20.0, 20.0),
@@ -1502,16 +1544,16 @@ class _PagCartaoWidgetState extends State<PagCartaoWidget> {
                                       cpf: '12345678909',
                                       dd: '11',
                                       numeroCelular: '999999999',
-                                      refId: '00011',
+                                      refId: 'referencia da cobranca',
                                       refItem: '00011',
-                                      nomeProduto: 'teste teste 1',
-                                      valorProduto: 7777,
+                                      nomeProduto: 'nome do item',
+                                      valorProduto: 500,
                                       securityCode: '123',
                                       nomeImpreCard: 'Jose da Silva',
                                       expMonth: 12,
                                       expYear: 2028,
                                       numberCard: '4111111111111111',
-                                      randow: '544241356',
+                                      randow: '5442413542',
                                     );
                                     if ((_model.validacaoCard?.succeeded ??
                                         true)) {

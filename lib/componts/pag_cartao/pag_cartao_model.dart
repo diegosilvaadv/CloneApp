@@ -1,4 +1,5 @@
 import '/backend/api_requests/api_calls.dart';
+import '/flutter_flow/flutter_flow_credit_card_form.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'pag_cartao_widget.dart' show PagCartaoWidget;
 import 'package:flutter/material.dart';
@@ -162,6 +163,9 @@ class PagCartaoModel extends FlutterFlowModel<PagCartaoWidget> {
     return null;
   }
 
+  // State field(s) for CreditCardForm widget.
+  final creditCardFormKey = GlobalKey<FormState>();
+  CreditCardModel creditCardInfo = emptyCreditCard();
   // Stores action output result for [Backend Call - API (Criar Pag Cartao API PagBank)] action in Button widget.
   ApiCallResponse? validacaoCard;
 
