@@ -4,7 +4,6 @@ import '/backend/supabase/supabase.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
-import '/flutter_flow/custom_functions.dart' as functions;
 import '/flutter_flow/random_data_util.dart' as random_data;
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -1501,37 +1500,26 @@ class _PagCartaoWidgetState extends State<PagCartaoWidget> {
                                     _model.validacaoCard =
                                         await CriarPagCartaoAPIPagBankCall.call(
                                       nomeCliente: 'João Silva',
-                                      emailCliente: currentUserUid,
-                                      cpf: _model.cpfController.text,
+                                      emailCliente:
+                                          'v32360644479133356067@sandbox.pagseguro.com.br',
+                                      cpf: '12345678909',
                                       dd: '11',
-                                      numeroCelular:
-                                          _model.celularController.text,
-                                      refId: random_data.randomString(
-                                        10,
-                                        12,
-                                        false,
-                                        false,
-                                        true,
-                                      ),
+                                      numeroCelular: '999999999',
+                                      refId: 'ex-00001',
                                       refItem: random_data.randomString(
+                                        8,
                                         10,
-                                        12,
-                                        true,
+                                        false,
                                         false,
                                         true,
                                       ),
-                                      nomeProduto: widget.detalhes?.titulo,
-                                      valorProduto: functions.doublePInteger(
-                                          widget.detalhes!.preco!),
-                                      securityCode:
-                                          _model.cvvCardController.text,
-                                      nomeImpreCard: _model.nomeController.text,
-                                      expMonth: int.tryParse(
-                                          _model.mesCardController.text),
-                                      expYear: int.tryParse(
-                                          _model.anoCardController.text),
-                                      numberCard:
-                                          _model.numberCartaoController.text,
+                                      nomeProduto: 'teste teste',
+                                      valorProduto: 7777,
+                                      securityCode: '123',
+                                      nomeImpreCard: 'Jose da Silva',
+                                      expMonth: 12,
+                                      expYear: 2028,
+                                      numberCard: '4111111111111111',
                                       randow: random_data.randomString(
                                         10,
                                         12,
