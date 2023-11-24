@@ -144,6 +144,8 @@ class _PagCartaoWidgetState extends State<PagCartaoWidget> {
                                       .bodyMedium
                                       .override(
                                         fontFamily: 'Readex Pro',
+                                        color: FlutterFlowTheme.of(context)
+                                            .secondary,
                                         fontSize: 30.0,
                                         fontWeight: FontWeight.w500,
                                       ),
