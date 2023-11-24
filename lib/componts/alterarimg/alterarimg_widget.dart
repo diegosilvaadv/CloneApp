@@ -77,6 +77,8 @@ class _AlterarimgWidgetState extends State<AlterarimgWidget> {
                     hoverColor: Colors.transparent,
                     highlightColor: Colors.transparent,
                     onTap: () async {
+                      logFirebaseEvent('ALTERARIMG_COMP_Icon_h5zdcayj_ON_TAP');
+                      logFirebaseEvent('Icon_bottom_sheet');
                       Navigator.pop(context);
                     },
                     child: Icon(
@@ -104,6 +106,8 @@ class _AlterarimgWidgetState extends State<AlterarimgWidget> {
                     hoverColor: Colors.transparent,
                     highlightColor: Colors.transparent,
                     onTap: () async {
+                      logFirebaseEvent('ALTERARIMG_COMP_Image_2p6pcjzh_ON_TAP');
+                      logFirebaseEvent('Image_upload_file_to_supabase');
                       final selectedFiles = await selectFiles(
                         storageFolderPath: 'fotos',
                         multiFile: false,
@@ -166,6 +170,8 @@ class _AlterarimgWidgetState extends State<AlterarimgWidget> {
                 children: [
                   FFButtonWidget(
                     onPressed: () async {
+                      logFirebaseEvent('ALTERARIMG_COMP_ALTERAR_BTN_ON_TAP');
+                      logFirebaseEvent('Button_backend_call');
                       await TemplatesTable().update(
                         data: {
                           'img': _model.uploadedFileUrl,
@@ -175,6 +181,7 @@ class _AlterarimgWidgetState extends State<AlterarimgWidget> {
                           widget.id,
                         ),
                       );
+                      logFirebaseEvent('Button_bottom_sheet');
                       Navigator.pop(context);
                     },
                     text: 'ALTERAR',

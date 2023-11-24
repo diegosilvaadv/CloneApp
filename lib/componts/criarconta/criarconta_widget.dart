@@ -90,6 +90,9 @@ class _CriarcontaWidgetState extends State<CriarcontaWidget> {
                               ),
                               showLoadingIndicator: true,
                               onPressed: () async {
+                                logFirebaseEvent(
+                                    'CRIARCONTA_COMP_close_ICN_ON_TAP');
+                                logFirebaseEvent('IconButton_bottom_sheet');
                                 Navigator.pop(context);
                               },
                             ),
@@ -130,6 +133,10 @@ class _CriarcontaWidgetState extends State<CriarcontaWidget> {
                           children: [
                             FFButtonWidget(
                               onPressed: () async {
+                                logFirebaseEvent(
+                                    'CRIARCONTA_CRIAR_CONTA_GRÁTIS_BTN_ON_TAP');
+                                logFirebaseEvent('Button_navigate_to');
+
                                 context.pushNamed(
                                   'login',
                                   extra: <String, dynamic>{

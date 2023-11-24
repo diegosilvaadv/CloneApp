@@ -123,6 +123,7 @@ class _DetalhePageWidgetState extends State<DetalhePageWidget>
     super.initState();
     _model = createModel(context, () => DetalhePageModel());
 
+    logFirebaseEvent('screen_view', parameters: {'screen_name': 'detalhePage'});
     _model.textController ??= TextEditingController(
         text: valueOrDefault<String>(
       widget.detlahes?.copypage,
@@ -220,6 +221,10 @@ class _DetalhePageWidgetState extends State<DetalhePageWidget>
                                 0.0, 0.0, 5.0, 0.0),
                             child: FFButtonWidget(
                               onPressed: () async {
+                                logFirebaseEvent(
+                                    'DETALHE_PAGE_PAGE_HOME_BTN_ON_TAP');
+                                logFirebaseEvent('Button_navigate_to');
+
                                 context.pushNamed(
                                   'HomePage',
                                   extra: <String, dynamic>{
@@ -272,6 +277,10 @@ class _DetalhePageWidgetState extends State<DetalhePageWidget>
                                 0.0, 0.0, 5.0, 0.0),
                             child: FFButtonWidget(
                               onPressed: () async {
+                                logFirebaseEvent(
+                                    'DETALHE_PAGE_PAGE_TUTORIAL_BTN_ON_TAP');
+                                logFirebaseEvent('Button_navigate_to');
+
                                 context.pushNamed(
                                   'Tutorial',
                                   extra: <String, dynamic>{
@@ -324,6 +333,10 @@ class _DetalhePageWidgetState extends State<DetalhePageWidget>
                                 0.0, 0.0, 5.0, 0.0),
                             child: FFButtonWidget(
                               onPressed: () async {
+                                logFirebaseEvent(
+                                    'DETALHE_PAGE_PAGE_CONTATO_BTN_ON_TAP');
+                                logFirebaseEvent('Button_navigate_to');
+
                                 context.pushNamed(
                                   'contato',
                                   extra: <String, dynamic>{
@@ -374,6 +387,10 @@ class _DetalhePageWidgetState extends State<DetalhePageWidget>
                           if (currentUserEmailVerified)
                             FFButtonWidget(
                               onPressed: () async {
+                                logFirebaseEvent(
+                                    'DETALHE_PAGE_PAGE_PERFIL_BTN_ON_TAP');
+                                logFirebaseEvent('Button_navigate_to');
+
                                 context.pushNamed(
                                   'perfil',
                                   extra: <String, dynamic>{
@@ -422,6 +439,10 @@ class _DetalhePageWidgetState extends State<DetalhePageWidget>
                           if (currentUserEmailVerified == false)
                             FFButtonWidget(
                               onPressed: () async {
+                                logFirebaseEvent(
+                                    'DETALHE_PAGE_PAGE_CRIAR_CONTA_BTN_ON_TAP');
+                                logFirebaseEvent('Button_navigate_to');
+
                                 context.pushNamed(
                                   'login',
                                   extra: <String, dynamic>{
@@ -476,10 +497,16 @@ class _DetalhePageWidgetState extends State<DetalhePageWidget>
                               hoverColor: Colors.transparent,
                               highlightColor: Colors.transparent,
                               onTap: () async {
+                                logFirebaseEvent(
+                                    'DETALHE_PAGE_PAGE_lightDark_small_ON_TAP');
                                 if ((Theme.of(context).brightness ==
                                         Brightness.light) ==
                                     true) {
+                                  logFirebaseEvent(
+                                      'lightDark_small_set_dark_mode_settings');
                                   setDarkModeSetting(context, ThemeMode.dark);
+                                  logFirebaseEvent(
+                                      'lightDark_small_widget_animation');
                                   if (animationsMap[
                                           'containerOnActionTriggerAnimation'] !=
                                       null) {
@@ -489,7 +516,11 @@ class _DetalhePageWidgetState extends State<DetalhePageWidget>
                                         .forward(from: 0.0);
                                   }
                                 } else {
+                                  logFirebaseEvent(
+                                      'lightDark_small_set_dark_mode_settings');
                                   setDarkModeSetting(context, ThemeMode.light);
+                                  logFirebaseEvent(
+                                      'lightDark_small_widget_animation');
                                   if (animationsMap[
                                           'containerOnActionTriggerAnimation'] !=
                                       null) {
@@ -728,6 +759,9 @@ class _DetalhePageWidgetState extends State<DetalhePageWidget>
                             hoverColor: Colors.transparent,
                             highlightColor: Colors.transparent,
                             onTap: () async {
+                              logFirebaseEvent(
+                                  'DETALHE_PAGE_PAGE_Image_tzskgcws_ON_TAP');
+                              logFirebaseEvent('Image_expand_image');
                               await Navigator.push(
                                 context,
                                 PageTransition(
@@ -850,9 +884,13 @@ class _DetalhePageWidgetState extends State<DetalhePageWidget>
                       children: [
                         FFButtonWidget(
                           onPressed: () async {
+                            logFirebaseEvent(
+                                'DETALHE_COPIAR_CÓDIGO_DA_PÁGINA_BTN_ON_T');
                             if (currentUserEmailVerified) {
+                              logFirebaseEvent('Button_copy_to_clipboard');
                               await Clipboard.setData(ClipboardData(
                                   text: widget.detlahes!.copypage!));
+                              logFirebaseEvent('Button_show_snack_bar');
                               ScaffoldMessenger.of(context).showSnackBar(
                                 SnackBar(
                                   content: Text(
@@ -868,6 +906,7 @@ class _DetalhePageWidgetState extends State<DetalhePageWidget>
                                 ),
                               );
                             } else {
+                              logFirebaseEvent('Button_bottom_sheet');
                               await showModalBottomSheet(
                                 isScrollControlled: true,
                                 backgroundColor: Color(0x7A14181B),

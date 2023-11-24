@@ -80,6 +80,7 @@ class _TemplatesWidgetState extends State<TemplatesWidget>
     super.initState();
     _model = createModel(context, () => TemplatesModel());
 
+    logFirebaseEvent('screen_view', parameters: {'screen_name': 'templates'});
     _model.tabBarController = TabController(
       vsync: this,
       length: 5,
@@ -178,6 +179,10 @@ class _TemplatesWidgetState extends State<TemplatesWidget>
                               hoverColor: Colors.transparent,
                               highlightColor: Colors.transparent,
                               onTap: () async {
+                                logFirebaseEvent(
+                                    'TEMPLATES_PAGE_Text_dzgbqj27_ON_TAP');
+                                logFirebaseEvent('Text_navigate_to');
+
                                 context.pushNamed('HomePage');
                               },
                               child: Text(
@@ -211,6 +216,10 @@ class _TemplatesWidgetState extends State<TemplatesWidget>
                                     0.0, 0.0, 5.0, 0.0),
                                 child: FFButtonWidget(
                                   onPressed: () async {
+                                    logFirebaseEvent(
+                                        'TEMPLATES_PAGE_DASH_BOARD_BTN_ON_TAP');
+                                    logFirebaseEvent('Button_navigate_to');
+
                                     context.pushNamed(
                                       'DashBoard',
                                       extra: <String, dynamic>{
@@ -322,6 +331,9 @@ class _TemplatesWidgetState extends State<TemplatesWidget>
                                     size: 24.0,
                                   ),
                                   onPressed: () async {
+                                    logFirebaseEvent(
+                                        'TEMPLATES_PAGE_add_ICN_ON_TAP');
+                                    logFirebaseEvent('IconButton_bottom_sheet');
                                     await showModalBottomSheet(
                                       isScrollControlled: true,
                                       backgroundColor: Colors.transparent,
@@ -357,11 +369,17 @@ class _TemplatesWidgetState extends State<TemplatesWidget>
                                   hoverColor: Colors.transparent,
                                   highlightColor: Colors.transparent,
                                   onTap: () async {
+                                    logFirebaseEvent(
+                                        'TEMPLATES_PAGE_lightDark_small_ON_TAP');
                                     if ((Theme.of(context).brightness ==
                                             Brightness.light) ==
                                         true) {
+                                      logFirebaseEvent(
+                                          'lightDark_small_set_dark_mode_settings');
                                       setDarkModeSetting(
                                           context, ThemeMode.dark);
+                                      logFirebaseEvent(
+                                          'lightDark_small_widget_animation');
                                       if (animationsMap[
                                               'containerOnActionTriggerAnimation'] !=
                                           null) {
@@ -371,8 +389,12 @@ class _TemplatesWidgetState extends State<TemplatesWidget>
                                             .forward(from: 0.0);
                                       }
                                     } else {
+                                      logFirebaseEvent(
+                                          'lightDark_small_set_dark_mode_settings');
                                       setDarkModeSetting(
                                           context, ThemeMode.light);
+                                      logFirebaseEvent(
+                                          'lightDark_small_widget_animation');
                                       if (animationsMap[
                                               'containerOnActionTriggerAnimation'] !=
                                           null) {
@@ -663,6 +685,10 @@ class _TemplatesWidgetState extends State<TemplatesWidget>
                                                                           .transparent,
                                                                   onTap:
                                                                       () async {
+                                                                    logFirebaseEvent(
+                                                                        'TEMPLATES_PAGE_Image_390b0iv4_ON_TAP');
+                                                                    logFirebaseEvent(
+                                                                        'Image_bottom_sheet');
                                                                     await showModalBottomSheet(
                                                                       isScrollControlled:
                                                                           true,
@@ -821,6 +847,8 @@ class _TemplatesWidgetState extends State<TemplatesWidget>
                                                                             FFButtonWidget(
                                                                           onPressed:
                                                                               () async {
+                                                                            logFirebaseEvent('TEMPLATES_PAGE_EDITAR_BTN_ON_TAP');
+                                                                            logFirebaseEvent('Button_bottom_sheet');
                                                                             await showModalBottomSheet(
                                                                               isScrollControlled: true,
                                                                               backgroundColor: Colors.transparent,
@@ -892,6 +920,8 @@ class _TemplatesWidgetState extends State<TemplatesWidget>
                                                                             FFButtonWidget(
                                                                           onPressed:
                                                                               () async {
+                                                                            logFirebaseEvent('TEMPLATES_PAGE_EXCLUIR_BTN_ON_TAP');
+                                                                            logFirebaseEvent('Button_alert_dialog');
                                                                             var confirmDialogResponse = await showDialog<bool>(
                                                                                   context: context,
                                                                                   builder: (alertDialogContext) {
@@ -914,12 +944,14 @@ class _TemplatesWidgetState extends State<TemplatesWidget>
                                                                                 ) ??
                                                                                 false;
                                                                             if (confirmDialogResponse) {
+                                                                              logFirebaseEvent('Button_backend_call');
                                                                               await TemplatesTable().delete(
                                                                                 matchingRows: (rows) => rows.eq(
                                                                                   'id',
                                                                                   listViewTemplatesRow.id,
                                                                                 ),
                                                                               );
+                                                                              logFirebaseEvent('Button_refresh_database_request');
                                                                               setState(() => _model.requestCompleter = null);
                                                                               await _model.waitForRequestCompleted();
                                                                             } else {
@@ -1074,6 +1106,10 @@ class _TemplatesWidgetState extends State<TemplatesWidget>
                                                                           .transparent,
                                                                   onTap:
                                                                       () async {
+                                                                    logFirebaseEvent(
+                                                                        'TEMPLATES_PAGE_Image_npitze6i_ON_TAP');
+                                                                    logFirebaseEvent(
+                                                                        'Image_bottom_sheet');
                                                                     await showModalBottomSheet(
                                                                       isScrollControlled:
                                                                           true,
@@ -1232,6 +1268,8 @@ class _TemplatesWidgetState extends State<TemplatesWidget>
                                                                             FFButtonWidget(
                                                                           onPressed:
                                                                               () async {
+                                                                            logFirebaseEvent('TEMPLATES_PAGE_EDITAR_BTN_ON_TAP');
+                                                                            logFirebaseEvent('Button_bottom_sheet');
                                                                             await showModalBottomSheet(
                                                                               isScrollControlled: true,
                                                                               backgroundColor: Colors.transparent,
@@ -1303,6 +1341,8 @@ class _TemplatesWidgetState extends State<TemplatesWidget>
                                                                             FFButtonWidget(
                                                                           onPressed:
                                                                               () async {
+                                                                            logFirebaseEvent('TEMPLATES_PAGE_EXCLUIR_BTN_ON_TAP');
+                                                                            logFirebaseEvent('Button_alert_dialog');
                                                                             var confirmDialogResponse = await showDialog<bool>(
                                                                                   context: context,
                                                                                   builder: (alertDialogContext) {
@@ -1325,6 +1365,7 @@ class _TemplatesWidgetState extends State<TemplatesWidget>
                                                                                 ) ??
                                                                                 false;
                                                                             if (confirmDialogResponse) {
+                                                                              logFirebaseEvent('Button_backend_call');
                                                                               await TemplatesTable().delete(
                                                                                 matchingRows: (rows) => rows.eq(
                                                                                   'id',
@@ -1483,6 +1524,10 @@ class _TemplatesWidgetState extends State<TemplatesWidget>
                                                                           .transparent,
                                                                   onTap:
                                                                       () async {
+                                                                    logFirebaseEvent(
+                                                                        'TEMPLATES_PAGE_Image_kn909hjh_ON_TAP');
+                                                                    logFirebaseEvent(
+                                                                        'Image_bottom_sheet');
                                                                     await showModalBottomSheet(
                                                                       isScrollControlled:
                                                                           true,
@@ -1641,6 +1686,8 @@ class _TemplatesWidgetState extends State<TemplatesWidget>
                                                                             FFButtonWidget(
                                                                           onPressed:
                                                                               () async {
+                                                                            logFirebaseEvent('TEMPLATES_PAGE_EDITAR_BTN_ON_TAP');
+                                                                            logFirebaseEvent('Button_bottom_sheet');
                                                                             await showModalBottomSheet(
                                                                               isScrollControlled: true,
                                                                               backgroundColor: Colors.transparent,
@@ -1712,6 +1759,8 @@ class _TemplatesWidgetState extends State<TemplatesWidget>
                                                                             FFButtonWidget(
                                                                           onPressed:
                                                                               () async {
+                                                                            logFirebaseEvent('TEMPLATES_PAGE_EXCLUIR_BTN_ON_TAP');
+                                                                            logFirebaseEvent('Button_alert_dialog');
                                                                             var confirmDialogResponse = await showDialog<bool>(
                                                                                   context: context,
                                                                                   builder: (alertDialogContext) {
@@ -1734,6 +1783,7 @@ class _TemplatesWidgetState extends State<TemplatesWidget>
                                                                                 ) ??
                                                                                 false;
                                                                             if (confirmDialogResponse) {
+                                                                              logFirebaseEvent('Button_backend_call');
                                                                               await TemplatesTable().delete(
                                                                                 matchingRows: (rows) => rows.eq(
                                                                                   'id',
@@ -1892,6 +1942,10 @@ class _TemplatesWidgetState extends State<TemplatesWidget>
                                                                           .transparent,
                                                                   onTap:
                                                                       () async {
+                                                                    logFirebaseEvent(
+                                                                        'TEMPLATES_PAGE_Image_v4t8rbcs_ON_TAP');
+                                                                    logFirebaseEvent(
+                                                                        'Image_bottom_sheet');
                                                                     await showModalBottomSheet(
                                                                       isScrollControlled:
                                                                           true,
@@ -2050,6 +2104,8 @@ class _TemplatesWidgetState extends State<TemplatesWidget>
                                                                             FFButtonWidget(
                                                                           onPressed:
                                                                               () async {
+                                                                            logFirebaseEvent('TEMPLATES_PAGE_EDITAR_BTN_ON_TAP');
+                                                                            logFirebaseEvent('Button_bottom_sheet');
                                                                             await showModalBottomSheet(
                                                                               isScrollControlled: true,
                                                                               backgroundColor: Colors.transparent,
@@ -2121,6 +2177,8 @@ class _TemplatesWidgetState extends State<TemplatesWidget>
                                                                             FFButtonWidget(
                                                                           onPressed:
                                                                               () async {
+                                                                            logFirebaseEvent('TEMPLATES_PAGE_EXCLUIR_BTN_ON_TAP');
+                                                                            logFirebaseEvent('Button_alert_dialog');
                                                                             var confirmDialogResponse = await showDialog<bool>(
                                                                                   context: context,
                                                                                   builder: (alertDialogContext) {
@@ -2143,6 +2201,7 @@ class _TemplatesWidgetState extends State<TemplatesWidget>
                                                                                 ) ??
                                                                                 false;
                                                                             if (confirmDialogResponse) {
+                                                                              logFirebaseEvent('Button_backend_call');
                                                                               await TemplatesTable().delete(
                                                                                 matchingRows: (rows) => rows.eq(
                                                                                   'id',
@@ -2301,6 +2360,10 @@ class _TemplatesWidgetState extends State<TemplatesWidget>
                                                                           .transparent,
                                                                   onTap:
                                                                       () async {
+                                                                    logFirebaseEvent(
+                                                                        'TEMPLATES_PAGE_Image_f1jmy0xy_ON_TAP');
+                                                                    logFirebaseEvent(
+                                                                        'Image_bottom_sheet');
                                                                     await showModalBottomSheet(
                                                                       isScrollControlled:
                                                                           true,
@@ -2459,6 +2522,8 @@ class _TemplatesWidgetState extends State<TemplatesWidget>
                                                                             FFButtonWidget(
                                                                           onPressed:
                                                                               () async {
+                                                                            logFirebaseEvent('TEMPLATES_PAGE_EDITAR_BTN_ON_TAP');
+                                                                            logFirebaseEvent('Button_bottom_sheet');
                                                                             await showModalBottomSheet(
                                                                               isScrollControlled: true,
                                                                               backgroundColor: Colors.transparent,
@@ -2530,6 +2595,8 @@ class _TemplatesWidgetState extends State<TemplatesWidget>
                                                                             FFButtonWidget(
                                                                           onPressed:
                                                                               () async {
+                                                                            logFirebaseEvent('TEMPLATES_PAGE_EXCLUIR_BTN_ON_TAP');
+                                                                            logFirebaseEvent('Button_alert_dialog');
                                                                             var confirmDialogResponse = await showDialog<bool>(
                                                                                   context: context,
                                                                                   builder: (alertDialogContext) {
@@ -2552,6 +2619,7 @@ class _TemplatesWidgetState extends State<TemplatesWidget>
                                                                                 ) ??
                                                                                 false;
                                                                             if (confirmDialogResponse) {
+                                                                              logFirebaseEvent('Button_backend_call');
                                                                               await TemplatesTable().delete(
                                                                                 matchingRows: (rows) => rows.eq(
                                                                                   'id',
@@ -2660,6 +2728,10 @@ class _TemplatesWidgetState extends State<TemplatesWidget>
                                 children: [
                                   FFButtonWidget(
                                     onPressed: () async {
+                                      logFirebaseEvent(
+                                          'TEMPLATES_VOLTAR_PARA_H_O_M_E_BTN_ON_TAP');
+                                      logFirebaseEvent('Button_navigate_to');
+
                                       context.goNamed(
                                         'HomePage',
                                         extra: <String, dynamic>{

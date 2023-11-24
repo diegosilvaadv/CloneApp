@@ -125,6 +125,7 @@ class _TutorialWidgetState extends State<TutorialWidget>
     super.initState();
     _model = createModel(context, () => TutorialModel());
 
+    logFirebaseEvent('screen_view', parameters: {'screen_name': 'Tutorial'});
     setupAnimations(
       animationsMap.values.where((anim) =>
           anim.trigger == AnimationTrigger.onActionTrigger ||
@@ -215,6 +216,10 @@ class _TutorialWidgetState extends State<TutorialWidget>
                                   0.0, 0.0, 5.0, 0.0),
                               child: FFButtonWidget(
                                 onPressed: () async {
+                                  logFirebaseEvent(
+                                      'TUTORIAL_PAGE_HOME_BTN_ON_TAP');
+                                  logFirebaseEvent('Button_navigate_to');
+
                                   context.pushNamed(
                                     'HomePage',
                                     extra: <String, dynamic>{
@@ -313,6 +318,10 @@ class _TutorialWidgetState extends State<TutorialWidget>
                                   0.0, 0.0, 5.0, 0.0),
                               child: FFButtonWidget(
                                 onPressed: () async {
+                                  logFirebaseEvent(
+                                      'TUTORIAL_PAGE_CONTATO_BTN_ON_TAP');
+                                  logFirebaseEvent('Button_navigate_to');
+
                                   context.pushNamed(
                                     'contato',
                                     extra: <String, dynamic>{
@@ -364,6 +373,10 @@ class _TutorialWidgetState extends State<TutorialWidget>
                             if (currentUserEmailVerified)
                               FFButtonWidget(
                                 onPressed: () async {
+                                  logFirebaseEvent(
+                                      'TUTORIAL_PAGE_PERFIL_BTN_ON_TAP');
+                                  logFirebaseEvent('Button_navigate_to');
+
                                   context.pushNamed(
                                     'perfil',
                                     extra: <String, dynamic>{
@@ -413,6 +426,10 @@ class _TutorialWidgetState extends State<TutorialWidget>
                             if (currentUserEmailVerified == false)
                               FFButtonWidget(
                                 onPressed: () async {
+                                  logFirebaseEvent(
+                                      'TUTORIAL_PAGE_CRIAR_CONTA_BTN_ON_TAP');
+                                  logFirebaseEvent('Button_navigate_to');
+
                                   context.pushNamed(
                                     'login',
                                     extra: <String, dynamic>{
@@ -468,10 +485,16 @@ class _TutorialWidgetState extends State<TutorialWidget>
                                 hoverColor: Colors.transparent,
                                 highlightColor: Colors.transparent,
                                 onTap: () async {
+                                  logFirebaseEvent(
+                                      'TUTORIAL_PAGE_lightDark_small_ON_TAP');
                                   if ((Theme.of(context).brightness ==
                                           Brightness.light) ==
                                       true) {
+                                    logFirebaseEvent(
+                                        'lightDark_small_set_dark_mode_settings');
                                     setDarkModeSetting(context, ThemeMode.dark);
+                                    logFirebaseEvent(
+                                        'lightDark_small_widget_animation');
                                     if (animationsMap[
                                             'containerOnActionTriggerAnimation'] !=
                                         null) {
@@ -481,8 +504,12 @@ class _TutorialWidgetState extends State<TutorialWidget>
                                           .forward(from: 0.0);
                                     }
                                   } else {
+                                    logFirebaseEvent(
+                                        'lightDark_small_set_dark_mode_settings');
                                     setDarkModeSetting(
                                         context, ThemeMode.light);
+                                    logFirebaseEvent(
+                                        'lightDark_small_widget_animation');
                                     if (animationsMap[
                                             'containerOnActionTriggerAnimation'] !=
                                         null) {
@@ -698,6 +725,9 @@ class _TutorialWidgetState extends State<TutorialWidget>
                                     10.0, 0.0, 0.0, 0.0),
                                 child: FFButtonWidget(
                                   onPressed: () async {
+                                    logFirebaseEvent(
+                                        'TUTORIAL_PAGE_ENTRAR_BTN_ON_TAP');
+                                    logFirebaseEvent('Button_launch_u_r_l');
                                     await launchURL(
                                         'https://discord.gg/czKA5Cpd');
                                   },

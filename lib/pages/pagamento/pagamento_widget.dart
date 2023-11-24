@@ -41,8 +41,11 @@ class _PagamentoWidgetState extends State<PagamentoWidget> {
     super.initState();
     _model = createModel(context, () => PagamentoModel());
 
+    logFirebaseEvent('screen_view', parameters: {'screen_name': 'Pagamento'});
     // On page load action.
     SchedulerBinding.instance.addPostFrameCallback((_) async {
+      logFirebaseEvent('PAGAMENTO_PAGE_Pagamento_ON_INIT_STATE');
+      logFirebaseEvent('Pagamento_update_app_state');
       setState(() {
         FFAppState().cahveAlea = random_data.randomInteger(0, 1000);
       });
@@ -89,6 +92,8 @@ class _PagamentoWidgetState extends State<PagamentoWidget> {
             hoverColor: Colors.transparent,
             highlightColor: Colors.transparent,
             onTap: () async {
+              logFirebaseEvent('PAGAMENTO_PAGE_Icon_5p8qv5im_ON_TAP');
+              logFirebaseEvent('Icon_navigate_back');
               context.safePop();
             },
             child: Icon(
@@ -216,6 +221,10 @@ class _PagamentoWidgetState extends State<PagamentoWidget> {
                                       hoverColor: Colors.transparent,
                                       highlightColor: Colors.transparent,
                                       onTap: () async {
+                                        logFirebaseEvent(
+                                            'PAGAMENTO_PAGE_Row_yzb3ka17_ON_TAP');
+                                        logFirebaseEvent(
+                                            'Row_update_app_state');
                                         setState(() {
                                           FFAppState().FormadePag = 'pix';
                                         });
@@ -337,6 +346,10 @@ class _PagamentoWidgetState extends State<PagamentoWidget> {
                                       hoverColor: Colors.transparent,
                                       highlightColor: Colors.transparent,
                                       onTap: () async {
+                                        logFirebaseEvent(
+                                            'PAGAMENTO_PAGE_Row_wpaih8tt_ON_TAP');
+                                        logFirebaseEvent(
+                                            'Row_update_app_state');
                                         setState(() {
                                           FFAppState().FormadePag = 'cartao';
                                         });
@@ -464,7 +477,10 @@ class _PagamentoWidgetState extends State<PagamentoWidget> {
                                 Builder(
                                   builder: (context) => FFButtonWidget(
                                     onPressed: () async {
+                                      logFirebaseEvent(
+                                          'PAGAMENTO_IR_PARA_PAGAMENTO_BTN_ON_TAP');
                                       if (FFAppState().FormadePag == 'pix') {
+                                        logFirebaseEvent('Button_backend_call');
                                         _model.gerarPedido =
                                             await PixMercadoPagoCall.call(
                                           amount: widget.detalhes?.preco,
@@ -487,6 +503,8 @@ class _PagamentoWidgetState extends State<PagamentoWidget> {
                                         );
                                         if ((_model.gerarPedido?.succeeded ??
                                             true)) {
+                                          logFirebaseEvent(
+                                              'Button_update_app_state');
                                           setState(() {
                                             FFAppState().PagRed =
                                                 PagamentosStruct(
@@ -506,6 +524,8 @@ class _PagamentoWidgetState extends State<PagamentoWidget> {
                                               ),
                                             );
                                           });
+                                          logFirebaseEvent(
+                                              'Button_backend_call');
                                           await PagamentosTable().insert({
                                             'user_id': currentUserUid,
                                             'produto': widget.detalhes?.titulo,
@@ -515,6 +535,8 @@ class _PagamentoWidgetState extends State<PagamentoWidget> {
                                             'link': widget.detalhes?.copypage,
                                             'img': widget.detalhes?.img,
                                           });
+                                          logFirebaseEvent(
+                                              'Button_alert_dialog');
                                           showAlignedDialog(
                                             barrierDismissible: false,
                                             context: context,
@@ -555,6 +577,8 @@ class _PagamentoWidgetState extends State<PagamentoWidget> {
                                             },
                                           ).then((value) => setState(() {}));
                                         } else {
+                                          logFirebaseEvent(
+                                              'Button_show_snack_bar');
                                           ScaffoldMessenger.of(context)
                                               .showSnackBar(
                                             SnackBar(
@@ -576,6 +600,7 @@ class _PagamentoWidgetState extends State<PagamentoWidget> {
                                         }
                                       } else if (FFAppState().FormadePag ==
                                           'cartao') {
+                                        logFirebaseEvent('Button_bottom_sheet');
                                         await showModalBottomSheet(
                                           isScrollControlled: true,
                                           backgroundColor: Colors.transparent,
@@ -603,6 +628,8 @@ class _PagamentoWidgetState extends State<PagamentoWidget> {
                                           },
                                         ).then((value) => safeSetState(() {}));
                                       } else {
+                                        logFirebaseEvent(
+                                            'Button_show_snack_bar');
                                         ScaffoldMessenger.of(context)
                                             .showSnackBar(
                                           SnackBar(

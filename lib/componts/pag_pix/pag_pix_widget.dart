@@ -193,8 +193,12 @@ class _PagPixWidgetState extends State<PagPixWidget> {
                               hoverColor: Colors.transparent,
                               highlightColor: Colors.transparent,
                               onTap: () async {
+                                logFirebaseEvent(
+                                    'PAG_PIX_COMP_Icon_gxc5b3em_ON_TAP');
+                                logFirebaseEvent('Icon_copy_to_clipboard');
                                 await Clipboard.setData(ClipboardData(
                                     text: _model.textController.text));
+                                logFirebaseEvent('Icon_show_snack_bar');
                                 ScaffoldMessenger.of(context).showSnackBar(
                                   SnackBar(
                                     content: Text(
@@ -304,12 +308,17 @@ class _PagPixWidgetState extends State<PagPixWidget> {
                                 'approved')
                               FFButtonWidget(
                                 onPressed: () async {
+                                  logFirebaseEvent(
+                                      'PAG_PIX_ATUALIZAR_PAGAMENTO_BTN_ON_TAP');
+                                  logFirebaseEvent('Button_update_app_state');
                                   setState(() {
                                     FFAppState().updatePagRedStruct(
                                       (e) =>
                                           e..status = widget.status?.toString(),
                                     );
                                   });
+                                  logFirebaseEvent(
+                                      'Button_refresh_database_request');
                                   setState(
                                       () => _model.apiRequestCompleter = null);
                                   await _model.waitForApiRequestCompleted();
@@ -342,6 +351,9 @@ class _PagPixWidgetState extends State<PagPixWidget> {
                                 'approved')
                               FFButtonWidget(
                                 onPressed: () async {
+                                  logFirebaseEvent(
+                                      'PAG_PIX_COMP_ACESSAR_PROJETO_BTN_ON_TAP');
+                                  logFirebaseEvent('Button_backend_call');
                                   await PagamentosTable().update(
                                     data: {
                                       'comprado': 'approved',
@@ -356,6 +368,7 @@ class _PagPixWidgetState extends State<PagPixWidget> {
                                           widget.pedido?.copypage,
                                         ),
                                   );
+                                  logFirebaseEvent('Button_navigate_to');
 
                                   context.goNamed(
                                     'detalhePageApps',

@@ -92,114 +92,96 @@ class StatusPixCall {
       );
 }
 
-class ObterTokemCardCall {
+class CriarPagCartaoAPIPagBankCall {
   static Future<ApiCallResponse> call({
-    String? publicKey = 'TEST-e81a0a4e-19f1-42ac-8e10-ca3906256a32',
-    String? accessToken =
-        'TEST-2540313967326267-111909-fb5a28f57f4f44cf184b71afeb38980d-433297459',
-    String? cardNumber = '',
-    String? cardholderName = '',
-    String? identification = '',
-    String? identificationNumber = '',
+    String? nomeCliente = '',
+    String? emailCliente = '',
+    String? cpf = '',
+    String? dd = '',
+    String? numeroCelular = '',
+    String? refId = '',
+    String? refItem = '',
+    String? nomeProduto = '',
+    int? valorProduto,
     String? securityCode = '',
-    int? cardExpirationMonth,
-    int? cardExpirationYear,
-    String? chave = '',
+    String? nomeImpreCard = '',
+    int? expMonth,
+    int? expYear,
+    String? numberCard = '',
+    String? randow = '',
   }) async {
     final ffApiRequestBody = '''
 {
-  "card_number": "${cardNumber}",
-  "cardhold": {
-    "name": "${cardholderName}",
-    "identification": {
-      "type": "${identification}",
-      "number": "${identificationNumber}"
-    }
+  "customer": {
+    "name": "${nomeCliente}",
+    "email": "${emailCliente}",
+    "tax_id": "${cpf}",
+    "phones": [
+      {
+        "country": "55",
+        "area": "${dd}",
+        "number": "${numeroCelular}",
+        "type": "MOBILE"
+      }
+    ]
   },
-  "security_code": "${securityCode}",
-  "expiration_month": "${cardExpirationMonth}",
-  "expiration_year": "${cardExpirationYear}"
-}''';
-    return ApiManager.instance.makeApiCall(
-      callName: 'Obter Tokem Card',
-      apiUrl:
-          'https://api.mercadopago.com/v1/card_tokens?public_key=${publicKey}',
-      callType: ApiCallType.POST,
-      headers: {
-        'Authorization': 'Bearer ${accessToken}',
-        'X-Idempotency-Key': '0d5020ed-1af6-469c-ae06-${chave}',
-      },
-      params: {},
-      body: ffApiRequestBody,
-      bodyType: BodyType.JSON,
-      returnBody: true,
-      encodeBodyUtf8: false,
-      decodeUtf8: false,
-      cache: false,
-    );
-  }
-
-  static dynamic token(dynamic response) => getJsonField(
-        response,
-        r'''$.id''',
-      );
-  static dynamic ultimos4digitos(dynamic response) => getJsonField(
-        response,
-        r'''$.last_four_digits''',
-      );
-}
-
-class CriarPagMPCall {
-  static Future<ApiCallResponse> call({
-    String? accessToken =
-        'TEST-2540313967326267-111909-fb5a28f57f4f44cf184b71afeb38980d-433297459',
-    double? transactionAmount,
-    String? firstName = '',
-    String? lastName = '',
-    String? email = '',
-    String? identificationType = '',
-    String? identificationNumber = '',
-    String? zipCode = '',
-    String? streetNumber = '',
-    String? neighborhood = '',
-    String? city = '',
-    String? federalUnit = '',
-    String? description = '',
-    String? token = '',
-    String? chave = '',
-  }) async {
-    final ffApiRequestBody = '''
-{
-  "transaction_amount": ${transactionAmount},
-  "token": "${token}",
-  "installments": 1,
-  "payer": {
-    "first_name": "${firstName}",
-    "last_name": "${lastName}",
-    "email": "${email}",
-    "type": "customer",
-    "identification": {
-      "type": "${identificationType}",
-      "number": "${identificationNumber}"
-    },
+  "shipping": {
     "address": {
-      "zip_code": "${zipCode}",
-      "street_name": "${streetNumber}",
-      "neighborhood": "${neighborhood}",
-      "city": "${city}",
-      "federal_unit": "${federalUnit}"
+      "street": "Avenida Brigadeiro Faria Lima",
+      "number": "1384",
+      "complement": "apto 12",
+      "locality": "Pinheiros",
+      "city": "São Paulo",
+      "region_code": "SP",
+      "country": "BRA",
+      "postal_code": "01452002"
     }
   },
-  "description": "${description}"
+  "reference_id": "${refId}",
+  "items": [
+    {
+      "reference_id": "${refItem}",
+      "name": "${nomeProduto}",
+      "quantity": 1,
+      "unit_amount": ${valorProduto}
+    }
+  ],
+  "charges": [
+    {
+      "reference_id": "${nomeProduto}",
+      "description": "itens",
+      "amount": {
+        "value": ${valorProduto},
+        "currency": "BRL"
+      },
+      "payment_method": {
+        "type": "CREDIT_CARD",
+        "installments": 1,
+        "capture": true,
+        "soft_descriptor": "CopyApp",
+        "card": {
+          "security_code": "${securityCode}",
+          "holder": {
+            "name": "${nomeImpreCard}"
+          },
+          "store": true,
+          "exp_month": ${expMonth},
+          "exp_year": ${expYear},
+          "number": "${numberCard}"
+        }
+      }
+    }
+  ]
 }''';
     return ApiManager.instance.makeApiCall(
-      callName: 'CriarPag MP',
-      apiUrl: 'https://api.mercadopago.com/v1/payments',
+      callName: 'Criar Pag Cartao API PagBank',
+      apiUrl: 'https://sandbox.api.pagseguro.com/orders',
       callType: ApiCallType.POST,
       headers: {
-        'Authorization': 'Bearer ${accessToken}',
-        'X-Idempotency-Key': '0d5020ed-1af6-469c-ae06-${chave}',
-        'Content-Type': 'application/json',
+        'Authorization': 'Bearer 9610FD2583284F95B9661F0A69CD0389',
+        'accept': 'application/json',
+        'content-type': 'application/json',
+        'x-idempotency-key': 'f7682128-b120-4498-b60a-${randow}',
       },
       params: {},
       body: ffApiRequestBody,

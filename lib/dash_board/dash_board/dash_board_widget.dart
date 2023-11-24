@@ -76,6 +76,7 @@ class _DashBoardWidgetState extends State<DashBoardWidget>
     super.initState();
     _model = createModel(context, () => DashBoardModel());
 
+    logFirebaseEvent('screen_view', parameters: {'screen_name': 'DashBoard'});
     setupAnimations(
       animationsMap.values.where((anim) =>
           anim.trigger == AnimationTrigger.onActionTrigger ||
@@ -169,6 +170,10 @@ class _DashBoardWidgetState extends State<DashBoardWidget>
                               hoverColor: Colors.transparent,
                               highlightColor: Colors.transparent,
                               onTap: () async {
+                                logFirebaseEvent(
+                                    'DASH_BOARD_PAGE_Text_i1jmy0ee_ON_TAP');
+                                logFirebaseEvent('Text_navigate_to');
+
                                 context.pushNamed('HomePage');
                               },
                               child: Text(
@@ -247,6 +252,10 @@ class _DashBoardWidgetState extends State<DashBoardWidget>
                                     0.0, 0.0, 5.0, 0.0),
                                 child: FFButtonWidget(
                                   onPressed: () async {
+                                    logFirebaseEvent(
+                                        'DASH_BOARD_PAGE_TEMPLATES_BTN_ON_TAP');
+                                    logFirebaseEvent('Button_navigate_to');
+
                                     context.pushNamed(
                                       'templates',
                                       extra: <String, dynamic>{
@@ -314,6 +323,9 @@ class _DashBoardWidgetState extends State<DashBoardWidget>
                                     size: 24.0,
                                   ),
                                   onPressed: () async {
+                                    logFirebaseEvent(
+                                        'DASH_BOARD_PAGE_add_ICN_ON_TAP');
+                                    logFirebaseEvent('IconButton_bottom_sheet');
                                     await showModalBottomSheet(
                                       isScrollControlled: true,
                                       backgroundColor: Colors.transparent,
@@ -349,11 +361,17 @@ class _DashBoardWidgetState extends State<DashBoardWidget>
                                   hoverColor: Colors.transparent,
                                   highlightColor: Colors.transparent,
                                   onTap: () async {
+                                    logFirebaseEvent(
+                                        'DASH_BOARD_PAGE_lightDark_small_ON_TAP');
                                     if ((Theme.of(context).brightness ==
                                             Brightness.light) ==
                                         true) {
+                                      logFirebaseEvent(
+                                          'lightDark_small_set_dark_mode_settings');
                                       setDarkModeSetting(
                                           context, ThemeMode.dark);
+                                      logFirebaseEvent(
+                                          'lightDark_small_widget_animation');
                                       if (animationsMap[
                                               'containerOnActionTriggerAnimation'] !=
                                           null) {
@@ -363,8 +381,12 @@ class _DashBoardWidgetState extends State<DashBoardWidget>
                                             .forward(from: 0.0);
                                       }
                                     } else {
+                                      logFirebaseEvent(
+                                          'lightDark_small_set_dark_mode_settings');
                                       setDarkModeSetting(
                                           context, ThemeMode.light);
+                                      logFirebaseEvent(
+                                          'lightDark_small_widget_animation');
                                       if (animationsMap[
                                               'containerOnActionTriggerAnimation'] !=
                                           null) {
@@ -735,6 +757,8 @@ class _DashBoardWidgetState extends State<DashBoardWidget>
                                                                           setState(() =>
                                                                               _model.checkboxValueMap[listViewUsersRow] = newValue!);
                                                                           if (newValue!) {
+                                                                            logFirebaseEvent('DASH_BOARD_Checkbox_5fpe3peh_ON_TOGGLE_O');
+                                                                            logFirebaseEvent('Checkbox_backend_call');
                                                                             await UsersTable().update(
                                                                               data: {
                                                                                 'produtores': _model.checkboxValueMap[listViewUsersRow],
@@ -889,6 +913,10 @@ class _DashBoardWidgetState extends State<DashBoardWidget>
                               children: [
                                 FFButtonWidget(
                                   onPressed: () async {
+                                    logFirebaseEvent(
+                                        'DASH_BOARD_VOLTAR_PARA_H_O_M_E_BTN_ON_TA');
+                                    logFirebaseEvent('Button_navigate_to');
+
                                     context.goNamed(
                                       'HomePage',
                                       extra: <String, dynamic>{

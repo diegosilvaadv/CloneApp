@@ -148,6 +148,7 @@ class _LoginWidgetState extends State<LoginWidget>
     super.initState();
     _model = createModel(context, () => LoginModel());
 
+    logFirebaseEvent('screen_view', parameters: {'screen_name': 'login'});
     _model.tabBarController = TabController(
       vsync: this,
       length: 2,
@@ -521,6 +522,9 @@ class _LoginWidgetState extends State<LoginWidget>
                                             0.0, 0.0, 0.0, 16.0),
                                         child: FFButtonWidget(
                                           onPressed: () async {
+                                            logFirebaseEvent(
+                                                'LOGIN_PAGE_ENTRAR_BTN_ON_TAP');
+                                            logFirebaseEvent('Button_auth');
                                             GoRouter.of(context)
                                                 .prepareAuthEvent();
 
@@ -534,6 +538,9 @@ class _LoginWidgetState extends State<LoginWidget>
                                             if (user == null) {
                                               return;
                                             }
+
+                                            logFirebaseEvent(
+                                                'Button_navigate_to');
 
                                             context.pushNamedAuth(
                                                 'HomePage', context.mounted);
@@ -714,6 +721,11 @@ class _LoginWidgetState extends State<LoginWidget>
                                                           0.0, 0.0, 0.0, 16.0),
                                                   child: FFButtonWidget(
                                                     onPressed: () async {
+                                                      logFirebaseEvent(
+                                                          'LOGIN_PAGE_ACESSAR_SEM_LOGIN_BTN_ON_TAP');
+                                                      logFirebaseEvent(
+                                                          'Button_navigate_to');
+
                                                       context.pushNamed(
                                                         'HomePage',
                                                         extra: <String,
@@ -1161,12 +1173,17 @@ class _LoginWidgetState extends State<LoginWidget>
                                             0.0, 0.0, 0.0, 16.0),
                                         child: FFButtonWidget(
                                           onPressed: () async {
+                                            logFirebaseEvent(
+                                                'LOGIN_PAGE_CRIAR_CONTA_BTN_ON_TAP');
+                                            logFirebaseEvent(
+                                                'Button_validate_form');
                                             if (_model.formKey.currentState ==
                                                     null ||
                                                 !_model.formKey.currentState!
                                                     .validate()) {
                                               return;
                                             }
+                                            logFirebaseEvent('Button_auth');
                                             GoRouter.of(context)
                                                 .prepareAuthEvent();
                                             if (_model
@@ -1195,6 +1212,8 @@ class _LoginWidgetState extends State<LoginWidget>
                                               return;
                                             }
 
+                                            logFirebaseEvent(
+                                                'Button_backend_call');
                                             await UsersTable().insert({
                                               'nome':
                                                   _model.nomeController.text,
@@ -1204,6 +1223,8 @@ class _LoginWidgetState extends State<LoginWidget>
                                               'adm': false,
                                               'produtores': false,
                                             });
+                                            logFirebaseEvent(
+                                                'Button_navigate_to');
 
                                             context.pushNamedAuth(
                                                 'HomePage', context.mounted);
@@ -1384,6 +1405,11 @@ class _LoginWidgetState extends State<LoginWidget>
                                                           0.0, 0.0, 0.0, 16.0),
                                                   child: FFButtonWidget(
                                                     onPressed: () async {
+                                                      logFirebaseEvent(
+                                                          'LOGIN_ACESSAR_SEM_CRIAR_CONTA_BTN_ON_TAP');
+                                                      logFirebaseEvent(
+                                                          'Button_navigate_to');
+
                                                       context.pushNamed(
                                                         'HomePage',
                                                         extra: <String,

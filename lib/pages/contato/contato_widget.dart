@@ -127,6 +127,7 @@ class _ContatoWidgetState extends State<ContatoWidget>
     super.initState();
     _model = createModel(context, () => ContatoModel());
 
+    logFirebaseEvent('screen_view', parameters: {'screen_name': 'contato'});
     setupAnimations(
       animationsMap.values.where((anim) =>
           anim.trigger == AnimationTrigger.onActionTrigger ||
@@ -215,6 +216,10 @@ class _ContatoWidgetState extends State<ContatoWidget>
                                 0.0, 0.0, 5.0, 0.0),
                             child: FFButtonWidget(
                               onPressed: () async {
+                                logFirebaseEvent(
+                                    'CONTATO_PAGE_HOME_BTN_ON_TAP');
+                                logFirebaseEvent('Button_navigate_to');
+
                                 context.pushNamed(
                                   'HomePage',
                                   extra: <String, dynamic>{
@@ -267,6 +272,10 @@ class _ContatoWidgetState extends State<ContatoWidget>
                                 0.0, 0.0, 5.0, 0.0),
                             child: FFButtonWidget(
                               onPressed: () async {
+                                logFirebaseEvent(
+                                    'CONTATO_PAGE_TUTORIAL_BTN_ON_TAP');
+                                logFirebaseEvent('Button_navigate_to');
+
                                 context.pushNamed(
                                   'Tutorial',
                                   extra: <String, dynamic>{
@@ -361,6 +370,10 @@ class _ContatoWidgetState extends State<ContatoWidget>
                           if (currentUserEmailVerified)
                             FFButtonWidget(
                               onPressed: () async {
+                                logFirebaseEvent(
+                                    'CONTATO_PAGE_PERFIL_BTN_ON_TAP');
+                                logFirebaseEvent('Button_navigate_to');
+
                                 context.pushNamed(
                                   'perfil',
                                   extra: <String, dynamic>{
@@ -409,6 +422,10 @@ class _ContatoWidgetState extends State<ContatoWidget>
                           if (currentUserEmailVerified == false)
                             FFButtonWidget(
                               onPressed: () async {
+                                logFirebaseEvent(
+                                    'CONTATO_PAGE_CRIAR_CONTA_BTN_ON_TAP');
+                                logFirebaseEvent('Button_navigate_to');
+
                                 context.pushNamed(
                                   'login',
                                   extra: <String, dynamic>{
@@ -463,10 +480,16 @@ class _ContatoWidgetState extends State<ContatoWidget>
                               hoverColor: Colors.transparent,
                               highlightColor: Colors.transparent,
                               onTap: () async {
+                                logFirebaseEvent(
+                                    'CONTATO_PAGE_lightDark_small_ON_TAP');
                                 if ((Theme.of(context).brightness ==
                                         Brightness.light) ==
                                     true) {
+                                  logFirebaseEvent(
+                                      'lightDark_small_set_dark_mode_settings');
                                   setDarkModeSetting(context, ThemeMode.dark);
+                                  logFirebaseEvent(
+                                      'lightDark_small_widget_animation');
                                   if (animationsMap[
                                           'containerOnActionTriggerAnimation'] !=
                                       null) {
@@ -476,7 +499,11 @@ class _ContatoWidgetState extends State<ContatoWidget>
                                         .forward(from: 0.0);
                                   }
                                 } else {
+                                  logFirebaseEvent(
+                                      'lightDark_small_set_dark_mode_settings');
                                   setDarkModeSetting(context, ThemeMode.light);
+                                  logFirebaseEvent(
+                                      'lightDark_small_widget_animation');
                                   if (animationsMap[
                                           'containerOnActionTriggerAnimation'] !=
                                       null) {
@@ -615,6 +642,8 @@ class _ContatoWidgetState extends State<ContatoWidget>
                           EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 0.0, 0.0),
                       child: FFButtonWidget(
                         onPressed: () async {
+                          logFirebaseEvent('CONTATO_PAGE_ENTRAR_BTN_ON_TAP');
+                          logFirebaseEvent('Button_launch_u_r_l');
                           await launchURL('https://discord.gg/czKA5Cpd');
                         },
                         text: 'ENTRAR',
@@ -679,6 +708,8 @@ class _ContatoWidgetState extends State<ContatoWidget>
                           EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 0.0, 0.0),
                       child: FFButtonWidget(
                         onPressed: () async {
+                          logFirebaseEvent('CONTATO_PAGE_ENTRAR_BTN_ON_TAP');
+                          logFirebaseEvent('Button_launch_u_r_l');
                           await launchURL(
                               'https://www.youtube.com/channel/UCale3h1Y7vM8AQ7Yg3wHAww');
                         },
@@ -759,6 +790,10 @@ class _ContatoWidgetState extends State<ContatoWidget>
                                         hoverColor: Colors.transparent,
                                         highlightColor: Colors.transparent,
                                         onTap: () async {
+                                          logFirebaseEvent(
+                                              'CONTATO_PAGE_Image_zfjxr70p_ON_TAP');
+                                          logFirebaseEvent(
+                                              'Image_expand_image');
                                           await Navigator.push(
                                             context,
                                             PageTransition(
@@ -846,6 +881,10 @@ class _ContatoWidgetState extends State<ContatoWidget>
                                                     highlightColor:
                                                         Colors.transparent,
                                                     onTap: () async {
+                                                      logFirebaseEvent(
+                                                          'CONTATO_PAGE_Icon_7470ms8e_ON_TAP');
+                                                      logFirebaseEvent(
+                                                          'Icon_copy_to_clipboard');
                                                       await Clipboard.setData(
                                                           ClipboardData(
                                                               text:
@@ -869,6 +908,10 @@ class _ContatoWidgetState extends State<ContatoWidget>
                                                       10.0, 10.0, 0.0, 0.0),
                                               child: FFButtonWidget(
                                                 onPressed: () async {
+                                                  logFirebaseEvent(
+                                                      'CONTATO_PAGE_ACESSAR_BTN_ON_TAP');
+                                                  logFirebaseEvent(
+                                                      'Button_launch_u_r_l');
                                                   await launchURL(
                                                       'https://www.udemy.com/course/aprenda-a-criar-um-app-de-catalogo-flutterflow-nocode/?couponCode=DESCONTO50OFF');
                                                 },

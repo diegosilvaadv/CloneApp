@@ -100,6 +100,9 @@ class _EditarWidgetState extends State<EditarWidget> {
                           hoverColor: Colors.transparent,
                           highlightColor: Colors.transparent,
                           onTap: () async {
+                            logFirebaseEvent(
+                                'EDITAR_COMP_Icon_yzht8knh_ON_TAP');
+                            logFirebaseEvent('Icon_bottom_sheet');
                             Navigator.pop(context);
                           },
                           child: Icon(
@@ -363,6 +366,9 @@ class _EditarWidgetState extends State<EditarWidget> {
                     children: [
                       FFButtonWidget(
                         onPressed: () async {
+                          logFirebaseEvent(
+                              'EDITAR_COMP_SALVAR_ALTERAÇÕES_BTN_ON_TAP');
+                          logFirebaseEvent('Button_backend_call');
                           await TemplatesTable().update(
                             data: {
                               'titulo': _model.tituloController.text,
@@ -375,6 +381,7 @@ class _EditarWidgetState extends State<EditarWidget> {
                               widget.id,
                             ),
                           );
+                          logFirebaseEvent('Button_bottom_sheet');
                           Navigator.pop(context);
                         },
                         text: 'Salvar Alterações',

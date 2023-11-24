@@ -113,6 +113,7 @@ class _VermaisallWidgetState extends State<VermaisallWidget>
     super.initState();
     _model = createModel(context, () => VermaisallModel());
 
+    logFirebaseEvent('screen_view', parameters: {'screen_name': 'vermaisall'});
     setupAnimations(
       animationsMap.values.where((anim) =>
           anim.trigger == AnimationTrigger.onActionTrigger ||
@@ -203,6 +204,10 @@ class _VermaisallWidgetState extends State<VermaisallWidget>
                                 0.0, 0.0, 5.0, 0.0),
                             child: FFButtonWidget(
                               onPressed: () async {
+                                logFirebaseEvent(
+                                    'VERMAISALL_PAGE_HOME_BTN_ON_TAP');
+                                logFirebaseEvent('Button_navigate_to');
+
                                 context.pushNamed(
                                   'HomePage',
                                   extra: <String, dynamic>{
@@ -255,6 +260,10 @@ class _VermaisallWidgetState extends State<VermaisallWidget>
                                 0.0, 0.0, 5.0, 0.0),
                             child: FFButtonWidget(
                               onPressed: () async {
+                                logFirebaseEvent(
+                                    'VERMAISALL_PAGE_TUTORIAL_BTN_ON_TAP');
+                                logFirebaseEvent('Button_navigate_to');
+
                                 context.pushNamed(
                                   'Tutorial',
                                   extra: <String, dynamic>{
@@ -307,6 +316,10 @@ class _VermaisallWidgetState extends State<VermaisallWidget>
                                 0.0, 0.0, 5.0, 0.0),
                             child: FFButtonWidget(
                               onPressed: () async {
+                                logFirebaseEvent(
+                                    'VERMAISALL_PAGE_CONTATO_BTN_ON_TAP');
+                                logFirebaseEvent('Button_navigate_to');
+
                                 context.pushNamed(
                                   'contato',
                                   extra: <String, dynamic>{
@@ -357,6 +370,10 @@ class _VermaisallWidgetState extends State<VermaisallWidget>
                           if (currentUserEmailVerified)
                             FFButtonWidget(
                               onPressed: () async {
+                                logFirebaseEvent(
+                                    'VERMAISALL_PAGE_PERFIL_BTN_ON_TAP');
+                                logFirebaseEvent('Button_navigate_to');
+
                                 context.pushNamed(
                                   'perfil',
                                   extra: <String, dynamic>{
@@ -405,6 +422,10 @@ class _VermaisallWidgetState extends State<VermaisallWidget>
                           if (currentUserEmailVerified == false)
                             FFButtonWidget(
                               onPressed: () async {
+                                logFirebaseEvent(
+                                    'VERMAISALL_PAGE_CRIAR_CONTA_BTN_ON_TAP');
+                                logFirebaseEvent('Button_navigate_to');
+
                                 context.pushNamed(
                                   'login',
                                   extra: <String, dynamic>{
@@ -459,10 +480,16 @@ class _VermaisallWidgetState extends State<VermaisallWidget>
                               hoverColor: Colors.transparent,
                               highlightColor: Colors.transparent,
                               onTap: () async {
+                                logFirebaseEvent(
+                                    'VERMAISALL_PAGE_lightDark_small_ON_TAP');
                                 if ((Theme.of(context).brightness ==
                                         Brightness.light) ==
                                     true) {
+                                  logFirebaseEvent(
+                                      'lightDark_small_set_dark_mode_settings');
                                   setDarkModeSetting(context, ThemeMode.dark);
+                                  logFirebaseEvent(
+                                      'lightDark_small_widget_animation');
                                   if (animationsMap[
                                           'containerOnActionTriggerAnimation'] !=
                                       null) {
@@ -472,7 +499,11 @@ class _VermaisallWidgetState extends State<VermaisallWidget>
                                         .forward(from: 0.0);
                                   }
                                 } else {
+                                  logFirebaseEvent(
+                                      'lightDark_small_set_dark_mode_settings');
                                   setDarkModeSetting(context, ThemeMode.light);
+                                  logFirebaseEvent(
+                                      'lightDark_small_widget_animation');
                                   if (animationsMap[
                                           'containerOnActionTriggerAnimation'] !=
                                       null) {
@@ -639,6 +670,11 @@ class _VermaisallWidgetState extends State<VermaisallWidget>
                                         hoverColor: Colors.transparent,
                                         highlightColor: Colors.transparent,
                                         onTap: () async {
+                                          logFirebaseEvent(
+                                              'VERMAISALL_Container_xcavsps7_ON_TAP');
+                                          logFirebaseEvent(
+                                              'Container_navigate_to');
+
                                           context.goNamed(
                                             'detalhePage',
                                             queryParameters: {

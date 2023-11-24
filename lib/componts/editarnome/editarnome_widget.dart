@@ -89,6 +89,9 @@ class _EditarnomeWidgetState extends State<EditarnomeWidget> {
                               hoverColor: Colors.transparent,
                               highlightColor: Colors.transparent,
                               onTap: () async {
+                                logFirebaseEvent(
+                                    'EDITARNOME_COMP_Icon_tpw92er6_ON_TAP');
+                                logFirebaseEvent('Icon_bottom_sheet');
                                 Navigator.pop(context);
                               },
                               child: Icon(
@@ -171,6 +174,9 @@ class _EditarnomeWidgetState extends State<EditarnomeWidget> {
                         children: [
                           FFButtonWidget(
                             onPressed: () async {
+                              logFirebaseEvent(
+                                  'EDITARNOME_COMP_MUDAR_NOME_BTN_ON_TAP');
+                              logFirebaseEvent('Button_backend_call');
                               await UsersTable().update(
                                 data: {
                                   'nome': _model.tituloController.text,
@@ -180,6 +186,7 @@ class _EditarnomeWidgetState extends State<EditarnomeWidget> {
                                   currentUserUid,
                                 ),
                               );
+                              logFirebaseEvent('Button_navigate_to');
 
                               context.goNamed(
                                 'perfil',

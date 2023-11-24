@@ -122,6 +122,8 @@ class _DetalhePageAppsWidgetState extends State<DetalhePageAppsWidget>
     super.initState();
     _model = createModel(context, () => DetalhePageAppsModel());
 
+    logFirebaseEvent('screen_view',
+        parameters: {'screen_name': 'detalhePageApps'});
     setupAnimations(
       animationsMap.values.where((anim) =>
           anim.trigger == AnimationTrigger.onActionTrigger ||
@@ -248,6 +250,10 @@ class _DetalhePageAppsWidgetState extends State<DetalhePageAppsWidget>
                                     0.0, 0.0, 5.0, 0.0),
                                 child: FFButtonWidget(
                                   onPressed: () async {
+                                    logFirebaseEvent(
+                                        'DETALHE_PAGE_APPS_PAGE_HOME_BTN_ON_TAP');
+                                    logFirebaseEvent('Button_navigate_to');
+
                                     context.pushNamed(
                                       'HomePage',
                                       extra: <String, dynamic>{
@@ -302,6 +308,10 @@ class _DetalhePageAppsWidgetState extends State<DetalhePageAppsWidget>
                                     0.0, 0.0, 5.0, 0.0),
                                 child: FFButtonWidget(
                                   onPressed: () async {
+                                    logFirebaseEvent(
+                                        'DETALHE_APPS_TUTORIAL_BTN_ON_TAP');
+                                    logFirebaseEvent('Button_navigate_to');
+
                                     context.pushNamed(
                                       'Tutorial',
                                       extra: <String, dynamic>{
@@ -356,6 +366,10 @@ class _DetalhePageAppsWidgetState extends State<DetalhePageAppsWidget>
                                     0.0, 0.0, 5.0, 0.0),
                                 child: FFButtonWidget(
                                   onPressed: () async {
+                                    logFirebaseEvent(
+                                        'DETALHE_APPS_CONTATO_BTN_ON_TAP');
+                                    logFirebaseEvent('Button_navigate_to');
+
                                     context.pushNamed(
                                       'contato',
                                       extra: <String, dynamic>{
@@ -408,6 +422,10 @@ class _DetalhePageAppsWidgetState extends State<DetalhePageAppsWidget>
                               if (currentUserEmailVerified)
                                 FFButtonWidget(
                                   onPressed: () async {
+                                    logFirebaseEvent(
+                                        'DETALHE_PAGE_APPS_PAGE_PERFIL_BTN_ON_TAP');
+                                    logFirebaseEvent('Button_navigate_to');
+
                                     context.pushNamed(
                                       'perfil',
                                       extra: <String, dynamic>{
@@ -458,6 +476,10 @@ class _DetalhePageAppsWidgetState extends State<DetalhePageAppsWidget>
                               if (currentUserEmailVerified == false)
                                 FFButtonWidget(
                                   onPressed: () async {
+                                    logFirebaseEvent(
+                                        'DETALHE_APPS_CRIAR_CONTA_BTN_ON_TAP');
+                                    logFirebaseEvent('Button_navigate_to');
+
                                     context.pushNamed(
                                       'login',
                                       extra: <String, dynamic>{
@@ -514,11 +536,17 @@ class _DetalhePageAppsWidgetState extends State<DetalhePageAppsWidget>
                                   hoverColor: Colors.transparent,
                                   highlightColor: Colors.transparent,
                                   onTap: () async {
+                                    logFirebaseEvent(
+                                        'DETALHE_APPS_lightDark_small_ON_TAP');
                                     if ((Theme.of(context).brightness ==
                                             Brightness.light) ==
                                         true) {
+                                      logFirebaseEvent(
+                                          'lightDark_small_set_dark_mode_settings');
                                       setDarkModeSetting(
                                           context, ThemeMode.dark);
+                                      logFirebaseEvent(
+                                          'lightDark_small_widget_animation');
                                       if (animationsMap[
                                               'containerOnActionTriggerAnimation'] !=
                                           null) {
@@ -528,8 +556,12 @@ class _DetalhePageAppsWidgetState extends State<DetalhePageAppsWidget>
                                             .forward(from: 0.0);
                                       }
                                     } else {
+                                      logFirebaseEvent(
+                                          'lightDark_small_set_dark_mode_settings');
                                       setDarkModeSetting(
                                           context, ThemeMode.light);
+                                      logFirebaseEvent(
+                                          'lightDark_small_widget_animation');
                                       if (animationsMap[
                                               'containerOnActionTriggerAnimation'] !=
                                           null) {
@@ -666,7 +698,11 @@ class _DetalhePageAppsWidgetState extends State<DetalhePageAppsWidget>
                                 'approved')
                               FFButtonWidget(
                                 onPressed: () async {
+                                  logFirebaseEvent(
+                                      'DETALHE_APPS_COMPRAR_PROJETO_BTN_ON_TAP');
                                   if (currentUserEmailVerified) {
+                                    logFirebaseEvent('Button_navigate_to');
+
                                     context.pushNamed(
                                       'Pagamento',
                                       queryParameters: {
@@ -677,6 +713,7 @@ class _DetalhePageAppsWidgetState extends State<DetalhePageAppsWidget>
                                       }.withoutNulls,
                                     );
                                   } else {
+                                    logFirebaseEvent('Button_bottom_sheet');
                                     await showModalBottomSheet(
                                       isScrollControlled: true,
                                       backgroundColor: Color(0xBE14181B),
@@ -729,6 +766,9 @@ class _DetalhePageAppsWidgetState extends State<DetalhePageAppsWidget>
                                 'approved')
                               FFButtonWidget(
                                 onPressed: () async {
+                                  logFirebaseEvent(
+                                      'DETALHE_APPS_ACESSAR_PROJETO_BTN_ON_TAP');
+                                  logFirebaseEvent('Button_launch_u_r_l');
                                   await launchURL(
                                       detalhePageAppsPagamentosRow!.link!);
                                 },
@@ -780,6 +820,9 @@ class _DetalhePageAppsWidgetState extends State<DetalhePageAppsWidget>
                             ),
                             FFButtonWidget(
                               onPressed: () async {
+                                logFirebaseEvent(
+                                    'DETALHE_APPS_TESTAR_PROJETO_BTN_ON_TAP');
+                                logFirebaseEvent('Button_launch_u_r_l');
                                 await launchURL(
                                     widget.paramentros!.linkTesteProjeto!);
                               },
@@ -950,6 +993,10 @@ class _DetalhePageAppsWidgetState extends State<DetalhePageAppsWidget>
                                         hoverColor: Colors.transparent,
                                         highlightColor: Colors.transparent,
                                         onTap: () async {
+                                          logFirebaseEvent(
+                                              'DETALHE_APPS_Image_72lbi0lh_ON_TAP');
+                                          logFirebaseEvent(
+                                              'Image_expand_image');
                                           await Navigator.push(
                                             context,
                                             PageTransition(

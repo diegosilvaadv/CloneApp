@@ -139,6 +139,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
     super.initState();
     _model = createModel(context, () => HomePageModel());
 
+    logFirebaseEvent('screen_view', parameters: {'screen_name': 'HomePage'});
     setupAnimations(
       animationsMap.values.where((anim) =>
           anim.trigger == AnimationTrigger.onActionTrigger ||
@@ -313,6 +314,10 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                   0.0, 0.0, 5.0, 0.0),
                               child: FFButtonWidget(
                                 onPressed: () async {
+                                  logFirebaseEvent(
+                                      'HOME_PAGE_PAGE_TUTORIAL_BTN_ON_TAP');
+                                  logFirebaseEvent('Button_navigate_to');
+
                                   context.pushNamed(
                                     'Tutorial',
                                     extra: <String, dynamic>{
@@ -366,6 +371,10 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                   0.0, 0.0, 5.0, 0.0),
                               child: FFButtonWidget(
                                 onPressed: () async {
+                                  logFirebaseEvent(
+                                      'HOME_PAGE_PAGE_CONTATO_BTN_ON_TAP');
+                                  logFirebaseEvent('Button_navigate_to');
+
                                   context.pushNamed(
                                     'contato',
                                     extra: <String, dynamic>{
@@ -417,6 +426,10 @@ class _HomePageWidgetState extends State<HomePageWidget>
                             if (currentUserEmailVerified)
                               FFButtonWidget(
                                 onPressed: () async {
+                                  logFirebaseEvent(
+                                      'HOME_PAGE_PAGE_PERFIL_BTN_ON_TAP');
+                                  logFirebaseEvent('Button_navigate_to');
+
                                   context.pushNamed(
                                     'perfil',
                                     extra: <String, dynamic>{
@@ -466,6 +479,10 @@ class _HomePageWidgetState extends State<HomePageWidget>
                             if (currentUserEmailVerified == false)
                               FFButtonWidget(
                                 onPressed: () async {
+                                  logFirebaseEvent(
+                                      'HOME_PAGE_PAGE_CRIAR_CONTA_BTN_ON_TAP');
+                                  logFirebaseEvent('Button_navigate_to');
+
                                   context.pushNamed(
                                     'login',
                                     extra: <String, dynamic>{
@@ -521,10 +538,16 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                 hoverColor: Colors.transparent,
                                 highlightColor: Colors.transparent,
                                 onTap: () async {
+                                  logFirebaseEvent(
+                                      'HOME_PAGE_PAGE_lightDark_small_ON_TAP');
                                   if ((Theme.of(context).brightness ==
                                           Brightness.light) ==
                                       true) {
+                                    logFirebaseEvent(
+                                        'lightDark_small_set_dark_mode_settings');
                                     setDarkModeSetting(context, ThemeMode.dark);
+                                    logFirebaseEvent(
+                                        'lightDark_small_widget_animation');
                                     if (animationsMap[
                                             'containerOnActionTriggerAnimation'] !=
                                         null) {
@@ -534,8 +557,12 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                           .forward(from: 0.0);
                                     }
                                   } else {
+                                    logFirebaseEvent(
+                                        'lightDark_small_set_dark_mode_settings');
                                     setDarkModeSetting(
                                         context, ThemeMode.light);
+                                    logFirebaseEvent(
+                                        'lightDark_small_widget_animation');
                                     if (animationsMap[
                                             'containerOnActionTriggerAnimation'] !=
                                         null) {
@@ -713,10 +740,15 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                   children: [
                                     FFButtonWidget(
                                       onPressed: () async {
+                                        logFirebaseEvent(
+                                            'HOME_PAGE_PAGE_SAIR_BTN_ON_TAP');
+                                        logFirebaseEvent('Button_auth');
                                         GoRouter.of(context).prepareAuthEvent();
                                         await authManager.signOut();
                                         GoRouter.of(context)
                                             .clearRedirectLocation();
+
+                                        logFirebaseEvent('Button_navigate_to');
 
                                         context.pushNamedAuth(
                                             'login', context.mounted);
@@ -751,6 +783,11 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                             10.0, 0.0, 0.0, 0.0),
                                         child: FFButtonWidget(
                                           onPressed: () async {
+                                            logFirebaseEvent(
+                                                'HOME_PAGE_PAGE_ADM_BTN_ON_TAP');
+                                            logFirebaseEvent(
+                                                'Button_navigate_to');
+
                                             context.pushNamed('DashBoard');
                                           },
                                           text: 'ADM',
@@ -956,6 +993,11 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                                     highlightColor:
                                                         Colors.transparent,
                                                     onTap: () async {
+                                                      logFirebaseEvent(
+                                                          'HOME_PAGE_PAGE_Container_xr7rxynq_ON_TAP');
+                                                      logFirebaseEvent(
+                                                          'Container_navigate_to');
+
                                                       context.pushNamed(
                                                         'detalhePageApps',
                                                         queryParameters: {
@@ -1250,6 +1292,11 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                         children: [
                                           FFButtonWidget(
                                             onPressed: () async {
+                                              logFirebaseEvent(
+                                                  'HOME_PAGE_PAGE_VER_MAIS_BTN_ON_TAP');
+                                              logFirebaseEvent(
+                                                  'Button_navigate_to');
+
                                               context.pushNamed(
                                                 'vermaisall',
                                                 extra: <String, dynamic>{
@@ -1398,6 +1445,11 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                                       highlightColor:
                                                           Colors.transparent,
                                                       onTap: () async {
+                                                        logFirebaseEvent(
+                                                            'HOME_PAGE_PAGE_Container_tkadzqqe_ON_TAP');
+                                                        logFirebaseEvent(
+                                                            'Container_navigate_to');
+
                                                         context.pushNamed(
                                                           'detalhePage',
                                                           queryParameters: {
@@ -1685,6 +1737,11 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                       children: [
                                         FFButtonWidget(
                                           onPressed: () async {
+                                            logFirebaseEvent(
+                                                'HOME_PAGE_PAGE_VER_MAIS_BTN_ON_TAP');
+                                            logFirebaseEvent(
+                                                'Button_navigate_to');
+
                                             context.pushNamed(
                                               'vermais',
                                               queryParameters: {
@@ -1821,6 +1878,11 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                                     highlightColor:
                                                         Colors.transparent,
                                                     onTap: () async {
+                                                      logFirebaseEvent(
+                                                          'HOME_PAGE_PAGE_Container_h062kmvt_ON_TAP');
+                                                      logFirebaseEvent(
+                                                          'Container_navigate_to');
+
                                                       context.pushNamed(
                                                         'detalhePage',
                                                         queryParameters: {
@@ -2113,6 +2175,11 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                       children: [
                                         FFButtonWidget(
                                           onPressed: () async {
+                                            logFirebaseEvent(
+                                                'HOME_PAGE_PAGE_VER_MAIS_BTN_ON_TAP');
+                                            logFirebaseEvent(
+                                                'Button_navigate_to');
+
                                             context.pushNamed(
                                               'vermais',
                                               queryParameters: {
@@ -2249,6 +2316,11 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                                     highlightColor:
                                                         Colors.transparent,
                                                     onTap: () async {
+                                                      logFirebaseEvent(
+                                                          'HOME_PAGE_PAGE_Container_xz9jp0oz_ON_TAP');
+                                                      logFirebaseEvent(
+                                                          'Container_navigate_to');
+
                                                       context.pushNamed(
                                                         'detalhePage',
                                                         queryParameters: {

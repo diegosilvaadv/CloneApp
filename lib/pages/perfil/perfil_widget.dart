@@ -135,6 +135,7 @@ class _PerfilWidgetState extends State<PerfilWidget>
     super.initState();
     _model = createModel(context, () => PerfilModel());
 
+    logFirebaseEvent('screen_view', parameters: {'screen_name': 'perfil'});
     _model.tabBarController = TabController(
       vsync: this,
       length: 5,
@@ -267,6 +268,9 @@ class _PerfilWidgetState extends State<PerfilWidget>
                                 0.0, 0.0, 5.0, 0.0),
                             child: FFButtonWidget(
                               onPressed: () async {
+                                logFirebaseEvent('PERFIL_PAGE_HOME_BTN_ON_TAP');
+                                logFirebaseEvent('Button_navigate_to');
+
                                 context.pushNamed('HomePage');
                               },
                               text: 'HOME',
@@ -311,6 +315,10 @@ class _PerfilWidgetState extends State<PerfilWidget>
                                 0.0, 0.0, 5.0, 0.0),
                             child: FFButtonWidget(
                               onPressed: () async {
+                                logFirebaseEvent(
+                                    'PERFIL_PAGE_TUTORIAL_BTN_ON_TAP');
+                                logFirebaseEvent('Button_navigate_to');
+
                                 context.pushNamed(
                                   'Tutorial',
                                   extra: <String, dynamic>{
@@ -363,6 +371,10 @@ class _PerfilWidgetState extends State<PerfilWidget>
                                 0.0, 0.0, 5.0, 0.0),
                             child: FFButtonWidget(
                               onPressed: () async {
+                                logFirebaseEvent(
+                                    'PERFIL_PAGE_CONTATO_BTN_ON_TAP');
+                                logFirebaseEvent('Button_navigate_to');
+
                                 context.pushNamed(
                                   'contato',
                                   extra: <String, dynamic>{
@@ -453,6 +465,10 @@ class _PerfilWidgetState extends State<PerfilWidget>
                           if (currentUserEmailVerified == false)
                             FFButtonWidget(
                               onPressed: () async {
+                                logFirebaseEvent(
+                                    'PERFIL_PAGE_CRIAR_CONTA_BTN_ON_TAP');
+                                logFirebaseEvent('Button_navigate_to');
+
                                 context.pushNamed(
                                   'login',
                                   extra: <String, dynamic>{
@@ -507,10 +523,16 @@ class _PerfilWidgetState extends State<PerfilWidget>
                               hoverColor: Colors.transparent,
                               highlightColor: Colors.transparent,
                               onTap: () async {
+                                logFirebaseEvent(
+                                    'PERFIL_PAGE_lightDark_small_ON_TAP');
                                 if ((Theme.of(context).brightness ==
                                         Brightness.light) ==
                                     true) {
+                                  logFirebaseEvent(
+                                      'lightDark_small_set_dark_mode_settings');
                                   setDarkModeSetting(context, ThemeMode.dark);
+                                  logFirebaseEvent(
+                                      'lightDark_small_widget_animation');
                                   if (animationsMap[
                                           'containerOnActionTriggerAnimation'] !=
                                       null) {
@@ -520,7 +542,11 @@ class _PerfilWidgetState extends State<PerfilWidget>
                                         .forward(from: 0.0);
                                   }
                                 } else {
+                                  logFirebaseEvent(
+                                      'lightDark_small_set_dark_mode_settings');
                                   setDarkModeSetting(context, ThemeMode.light);
+                                  logFirebaseEvent(
+                                      'lightDark_small_widget_animation');
                                   if (animationsMap[
                                           'containerOnActionTriggerAnimation'] !=
                                       null) {
@@ -701,6 +727,10 @@ class _PerfilWidgetState extends State<PerfilWidget>
                                       hoverColor: Colors.transparent,
                                       highlightColor: Colors.transparent,
                                       onTap: () async {
+                                        logFirebaseEvent(
+                                            'PERFIL_PAGE_Image_t37rkr0z_ON_TAP');
+                                        logFirebaseEvent(
+                                            'Image_upload_file_to_supabase');
                                         final selectedFiles = await selectFiles(
                                           storageFolderPath: 'fotosperfil',
                                           multiFile: false,
@@ -747,6 +777,7 @@ class _PerfilWidgetState extends State<PerfilWidget>
                                           }
                                         }
 
+                                        logFirebaseEvent('Image_backend_call');
                                         await UsersTable().update(
                                           data: {
                                             'imgPerfil': _model.uploadedFileUrl,
@@ -756,6 +787,8 @@ class _PerfilWidgetState extends State<PerfilWidget>
                                             currentUserUid,
                                           ),
                                         );
+                                        logFirebaseEvent(
+                                            'Image_show_snack_bar');
                                         ScaffoldMessenger.of(context)
                                             .showSnackBar(
                                           SnackBar(
@@ -774,6 +807,8 @@ class _PerfilWidgetState extends State<PerfilWidget>
                                                     .secondary,
                                           ),
                                         );
+                                        logFirebaseEvent(
+                                            'Image_refresh_database_request');
                                         setState(() =>
                                             _model.requestCompleter = null);
                                         await _model.waitForRequestCompleted();
@@ -809,6 +844,8 @@ class _PerfilWidgetState extends State<PerfilWidget>
                         hoverColor: Colors.transparent,
                         highlightColor: Colors.transparent,
                         onTap: () async {
+                          logFirebaseEvent('PERFIL_PAGE_Text_f4mww5gv_ON_TAP');
+                          logFirebaseEvent('Text_bottom_sheet');
                           await showModalBottomSheet(
                             isScrollControlled: true,
                             backgroundColor: Colors.transparent,
@@ -872,6 +909,9 @@ class _PerfilWidgetState extends State<PerfilWidget>
                           if (columnUsersRow?.produtores ?? true)
                             FFButtonWidget(
                               onPressed: () async {
+                                logFirebaseEvent(
+                                    'PERFIL_PAGE_ADCIONAR_PÁGINAS_BTN_ON_TAP');
+                                logFirebaseEvent('Button_bottom_sheet');
                                 await showModalBottomSheet(
                                   isScrollControlled: true,
                                   backgroundColor: Colors.transparent,
@@ -919,6 +959,9 @@ class _PerfilWidgetState extends State<PerfilWidget>
                           if (columnUsersRow?.produtores == false)
                             FFButtonWidget(
                               onPressed: () async {
+                                logFirebaseEvent(
+                                    'PERFIL_QUERO_TRABALHAR_COMO_PRODUTOR_BTN');
+                                logFirebaseEvent('Button_bottom_sheet');
                                 await showModalBottomSheet(
                                   isScrollControlled: true,
                                   backgroundColor: Color(0xAB1D2428),
@@ -975,9 +1018,13 @@ class _PerfilWidgetState extends State<PerfilWidget>
                         children: [
                           FFButtonWidget(
                             onPressed: () async {
+                              logFirebaseEvent('PERFIL_PAGE_SAIR_BTN_ON_TAP');
+                              logFirebaseEvent('Button_auth');
                               GoRouter.of(context).prepareAuthEvent();
                               await authManager.signOut();
                               GoRouter.of(context).clearRedirectLocation();
+
+                              logFirebaseEvent('Button_navigate_to');
 
                               context.pushNamedAuth('login', context.mounted);
                             },
@@ -1207,6 +1254,8 @@ class _PerfilWidgetState extends State<PerfilWidget>
                                                                               hoverColor: Colors.transparent,
                                                                               highlightColor: Colors.transparent,
                                                                               onTap: () async {
+                                                                                logFirebaseEvent('PERFIL_PAGE_Image_egq2fvo5_ON_TAP');
+                                                                                logFirebaseEvent('Image_bottom_sheet');
                                                                                 await showModalBottomSheet(
                                                                                   isScrollControlled: true,
                                                                                   backgroundColor: Colors.transparent,
@@ -1308,6 +1357,8 @@ class _PerfilWidgetState extends State<PerfilWidget>
                                                                                     padding: EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 10.0, 10.0),
                                                                                     child: FFButtonWidget(
                                                                                       onPressed: () async {
+                                                                                        logFirebaseEvent('PERFIL_PAGE_EDITAR_BTN_ON_TAP');
+                                                                                        logFirebaseEvent('Button_bottom_sheet');
                                                                                         await showModalBottomSheet(
                                                                                           isScrollControlled: true,
                                                                                           backgroundColor: Colors.transparent,
@@ -1357,6 +1408,8 @@ class _PerfilWidgetState extends State<PerfilWidget>
                                                                                     padding: EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 10.0, 0.0),
                                                                                     child: FFButtonWidget(
                                                                                       onPressed: () async {
+                                                                                        logFirebaseEvent('PERFIL_PAGE_EXCLUIR_BTN_ON_TAP');
+                                                                                        logFirebaseEvent('Button_alert_dialog');
                                                                                         var confirmDialogResponse = await showDialog<bool>(
                                                                                               context: context,
                                                                                               builder: (alertDialogContext) {
@@ -1379,12 +1432,14 @@ class _PerfilWidgetState extends State<PerfilWidget>
                                                                                             ) ??
                                                                                             false;
                                                                                         if (confirmDialogResponse) {
+                                                                                          logFirebaseEvent('Button_backend_call');
                                                                                           await TemplatesTable().delete(
                                                                                             matchingRows: (rows) => rows.eq(
                                                                                               'id',
                                                                                               listViewTemplatesRow.id,
                                                                                             ),
                                                                                           );
+                                                                                          logFirebaseEvent('Button_refresh_database_request');
                                                                                           setState(() => _model.requestCompleter = null);
                                                                                           await _model.waitForRequestCompleted();
                                                                                         } else {
@@ -1538,6 +1593,8 @@ class _PerfilWidgetState extends State<PerfilWidget>
                                                                                 Colors.transparent,
                                                                             onTap:
                                                                                 () async {
+                                                                              logFirebaseEvent('PERFIL_PAGE_Image_d1fjzlbb_ON_TAP');
+                                                                              logFirebaseEvent('Image_bottom_sheet');
                                                                               await showModalBottomSheet(
                                                                                 isScrollControlled: true,
                                                                                 backgroundColor: Colors.transparent,
@@ -1646,6 +1703,8 @@ class _PerfilWidgetState extends State<PerfilWidget>
                                                                                   padding: EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 10.0, 10.0),
                                                                                   child: FFButtonWidget(
                                                                                     onPressed: () async {
+                                                                                      logFirebaseEvent('PERFIL_PAGE_EDITAR_BTN_ON_TAP');
+                                                                                      logFirebaseEvent('Button_bottom_sheet');
                                                                                       await showModalBottomSheet(
                                                                                         isScrollControlled: true,
                                                                                         backgroundColor: Colors.transparent,
@@ -1695,6 +1754,8 @@ class _PerfilWidgetState extends State<PerfilWidget>
                                                                                   padding: EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 10.0, 0.0),
                                                                                   child: FFButtonWidget(
                                                                                     onPressed: () async {
+                                                                                      logFirebaseEvent('PERFIL_PAGE_EXCLUIR_BTN_ON_TAP');
+                                                                                      logFirebaseEvent('Button_alert_dialog');
                                                                                       var confirmDialogResponse = await showDialog<bool>(
                                                                                             context: context,
                                                                                             builder: (alertDialogContext) {
@@ -1717,6 +1778,7 @@ class _PerfilWidgetState extends State<PerfilWidget>
                                                                                           ) ??
                                                                                           false;
                                                                                       if (confirmDialogResponse) {
+                                                                                        logFirebaseEvent('Button_backend_call');
                                                                                         await TemplatesTable().delete(
                                                                                           matchingRows: (rows) => rows.eq(
                                                                                             'id',
@@ -1873,6 +1935,8 @@ class _PerfilWidgetState extends State<PerfilWidget>
                                                                                 Colors.transparent,
                                                                             onTap:
                                                                                 () async {
+                                                                              logFirebaseEvent('PERFIL_PAGE_Image_6jslyszd_ON_TAP');
+                                                                              logFirebaseEvent('Image_bottom_sheet');
                                                                               await showModalBottomSheet(
                                                                                 isScrollControlled: true,
                                                                                 backgroundColor: Colors.transparent,
@@ -1981,6 +2045,8 @@ class _PerfilWidgetState extends State<PerfilWidget>
                                                                                   padding: EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 10.0, 10.0),
                                                                                   child: FFButtonWidget(
                                                                                     onPressed: () async {
+                                                                                      logFirebaseEvent('PERFIL_PAGE_EDITAR_BTN_ON_TAP');
+                                                                                      logFirebaseEvent('Button_bottom_sheet');
                                                                                       await showModalBottomSheet(
                                                                                         isScrollControlled: true,
                                                                                         backgroundColor: Colors.transparent,
@@ -2030,6 +2096,8 @@ class _PerfilWidgetState extends State<PerfilWidget>
                                                                                   padding: EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 10.0, 0.0),
                                                                                   child: FFButtonWidget(
                                                                                     onPressed: () async {
+                                                                                      logFirebaseEvent('PERFIL_PAGE_EXCLUIR_BTN_ON_TAP');
+                                                                                      logFirebaseEvent('Button_alert_dialog');
                                                                                       var confirmDialogResponse = await showDialog<bool>(
                                                                                             context: context,
                                                                                             builder: (alertDialogContext) {
@@ -2052,6 +2120,7 @@ class _PerfilWidgetState extends State<PerfilWidget>
                                                                                           ) ??
                                                                                           false;
                                                                                       if (confirmDialogResponse) {
+                                                                                        logFirebaseEvent('Button_backend_call');
                                                                                         await TemplatesTable().delete(
                                                                                           matchingRows: (rows) => rows.eq(
                                                                                             'id',
@@ -2208,6 +2277,8 @@ class _PerfilWidgetState extends State<PerfilWidget>
                                                                                 Colors.transparent,
                                                                             onTap:
                                                                                 () async {
+                                                                              logFirebaseEvent('PERFIL_PAGE_Image_pyl33sxr_ON_TAP');
+                                                                              logFirebaseEvent('Image_bottom_sheet');
                                                                               await showModalBottomSheet(
                                                                                 isScrollControlled: true,
                                                                                 backgroundColor: Colors.transparent,
@@ -2316,6 +2387,8 @@ class _PerfilWidgetState extends State<PerfilWidget>
                                                                                   padding: EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 10.0, 10.0),
                                                                                   child: FFButtonWidget(
                                                                                     onPressed: () async {
+                                                                                      logFirebaseEvent('PERFIL_PAGE_EDITAR_BTN_ON_TAP');
+                                                                                      logFirebaseEvent('Button_bottom_sheet');
                                                                                       await showModalBottomSheet(
                                                                                         isScrollControlled: true,
                                                                                         backgroundColor: Colors.transparent,
@@ -2365,6 +2438,8 @@ class _PerfilWidgetState extends State<PerfilWidget>
                                                                                   padding: EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 10.0, 0.0),
                                                                                   child: FFButtonWidget(
                                                                                     onPressed: () async {
+                                                                                      logFirebaseEvent('PERFIL_PAGE_EXCLUIR_BTN_ON_TAP');
+                                                                                      logFirebaseEvent('Button_alert_dialog');
                                                                                       var confirmDialogResponse = await showDialog<bool>(
                                                                                             context: context,
                                                                                             builder: (alertDialogContext) {
@@ -2387,6 +2462,7 @@ class _PerfilWidgetState extends State<PerfilWidget>
                                                                                           ) ??
                                                                                           false;
                                                                                       if (confirmDialogResponse) {
+                                                                                        logFirebaseEvent('Button_backend_call');
                                                                                         await TemplatesTable().delete(
                                                                                           matchingRows: (rows) => rows.eq(
                                                                                             'id',
@@ -2543,6 +2619,8 @@ class _PerfilWidgetState extends State<PerfilWidget>
                                                                                 Colors.transparent,
                                                                             onTap:
                                                                                 () async {
+                                                                              logFirebaseEvent('PERFIL_PAGE_Image_ps1ntbcl_ON_TAP');
+                                                                              logFirebaseEvent('Image_bottom_sheet');
                                                                               await showModalBottomSheet(
                                                                                 isScrollControlled: true,
                                                                                 backgroundColor: Colors.transparent,
@@ -2651,6 +2729,8 @@ class _PerfilWidgetState extends State<PerfilWidget>
                                                                                   padding: EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 10.0, 10.0),
                                                                                   child: FFButtonWidget(
                                                                                     onPressed: () async {
+                                                                                      logFirebaseEvent('PERFIL_PAGE_EDITAR_BTN_ON_TAP');
+                                                                                      logFirebaseEvent('Button_bottom_sheet');
                                                                                       await showModalBottomSheet(
                                                                                         isScrollControlled: true,
                                                                                         backgroundColor: Colors.transparent,
@@ -2700,6 +2780,8 @@ class _PerfilWidgetState extends State<PerfilWidget>
                                                                                   padding: EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 10.0, 0.0),
                                                                                   child: FFButtonWidget(
                                                                                     onPressed: () async {
+                                                                                      logFirebaseEvent('PERFIL_PAGE_EXCLUIR_BTN_ON_TAP');
+                                                                                      logFirebaseEvent('Button_alert_dialog');
                                                                                       var confirmDialogResponse = await showDialog<bool>(
                                                                                             context: context,
                                                                                             builder: (alertDialogContext) {
@@ -2722,6 +2804,7 @@ class _PerfilWidgetState extends State<PerfilWidget>
                                                                                           ) ??
                                                                                           false;
                                                                                       if (confirmDialogResponse) {
+                                                                                        logFirebaseEvent('Button_backend_call');
                                                                                         await TemplatesTable().delete(
                                                                                           matchingRows: (rows) => rows.eq(
                                                                                             'id',

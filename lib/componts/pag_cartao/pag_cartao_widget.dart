@@ -4,6 +4,7 @@ import '/backend/supabase/supabase.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import '/flutter_flow/custom_functions.dart' as functions;
 import '/flutter_flow/random_data_util.dart' as random_data;
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -221,6 +222,7 @@ class _PagCartaoWidgetState extends State<PagCartaoWidget> {
                                                     ],
                                                     obscureText: false,
                                                     decoration: InputDecoration(
+                                                      labelText: 'João Silva',
                                                       labelStyle:
                                                           FlutterFlowTheme.of(
                                                                   context)
@@ -359,6 +361,8 @@ class _PagCartaoWidgetState extends State<PagCartaoWidget> {
                                                       obscureText: false,
                                                       decoration:
                                                           InputDecoration(
+                                                        labelText:
+                                                            '000.000.000-00',
                                                         labelStyle:
                                                             FlutterFlowTheme.of(
                                                                     context)
@@ -367,7 +371,7 @@ class _PagCartaoWidgetState extends State<PagCartaoWidget> {
                                                                   fontFamily:
                                                                       'Readex Pro',
                                                                   fontSize:
-                                                                      14.0,
+                                                                      20.0,
                                                                 ),
                                                         hintStyle:
                                                             FlutterFlowTheme.of(
@@ -510,10 +514,18 @@ class _PagCartaoWidgetState extends State<PagCartaoWidget> {
                                                       obscureText: false,
                                                       decoration:
                                                           InputDecoration(
+                                                        labelText:
+                                                            '4111111111111111',
                                                         labelStyle:
                                                             FlutterFlowTheme.of(
                                                                     context)
-                                                                .labelMedium,
+                                                                .labelMedium
+                                                                .override(
+                                                                  fontFamily:
+                                                                      'Readex Pro',
+                                                                  fontSize:
+                                                                      20.0,
+                                                                ),
                                                         hintStyle:
                                                             FlutterFlowTheme.of(
                                                                     context)
@@ -663,10 +675,17 @@ class _PagCartaoWidgetState extends State<PagCartaoWidget> {
                                                             obscureText: false,
                                                             decoration:
                                                                 InputDecoration(
+                                                              labelText: '12',
                                                               labelStyle:
                                                                   FlutterFlowTheme.of(
                                                                           context)
-                                                                      .labelMedium,
+                                                                      .labelMedium
+                                                                      .override(
+                                                                        fontFamily:
+                                                                            'Readex Pro',
+                                                                        fontSize:
+                                                                            20.0,
+                                                                      ),
                                                               hintStyle:
                                                                   FlutterFlowTheme.of(
                                                                           context)
@@ -787,10 +806,17 @@ class _PagCartaoWidgetState extends State<PagCartaoWidget> {
                                                             obscureText: false,
                                                             decoration:
                                                                 InputDecoration(
+                                                              labelText: '12',
                                                               labelStyle:
                                                                   FlutterFlowTheme.of(
                                                                           context)
-                                                                      .labelMedium,
+                                                                      .labelMedium
+                                                                      .override(
+                                                                        fontFamily:
+                                                                            'Readex Pro',
+                                                                        fontSize:
+                                                                            20.0,
+                                                                      ),
                                                               hintStyle:
                                                                   FlutterFlowTheme.of(
                                                                           context)
@@ -911,10 +937,17 @@ class _PagCartaoWidgetState extends State<PagCartaoWidget> {
                                                             obscureText: false,
                                                             decoration:
                                                                 InputDecoration(
+                                                              labelText: '123',
                                                               labelStyle:
                                                                   FlutterFlowTheme.of(
                                                                           context)
-                                                                      .labelMedium,
+                                                                      .labelMedium
+                                                                      .override(
+                                                                        fontFamily:
+                                                                            'Readex Pro',
+                                                                        fontSize:
+                                                                            20.0,
+                                                                      ),
                                                               hintStyle:
                                                                   FlutterFlowTheme.of(
                                                                           context)
@@ -1345,6 +1378,8 @@ class _PagCartaoWidgetState extends State<PagCartaoWidget> {
                                                       obscureText: false,
                                                       decoration:
                                                           InputDecoration(
+                                                        labelText:
+                                                            '(11) 91234-5678',
                                                         labelStyle:
                                                             FlutterFlowTheme.of(
                                                                     context)
@@ -1460,28 +1495,46 @@ class _PagCartaoWidgetState extends State<PagCartaoWidget> {
                               children: [
                                 FFButtonWidget(
                                   onPressed: () async {
+                                    logFirebaseEvent(
+                                        'PAG_CARTAO_REALIZAR_PAGAMENTO_BTN_ON_TAP');
+                                    logFirebaseEvent('Button_backend_call');
                                     _model.validacaoCard =
-                                        await ObterTokemCardCall.call(
-                                      publicKey:
-                                          'APP_USR-cb9f113b-ad18-4959-812e-b75e7561c351',
-                                      accessToken:
-                                          'APP_USR-2540313967326267-111909-94d7cfcc16413329acb45f48567519c7-433297459',
-                                      cardNumber:
-                                          _model.numberCartaoController.text,
-                                      cardholderName:
-                                          _model.nomeController.text,
-                                      identification: 'CPF',
-                                      identificationNumber:
-                                          _model.cpfController.text,
+                                        await CriarPagCartaoAPIPagBankCall.call(
+                                      nomeCliente: columnUsersRow?.nome,
+                                      emailCliente: currentUserUid,
+                                      cpf: _model.cpfController.text,
+                                      dd: '11',
+                                      numeroCelular:
+                                          _model.celularController.text,
+                                      refId: random_data.randomString(
+                                        10,
+                                        12,
+                                        false,
+                                        false,
+                                        true,
+                                      ),
+                                      refItem: random_data.randomString(
+                                        10,
+                                        12,
+                                        true,
+                                        false,
+                                        true,
+                                      ),
+                                      nomeProduto: widget.detalhes?.titulo,
+                                      valorProduto: functions.doublePInteger(
+                                          widget.detalhes!.preco!),
                                       securityCode:
                                           _model.cvvCardController.text,
-                                      cardExpirationMonth: int.tryParse(
+                                      nomeImpreCard: _model.nomeController.text,
+                                      expMonth: int.tryParse(
                                           _model.mesCardController.text),
-                                      cardExpirationYear: int.tryParse(
+                                      expYear: int.tryParse(
                                           _model.anoCardController.text),
-                                      chave: random_data.randomString(
+                                      numberCard:
+                                          _model.numberCartaoController.text,
+                                      randow: random_data.randomString(
                                         10,
-                                        13,
+                                        12,
                                         false,
                                         false,
                                         true,
@@ -1489,85 +1542,36 @@ class _PagCartaoWidgetState extends State<PagCartaoWidget> {
                                     );
                                     if ((_model.validacaoCard?.succeeded ??
                                         true)) {
-                                      _model.realizarPagamento =
-                                          await CriarPagMPCall.call(
-                                        accessToken:
-                                            'APP_USR-2540313967326267-111909-94d7cfcc16413329acb45f48567519c7-433297459',
-                                        transactionAmount: 1.0,
-                                        firstName: 'Diego',
-                                        lastName: 'Silva',
-                                        email: 'diegosilva.adv@hotmail.com',
-                                        identificationType: 'CPF',
-                                        identificationNumber: '86071121558',
-                                        zipCode: '05186230',
-                                        streetNumber: '180',
-                                        neighborhood: 'Vila Aurora',
-                                        city: 'São Paulo',
-                                        federalUnit: 'SP',
-                                        description: 'PEDIDO #515151',
-                                        token: ObterTokemCardCall.token(
-                                          (_model.validacaoCard?.jsonBody ??
-                                              ''),
-                                        ).toString(),
-                                        chave: random_data.randomString(
-                                          10,
-                                          13,
-                                          false,
-                                          false,
-                                          true,
+                                      logFirebaseEvent('Button_backend_call');
+                                      await PagamentosTable().update(
+                                        data: {
+                                          'comprado': 'approved',
+                                        },
+                                        matchingRows: (rows) => rows.eq(
+                                          'user_id',
+                                          currentUserUid,
                                         ),
                                       );
-                                      if ((_model
-                                              .realizarPagamento?.succeeded ??
-                                          true)) {
-                                        await PagamentosTable().update(
-                                          data: {
-                                            'comprado': 'approved',
-                                          },
-                                          matchingRows: (rows) => rows.eq(
-                                            'user_id',
-                                            currentUserUid,
-                                          ),
-                                        );
+                                      logFirebaseEvent('Button_navigate_to');
 
-                                        context.goNamed(
-                                          'detalhePageApps',
-                                          queryParameters: {
-                                            'paramentros': serializeParam(
-                                              widget.detalhes,
-                                              ParamType.SupabaseRow,
-                                            ),
-                                          }.withoutNulls,
-                                        );
-                                      } else {
-                                        await showDialog(
-                                          context: context,
-                                          builder: (alertDialogContext) {
-                                            return WebViewAware(
-                                                child: AlertDialog(
-                                              title:
-                                                  Text('Falha na Transação!'),
-                                              content: Text('erro pag'),
-                                              actions: [
-                                                TextButton(
-                                                  onPressed: () =>
-                                                      Navigator.pop(
-                                                          alertDialogContext),
-                                                  child: Text('Ok'),
-                                                ),
-                                              ],
-                                            ));
-                                          },
-                                        );
-                                      }
+                                      context.goNamed(
+                                        'detalhePageApps',
+                                        queryParameters: {
+                                          'paramentros': serializeParam(
+                                            widget.detalhes,
+                                            ParamType.SupabaseRow,
+                                          ),
+                                        }.withoutNulls,
+                                      );
                                     } else {
+                                      logFirebaseEvent('Button_alert_dialog');
                                       await showDialog(
                                         context: context,
                                         builder: (alertDialogContext) {
                                           return WebViewAware(
                                               child: AlertDialog(
-                                            title: Text('Falha na Validação!'),
-                                            content: Text('erro validar'),
+                                            title: Text('Erro no Pagamento'),
+                                            content: Text('ERRO'),
                                             actions: [
                                               TextButton(
                                                 onPressed: () => Navigator.pop(

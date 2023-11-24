@@ -80,6 +80,9 @@ class _EntraremcontatoWidgetState extends State<EntraremcontatoWidget> {
                               hoverColor: Colors.transparent,
                               highlightColor: Colors.transparent,
                               onTap: () async {
+                                logFirebaseEvent(
+                                    'ENTRAREMCONTATO_Icon_rqdnvrim_ON_TAP');
+                                logFirebaseEvent('Icon_bottom_sheet');
                                 Navigator.pop(context);
                               },
                               child: Icon(
@@ -157,7 +160,11 @@ class _EntraremcontatoWidgetState extends State<EntraremcontatoWidget> {
                           children: [
                             FFButtonWidget(
                               onPressed: () async {
+                                logFirebaseEvent(
+                                    'ENTRAREMCONTATO_ENVIAR_MENSAGEM_BTN_ON_T');
+                                logFirebaseEvent('Button_launch_u_r_l');
                                 await launchURL('https://wa.link/7hcq0h');
+                                logFirebaseEvent('Button_bottom_sheet');
                                 Navigator.pop(context);
                               },
                               text: 'Enviar Mensagem',

@@ -88,6 +88,8 @@ class _AddWidgetState extends State<AddWidget> {
                           hoverColor: Colors.transparent,
                           highlightColor: Colors.transparent,
                           onTap: () async {
+                            logFirebaseEvent('ADD_COMP_Icon_vvm51r3g_ON_TAP');
+                            logFirebaseEvent('Icon_bottom_sheet');
                             Navigator.pop(context);
                           },
                           child: Icon(
@@ -112,6 +114,8 @@ class _AddWidgetState extends State<AddWidget> {
                           hoverColor: Colors.transparent,
                           highlightColor: Colors.transparent,
                           onTap: () async {
+                            logFirebaseEvent('ADD_COMP_Image_r1ik43fh_ON_TAP');
+                            logFirebaseEvent('Image_upload_file_to_supabase');
                             final selectedFiles = await selectFiles(
                               storageFolderPath: 'fotos',
                               multiFile: false,
@@ -322,6 +326,8 @@ class _AddWidgetState extends State<AddWidget> {
                             hoverColor: Colors.transparent,
                             highlightColor: Colors.transparent,
                             onTap: () async {
+                              logFirebaseEvent('ADD_COMP_Icon_89lmpui6_ON_TAP');
+                              logFirebaseEvent('Icon_copy_to_clipboard');
                               await Clipboard.setData(
                                   ClipboardData(text: 'dashboard'));
                             },
@@ -345,6 +351,8 @@ class _AddWidgetState extends State<AddWidget> {
                             hoverColor: Colors.transparent,
                             highlightColor: Colors.transparent,
                             onTap: () async {
+                              logFirebaseEvent('ADD_COMP_Icon_llvvzwbe_ON_TAP');
+                              logFirebaseEvent('Icon_copy_to_clipboard');
                               await Clipboard.setData(
                                   ClipboardData(text: 'homepage'));
                             },
@@ -368,6 +376,8 @@ class _AddWidgetState extends State<AddWidget> {
                             hoverColor: Colors.transparent,
                             highlightColor: Colors.transparent,
                             onTap: () async {
+                              logFirebaseEvent('ADD_COMP_Icon_7z0z8tfc_ON_TAP');
+                              logFirebaseEvent('Icon_copy_to_clipboard');
                               await Clipboard.setData(
                                   ClipboardData(text: 'componentes'));
                             },
@@ -391,6 +401,8 @@ class _AddWidgetState extends State<AddWidget> {
                             hoverColor: Colors.transparent,
                             highlightColor: Colors.transparent,
                             onTap: () async {
+                              logFirebaseEvent('ADD_COMP_Icon_ubnwz3qr_ON_TAP');
+                              logFirebaseEvent('Icon_copy_to_clipboard');
                               await Clipboard.setData(
                                   ClipboardData(text: 'authentication'));
                             },
@@ -580,6 +592,9 @@ class _AddWidgetState extends State<AddWidget> {
                         children: [
                           FFButtonWidget(
                             onPressed: () async {
+                              logFirebaseEvent(
+                                  'ADD_COMP_PUBLICAR_CONTEÚDO_BTN_ON_TAP');
+                              logFirebaseEvent('Button_backend_call');
                               await TemplatesTable().insert({
                                 'created_at': supaSerialize<DateTime>(
                                     getCurrentTimestamp),
@@ -591,6 +606,7 @@ class _AddWidgetState extends State<AddWidget> {
                                 'user': currentUserUid,
                                 'criado por': rowUsersRow?.nome,
                               });
+                              logFirebaseEvent('Button_bottom_sheet');
                               Navigator.pop(context);
                             },
                             text: 'Publicar Conteúdo',
