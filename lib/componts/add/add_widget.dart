@@ -7,13 +7,12 @@ import '/flutter_flow/upload_data.dart';
 import 'package:easy_debounce/easy_debounce.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'add_model.dart';
 export 'add_model.dart';
 
 class AddWidget extends StatefulWidget {
-  const AddWidget({Key? key}) : super(key: key);
+  const AddWidget({super.key});
 
   @override
   _AddWidgetState createState() => _AddWidgetState();
@@ -60,7 +59,7 @@ class _AddWidgetState extends State<AddWidget> {
     context.watch<FFAppState>();
 
     return Padding(
-      padding: EdgeInsetsDirectional.fromSTEB(20.0, 20.0, 20.0, 20.0),
+      padding: const EdgeInsetsDirectional.fromSTEB(20.0, 20.0, 20.0, 20.0),
       child: SingleChildScrollView(
         child: Column(
           mainAxisSize: MainAxisSize.max,
@@ -77,7 +76,7 @@ class _AddWidgetState extends State<AddWidget> {
                 children: [
                   Padding(
                     padding:
-                        EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 30.0, 0.0),
+                        const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 30.0, 0.0),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
                       mainAxisAlignment: MainAxisAlignment.end,
@@ -92,7 +91,7 @@ class _AddWidgetState extends State<AddWidget> {
                             logFirebaseEvent('Icon_bottom_sheet');
                             Navigator.pop(context);
                           },
-                          child: Icon(
+                          child: const Icon(
                             Icons.close_sharp,
                             color: Color(0xFFFF0004),
                             size: 40.0,
@@ -103,7 +102,7 @@ class _AddWidgetState extends State<AddWidget> {
                   ),
                   Padding(
                     padding:
-                        EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 10.0),
+                        const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 10.0),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
                       mainAxisAlignment: MainAxisAlignment.center,
@@ -171,7 +170,7 @@ class _AddWidgetState extends State<AddWidget> {
                     ),
                   ),
                   Padding(
-                    padding: EdgeInsetsDirectional.fromSTEB(
+                    padding: const EdgeInsetsDirectional.fromSTEB(
                         150.0, 10.0, 150.0, 10.0),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
@@ -179,7 +178,7 @@ class _AddWidgetState extends State<AddWidget> {
                       children: [
                         Expanded(
                           child: Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 8.0, 0.0, 8.0, 0.0),
                             child: TextFormField(
                               controller: _model.tituloController,
@@ -232,7 +231,7 @@ class _AddWidgetState extends State<AddWidget> {
                     ),
                   ),
                   Padding(
-                    padding: EdgeInsetsDirectional.fromSTEB(
+                    padding: const EdgeInsetsDirectional.fromSTEB(
                         150.0, 10.0, 150.0, 10.0),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
@@ -240,7 +239,7 @@ class _AddWidgetState extends State<AddWidget> {
                       children: [
                         Expanded(
                           child: Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 8.0, 0.0, 8.0, 0.0),
                             child: TextFormField(
                               controller: _model.descricaoController,
@@ -295,13 +294,13 @@ class _AddWidgetState extends State<AddWidget> {
                   ),
                   Padding(
                     padding:
-                        EdgeInsetsDirectional.fromSTEB(150.0, 10.0, 150.0, 0.0),
+                        const EdgeInsetsDirectional.fromSTEB(150.0, 10.0, 150.0, 0.0),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
                       mainAxisAlignment: MainAxisAlignment.start,
                       children: [
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               10.0, 0.0, 0.0, 0.0),
                           child: Text(
                             'CATEGORIAS: ',
@@ -318,7 +317,7 @@ class _AddWidgetState extends State<AddWidget> {
                           style: FlutterFlowTheme.of(context).bodyMedium,
                         ),
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 0.0, 20.0, 0.0),
                           child: InkWell(
                             splashColor: Colors.transparent,
@@ -329,7 +328,7 @@ class _AddWidgetState extends State<AddWidget> {
                               logFirebaseEvent('ADD_COMP_Icon_89lmpui6_ON_TAP');
                               logFirebaseEvent('Icon_copy_to_clipboard');
                               await Clipboard.setData(
-                                  ClipboardData(text: 'dashboard'));
+                                  const ClipboardData(text: 'dashboard'));
                             },
                             child: Icon(
                               Icons.content_copy,
@@ -343,7 +342,7 @@ class _AddWidgetState extends State<AddWidget> {
                           style: FlutterFlowTheme.of(context).bodyMedium,
                         ),
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 0.0, 20.0, 0.0),
                           child: InkWell(
                             splashColor: Colors.transparent,
@@ -354,7 +353,7 @@ class _AddWidgetState extends State<AddWidget> {
                               logFirebaseEvent('ADD_COMP_Icon_llvvzwbe_ON_TAP');
                               logFirebaseEvent('Icon_copy_to_clipboard');
                               await Clipboard.setData(
-                                  ClipboardData(text: 'homepage'));
+                                  const ClipboardData(text: 'homepage'));
                             },
                             child: Icon(
                               Icons.content_copy,
@@ -368,7 +367,7 @@ class _AddWidgetState extends State<AddWidget> {
                           style: FlutterFlowTheme.of(context).bodyMedium,
                         ),
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 0.0, 20.0, 0.0),
                           child: InkWell(
                             splashColor: Colors.transparent,
@@ -379,7 +378,7 @@ class _AddWidgetState extends State<AddWidget> {
                               logFirebaseEvent('ADD_COMP_Icon_7z0z8tfc_ON_TAP');
                               logFirebaseEvent('Icon_copy_to_clipboard');
                               await Clipboard.setData(
-                                  ClipboardData(text: 'componentes'));
+                                  const ClipboardData(text: 'componentes'));
                             },
                             child: Icon(
                               Icons.content_copy,
@@ -393,7 +392,7 @@ class _AddWidgetState extends State<AddWidget> {
                           style: FlutterFlowTheme.of(context).bodyMedium,
                         ),
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 0.0, 20.0, 0.0),
                           child: InkWell(
                             splashColor: Colors.transparent,
@@ -404,7 +403,7 @@ class _AddWidgetState extends State<AddWidget> {
                               logFirebaseEvent('ADD_COMP_Icon_ubnwz3qr_ON_TAP');
                               logFirebaseEvent('Icon_copy_to_clipboard');
                               await Clipboard.setData(
-                                  ClipboardData(text: 'authentication'));
+                                  const ClipboardData(text: 'authentication'));
                             },
                             child: Icon(
                               Icons.content_copy,
@@ -418,14 +417,14 @@ class _AddWidgetState extends State<AddWidget> {
                   ),
                   Padding(
                     padding:
-                        EdgeInsetsDirectional.fromSTEB(150.0, 6.0, 150.0, 10.0),
+                        const EdgeInsetsDirectional.fromSTEB(150.0, 6.0, 150.0, 10.0),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Expanded(
                           child: Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 8.0, 0.0, 8.0, 0.0),
                             child: TextFormField(
                               controller: _model.categoriaController,
@@ -478,7 +477,7 @@ class _AddWidgetState extends State<AddWidget> {
                     ),
                   ),
                   Padding(
-                    padding: EdgeInsetsDirectional.fromSTEB(
+                    padding: const EdgeInsetsDirectional.fromSTEB(
                         150.0, 10.0, 150.0, 10.0),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
@@ -486,14 +485,14 @@ class _AddWidgetState extends State<AddWidget> {
                       children: [
                         Expanded(
                           child: Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 8.0, 0.0, 8.0, 0.0),
                             child: TextFormField(
                               controller: _model.codpagController,
                               focusNode: _model.codpagFocusNode,
                               onChanged: (_) => EasyDebounce.debounce(
                                 '_model.codpagController',
-                                Duration(milliseconds: 2000),
+                                const Duration(milliseconds: 2000),
                                 () => setState(() {}),
                               ),
                               autofocus: true,
@@ -612,9 +611,9 @@ class _AddWidgetState extends State<AddWidget> {
                             text: 'Publicar Conteúdo',
                             options: FFButtonOptions(
                               height: 40.0,
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   24.0, 0.0, 24.0, 0.0),
-                              iconPadding: EdgeInsetsDirectional.fromSTEB(
+                              iconPadding: const EdgeInsetsDirectional.fromSTEB(
                                   0.0, 0.0, 0.0, 0.0),
                               color: FlutterFlowTheme.of(context).primary,
                               textStyle: FlutterFlowTheme.of(context)
@@ -624,7 +623,7 @@ class _AddWidgetState extends State<AddWidget> {
                                     color: Colors.white,
                                   ),
                               elevation: 3.0,
-                              borderSide: BorderSide(
+                              borderSide: const BorderSide(
                                 color: Colors.transparent,
                                 width: 1.0,
                               ),

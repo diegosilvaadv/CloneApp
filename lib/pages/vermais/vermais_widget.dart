@@ -5,20 +5,18 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/scheduler.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'vermais_model.dart';
 export 'vermais_model.dart';
 
 class VermaisWidget extends StatefulWidget {
   const VermaisWidget({
-    Key? key,
+    super.key,
     required this.tag,
-  }) : super(key: key);
+  });
 
   final String? tag;
 
@@ -106,8 +104,8 @@ class _VermaisWidgetState extends State<VermaisWidget>
           curve: Curves.easeInOut,
           delay: 0.ms,
           duration: 300.ms,
-          begin: Offset(-40.0, 0.0),
-          end: Offset(0.0, 0.0),
+          begin: const Offset(-40.0, 0.0),
+          end: const Offset(0.0, 0.0),
         ),
       ],
     ),
@@ -162,7 +160,7 @@ class _VermaisWidgetState extends State<VermaisWidget>
               IconThemeData(color: FlutterFlowTheme.of(context).primaryText),
           automaticallyImplyLeading: true,
           title: Padding(
-            padding: EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 20.0, 0.0),
+            padding: const EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 20.0, 0.0),
             child: Row(
               mainAxisSize: MainAxisSize.max,
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -205,7 +203,7 @@ class _VermaisWidgetState extends State<VermaisWidget>
                         mainAxisSize: MainAxisSize.max,
                         children: [
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 5.0, 0.0),
                             child: FFButtonWidget(
                               onPressed: () async {
@@ -216,7 +214,7 @@ class _VermaisWidgetState extends State<VermaisWidget>
                                 context.pushNamed(
                                   'HomePage',
                                   extra: <String, dynamic>{
-                                    kTransitionInfoKey: TransitionInfo(
+                                    kTransitionInfoKey: const TransitionInfo(
                                       hasTransition: true,
                                       transitionType: PageTransitionType.fade,
                                     ),
@@ -226,9 +224,9 @@ class _VermaisWidgetState extends State<VermaisWidget>
                               text: 'HOME',
                               options: FFButtonOptions(
                                 height: 40.0,
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     10.0, 0.0, 10.0, 0.0),
-                                iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                iconPadding: const EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 0.0),
                                 color: FlutterFlowTheme.of(context)
                                     .secondaryBackground,
@@ -242,13 +240,13 @@ class _VermaisWidgetState extends State<VermaisWidget>
                                       fontWeight: FontWeight.bold,
                                     ),
                                 elevation: 0.0,
-                                borderSide: BorderSide(
+                                borderSide: const BorderSide(
                                   color: Colors.transparent,
                                   width: 0.0,
                                 ),
                                 borderRadius: BorderRadius.circular(8.0),
-                                hoverColor: Color(0x00F1F4F8),
-                                hoverBorderSide: BorderSide(
+                                hoverColor: const Color(0x00F1F4F8),
+                                hoverBorderSide: const BorderSide(
                                   color: Color(0x00F1F4F8),
                                   width: 0.0,
                                 ),
@@ -261,7 +259,7 @@ class _VermaisWidgetState extends State<VermaisWidget>
                             ),
                           ),
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 5.0, 0.0),
                             child: FFButtonWidget(
                               onPressed: () async {
@@ -272,7 +270,7 @@ class _VermaisWidgetState extends State<VermaisWidget>
                                 context.pushNamed(
                                   'Tutorial',
                                   extra: <String, dynamic>{
-                                    kTransitionInfoKey: TransitionInfo(
+                                    kTransitionInfoKey: const TransitionInfo(
                                       hasTransition: true,
                                       transitionType: PageTransitionType.fade,
                                     ),
@@ -282,9 +280,9 @@ class _VermaisWidgetState extends State<VermaisWidget>
                               text: 'TUTORIAL',
                               options: FFButtonOptions(
                                 height: 40.0,
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     10.0, 0.0, 10.0, 0.0),
-                                iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                iconPadding: const EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 0.0),
                                 color: FlutterFlowTheme.of(context)
                                     .secondaryBackground,
@@ -298,13 +296,13 @@ class _VermaisWidgetState extends State<VermaisWidget>
                                       fontWeight: FontWeight.w500,
                                     ),
                                 elevation: 0.0,
-                                borderSide: BorderSide(
+                                borderSide: const BorderSide(
                                   color: Colors.transparent,
                                   width: 0.0,
                                 ),
                                 borderRadius: BorderRadius.circular(8.0),
-                                hoverColor: Color(0x00F1F4F8),
-                                hoverBorderSide: BorderSide(
+                                hoverColor: const Color(0x00F1F4F8),
+                                hoverBorderSide: const BorderSide(
                                   color: Color(0x00F1F4F8),
                                   width: 0.0,
                                 ),
@@ -317,7 +315,7 @@ class _VermaisWidgetState extends State<VermaisWidget>
                             ),
                           ),
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 5.0, 0.0),
                             child: FFButtonWidget(
                               onPressed: () async {
@@ -328,7 +326,7 @@ class _VermaisWidgetState extends State<VermaisWidget>
                                 context.pushNamed(
                                   'contato',
                                   extra: <String, dynamic>{
-                                    kTransitionInfoKey: TransitionInfo(
+                                    kTransitionInfoKey: const TransitionInfo(
                                       hasTransition: true,
                                       transitionType: PageTransitionType.fade,
                                     ),
@@ -338,9 +336,9 @@ class _VermaisWidgetState extends State<VermaisWidget>
                               text: 'CONTATO',
                               options: FFButtonOptions(
                                 height: 40.0,
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     10.0, 0.0, 10.0, 0.0),
-                                iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                iconPadding: const EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 0.0),
                                 color: FlutterFlowTheme.of(context)
                                     .secondaryBackground,
@@ -354,13 +352,13 @@ class _VermaisWidgetState extends State<VermaisWidget>
                                       fontWeight: FontWeight.w500,
                                     ),
                                 elevation: 0.0,
-                                borderSide: BorderSide(
+                                borderSide: const BorderSide(
                                   color: Colors.transparent,
                                   width: 0.0,
                                 ),
                                 borderRadius: BorderRadius.circular(8.0),
-                                hoverColor: Color(0x00F1F4F8),
-                                hoverBorderSide: BorderSide(
+                                hoverColor: const Color(0x00F1F4F8),
+                                hoverBorderSide: const BorderSide(
                                   color: Color(0x00F1F4F8),
                                   width: 0.0,
                                 ),
@@ -382,7 +380,7 @@ class _VermaisWidgetState extends State<VermaisWidget>
                                 context.pushNamed(
                                   'perfil',
                                   extra: <String, dynamic>{
-                                    kTransitionInfoKey: TransitionInfo(
+                                    kTransitionInfoKey: const TransitionInfo(
                                       hasTransition: true,
                                       transitionType: PageTransitionType.fade,
                                     ),
@@ -392,11 +390,11 @@ class _VermaisWidgetState extends State<VermaisWidget>
                               text: 'PERFIL',
                               options: FFButtonOptions(
                                 height: 40.0,
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     10.0, 0.0, 10.0, 0.0),
-                                iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                iconPadding: const EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 0.0),
-                                color: Color(0x7C5765F2),
+                                color: const Color(0x7C5765F2),
                                 textStyle: FlutterFlowTheme.of(context)
                                     .titleSmall
                                     .override(
@@ -407,13 +405,13 @@ class _VermaisWidgetState extends State<VermaisWidget>
                                       fontWeight: FontWeight.w500,
                                     ),
                                 elevation: 0.0,
-                                borderSide: BorderSide(
+                                borderSide: const BorderSide(
                                   color: Colors.transparent,
                                   width: 0.0,
                                 ),
                                 borderRadius: BorderRadius.circular(8.0),
-                                hoverColor: Color(0x00F1F4F8),
-                                hoverBorderSide: BorderSide(
+                                hoverColor: const Color(0x00F1F4F8),
+                                hoverBorderSide: const BorderSide(
                                   color: Color(0x00F1F4F8),
                                   width: 0.0,
                                 ),
@@ -434,7 +432,7 @@ class _VermaisWidgetState extends State<VermaisWidget>
                                 context.pushNamed(
                                   'login',
                                   extra: <String, dynamic>{
-                                    kTransitionInfoKey: TransitionInfo(
+                                    kTransitionInfoKey: const TransitionInfo(
                                       hasTransition: true,
                                       transitionType: PageTransitionType.fade,
                                     ),
@@ -444,11 +442,11 @@ class _VermaisWidgetState extends State<VermaisWidget>
                               text: 'CRIAR CONTA',
                               options: FFButtonOptions(
                                 height: 40.0,
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     10.0, 0.0, 10.0, 0.0),
-                                iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                iconPadding: const EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 0.0),
-                                color: Color(0x575765F2),
+                                color: const Color(0x575765F2),
                                 textStyle: FlutterFlowTheme.of(context)
                                     .titleSmall
                                     .override(
@@ -459,13 +457,13 @@ class _VermaisWidgetState extends State<VermaisWidget>
                                       fontWeight: FontWeight.w500,
                                     ),
                                 elevation: 0.0,
-                                borderSide: BorderSide(
+                                borderSide: const BorderSide(
                                   color: Colors.transparent,
                                   width: 0.0,
                                 ),
                                 borderRadius: BorderRadius.circular(8.0),
-                                hoverColor: Color(0x00F1F4F8),
-                                hoverBorderSide: BorderSide(
+                                hoverColor: const Color(0x00F1F4F8),
+                                hoverBorderSide: const BorderSide(
                                   color: Color(0x00F1F4F8),
                                   width: 0.0,
                                 ),
@@ -477,7 +475,7 @@ class _VermaisWidgetState extends State<VermaisWidget>
                               animationsMap['buttonOnActionTriggerAnimation5']!,
                             ),
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 20.0, 0.0, 12.0, 0.0),
                             child: InkWell(
                               splashColor: Colors.transparent,
@@ -533,17 +531,17 @@ class _VermaisWidgetState extends State<VermaisWidget>
                                   ),
                                 ),
                                 child: Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       2.0, 2.0, 2.0, 2.0),
                                   child: Stack(
-                                    alignment: AlignmentDirectional(0.0, 0.0),
+                                    alignment: const AlignmentDirectional(0.0, 0.0),
                                     children: [
                                       Align(
                                         alignment:
-                                            AlignmentDirectional(-0.90, 0.00),
+                                            const AlignmentDirectional(-0.90, 0.00),
                                         child: Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   6.0, 0.0, 0.0, 0.0),
                                           child: Icon(
                                             Icons.wb_sunny_rounded,
@@ -553,7 +551,7 @@ class _VermaisWidgetState extends State<VermaisWidget>
                                           ),
                                         ),
                                       ),
-                                      Align(
+                                      const Align(
                                         alignment:
                                             AlignmentDirectional(1.00, 0.00),
                                         child: Padding(
@@ -569,14 +567,14 @@ class _VermaisWidgetState extends State<VermaisWidget>
                                       ),
                                       Align(
                                         alignment:
-                                            AlignmentDirectional(1.00, 0.00),
+                                            const AlignmentDirectional(1.00, 0.00),
                                         child: Container(
                                           width: 36.0,
                                           height: 36.0,
                                           decoration: BoxDecoration(
                                             color: FlutterFlowTheme.of(context)
                                                 .primaryText,
-                                            boxShadow: [
+                                            boxShadow: const [
                                               BoxShadow(
                                                 blurRadius: 4.0,
                                                 color: Color(0x430B0D0F),
@@ -605,7 +603,7 @@ class _VermaisWidgetState extends State<VermaisWidget>
               ],
             ),
           ),
-          actions: [],
+          actions: const [],
           centerTitle: false,
           toolbarHeight: 80.0,
           elevation: 10.0,
@@ -621,13 +619,13 @@ class _VermaisWidgetState extends State<VermaisWidget>
                   mainAxisSize: MainAxisSize.max,
                   children: [
                     Padding(
-                      padding: EdgeInsetsDirectional.fromSTEB(
+                      padding: const EdgeInsetsDirectional.fromSTEB(
                           10.0, 10.0, 10.0, 10.0),
                       child: Column(
                         mainAxisSize: MainAxisSize.max,
                         children: [
                           Align(
-                            alignment: AlignmentDirectional(0.00, 0.00),
+                            alignment: const AlignmentDirectional(0.00, 0.00),
                             child: FutureBuilder<List<TemplatesRow>>(
                               future: TemplatesTable().queryRows(
                                 queryFn: (q) => q.eq(
@@ -662,7 +660,7 @@ class _VermaisWidgetState extends State<VermaisWidget>
                                     final listViewTemplatesRow =
                                         listViewTemplatesRowList[listViewIndex];
                                     return Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           0.0, 0.0, 0.0, 10.0),
                                       child: InkWell(
                                         splashColor: Colors.transparent,
@@ -685,7 +683,7 @@ class _VermaisWidgetState extends State<VermaisWidget>
                                             }.withoutNulls,
                                             extra: <String, dynamic>{
                                               kTransitionInfoKey:
-                                                  TransitionInfo(
+                                                  const TransitionInfo(
                                                 hasTransition: true,
                                                 transitionType:
                                                     PageTransitionType.fade,
@@ -708,7 +706,7 @@ class _VermaisWidgetState extends State<VermaisWidget>
                                                 MainAxisAlignment.center,
                                             children: [
                                               Padding(
-                                                padding: EdgeInsetsDirectional
+                                                padding: const EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         20.0, 20.0, 20.0, 20.0),
                                                 child: Row(
@@ -732,11 +730,11 @@ class _VermaisWidgetState extends State<VermaisWidget>
                                                     Expanded(
                                                       child: Align(
                                                         alignment:
-                                                            AlignmentDirectional(
+                                                            const AlignmentDirectional(
                                                                 0.00, 0.00),
                                                         child: Padding(
                                                           padding:
-                                                              EdgeInsetsDirectional
+                                                              const EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       20.0,
                                                                       0.0,
@@ -780,7 +778,7 @@ class _VermaisWidgetState extends State<VermaisWidget>
                                                               ),
                                                               Padding(
                                                                 padding:
-                                                                    EdgeInsetsDirectional
+                                                                    const EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             0.0,
                                                                             6.0,
@@ -812,7 +810,7 @@ class _VermaisWidgetState extends State<VermaisWidget>
                                                               ),
                                                               Padding(
                                                                 padding:
-                                                                    EdgeInsetsDirectional
+                                                                    const EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             0.0,
                                                                             10.0,
@@ -824,7 +822,7 @@ class _VermaisWidgetState extends State<VermaisWidget>
                                                                           .max,
                                                                   children: [
                                                                     Padding(
-                                                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                                                           0.0,
                                                                           6.0,
                                                                           50.0,
@@ -844,7 +842,7 @@ class _VermaisWidgetState extends State<VermaisWidget>
                                                                                 24.0,
                                                                           ),
                                                                           Padding(
-                                                                            padding: EdgeInsetsDirectional.fromSTEB(
+                                                                            padding: const EdgeInsetsDirectional.fromSTEB(
                                                                                 8.0,
                                                                                 0.0,
                                                                                 0.0,
@@ -868,7 +866,7 @@ class _VermaisWidgetState extends State<VermaisWidget>
                                                               ),
                                                               Padding(
                                                                 padding:
-                                                                    EdgeInsetsDirectional
+                                                                    const EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             0.0,
                                                                             6.0,
@@ -892,7 +890,7 @@ class _VermaisWidgetState extends State<VermaisWidget>
                                                                           24.0,
                                                                     ),
                                                                     Padding(
-                                                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                                                           8.0,
                                                                           0.0,
                                                                           0.0,

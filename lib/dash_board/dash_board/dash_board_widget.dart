@@ -7,17 +7,15 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/scheduler.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_animate/flutter_animate.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'package:webviewx_plus/webviewx_plus.dart';
 import 'dash_board_model.dart';
 export 'dash_board_model.dart';
 
 class DashBoardWidget extends StatefulWidget {
-  const DashBoardWidget({Key? key}) : super(key: key);
+  const DashBoardWidget({super.key});
 
   @override
   _DashBoardWidgetState createState() => _DashBoardWidgetState();
@@ -64,8 +62,8 @@ class _DashBoardWidgetState extends State<DashBoardWidget>
           curve: Curves.easeInOut,
           delay: 0.ms,
           duration: 300.ms,
-          begin: Offset(-40.0, 0.0),
-          end: Offset(0.0, 0.0),
+          begin: const Offset(-40.0, 0.0),
+          end: const Offset(0.0, 0.0),
         ),
       ],
     ),
@@ -120,7 +118,7 @@ class _DashBoardWidgetState extends State<DashBoardWidget>
               IconThemeData(color: FlutterFlowTheme.of(context).primaryText),
           automaticallyImplyLeading: false,
           title: Padding(
-            padding: EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 20.0, 0.0),
+            padding: const EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 20.0, 0.0),
             child: FutureBuilder<List<UsersRow>>(
               future: UsersTable().querySingleRow(
                 queryFn: (q) => q.eq(
@@ -203,7 +201,7 @@ class _DashBoardWidgetState extends State<DashBoardWidget>
                             mainAxisSize: MainAxisSize.max,
                             children: [
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 5.0, 0.0),
                                 child: FFButtonWidget(
                                   onPressed: () {
@@ -212,9 +210,9 @@ class _DashBoardWidgetState extends State<DashBoardWidget>
                                   text: 'DashBoard',
                                   options: FFButtonOptions(
                                     height: 40.0,
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         10.0, 0.0, 10.0, 0.0),
-                                    iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                    iconPadding: const EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 0.0, 0.0),
                                     color: FlutterFlowTheme.of(context)
                                         .secondaryBackground,
@@ -228,13 +226,13 @@ class _DashBoardWidgetState extends State<DashBoardWidget>
                                           fontWeight: FontWeight.bold,
                                         ),
                                     elevation: 0.0,
-                                    borderSide: BorderSide(
+                                    borderSide: const BorderSide(
                                       color: Color(0xFF875FD0),
                                       width: 0.0,
                                     ),
                                     borderRadius: BorderRadius.circular(8.0),
-                                    hoverColor: Color(0x00F1F4F8),
-                                    hoverBorderSide: BorderSide(
+                                    hoverColor: const Color(0x00F1F4F8),
+                                    hoverBorderSide: const BorderSide(
                                       color: Color(0x00F1F4F8),
                                       width: 0.0,
                                     ),
@@ -248,7 +246,7 @@ class _DashBoardWidgetState extends State<DashBoardWidget>
                                 ),
                               ),
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 5.0, 0.0),
                                 child: FFButtonWidget(
                                   onPressed: () async {
@@ -259,7 +257,7 @@ class _DashBoardWidgetState extends State<DashBoardWidget>
                                     context.pushNamed(
                                       'templates',
                                       extra: <String, dynamic>{
-                                        kTransitionInfoKey: TransitionInfo(
+                                        kTransitionInfoKey: const TransitionInfo(
                                           hasTransition: true,
                                           transitionType:
                                               PageTransitionType.fade,
@@ -270,9 +268,9 @@ class _DashBoardWidgetState extends State<DashBoardWidget>
                                   text: 'Templates',
                                   options: FFButtonOptions(
                                     height: 40.0,
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         10.0, 0.0, 10.0, 0.0),
-                                    iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                    iconPadding: const EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 0.0, 0.0),
                                     color: FlutterFlowTheme.of(context)
                                         .secondaryBackground,
@@ -286,13 +284,13 @@ class _DashBoardWidgetState extends State<DashBoardWidget>
                                           fontWeight: FontWeight.w500,
                                         ),
                                     elevation: 0.0,
-                                    borderSide: BorderSide(
+                                    borderSide: const BorderSide(
                                       color: Colors.transparent,
                                       width: 0.0,
                                     ),
                                     borderRadius: BorderRadius.circular(8.0),
-                                    hoverColor: Color(0x00F1F4F8),
-                                    hoverBorderSide: BorderSide(
+                                    hoverColor: const Color(0x00F1F4F8),
+                                    hoverBorderSide: const BorderSide(
                                       color: Color(0x00F1F4F8),
                                       width: 0.0,
                                     ),
@@ -306,7 +304,7 @@ class _DashBoardWidgetState extends State<DashBoardWidget>
                                 ),
                               ),
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     10.0, 0.0, 0.0, 0.0),
                                 child: FlutterFlowIconButton(
                                   borderColor:
@@ -344,7 +342,7 @@ class _DashBoardWidgetState extends State<DashBoardWidget>
                                           child: Padding(
                                             padding: MediaQuery.viewInsetsOf(
                                                 context),
-                                            child: AddWidget(),
+                                            child: const AddWidget(),
                                           ),
                                         ));
                                       },
@@ -353,7 +351,7 @@ class _DashBoardWidgetState extends State<DashBoardWidget>
                                 ),
                               ),
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     20.0, 0.0, 12.0, 0.0),
                                 child: InkWell(
                                   splashColor: Colors.transparent,
@@ -411,17 +409,17 @@ class _DashBoardWidgetState extends State<DashBoardWidget>
                                       ),
                                     ),
                                     child: Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           2.0, 2.0, 2.0, 2.0),
                                       child: Stack(
                                         alignment:
-                                            AlignmentDirectional(0.0, 0.0),
+                                            const AlignmentDirectional(0.0, 0.0),
                                         children: [
                                           Align(
-                                            alignment: AlignmentDirectional(
+                                            alignment: const AlignmentDirectional(
                                                 -0.90, 0.00),
                                             child: Padding(
-                                              padding: EdgeInsetsDirectional
+                                              padding: const EdgeInsetsDirectional
                                                   .fromSTEB(6.0, 0.0, 0.0, 0.0),
                                               child: Icon(
                                                 Icons.wb_sunny_rounded,
@@ -432,7 +430,7 @@ class _DashBoardWidgetState extends State<DashBoardWidget>
                                               ),
                                             ),
                                           ),
-                                          Align(
+                                          const Align(
                                             alignment: AlignmentDirectional(
                                                 1.00, 0.00),
                                             child: Padding(
@@ -446,7 +444,7 @@ class _DashBoardWidgetState extends State<DashBoardWidget>
                                             ),
                                           ),
                                           Align(
-                                            alignment: AlignmentDirectional(
+                                            alignment: const AlignmentDirectional(
                                                 1.00, 0.00),
                                             child: Container(
                                               width: 36.0,
@@ -455,7 +453,7 @@ class _DashBoardWidgetState extends State<DashBoardWidget>
                                                 color:
                                                     FlutterFlowTheme.of(context)
                                                         .primaryText,
-                                                boxShadow: [
+                                                boxShadow: const [
                                                   BoxShadow(
                                                     blurRadius: 4.0,
                                                     color: Color(0x430B0D0F),
@@ -486,7 +484,7 @@ class _DashBoardWidgetState extends State<DashBoardWidget>
               },
             ),
           ),
-          actions: [],
+          actions: const [],
           centerTitle: false,
           toolbarHeight: 80.0,
           elevation: 10.0,
@@ -525,7 +523,7 @@ class _DashBoardWidgetState extends State<DashBoardWidget>
                   children: [
                     if (templatesUsersRow?.adm ?? true)
                       Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(
+                        padding: const EdgeInsetsDirectional.fromSTEB(
                             10.0, 10.0, 10.0, 10.0),
                         child: Container(
                           width: double.infinity,
@@ -536,7 +534,7 @@ class _DashBoardWidgetState extends State<DashBoardWidget>
                             borderRadius: BorderRadius.circular(16.0),
                           ),
                           child: Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 10.0, 10.0, 10.0, 10.0),
                             child: SingleChildScrollView(
                               child: Column(
@@ -576,7 +574,7 @@ class _DashBoardWidgetState extends State<DashBoardWidget>
                                                   listViewIndex];
                                           return Padding(
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 0.0, 0.0, 10.0),
                                             child: Container(
                                               width: 100.0,
@@ -597,7 +595,7 @@ class _DashBoardWidgetState extends State<DashBoardWidget>
                                                 children: [
                                                   Padding(
                                                     padding:
-                                                        EdgeInsetsDirectional
+                                                        const EdgeInsetsDirectional
                                                             .fromSTEB(10.0, 0.0,
                                                                 10.0, 0.0),
                                                     child: Row(
@@ -624,7 +622,7 @@ class _DashBoardWidgetState extends State<DashBoardWidget>
                                                         Expanded(
                                                           child: Padding(
                                                             padding:
-                                                                EdgeInsetsDirectional
+                                                                const EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         10.0,
                                                                         0.0,
@@ -639,7 +637,7 @@ class _DashBoardWidgetState extends State<DashBoardWidget>
                                                                       .start,
                                                               children: [
                                                                 Padding(
-                                                                  padding: EdgeInsetsDirectional
+                                                                  padding: const EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           0.0,
                                                                           0.0,
@@ -674,7 +672,7 @@ class _DashBoardWidgetState extends State<DashBoardWidget>
                                                                     Expanded(
                                                                       child:
                                                                           Padding(
-                                                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                                                             0.0,
                                                                             0.0,
                                                                             0.0,
@@ -691,7 +689,7 @@ class _DashBoardWidgetState extends State<DashBoardWidget>
                                                                     Expanded(
                                                                       child:
                                                                           Padding(
-                                                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                                                             0.0,
                                                                             0.0,
                                                                             0.0,
@@ -784,7 +782,7 @@ class _DashBoardWidgetState extends State<DashBoardWidget>
                                                         ),
                                                         Padding(
                                                           padding:
-                                                              EdgeInsetsDirectional
+                                                              const EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       10.0,
                                                                       0.0,
@@ -799,7 +797,7 @@ class _DashBoardWidgetState extends State<DashBoardWidget>
                                                                     .center,
                                                             children: [
                                                               Padding(
-                                                                padding: EdgeInsetsDirectional
+                                                                padding: const EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         10.0,
                                                                         0.0,
@@ -818,19 +816,19 @@ class _DashBoardWidgetState extends State<DashBoardWidget>
                                                                       FFButtonOptions(
                                                                     height:
                                                                         40.0,
-                                                                    padding: EdgeInsetsDirectional
+                                                                    padding: const EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             24.0,
                                                                             0.0,
                                                                             24.0,
                                                                             0.0),
                                                                     iconPadding:
-                                                                        EdgeInsetsDirectional.fromSTEB(
+                                                                        const EdgeInsetsDirectional.fromSTEB(
                                                                             0.0,
                                                                             0.0,
                                                                             0.0,
                                                                             0.0),
-                                                                    color: Color(
+                                                                    color: const Color(
                                                                         0xFFFF0004),
                                                                     textStyle: FlutterFlowTheme.of(
                                                                             context)
@@ -844,7 +842,7 @@ class _DashBoardWidgetState extends State<DashBoardWidget>
                                                                     elevation:
                                                                         3.0,
                                                                     borderSide:
-                                                                        BorderSide(
+                                                                        const BorderSide(
                                                                       color: Colors
                                                                           .transparent,
                                                                       width:
@@ -881,14 +879,14 @@ class _DashBoardWidgetState extends State<DashBoardWidget>
                         mainAxisSize: MainAxisSize.max,
                         children: [
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 0.0, 100.0, 0.0, 0.0),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
                                 Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 10.0, 0.0),
                                   child: Icon(
                                     Icons.report_problem,
@@ -905,7 +903,7 @@ class _DashBoardWidgetState extends State<DashBoardWidget>
                             ),
                           ),
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 0.0, 10.0, 0.0, 0.0),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
@@ -920,7 +918,7 @@ class _DashBoardWidgetState extends State<DashBoardWidget>
                                     context.goNamed(
                                       'HomePage',
                                       extra: <String, dynamic>{
-                                        kTransitionInfoKey: TransitionInfo(
+                                        kTransitionInfoKey: const TransitionInfo(
                                           hasTransition: true,
                                           transitionType:
                                               PageTransitionType.fade,
@@ -931,9 +929,9 @@ class _DashBoardWidgetState extends State<DashBoardWidget>
                                   text: 'Voltar para HOME',
                                   options: FFButtonOptions(
                                     height: 40.0,
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         24.0, 0.0, 24.0, 0.0),
-                                    iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                    iconPadding: const EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 0.0, 0.0),
                                     color: FlutterFlowTheme.of(context).primary,
                                     textStyle: FlutterFlowTheme.of(context)
@@ -943,7 +941,7 @@ class _DashBoardWidgetState extends State<DashBoardWidget>
                                           color: Colors.white,
                                         ),
                                     elevation: 3.0,
-                                    borderSide: BorderSide(
+                                    borderSide: const BorderSide(
                                       color: Colors.transparent,
                                       width: 1.0,
                                     ),

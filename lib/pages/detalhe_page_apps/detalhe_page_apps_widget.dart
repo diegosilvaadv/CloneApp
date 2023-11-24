@@ -7,12 +7,9 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/scheduler.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:page_transition/page_transition.dart';
 import 'package:provider/provider.dart';
 import 'package:webviewx_plus/webviewx_plus.dart';
 import 'detalhe_page_apps_model.dart';
@@ -20,9 +17,9 @@ export 'detalhe_page_apps_model.dart';
 
 class DetalhePageAppsWidget extends StatefulWidget {
   const DetalhePageAppsWidget({
-    Key? key,
+    super.key,
     required this.paramentros,
-  }) : super(key: key);
+  });
 
   final TemplatesRow? paramentros;
 
@@ -110,8 +107,8 @@ class _DetalhePageAppsWidgetState extends State<DetalhePageAppsWidget>
           curve: Curves.easeInOut,
           delay: 0.ms,
           duration: 300.ms,
-          begin: Offset(-40.0, 0.0),
-          end: Offset(0.0, 0.0),
+          begin: const Offset(-40.0, 0.0),
+          end: const Offset(0.0, 0.0),
         ),
       ],
     ),
@@ -202,7 +199,7 @@ class _DetalhePageAppsWidgetState extends State<DetalhePageAppsWidget>
                   color: FlutterFlowTheme.of(context).primaryText),
               automaticallyImplyLeading: true,
               title: Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 20.0, 0.0),
+                padding: const EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 20.0, 0.0),
                 child: Row(
                   mainAxisSize: MainAxisSize.max,
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -246,7 +243,7 @@ class _DetalhePageAppsWidgetState extends State<DetalhePageAppsWidget>
                             mainAxisSize: MainAxisSize.max,
                             children: [
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 5.0, 0.0),
                                 child: FFButtonWidget(
                                   onPressed: () async {
@@ -257,7 +254,7 @@ class _DetalhePageAppsWidgetState extends State<DetalhePageAppsWidget>
                                     context.pushNamed(
                                       'HomePage',
                                       extra: <String, dynamic>{
-                                        kTransitionInfoKey: TransitionInfo(
+                                        kTransitionInfoKey: const TransitionInfo(
                                           hasTransition: true,
                                           transitionType:
                                               PageTransitionType.fade,
@@ -268,9 +265,9 @@ class _DetalhePageAppsWidgetState extends State<DetalhePageAppsWidget>
                                   text: 'HOME',
                                   options: FFButtonOptions(
                                     height: 40.0,
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         10.0, 0.0, 10.0, 0.0),
-                                    iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                    iconPadding: const EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 0.0, 0.0),
                                     color: FlutterFlowTheme.of(context)
                                         .secondaryBackground,
@@ -284,13 +281,13 @@ class _DetalhePageAppsWidgetState extends State<DetalhePageAppsWidget>
                                           fontWeight: FontWeight.bold,
                                         ),
                                     elevation: 0.0,
-                                    borderSide: BorderSide(
+                                    borderSide: const BorderSide(
                                       color: Colors.transparent,
                                       width: 0.0,
                                     ),
                                     borderRadius: BorderRadius.circular(8.0),
-                                    hoverColor: Color(0x00F1F4F8),
-                                    hoverBorderSide: BorderSide(
+                                    hoverColor: const Color(0x00F1F4F8),
+                                    hoverBorderSide: const BorderSide(
                                       color: Color(0x00F1F4F8),
                                       width: 0.0,
                                     ),
@@ -304,7 +301,7 @@ class _DetalhePageAppsWidgetState extends State<DetalhePageAppsWidget>
                                 ),
                               ),
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 5.0, 0.0),
                                 child: FFButtonWidget(
                                   onPressed: () async {
@@ -315,7 +312,7 @@ class _DetalhePageAppsWidgetState extends State<DetalhePageAppsWidget>
                                     context.pushNamed(
                                       'Tutorial',
                                       extra: <String, dynamic>{
-                                        kTransitionInfoKey: TransitionInfo(
+                                        kTransitionInfoKey: const TransitionInfo(
                                           hasTransition: true,
                                           transitionType:
                                               PageTransitionType.fade,
@@ -326,9 +323,9 @@ class _DetalhePageAppsWidgetState extends State<DetalhePageAppsWidget>
                                   text: 'TUTORIAL',
                                   options: FFButtonOptions(
                                     height: 40.0,
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         10.0, 0.0, 10.0, 0.0),
-                                    iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                    iconPadding: const EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 0.0, 0.0),
                                     color: FlutterFlowTheme.of(context)
                                         .secondaryBackground,
@@ -342,13 +339,13 @@ class _DetalhePageAppsWidgetState extends State<DetalhePageAppsWidget>
                                           fontWeight: FontWeight.w500,
                                         ),
                                     elevation: 0.0,
-                                    borderSide: BorderSide(
+                                    borderSide: const BorderSide(
                                       color: Colors.transparent,
                                       width: 0.0,
                                     ),
                                     borderRadius: BorderRadius.circular(8.0),
-                                    hoverColor: Color(0x00F1F4F8),
-                                    hoverBorderSide: BorderSide(
+                                    hoverColor: const Color(0x00F1F4F8),
+                                    hoverBorderSide: const BorderSide(
                                       color: Color(0x00F1F4F8),
                                       width: 0.0,
                                     ),
@@ -362,7 +359,7 @@ class _DetalhePageAppsWidgetState extends State<DetalhePageAppsWidget>
                                 ),
                               ),
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 5.0, 0.0),
                                 child: FFButtonWidget(
                                   onPressed: () async {
@@ -373,7 +370,7 @@ class _DetalhePageAppsWidgetState extends State<DetalhePageAppsWidget>
                                     context.pushNamed(
                                       'contato',
                                       extra: <String, dynamic>{
-                                        kTransitionInfoKey: TransitionInfo(
+                                        kTransitionInfoKey: const TransitionInfo(
                                           hasTransition: true,
                                           transitionType:
                                               PageTransitionType.fade,
@@ -384,9 +381,9 @@ class _DetalhePageAppsWidgetState extends State<DetalhePageAppsWidget>
                                   text: 'CONTATO',
                                   options: FFButtonOptions(
                                     height: 40.0,
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         10.0, 0.0, 10.0, 0.0),
-                                    iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                    iconPadding: const EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 0.0, 0.0),
                                     color: FlutterFlowTheme.of(context)
                                         .secondaryBackground,
@@ -400,13 +397,13 @@ class _DetalhePageAppsWidgetState extends State<DetalhePageAppsWidget>
                                           fontWeight: FontWeight.w500,
                                         ),
                                     elevation: 0.0,
-                                    borderSide: BorderSide(
+                                    borderSide: const BorderSide(
                                       color: Colors.transparent,
                                       width: 0.0,
                                     ),
                                     borderRadius: BorderRadius.circular(8.0),
-                                    hoverColor: Color(0x00F1F4F8),
-                                    hoverBorderSide: BorderSide(
+                                    hoverColor: const Color(0x00F1F4F8),
+                                    hoverBorderSide: const BorderSide(
                                       color: Color(0x00F1F4F8),
                                       width: 0.0,
                                     ),
@@ -429,7 +426,7 @@ class _DetalhePageAppsWidgetState extends State<DetalhePageAppsWidget>
                                     context.pushNamed(
                                       'perfil',
                                       extra: <String, dynamic>{
-                                        kTransitionInfoKey: TransitionInfo(
+                                        kTransitionInfoKey: const TransitionInfo(
                                           hasTransition: true,
                                           transitionType:
                                               PageTransitionType.fade,
@@ -440,11 +437,11 @@ class _DetalhePageAppsWidgetState extends State<DetalhePageAppsWidget>
                                   text: 'PERFIL',
                                   options: FFButtonOptions(
                                     height: 40.0,
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         10.0, 0.0, 10.0, 0.0),
-                                    iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                    iconPadding: const EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 0.0, 0.0),
-                                    color: Color(0x7C5765F2),
+                                    color: const Color(0x7C5765F2),
                                     textStyle: FlutterFlowTheme.of(context)
                                         .titleSmall
                                         .override(
@@ -455,13 +452,13 @@ class _DetalhePageAppsWidgetState extends State<DetalhePageAppsWidget>
                                           fontWeight: FontWeight.w500,
                                         ),
                                     elevation: 0.0,
-                                    borderSide: BorderSide(
+                                    borderSide: const BorderSide(
                                       color: Colors.transparent,
                                       width: 0.0,
                                     ),
                                     borderRadius: BorderRadius.circular(8.0),
-                                    hoverColor: Color(0x00F1F4F8),
-                                    hoverBorderSide: BorderSide(
+                                    hoverColor: const Color(0x00F1F4F8),
+                                    hoverBorderSide: const BorderSide(
                                       color: Color(0x00F1F4F8),
                                       width: 0.0,
                                     ),
@@ -483,7 +480,7 @@ class _DetalhePageAppsWidgetState extends State<DetalhePageAppsWidget>
                                     context.pushNamed(
                                       'login',
                                       extra: <String, dynamic>{
-                                        kTransitionInfoKey: TransitionInfo(
+                                        kTransitionInfoKey: const TransitionInfo(
                                           hasTransition: true,
                                           transitionType:
                                               PageTransitionType.fade,
@@ -494,11 +491,11 @@ class _DetalhePageAppsWidgetState extends State<DetalhePageAppsWidget>
                                   text: 'CRIAR CONTA',
                                   options: FFButtonOptions(
                                     height: 40.0,
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         10.0, 0.0, 10.0, 0.0),
-                                    iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                    iconPadding: const EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 0.0, 0.0),
-                                    color: Color(0x575765F2),
+                                    color: const Color(0x575765F2),
                                     textStyle: FlutterFlowTheme.of(context)
                                         .titleSmall
                                         .override(
@@ -509,13 +506,13 @@ class _DetalhePageAppsWidgetState extends State<DetalhePageAppsWidget>
                                           fontWeight: FontWeight.w500,
                                         ),
                                     elevation: 0.0,
-                                    borderSide: BorderSide(
+                                    borderSide: const BorderSide(
                                       color: Colors.transparent,
                                       width: 0.0,
                                     ),
                                     borderRadius: BorderRadius.circular(8.0),
-                                    hoverColor: Color(0x00F1F4F8),
-                                    hoverBorderSide: BorderSide(
+                                    hoverColor: const Color(0x00F1F4F8),
+                                    hoverBorderSide: const BorderSide(
                                       color: Color(0x00F1F4F8),
                                       width: 0.0,
                                     ),
@@ -528,7 +525,7 @@ class _DetalhePageAppsWidgetState extends State<DetalhePageAppsWidget>
                                       'buttonOnActionTriggerAnimation5']!,
                                 ),
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     20.0, 0.0, 12.0, 0.0),
                                 child: InkWell(
                                   splashColor: Colors.transparent,
@@ -586,17 +583,17 @@ class _DetalhePageAppsWidgetState extends State<DetalhePageAppsWidget>
                                       ),
                                     ),
                                     child: Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           2.0, 2.0, 2.0, 2.0),
                                       child: Stack(
                                         alignment:
-                                            AlignmentDirectional(0.0, 0.0),
+                                            const AlignmentDirectional(0.0, 0.0),
                                         children: [
                                           Align(
-                                            alignment: AlignmentDirectional(
+                                            alignment: const AlignmentDirectional(
                                                 -0.90, 0.00),
                                             child: Padding(
-                                              padding: EdgeInsetsDirectional
+                                              padding: const EdgeInsetsDirectional
                                                   .fromSTEB(6.0, 0.0, 0.0, 0.0),
                                               child: Icon(
                                                 Icons.wb_sunny_rounded,
@@ -607,7 +604,7 @@ class _DetalhePageAppsWidgetState extends State<DetalhePageAppsWidget>
                                               ),
                                             ),
                                           ),
-                                          Align(
+                                          const Align(
                                             alignment: AlignmentDirectional(
                                                 1.00, 0.00),
                                             child: Padding(
@@ -621,7 +618,7 @@ class _DetalhePageAppsWidgetState extends State<DetalhePageAppsWidget>
                                             ),
                                           ),
                                           Align(
-                                            alignment: AlignmentDirectional(
+                                            alignment: const AlignmentDirectional(
                                                 1.00, 0.00),
                                             child: Container(
                                               width: 36.0,
@@ -630,7 +627,7 @@ class _DetalhePageAppsWidgetState extends State<DetalhePageAppsWidget>
                                                 color:
                                                     FlutterFlowTheme.of(context)
                                                         .primaryText,
-                                                boxShadow: [
+                                                boxShadow: const [
                                                   BoxShadow(
                                                     blurRadius: 4.0,
                                                     color: Color(0x430B0D0F),
@@ -659,7 +656,7 @@ class _DetalhePageAppsWidgetState extends State<DetalhePageAppsWidget>
                   ],
                 ),
               ),
-              actions: [],
+              actions: const [],
               centerTitle: false,
               toolbarHeight: 80.0,
               elevation: 10.0,
@@ -668,14 +665,14 @@ class _DetalhePageAppsWidgetState extends State<DetalhePageAppsWidget>
               top: true,
               child: Padding(
                 padding:
-                    EdgeInsetsDirectional.fromSTEB(100.0, 50.0, 100.0, 50.0),
+                    const EdgeInsetsDirectional.fromSTEB(100.0, 50.0, 100.0, 50.0),
                 child: SingleChildScrollView(
                   child: Column(
                     mainAxisSize: MainAxisSize.max,
                     children: [
                       Padding(
                         padding:
-                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 50.0, 0.0),
+                            const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 50.0, 0.0),
                         child: Row(
                           mainAxisSize: MainAxisSize.max,
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -716,7 +713,7 @@ class _DetalhePageAppsWidgetState extends State<DetalhePageAppsWidget>
                                     logFirebaseEvent('Button_bottom_sheet');
                                     await showModalBottomSheet(
                                       isScrollControlled: true,
-                                      backgroundColor: Color(0xBE14181B),
+                                      backgroundColor: const Color(0xBE14181B),
                                       enableDrag: false,
                                       context: context,
                                       builder: (context) {
@@ -732,7 +729,7 @@ class _DetalhePageAppsWidgetState extends State<DetalhePageAppsWidget>
                                           child: Padding(
                                             padding: MediaQuery.viewInsetsOf(
                                                 context),
-                                            child: CriarcontaWidget(),
+                                            child: const CriarcontaWidget(),
                                           ),
                                         ));
                                       },
@@ -742,11 +739,11 @@ class _DetalhePageAppsWidgetState extends State<DetalhePageAppsWidget>
                                 text: 'Comprar Projeto',
                                 options: FFButtonOptions(
                                   height: 40.0,
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       24.0, 0.0, 24.0, 0.0),
-                                  iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                  iconPadding: const EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 0.0, 0.0),
-                                  color: Color(0xFF09D707),
+                                  color: const Color(0xFF09D707),
                                   textStyle: FlutterFlowTheme.of(context)
                                       .titleSmall
                                       .override(
@@ -755,7 +752,7 @@ class _DetalhePageAppsWidgetState extends State<DetalhePageAppsWidget>
                                         fontWeight: FontWeight.w500,
                                       ),
                                   elevation: 3.0,
-                                  borderSide: BorderSide(
+                                  borderSide: const BorderSide(
                                     color: Colors.transparent,
                                     width: 1.0,
                                   ),
@@ -775,19 +772,19 @@ class _DetalhePageAppsWidgetState extends State<DetalhePageAppsWidget>
                                 text: 'Acessar Projeto',
                                 options: FFButtonOptions(
                                   height: 40.0,
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       24.0, 0.0, 24.0, 0.0),
-                                  iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                  iconPadding: const EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 0.0, 0.0),
-                                  color: Color(0xFF10DAD3),
+                                  color: const Color(0xFF10DAD3),
                                   textStyle: FlutterFlowTheme.of(context)
                                       .titleSmall
                                       .override(
                                         fontFamily: 'Readex Pro',
-                                        color: Color(0xFF131313),
+                                        color: const Color(0xFF131313),
                                       ),
                                   elevation: 3.0,
-                                  borderSide: BorderSide(
+                                  borderSide: const BorderSide(
                                     color: Colors.transparent,
                                     width: 1.0,
                                   ),
@@ -799,7 +796,7 @@ class _DetalhePageAppsWidgetState extends State<DetalhePageAppsWidget>
                       ),
                       Padding(
                         padding:
-                            EdgeInsetsDirectional.fromSTEB(0.0, 6.0, 50.0, 0.0),
+                            const EdgeInsetsDirectional.fromSTEB(0.0, 6.0, 50.0, 0.0),
                         child: Row(
                           mainAxisSize: MainAxisSize.max,
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -829,9 +826,9 @@ class _DetalhePageAppsWidgetState extends State<DetalhePageAppsWidget>
                               text: 'Testar Projeto',
                               options: FFButtonOptions(
                                 height: 40.0,
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     24.0, 0.0, 24.0, 0.0),
-                                iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                iconPadding: const EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 0.0),
                                 color: FlutterFlowTheme.of(context)
                                     .primaryBackground,
@@ -843,7 +840,7 @@ class _DetalhePageAppsWidgetState extends State<DetalhePageAppsWidget>
                                           .primaryText,
                                     ),
                                 elevation: 3.0,
-                                borderSide: BorderSide(
+                                borderSide: const BorderSide(
                                   color: Colors.transparent,
                                   width: 1.0,
                                 ),
@@ -855,7 +852,7 @@ class _DetalhePageAppsWidgetState extends State<DetalhePageAppsWidget>
                       ),
                       Padding(
                         padding:
-                            EdgeInsetsDirectional.fromSTEB(0.0, 6.0, 50.0, 0.0),
+                            const EdgeInsetsDirectional.fromSTEB(0.0, 6.0, 50.0, 0.0),
                         child: Row(
                           mainAxisSize: MainAxisSize.max,
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -870,7 +867,7 @@ class _DetalhePageAppsWidgetState extends State<DetalhePageAppsWidget>
                                   size: 24.0,
                                 ),
                                 Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       8.0, 0.0, 0.0, 0.0),
                                   child: Text(
                                     valueOrDefault<String>(
@@ -909,7 +906,7 @@ class _DetalhePageAppsWidgetState extends State<DetalhePageAppsWidget>
                       ),
                       Padding(
                         padding:
-                            EdgeInsetsDirectional.fromSTEB(0.0, 6.0, 50.0, 0.0),
+                            const EdgeInsetsDirectional.fromSTEB(0.0, 6.0, 50.0, 0.0),
                         child: Row(
                           mainAxisSize: MainAxisSize.max,
                           mainAxisAlignment: MainAxisAlignment.start,
@@ -920,7 +917,7 @@ class _DetalhePageAppsWidgetState extends State<DetalhePageAppsWidget>
                               size: 24.0,
                             ),
                             Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   8.0, 0.0, 0.0, 0.0),
                               child: Text(
                                 valueOrDefault<String>(
@@ -943,7 +940,7 @@ class _DetalhePageAppsWidgetState extends State<DetalhePageAppsWidget>
                         ),
                       ),
                       Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(
+                        padding: const EdgeInsetsDirectional.fromSTEB(
                             0.0, 10.0, 10.0, 10.0),
                         child: FutureBuilder<List<TemplatesRow>>(
                           future: TemplatesTable().querySingleRow(
@@ -981,11 +978,11 @@ class _DetalhePageAppsWidgetState extends State<DetalhePageAppsWidget>
                                   ),
                                   child: Container(
                                     decoration: BoxDecoration(
-                                      color: Color(0xFF2D2F31),
+                                      color: const Color(0xFF2D2F31),
                                       borderRadius: BorderRadius.circular(12.0),
                                     ),
                                     child: Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           10.0, 10.0, 10.0, 10.0),
                                       child: InkWell(
                                         splashColor: Colors.transparent,
@@ -1051,12 +1048,12 @@ class _DetalhePageAppsWidgetState extends State<DetalhePageAppsWidget>
                       ),
                       Padding(
                         padding:
-                            EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 0.0),
+                            const EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 0.0),
                         child: Row(
                           mainAxisSize: MainAxisSize.max,
                           children: [
                             Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   0.0, 0.0, 100.0, 0.0),
                               child: Text(
                                 dateTimeFormat('dd/MM/yyyy | kk:mm',

@@ -13,10 +13,8 @@ import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/upload_data.dart';
 import 'dart:async';
 import 'package:flutter/material.dart';
-import 'package:flutter/scheduler.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_animate/flutter_animate.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'package:simple_gradient_text/simple_gradient_text.dart';
 import 'package:webviewx_plus/webviewx_plus.dart';
@@ -24,7 +22,7 @@ import 'perfil_model.dart';
 export 'perfil_model.dart';
 
 class PerfilWidget extends StatefulWidget {
-  const PerfilWidget({Key? key}) : super(key: key);
+  const PerfilWidget({super.key});
 
   @override
   _PerfilWidgetState createState() => _PerfilWidgetState();
@@ -45,7 +43,7 @@ class _PerfilWidgetState extends State<PerfilWidget>
           delay: 0.ms,
           duration: 1000.ms,
           hz: 1,
-          offset: Offset(1.0, 1.0),
+          offset: const Offset(1.0, 1.0),
           rotation: 0.017,
         ),
       ],
@@ -123,8 +121,8 @@ class _PerfilWidgetState extends State<PerfilWidget>
           curve: Curves.easeInOut,
           delay: 0.ms,
           duration: 300.ms,
-          begin: Offset(-40.0, 0.0),
-          end: Offset(0.0, 0.0),
+          begin: const Offset(-40.0, 0.0),
+          end: const Offset(0.0, 0.0),
         ),
       ],
     ),
@@ -182,7 +180,7 @@ class _PerfilWidgetState extends State<PerfilWidget>
           backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
           automaticallyImplyLeading: false,
           title: Padding(
-            padding: EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 20.0, 0.0),
+            padding: const EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 20.0, 0.0),
             child: Row(
               mainAxisSize: MainAxisSize.max,
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -264,7 +262,7 @@ class _PerfilWidgetState extends State<PerfilWidget>
                         mainAxisSize: MainAxisSize.max,
                         children: [
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 5.0, 0.0),
                             child: FFButtonWidget(
                               onPressed: () async {
@@ -276,9 +274,9 @@ class _PerfilWidgetState extends State<PerfilWidget>
                               text: 'HOME',
                               options: FFButtonOptions(
                                 height: 40.0,
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     10.0, 0.0, 10.0, 0.0),
-                                iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                iconPadding: const EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 0.0),
                                 color: FlutterFlowTheme.of(context)
                                     .secondaryBackground,
@@ -292,13 +290,13 @@ class _PerfilWidgetState extends State<PerfilWidget>
                                       fontWeight: FontWeight.bold,
                                     ),
                                 elevation: 0.0,
-                                borderSide: BorderSide(
+                                borderSide: const BorderSide(
                                   color: Color(0x3439D2C0),
                                   width: 0.0,
                                 ),
                                 borderRadius: BorderRadius.circular(8.0),
                                 hoverColor: Colors.transparent,
-                                hoverBorderSide: BorderSide(
+                                hoverBorderSide: const BorderSide(
                                   color: Color(0x00F1F4F8),
                                   width: 0.0,
                                 ),
@@ -311,7 +309,7 @@ class _PerfilWidgetState extends State<PerfilWidget>
                             ),
                           ),
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 5.0, 0.0),
                             child: FFButtonWidget(
                               onPressed: () async {
@@ -322,7 +320,7 @@ class _PerfilWidgetState extends State<PerfilWidget>
                                 context.pushNamed(
                                   'Tutorial',
                                   extra: <String, dynamic>{
-                                    kTransitionInfoKey: TransitionInfo(
+                                    kTransitionInfoKey: const TransitionInfo(
                                       hasTransition: true,
                                       transitionType: PageTransitionType.fade,
                                     ),
@@ -332,9 +330,9 @@ class _PerfilWidgetState extends State<PerfilWidget>
                               text: 'TUTORIAL',
                               options: FFButtonOptions(
                                 height: 40.0,
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     10.0, 0.0, 10.0, 0.0),
-                                iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                iconPadding: const EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 0.0),
                                 color: FlutterFlowTheme.of(context)
                                     .secondaryBackground,
@@ -348,13 +346,13 @@ class _PerfilWidgetState extends State<PerfilWidget>
                                       fontWeight: FontWeight.w500,
                                     ),
                                 elevation: 0.0,
-                                borderSide: BorderSide(
+                                borderSide: const BorderSide(
                                   color: Colors.transparent,
                                   width: 0.0,
                                 ),
                                 borderRadius: BorderRadius.circular(8.0),
-                                hoverColor: Color(0x00F1F4F8),
-                                hoverBorderSide: BorderSide(
+                                hoverColor: const Color(0x00F1F4F8),
+                                hoverBorderSide: const BorderSide(
                                   color: Color(0x00F1F4F8),
                                   width: 0.0,
                                 ),
@@ -367,7 +365,7 @@ class _PerfilWidgetState extends State<PerfilWidget>
                             ),
                           ),
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 5.0, 0.0),
                             child: FFButtonWidget(
                               onPressed: () async {
@@ -378,7 +376,7 @@ class _PerfilWidgetState extends State<PerfilWidget>
                                 context.pushNamed(
                                   'contato',
                                   extra: <String, dynamic>{
-                                    kTransitionInfoKey: TransitionInfo(
+                                    kTransitionInfoKey: const TransitionInfo(
                                       hasTransition: true,
                                       transitionType: PageTransitionType.fade,
                                     ),
@@ -388,9 +386,9 @@ class _PerfilWidgetState extends State<PerfilWidget>
                               text: 'CONTATO',
                               options: FFButtonOptions(
                                 height: 40.0,
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     10.0, 0.0, 10.0, 0.0),
-                                iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                iconPadding: const EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 0.0),
                                 color: FlutterFlowTheme.of(context)
                                     .secondaryBackground,
@@ -404,13 +402,13 @@ class _PerfilWidgetState extends State<PerfilWidget>
                                       fontWeight: FontWeight.w500,
                                     ),
                                 elevation: 0.0,
-                                borderSide: BorderSide(
+                                borderSide: const BorderSide(
                                   color: Colors.transparent,
                                   width: 0.0,
                                 ),
                                 borderRadius: BorderRadius.circular(8.0),
-                                hoverColor: Color(0x00F1F4F8),
-                                hoverBorderSide: BorderSide(
+                                hoverColor: const Color(0x00F1F4F8),
+                                hoverBorderSide: const BorderSide(
                                   color: Color(0x00F1F4F8),
                                   width: 0.0,
                                 ),
@@ -430,11 +428,11 @@ class _PerfilWidgetState extends State<PerfilWidget>
                               text: 'PERFIL',
                               options: FFButtonOptions(
                                 height: 40.0,
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     10.0, 0.0, 10.0, 0.0),
-                                iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                iconPadding: const EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 0.0),
-                                color: Color(0x7C5765F2),
+                                color: const Color(0x7C5765F2),
                                 textStyle: FlutterFlowTheme.of(context)
                                     .titleSmall
                                     .override(
@@ -445,13 +443,13 @@ class _PerfilWidgetState extends State<PerfilWidget>
                                       fontWeight: FontWeight.w500,
                                     ),
                                 elevation: 0.0,
-                                borderSide: BorderSide(
+                                borderSide: const BorderSide(
                                   color: Colors.transparent,
                                   width: 0.0,
                                 ),
                                 borderRadius: BorderRadius.circular(8.0),
-                                hoverColor: Color(0x00F1F4F8),
-                                hoverBorderSide: BorderSide(
+                                hoverColor: const Color(0x00F1F4F8),
+                                hoverBorderSide: const BorderSide(
                                   color: Color(0x00F1F4F8),
                                   width: 0.0,
                                 ),
@@ -472,7 +470,7 @@ class _PerfilWidgetState extends State<PerfilWidget>
                                 context.pushNamed(
                                   'login',
                                   extra: <String, dynamic>{
-                                    kTransitionInfoKey: TransitionInfo(
+                                    kTransitionInfoKey: const TransitionInfo(
                                       hasTransition: true,
                                       transitionType: PageTransitionType.fade,
                                     ),
@@ -482,11 +480,11 @@ class _PerfilWidgetState extends State<PerfilWidget>
                               text: 'CRIAR CONTA',
                               options: FFButtonOptions(
                                 height: 40.0,
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     10.0, 0.0, 10.0, 0.0),
-                                iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                iconPadding: const EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 0.0),
-                                color: Color(0x575765F2),
+                                color: const Color(0x575765F2),
                                 textStyle: FlutterFlowTheme.of(context)
                                     .titleSmall
                                     .override(
@@ -497,13 +495,13 @@ class _PerfilWidgetState extends State<PerfilWidget>
                                       fontWeight: FontWeight.w500,
                                     ),
                                 elevation: 0.0,
-                                borderSide: BorderSide(
+                                borderSide: const BorderSide(
                                   color: Colors.transparent,
                                   width: 0.0,
                                 ),
                                 borderRadius: BorderRadius.circular(8.0),
-                                hoverColor: Color(0x00F1F4F8),
-                                hoverBorderSide: BorderSide(
+                                hoverColor: const Color(0x00F1F4F8),
+                                hoverBorderSide: const BorderSide(
                                   color: Color(0x00F1F4F8),
                                   width: 0.0,
                                 ),
@@ -515,7 +513,7 @@ class _PerfilWidgetState extends State<PerfilWidget>
                               animationsMap['buttonOnActionTriggerAnimation5']!,
                             ),
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 20.0, 0.0, 12.0, 0.0),
                             child: InkWell(
                               splashColor: Colors.transparent,
@@ -571,17 +569,17 @@ class _PerfilWidgetState extends State<PerfilWidget>
                                   ),
                                 ),
                                 child: Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       2.0, 2.0, 2.0, 2.0),
                                   child: Stack(
-                                    alignment: AlignmentDirectional(0.0, 0.0),
+                                    alignment: const AlignmentDirectional(0.0, 0.0),
                                     children: [
                                       Align(
                                         alignment:
-                                            AlignmentDirectional(-0.90, 0.00),
+                                            const AlignmentDirectional(-0.90, 0.00),
                                         child: Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   6.0, 0.0, 0.0, 0.0),
                                           child: Icon(
                                             Icons.wb_sunny_rounded,
@@ -591,7 +589,7 @@ class _PerfilWidgetState extends State<PerfilWidget>
                                           ),
                                         ),
                                       ),
-                                      Align(
+                                      const Align(
                                         alignment:
                                             AlignmentDirectional(1.00, 0.00),
                                         child: Padding(
@@ -607,14 +605,14 @@ class _PerfilWidgetState extends State<PerfilWidget>
                                       ),
                                       Align(
                                         alignment:
-                                            AlignmentDirectional(1.00, 0.00),
+                                            const AlignmentDirectional(1.00, 0.00),
                                         child: Container(
                                           width: 36.0,
                                           height: 36.0,
                                           decoration: BoxDecoration(
                                             color: FlutterFlowTheme.of(context)
                                                 .primaryText,
-                                            boxShadow: [
+                                            boxShadow: const [
                                               BoxShadow(
                                                 blurRadius: 4.0,
                                                 color: Color(0x430B0D0F),
@@ -643,15 +641,15 @@ class _PerfilWidgetState extends State<PerfilWidget>
               ],
             ).animateOnPageLoad(animationsMap['rowOnPageLoadAnimation']!),
           ),
-          actions: [],
+          actions: const [],
           centerTitle: false,
           toolbarHeight: 80.0,
           elevation: 10.0,
         ),
         body: Align(
-          alignment: AlignmentDirectional(0.00, 0.00),
+          alignment: const AlignmentDirectional(0.00, 0.00),
           child: Padding(
-            padding: EdgeInsetsDirectional.fromSTEB(0.0, 25.0, 0.0, 0.0),
+            padding: const EdgeInsetsDirectional.fromSTEB(0.0, 25.0, 0.0, 0.0),
             child: FutureBuilder<List<UsersRow>>(
               future: (_model.requestCompleter ??= Completer<List<UsersRow>>()
                     ..complete(UsersTable().querySingleRow(
@@ -688,7 +686,7 @@ class _PerfilWidgetState extends State<PerfilWidget>
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               16.0, 0.0, 16.0, 0.0),
                           child: Container(
                             width: 100.0,
@@ -699,16 +697,16 @@ class _PerfilWidgetState extends State<PerfilWidget>
                                   FlutterFlowTheme.of(context).primary,
                                   FlutterFlowTheme.of(context).tertiary
                                 ],
-                                stops: [0.0, 1.0],
-                                begin: AlignmentDirectional(1.0, -1.0),
-                                end: AlignmentDirectional(-1.0, 1.0),
+                                stops: const [0.0, 1.0],
+                                begin: const AlignmentDirectional(1.0, -1.0),
+                                end: const AlignmentDirectional(-1.0, 1.0),
                               ),
                               shape: BoxShape.circle,
                             ),
                             child: Align(
-                              alignment: AlignmentDirectional(0.00, 0.00),
+                              alignment: const AlignmentDirectional(0.00, 0.00),
                               child: Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     4.0, 4.0, 4.0, 4.0),
                                 child: Container(
                                   width: 100.0,
@@ -719,7 +717,7 @@ class _PerfilWidgetState extends State<PerfilWidget>
                                     shape: BoxShape.circle,
                                   ),
                                   child: Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         4.0, 4.0, 4.0, 4.0),
                                     child: InkWell(
                                       splashColor: Colors.transparent,
@@ -801,7 +799,7 @@ class _PerfilWidgetState extends State<PerfilWidget>
                                               ),
                                             ),
                                             duration:
-                                                Duration(milliseconds: 4000),
+                                                const Duration(milliseconds: 4000),
                                             backgroundColor:
                                                 FlutterFlowTheme.of(context)
                                                     .secondary,
@@ -837,7 +835,7 @@ class _PerfilWidgetState extends State<PerfilWidget>
                     ),
                     Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 0.0),
+                          const EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 0.0),
                       child: InkWell(
                         splashColor: Colors.transparent,
                         focusColor: Colors.transparent,
@@ -861,7 +859,7 @@ class _PerfilWidgetState extends State<PerfilWidget>
                                 child: Padding(
                                   padding: MediaQuery.viewInsetsOf(context),
                                   child: EditarnomeWidget(
-                                    nome: columnUsersRow!.nome!,
+                                    nome: columnUsersRow.nome!,
                                   ),
                                 ),
                               ));
@@ -882,9 +880,9 @@ class _PerfilWidgetState extends State<PerfilWidget>
                     ),
                     Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(16.0, 4.0, 16.0, 0.0),
+                          const EdgeInsetsDirectional.fromSTEB(16.0, 4.0, 16.0, 0.0),
                       child: GradientText(
-                        columnUsersRow!.email!,
+                        columnUsersRow.email!,
                         style: FlutterFlowTheme.of(context).labelSmall.override(
                               fontFamily: 'Readex Pro',
                               color: FlutterFlowTheme.of(context).secondary,
@@ -901,12 +899,12 @@ class _PerfilWidgetState extends State<PerfilWidget>
                     ),
                     Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 0.0),
+                          const EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 0.0),
                       child: Row(
                         mainAxisSize: MainAxisSize.max,
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          if (columnUsersRow?.produtores ?? true)
+                          if (columnUsersRow.produtores ?? true)
                             FFButtonWidget(
                               onPressed: () async {
                                 logFirebaseEvent(
@@ -928,7 +926,7 @@ class _PerfilWidgetState extends State<PerfilWidget>
                                       child: Padding(
                                         padding:
                                             MediaQuery.viewInsetsOf(context),
-                                        child: AddWidget(),
+                                        child: const AddWidget(),
                                       ),
                                     ));
                                   },
@@ -937,9 +935,9 @@ class _PerfilWidgetState extends State<PerfilWidget>
                               text: 'Adcionar Páginas',
                               options: FFButtonOptions(
                                 height: 40.0,
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     24.0, 0.0, 24.0, 0.0),
-                                iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                iconPadding: const EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 0.0),
                                 color: FlutterFlowTheme.of(context).primary,
                                 textStyle: FlutterFlowTheme.of(context)
@@ -949,14 +947,14 @@ class _PerfilWidgetState extends State<PerfilWidget>
                                       color: Colors.white,
                                     ),
                                 elevation: 3.0,
-                                borderSide: BorderSide(
+                                borderSide: const BorderSide(
                                   color: Colors.transparent,
                                   width: 1.0,
                                 ),
                                 borderRadius: BorderRadius.circular(8.0),
                               ),
                             ),
-                          if (columnUsersRow?.produtores == false)
+                          if (columnUsersRow.produtores == false)
                             FFButtonWidget(
                               onPressed: () async {
                                 logFirebaseEvent(
@@ -964,7 +962,7 @@ class _PerfilWidgetState extends State<PerfilWidget>
                                 logFirebaseEvent('Button_bottom_sheet');
                                 await showModalBottomSheet(
                                   isScrollControlled: true,
-                                  backgroundColor: Color(0xAB1D2428),
+                                  backgroundColor: const Color(0xAB1D2428),
                                   enableDrag: false,
                                   context: context,
                                   builder: (context) {
@@ -978,7 +976,7 @@ class _PerfilWidgetState extends State<PerfilWidget>
                                       child: Padding(
                                         padding:
                                             MediaQuery.viewInsetsOf(context),
-                                        child: EntraremcontatoWidget(),
+                                        child: const EntraremcontatoWidget(),
                                       ),
                                     ));
                                   },
@@ -987,9 +985,9 @@ class _PerfilWidgetState extends State<PerfilWidget>
                               text: 'Quero Trabalhar como Produtor',
                               options: FFButtonOptions(
                                 height: 40.0,
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     24.0, 0.0, 24.0, 0.0),
-                                iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                iconPadding: const EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 0.0),
                                 color: FlutterFlowTheme.of(context).primary,
                                 textStyle: FlutterFlowTheme.of(context)
@@ -999,7 +997,7 @@ class _PerfilWidgetState extends State<PerfilWidget>
                                       color: Colors.white,
                                     ),
                                 elevation: 3.0,
-                                borderSide: BorderSide(
+                                borderSide: const BorderSide(
                                   color: Colors.transparent,
                                   width: 1.0,
                                 ),
@@ -1011,7 +1009,7 @@ class _PerfilWidgetState extends State<PerfilWidget>
                     ),
                     Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 0.0),
+                          const EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 0.0),
                       child: Row(
                         mainAxisSize: MainAxisSize.max,
                         mainAxisAlignment: MainAxisAlignment.center,
@@ -1031,11 +1029,11 @@ class _PerfilWidgetState extends State<PerfilWidget>
                             text: 'SAIR',
                             options: FFButtonOptions(
                               height: 40.0,
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   24.0, 0.0, 24.0, 0.0),
-                              iconPadding: EdgeInsetsDirectional.fromSTEB(
+                              iconPadding: const EdgeInsetsDirectional.fromSTEB(
                                   0.0, 0.0, 0.0, 0.0),
-                              color: Color(0xFF88180F),
+                              color: const Color(0xFF88180F),
                               textStyle: FlutterFlowTheme.of(context)
                                   .titleSmall
                                   .override(
@@ -1043,7 +1041,7 @@ class _PerfilWidgetState extends State<PerfilWidget>
                                     color: Colors.white,
                                   ),
                               elevation: 3.0,
-                              borderSide: BorderSide(
+                              borderSide: const BorderSide(
                                 color: Colors.transparent,
                                 width: 1.0,
                               ),
@@ -1053,10 +1051,10 @@ class _PerfilWidgetState extends State<PerfilWidget>
                         ],
                       ),
                     ),
-                    if (columnUsersRow?.produtores ?? true)
+                    if (columnUsersRow.produtores ?? true)
                       Expanded(
                         child: Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 44.0, 0.0, 0.0),
                           child: Container(
                             width: double.infinity,
@@ -1064,14 +1062,14 @@ class _PerfilWidgetState extends State<PerfilWidget>
                             decoration: BoxDecoration(
                               color: FlutterFlowTheme.of(context)
                                   .secondaryBackground,
-                              boxShadow: [
+                              boxShadow: const [
                                 BoxShadow(
                                   blurRadius: 3.0,
                                   color: Color(0x33000000),
                                   offset: Offset(0.0, -1.0),
                                 )
                               ],
-                              borderRadius: BorderRadius.only(
+                              borderRadius: const BorderRadius.only(
                                 bottomLeft: Radius.circular(0.0),
                                 bottomRight: Radius.circular(0.0),
                                 topLeft: Radius.circular(16.0),
@@ -1084,18 +1082,18 @@ class _PerfilWidgetState extends State<PerfilWidget>
                               children: [
                                 Expanded(
                                   child: Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         0.0, 20.0, 0.0, 0.0),
                                     child: Column(
                                       children: [
                                         Align(
-                                          alignment: Alignment(0.0, 0),
+                                          alignment: const Alignment(0.0, 0),
                                           child: FlutterFlowButtonTabBar(
                                             useToggleButtonStyle: true,
                                             labelStyle:
                                                 FlutterFlowTheme.of(context)
                                                     .titleMedium,
-                                            unselectedLabelStyle: TextStyle(),
+                                            unselectedLabelStyle: const TextStyle(),
                                             labelColor:
                                                 FlutterFlowTheme.of(context)
                                                     .primaryText,
@@ -1118,12 +1116,12 @@ class _PerfilWidgetState extends State<PerfilWidget>
                                             borderRadius: 8.0,
                                             elevation: 0.0,
                                             buttonMargin:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     8.0, 0.0, 8.0, 0.0),
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     10.0, 10.0, 10.0, 10.0),
-                                            tabs: [
+                                            tabs: const [
                                               Tab(
                                                 text: 'Minhas Páginas',
                                               ),
@@ -1148,7 +1146,7 @@ class _PerfilWidgetState extends State<PerfilWidget>
                                             controller: _model.tabBarController,
                                             children: [
                                               Padding(
-                                                padding: EdgeInsetsDirectional
+                                                padding: const EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         10.0, 10.0, 10.0, 10.0),
                                                 child: SingleChildScrollView(
@@ -1210,7 +1208,7 @@ class _PerfilWidgetState extends State<PerfilWidget>
                                                                       listViewIndex];
                                                               return Padding(
                                                                 padding:
-                                                                    EdgeInsetsDirectional
+                                                                    const EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             0.0,
                                                                             0.0,
@@ -1238,7 +1236,7 @@ class _PerfilWidgetState extends State<PerfilWidget>
                                                                             .center,
                                                                     children: [
                                                                       Padding(
-                                                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                                                             10.0,
                                                                             0.0,
                                                                             10.0,
@@ -1291,13 +1289,13 @@ class _PerfilWidgetState extends State<PerfilWidget>
                                                                             ),
                                                                             Expanded(
                                                                               child: Padding(
-                                                                                padding: EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 0.0, 0.0),
+                                                                                padding: const EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 0.0, 0.0),
                                                                                 child: Column(
                                                                                   mainAxisSize: MainAxisSize.max,
                                                                                   crossAxisAlignment: CrossAxisAlignment.start,
                                                                                   children: [
                                                                                     Padding(
-                                                                                      padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 8.0),
+                                                                                      padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 8.0),
                                                                                       child: Row(
                                                                                         mainAxisSize: MainAxisSize.max,
                                                                                         children: [
@@ -1318,7 +1316,7 @@ class _PerfilWidgetState extends State<PerfilWidget>
                                                                                       children: [
                                                                                         Expanded(
                                                                                           child: Padding(
-                                                                                            padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 8.0),
+                                                                                            padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 8.0),
                                                                                             child: Text(
                                                                                               listViewTemplatesRow.descricao!,
                                                                                               style: FlutterFlowTheme.of(context).bodyMedium,
@@ -1348,13 +1346,13 @@ class _PerfilWidgetState extends State<PerfilWidget>
                                                                               ),
                                                                             ),
                                                                             Padding(
-                                                                              padding: EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 0.0, 0.0),
+                                                                              padding: const EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 0.0, 0.0),
                                                                               child: Column(
                                                                                 mainAxisSize: MainAxisSize.max,
                                                                                 mainAxisAlignment: MainAxisAlignment.center,
                                                                                 children: [
                                                                                   Padding(
-                                                                                    padding: EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 10.0, 10.0),
+                                                                                    padding: const EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 10.0, 10.0),
                                                                                     child: FFButtonWidget(
                                                                                       onPressed: () async {
                                                                                         logFirebaseEvent('PERFIL_PAGE_EDITAR_BTN_ON_TAP');
@@ -1370,7 +1368,7 @@ class _PerfilWidgetState extends State<PerfilWidget>
                                                                                               onTap: () => _model.unfocusNode.canRequestFocus ? FocusScope.of(context).requestFocus(_model.unfocusNode) : FocusScope.of(context).unfocus(),
                                                                                               child: Padding(
                                                                                                 padding: MediaQuery.viewInsetsOf(context),
-                                                                                                child: Container(
+                                                                                                child: SizedBox(
                                                                                                   height: 750.0,
                                                                                                   child: EditarWidget(
                                                                                                     titulo: listViewTemplatesRow.titulo!,
@@ -1388,15 +1386,15 @@ class _PerfilWidgetState extends State<PerfilWidget>
                                                                                       text: 'EDITAR',
                                                                                       options: FFButtonOptions(
                                                                                         height: 40.0,
-                                                                                        padding: EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
-                                                                                        iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                                                                        padding: const EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
+                                                                                        iconPadding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                                                                                         color: FlutterFlowTheme.of(context).secondary,
                                                                                         textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                                                                                               fontFamily: 'Readex Pro',
                                                                                               color: Colors.white,
                                                                                             ),
                                                                                         elevation: 3.0,
-                                                                                        borderSide: BorderSide(
+                                                                                        borderSide: const BorderSide(
                                                                                           color: Colors.transparent,
                                                                                           width: 1.0,
                                                                                         ),
@@ -1405,7 +1403,7 @@ class _PerfilWidgetState extends State<PerfilWidget>
                                                                                     ),
                                                                                   ),
                                                                                   Padding(
-                                                                                    padding: EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 10.0, 0.0),
+                                                                                    padding: const EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 10.0, 0.0),
                                                                                     child: FFButtonWidget(
                                                                                       onPressed: () async {
                                                                                         logFirebaseEvent('PERFIL_PAGE_EXCLUIR_BTN_ON_TAP');
@@ -1415,16 +1413,16 @@ class _PerfilWidgetState extends State<PerfilWidget>
                                                                                               builder: (alertDialogContext) {
                                                                                                 return WebViewAware(
                                                                                                     child: AlertDialog(
-                                                                                                  title: Text('DELETAR ESSA PAG?'),
-                                                                                                  content: Text('tem certeza?'),
+                                                                                                  title: const Text('DELETAR ESSA PAG?'),
+                                                                                                  content: const Text('tem certeza?'),
                                                                                                   actions: [
                                                                                                     TextButton(
                                                                                                       onPressed: () => Navigator.pop(alertDialogContext, false),
-                                                                                                      child: Text('Cancelar'),
+                                                                                                      child: const Text('Cancelar'),
                                                                                                     ),
                                                                                                     TextButton(
                                                                                                       onPressed: () => Navigator.pop(alertDialogContext, true),
-                                                                                                      child: Text('Confirmar'),
+                                                                                                      child: const Text('Confirmar'),
                                                                                                     ),
                                                                                                   ],
                                                                                                 ));
@@ -1449,15 +1447,15 @@ class _PerfilWidgetState extends State<PerfilWidget>
                                                                                       text: 'EXCLUIR',
                                                                                       options: FFButtonOptions(
                                                                                         height: 40.0,
-                                                                                        padding: EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
-                                                                                        iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                                                                        color: Color(0xFFFF0004),
+                                                                                        padding: const EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
+                                                                                        iconPadding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                                                                        color: const Color(0xFFFF0004),
                                                                                         textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                                                                                               fontFamily: 'Readex Pro',
                                                                                               color: Colors.white,
                                                                                             ),
                                                                                         elevation: 3.0,
-                                                                                        borderSide: BorderSide(
+                                                                                        borderSide: const BorderSide(
                                                                                           color: Colors.transparent,
                                                                                           width: 1.0,
                                                                                         ),
@@ -1544,7 +1542,7 @@ class _PerfilWidgetState extends State<PerfilWidget>
                                                                     listViewIndex];
                                                             return Padding(
                                                               padding:
-                                                                  EdgeInsetsDirectional
+                                                                  const EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           0.0,
                                                                           0.0,
@@ -1572,7 +1570,7 @@ class _PerfilWidgetState extends State<PerfilWidget>
                                                                           .center,
                                                                   children: [
                                                                     Padding(
-                                                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                                                           10.0,
                                                                           0.0,
                                                                           10.0,
@@ -1632,13 +1630,13 @@ class _PerfilWidgetState extends State<PerfilWidget>
                                                                           Expanded(
                                                                             child:
                                                                                 Padding(
-                                                                              padding: EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 0.0, 0.0),
+                                                                              padding: const EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 0.0, 0.0),
                                                                               child: Column(
                                                                                 mainAxisSize: MainAxisSize.max,
                                                                                 crossAxisAlignment: CrossAxisAlignment.start,
                                                                                 children: [
                                                                                   Padding(
-                                                                                    padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 8.0),
+                                                                                    padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 8.0),
                                                                                     child: Row(
                                                                                       mainAxisSize: MainAxisSize.max,
                                                                                       children: [
@@ -1659,7 +1657,7 @@ class _PerfilWidgetState extends State<PerfilWidget>
                                                                                     children: [
                                                                                       Expanded(
                                                                                         child: Padding(
-                                                                                          padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 8.0),
+                                                                                          padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 8.0),
                                                                                           child: Text(
                                                                                             listViewTemplatesRow.descricao!,
                                                                                             style: FlutterFlowTheme.of(context).bodyMedium,
@@ -1689,7 +1687,7 @@ class _PerfilWidgetState extends State<PerfilWidget>
                                                                             ),
                                                                           ),
                                                                           Padding(
-                                                                            padding: EdgeInsetsDirectional.fromSTEB(
+                                                                            padding: const EdgeInsetsDirectional.fromSTEB(
                                                                                 10.0,
                                                                                 0.0,
                                                                                 0.0,
@@ -1700,7 +1698,7 @@ class _PerfilWidgetState extends State<PerfilWidget>
                                                                               mainAxisAlignment: MainAxisAlignment.center,
                                                                               children: [
                                                                                 Padding(
-                                                                                  padding: EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 10.0, 10.0),
+                                                                                  padding: const EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 10.0, 10.0),
                                                                                   child: FFButtonWidget(
                                                                                     onPressed: () async {
                                                                                       logFirebaseEvent('PERFIL_PAGE_EDITAR_BTN_ON_TAP');
@@ -1716,7 +1714,7 @@ class _PerfilWidgetState extends State<PerfilWidget>
                                                                                             onTap: () => _model.unfocusNode.canRequestFocus ? FocusScope.of(context).requestFocus(_model.unfocusNode) : FocusScope.of(context).unfocus(),
                                                                                             child: Padding(
                                                                                               padding: MediaQuery.viewInsetsOf(context),
-                                                                                              child: Container(
+                                                                                              child: SizedBox(
                                                                                                 height: 750.0,
                                                                                                 child: EditarWidget(
                                                                                                   titulo: listViewTemplatesRow.titulo!,
@@ -1734,15 +1732,15 @@ class _PerfilWidgetState extends State<PerfilWidget>
                                                                                     text: 'EDITAR',
                                                                                     options: FFButtonOptions(
                                                                                       height: 40.0,
-                                                                                      padding: EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
-                                                                                      iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                                                                      padding: const EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
+                                                                                      iconPadding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                                                                                       color: FlutterFlowTheme.of(context).secondary,
                                                                                       textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                                                                                             fontFamily: 'Readex Pro',
                                                                                             color: Colors.white,
                                                                                           ),
                                                                                       elevation: 3.0,
-                                                                                      borderSide: BorderSide(
+                                                                                      borderSide: const BorderSide(
                                                                                         color: Colors.transparent,
                                                                                         width: 1.0,
                                                                                       ),
@@ -1751,7 +1749,7 @@ class _PerfilWidgetState extends State<PerfilWidget>
                                                                                   ),
                                                                                 ),
                                                                                 Padding(
-                                                                                  padding: EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 10.0, 0.0),
+                                                                                  padding: const EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 10.0, 0.0),
                                                                                   child: FFButtonWidget(
                                                                                     onPressed: () async {
                                                                                       logFirebaseEvent('PERFIL_PAGE_EXCLUIR_BTN_ON_TAP');
@@ -1761,16 +1759,16 @@ class _PerfilWidgetState extends State<PerfilWidget>
                                                                                             builder: (alertDialogContext) {
                                                                                               return WebViewAware(
                                                                                                   child: AlertDialog(
-                                                                                                title: Text('DELETAR ESSA PAG?'),
-                                                                                                content: Text('tem certeza?'),
+                                                                                                title: const Text('DELETAR ESSA PAG?'),
+                                                                                                content: const Text('tem certeza?'),
                                                                                                 actions: [
                                                                                                   TextButton(
                                                                                                     onPressed: () => Navigator.pop(alertDialogContext, false),
-                                                                                                    child: Text('Cancelar'),
+                                                                                                    child: const Text('Cancelar'),
                                                                                                   ),
                                                                                                   TextButton(
                                                                                                     onPressed: () => Navigator.pop(alertDialogContext, true),
-                                                                                                    child: Text('Confirmar'),
+                                                                                                    child: const Text('Confirmar'),
                                                                                                   ),
                                                                                                 ],
                                                                                               ));
@@ -1792,15 +1790,15 @@ class _PerfilWidgetState extends State<PerfilWidget>
                                                                                     text: 'EXCLUIR',
                                                                                     options: FFButtonOptions(
                                                                                       height: 40.0,
-                                                                                      padding: EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
-                                                                                      iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                                                                      color: Color(0xFFFF0004),
+                                                                                      padding: const EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
+                                                                                      iconPadding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                                                                      color: const Color(0xFFFF0004),
                                                                                       textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                                                                                             fontFamily: 'Readex Pro',
                                                                                             color: Colors.white,
                                                                                           ),
                                                                                       elevation: 3.0,
-                                                                                      borderSide: BorderSide(
+                                                                                      borderSide: const BorderSide(
                                                                                         color: Colors.transparent,
                                                                                         width: 1.0,
                                                                                       ),
@@ -1886,7 +1884,7 @@ class _PerfilWidgetState extends State<PerfilWidget>
                                                                     listViewIndex];
                                                             return Padding(
                                                               padding:
-                                                                  EdgeInsetsDirectional
+                                                                  const EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           0.0,
                                                                           0.0,
@@ -1914,7 +1912,7 @@ class _PerfilWidgetState extends State<PerfilWidget>
                                                                           .center,
                                                                   children: [
                                                                     Padding(
-                                                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                                                           10.0,
                                                                           0.0,
                                                                           10.0,
@@ -1974,13 +1972,13 @@ class _PerfilWidgetState extends State<PerfilWidget>
                                                                           Expanded(
                                                                             child:
                                                                                 Padding(
-                                                                              padding: EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 0.0, 0.0),
+                                                                              padding: const EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 0.0, 0.0),
                                                                               child: Column(
                                                                                 mainAxisSize: MainAxisSize.max,
                                                                                 crossAxisAlignment: CrossAxisAlignment.start,
                                                                                 children: [
                                                                                   Padding(
-                                                                                    padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 8.0),
+                                                                                    padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 8.0),
                                                                                     child: Row(
                                                                                       mainAxisSize: MainAxisSize.max,
                                                                                       children: [
@@ -2001,7 +1999,7 @@ class _PerfilWidgetState extends State<PerfilWidget>
                                                                                     children: [
                                                                                       Expanded(
                                                                                         child: Padding(
-                                                                                          padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 8.0),
+                                                                                          padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 8.0),
                                                                                           child: Text(
                                                                                             listViewTemplatesRow.descricao!,
                                                                                             style: FlutterFlowTheme.of(context).bodyMedium,
@@ -2031,7 +2029,7 @@ class _PerfilWidgetState extends State<PerfilWidget>
                                                                             ),
                                                                           ),
                                                                           Padding(
-                                                                            padding: EdgeInsetsDirectional.fromSTEB(
+                                                                            padding: const EdgeInsetsDirectional.fromSTEB(
                                                                                 10.0,
                                                                                 0.0,
                                                                                 0.0,
@@ -2042,7 +2040,7 @@ class _PerfilWidgetState extends State<PerfilWidget>
                                                                               mainAxisAlignment: MainAxisAlignment.center,
                                                                               children: [
                                                                                 Padding(
-                                                                                  padding: EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 10.0, 10.0),
+                                                                                  padding: const EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 10.0, 10.0),
                                                                                   child: FFButtonWidget(
                                                                                     onPressed: () async {
                                                                                       logFirebaseEvent('PERFIL_PAGE_EDITAR_BTN_ON_TAP');
@@ -2058,7 +2056,7 @@ class _PerfilWidgetState extends State<PerfilWidget>
                                                                                             onTap: () => _model.unfocusNode.canRequestFocus ? FocusScope.of(context).requestFocus(_model.unfocusNode) : FocusScope.of(context).unfocus(),
                                                                                             child: Padding(
                                                                                               padding: MediaQuery.viewInsetsOf(context),
-                                                                                              child: Container(
+                                                                                              child: SizedBox(
                                                                                                 height: 750.0,
                                                                                                 child: EditarWidget(
                                                                                                   titulo: listViewTemplatesRow.titulo!,
@@ -2076,15 +2074,15 @@ class _PerfilWidgetState extends State<PerfilWidget>
                                                                                     text: 'EDITAR',
                                                                                     options: FFButtonOptions(
                                                                                       height: 40.0,
-                                                                                      padding: EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
-                                                                                      iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                                                                      padding: const EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
+                                                                                      iconPadding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                                                                                       color: FlutterFlowTheme.of(context).secondary,
                                                                                       textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                                                                                             fontFamily: 'Readex Pro',
                                                                                             color: Colors.white,
                                                                                           ),
                                                                                       elevation: 3.0,
-                                                                                      borderSide: BorderSide(
+                                                                                      borderSide: const BorderSide(
                                                                                         color: Colors.transparent,
                                                                                         width: 1.0,
                                                                                       ),
@@ -2093,7 +2091,7 @@ class _PerfilWidgetState extends State<PerfilWidget>
                                                                                   ),
                                                                                 ),
                                                                                 Padding(
-                                                                                  padding: EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 10.0, 0.0),
+                                                                                  padding: const EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 10.0, 0.0),
                                                                                   child: FFButtonWidget(
                                                                                     onPressed: () async {
                                                                                       logFirebaseEvent('PERFIL_PAGE_EXCLUIR_BTN_ON_TAP');
@@ -2103,16 +2101,16 @@ class _PerfilWidgetState extends State<PerfilWidget>
                                                                                             builder: (alertDialogContext) {
                                                                                               return WebViewAware(
                                                                                                   child: AlertDialog(
-                                                                                                title: Text('DELETAR ESSA PAG?'),
-                                                                                                content: Text('tem certeza?'),
+                                                                                                title: const Text('DELETAR ESSA PAG?'),
+                                                                                                content: const Text('tem certeza?'),
                                                                                                 actions: [
                                                                                                   TextButton(
                                                                                                     onPressed: () => Navigator.pop(alertDialogContext, false),
-                                                                                                    child: Text('Cancelar'),
+                                                                                                    child: const Text('Cancelar'),
                                                                                                   ),
                                                                                                   TextButton(
                                                                                                     onPressed: () => Navigator.pop(alertDialogContext, true),
-                                                                                                    child: Text('Confirmar'),
+                                                                                                    child: const Text('Confirmar'),
                                                                                                   ),
                                                                                                 ],
                                                                                               ));
@@ -2134,15 +2132,15 @@ class _PerfilWidgetState extends State<PerfilWidget>
                                                                                     text: 'EXCLUIR',
                                                                                     options: FFButtonOptions(
                                                                                       height: 40.0,
-                                                                                      padding: EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
-                                                                                      iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                                                                      color: Color(0xFFFF0004),
+                                                                                      padding: const EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
+                                                                                      iconPadding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                                                                      color: const Color(0xFFFF0004),
                                                                                       textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                                                                                             fontFamily: 'Readex Pro',
                                                                                             color: Colors.white,
                                                                                           ),
                                                                                       elevation: 3.0,
-                                                                                      borderSide: BorderSide(
+                                                                                      borderSide: const BorderSide(
                                                                                         color: Colors.transparent,
                                                                                         width: 1.0,
                                                                                       ),
@@ -2228,7 +2226,7 @@ class _PerfilWidgetState extends State<PerfilWidget>
                                                                     listViewIndex];
                                                             return Padding(
                                                               padding:
-                                                                  EdgeInsetsDirectional
+                                                                  const EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           0.0,
                                                                           0.0,
@@ -2256,7 +2254,7 @@ class _PerfilWidgetState extends State<PerfilWidget>
                                                                           .center,
                                                                   children: [
                                                                     Padding(
-                                                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                                                           10.0,
                                                                           0.0,
                                                                           10.0,
@@ -2316,13 +2314,13 @@ class _PerfilWidgetState extends State<PerfilWidget>
                                                                           Expanded(
                                                                             child:
                                                                                 Padding(
-                                                                              padding: EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 0.0, 0.0),
+                                                                              padding: const EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 0.0, 0.0),
                                                                               child: Column(
                                                                                 mainAxisSize: MainAxisSize.max,
                                                                                 crossAxisAlignment: CrossAxisAlignment.start,
                                                                                 children: [
                                                                                   Padding(
-                                                                                    padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 8.0),
+                                                                                    padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 8.0),
                                                                                     child: Row(
                                                                                       mainAxisSize: MainAxisSize.max,
                                                                                       children: [
@@ -2343,7 +2341,7 @@ class _PerfilWidgetState extends State<PerfilWidget>
                                                                                     children: [
                                                                                       Expanded(
                                                                                         child: Padding(
-                                                                                          padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 8.0),
+                                                                                          padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 8.0),
                                                                                           child: Text(
                                                                                             listViewTemplatesRow.descricao!,
                                                                                             style: FlutterFlowTheme.of(context).bodyMedium,
@@ -2373,7 +2371,7 @@ class _PerfilWidgetState extends State<PerfilWidget>
                                                                             ),
                                                                           ),
                                                                           Padding(
-                                                                            padding: EdgeInsetsDirectional.fromSTEB(
+                                                                            padding: const EdgeInsetsDirectional.fromSTEB(
                                                                                 10.0,
                                                                                 0.0,
                                                                                 0.0,
@@ -2384,7 +2382,7 @@ class _PerfilWidgetState extends State<PerfilWidget>
                                                                               mainAxisAlignment: MainAxisAlignment.center,
                                                                               children: [
                                                                                 Padding(
-                                                                                  padding: EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 10.0, 10.0),
+                                                                                  padding: const EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 10.0, 10.0),
                                                                                   child: FFButtonWidget(
                                                                                     onPressed: () async {
                                                                                       logFirebaseEvent('PERFIL_PAGE_EDITAR_BTN_ON_TAP');
@@ -2400,7 +2398,7 @@ class _PerfilWidgetState extends State<PerfilWidget>
                                                                                             onTap: () => _model.unfocusNode.canRequestFocus ? FocusScope.of(context).requestFocus(_model.unfocusNode) : FocusScope.of(context).unfocus(),
                                                                                             child: Padding(
                                                                                               padding: MediaQuery.viewInsetsOf(context),
-                                                                                              child: Container(
+                                                                                              child: SizedBox(
                                                                                                 height: 750.0,
                                                                                                 child: EditarWidget(
                                                                                                   titulo: listViewTemplatesRow.titulo!,
@@ -2418,15 +2416,15 @@ class _PerfilWidgetState extends State<PerfilWidget>
                                                                                     text: 'EDITAR',
                                                                                     options: FFButtonOptions(
                                                                                       height: 40.0,
-                                                                                      padding: EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
-                                                                                      iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                                                                      padding: const EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
+                                                                                      iconPadding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                                                                                       color: FlutterFlowTheme.of(context).secondary,
                                                                                       textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                                                                                             fontFamily: 'Readex Pro',
                                                                                             color: Colors.white,
                                                                                           ),
                                                                                       elevation: 3.0,
-                                                                                      borderSide: BorderSide(
+                                                                                      borderSide: const BorderSide(
                                                                                         color: Colors.transparent,
                                                                                         width: 1.0,
                                                                                       ),
@@ -2435,7 +2433,7 @@ class _PerfilWidgetState extends State<PerfilWidget>
                                                                                   ),
                                                                                 ),
                                                                                 Padding(
-                                                                                  padding: EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 10.0, 0.0),
+                                                                                  padding: const EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 10.0, 0.0),
                                                                                   child: FFButtonWidget(
                                                                                     onPressed: () async {
                                                                                       logFirebaseEvent('PERFIL_PAGE_EXCLUIR_BTN_ON_TAP');
@@ -2445,16 +2443,16 @@ class _PerfilWidgetState extends State<PerfilWidget>
                                                                                             builder: (alertDialogContext) {
                                                                                               return WebViewAware(
                                                                                                   child: AlertDialog(
-                                                                                                title: Text('DELETAR ESSA PAG?'),
-                                                                                                content: Text('tem certeza?'),
+                                                                                                title: const Text('DELETAR ESSA PAG?'),
+                                                                                                content: const Text('tem certeza?'),
                                                                                                 actions: [
                                                                                                   TextButton(
                                                                                                     onPressed: () => Navigator.pop(alertDialogContext, false),
-                                                                                                    child: Text('Cancelar'),
+                                                                                                    child: const Text('Cancelar'),
                                                                                                   ),
                                                                                                   TextButton(
                                                                                                     onPressed: () => Navigator.pop(alertDialogContext, true),
-                                                                                                    child: Text('Confirmar'),
+                                                                                                    child: const Text('Confirmar'),
                                                                                                   ),
                                                                                                 ],
                                                                                               ));
@@ -2476,15 +2474,15 @@ class _PerfilWidgetState extends State<PerfilWidget>
                                                                                     text: 'EXCLUIR',
                                                                                     options: FFButtonOptions(
                                                                                       height: 40.0,
-                                                                                      padding: EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
-                                                                                      iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                                                                      color: Color(0xFFFF0004),
+                                                                                      padding: const EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
+                                                                                      iconPadding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                                                                      color: const Color(0xFFFF0004),
                                                                                       textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                                                                                             fontFamily: 'Readex Pro',
                                                                                             color: Colors.white,
                                                                                           ),
                                                                                       elevation: 3.0,
-                                                                                      borderSide: BorderSide(
+                                                                                      borderSide: const BorderSide(
                                                                                         color: Colors.transparent,
                                                                                         width: 1.0,
                                                                                       ),
@@ -2570,7 +2568,7 @@ class _PerfilWidgetState extends State<PerfilWidget>
                                                                     listViewIndex];
                                                             return Padding(
                                                               padding:
-                                                                  EdgeInsetsDirectional
+                                                                  const EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           0.0,
                                                                           0.0,
@@ -2598,7 +2596,7 @@ class _PerfilWidgetState extends State<PerfilWidget>
                                                                           .center,
                                                                   children: [
                                                                     Padding(
-                                                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                                                           10.0,
                                                                           0.0,
                                                                           10.0,
@@ -2658,13 +2656,13 @@ class _PerfilWidgetState extends State<PerfilWidget>
                                                                           Expanded(
                                                                             child:
                                                                                 Padding(
-                                                                              padding: EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 0.0, 0.0),
+                                                                              padding: const EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 0.0, 0.0),
                                                                               child: Column(
                                                                                 mainAxisSize: MainAxisSize.max,
                                                                                 crossAxisAlignment: CrossAxisAlignment.start,
                                                                                 children: [
                                                                                   Padding(
-                                                                                    padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 8.0),
+                                                                                    padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 8.0),
                                                                                     child: Row(
                                                                                       mainAxisSize: MainAxisSize.max,
                                                                                       children: [
@@ -2685,7 +2683,7 @@ class _PerfilWidgetState extends State<PerfilWidget>
                                                                                     children: [
                                                                                       Expanded(
                                                                                         child: Padding(
-                                                                                          padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 8.0),
+                                                                                          padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 8.0),
                                                                                           child: Text(
                                                                                             listViewTemplatesRow.descricao!,
                                                                                             style: FlutterFlowTheme.of(context).bodyMedium,
@@ -2715,7 +2713,7 @@ class _PerfilWidgetState extends State<PerfilWidget>
                                                                             ),
                                                                           ),
                                                                           Padding(
-                                                                            padding: EdgeInsetsDirectional.fromSTEB(
+                                                                            padding: const EdgeInsetsDirectional.fromSTEB(
                                                                                 10.0,
                                                                                 0.0,
                                                                                 0.0,
@@ -2726,7 +2724,7 @@ class _PerfilWidgetState extends State<PerfilWidget>
                                                                               mainAxisAlignment: MainAxisAlignment.center,
                                                                               children: [
                                                                                 Padding(
-                                                                                  padding: EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 10.0, 10.0),
+                                                                                  padding: const EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 10.0, 10.0),
                                                                                   child: FFButtonWidget(
                                                                                     onPressed: () async {
                                                                                       logFirebaseEvent('PERFIL_PAGE_EDITAR_BTN_ON_TAP');
@@ -2742,7 +2740,7 @@ class _PerfilWidgetState extends State<PerfilWidget>
                                                                                             onTap: () => _model.unfocusNode.canRequestFocus ? FocusScope.of(context).requestFocus(_model.unfocusNode) : FocusScope.of(context).unfocus(),
                                                                                             child: Padding(
                                                                                               padding: MediaQuery.viewInsetsOf(context),
-                                                                                              child: Container(
+                                                                                              child: SizedBox(
                                                                                                 height: 750.0,
                                                                                                 child: EditarWidget(
                                                                                                   titulo: listViewTemplatesRow.titulo!,
@@ -2760,15 +2758,15 @@ class _PerfilWidgetState extends State<PerfilWidget>
                                                                                     text: 'EDITAR',
                                                                                     options: FFButtonOptions(
                                                                                       height: 40.0,
-                                                                                      padding: EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
-                                                                                      iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                                                                      padding: const EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
+                                                                                      iconPadding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                                                                                       color: FlutterFlowTheme.of(context).secondary,
                                                                                       textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                                                                                             fontFamily: 'Readex Pro',
                                                                                             color: Colors.white,
                                                                                           ),
                                                                                       elevation: 3.0,
-                                                                                      borderSide: BorderSide(
+                                                                                      borderSide: const BorderSide(
                                                                                         color: Colors.transparent,
                                                                                         width: 1.0,
                                                                                       ),
@@ -2777,7 +2775,7 @@ class _PerfilWidgetState extends State<PerfilWidget>
                                                                                   ),
                                                                                 ),
                                                                                 Padding(
-                                                                                  padding: EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 10.0, 0.0),
+                                                                                  padding: const EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 10.0, 0.0),
                                                                                   child: FFButtonWidget(
                                                                                     onPressed: () async {
                                                                                       logFirebaseEvent('PERFIL_PAGE_EXCLUIR_BTN_ON_TAP');
@@ -2787,16 +2785,16 @@ class _PerfilWidgetState extends State<PerfilWidget>
                                                                                             builder: (alertDialogContext) {
                                                                                               return WebViewAware(
                                                                                                   child: AlertDialog(
-                                                                                                title: Text('DELETAR ESSA PAG?'),
-                                                                                                content: Text('tem certeza?'),
+                                                                                                title: const Text('DELETAR ESSA PAG?'),
+                                                                                                content: const Text('tem certeza?'),
                                                                                                 actions: [
                                                                                                   TextButton(
                                                                                                     onPressed: () => Navigator.pop(alertDialogContext, false),
-                                                                                                    child: Text('Cancelar'),
+                                                                                                    child: const Text('Cancelar'),
                                                                                                   ),
                                                                                                   TextButton(
                                                                                                     onPressed: () => Navigator.pop(alertDialogContext, true),
-                                                                                                    child: Text('Confirmar'),
+                                                                                                    child: const Text('Confirmar'),
                                                                                                   ),
                                                                                                 ],
                                                                                               ));
@@ -2818,15 +2816,15 @@ class _PerfilWidgetState extends State<PerfilWidget>
                                                                                     text: 'EXCLUIR',
                                                                                     options: FFButtonOptions(
                                                                                       height: 40.0,
-                                                                                      padding: EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
-                                                                                      iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                                                                      color: Color(0xFFFF0004),
+                                                                                      padding: const EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
+                                                                                      iconPadding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                                                                      color: const Color(0xFFFF0004),
                                                                                       textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                                                                                             fontFamily: 'Readex Pro',
                                                                                             color: Colors.white,
                                                                                           ),
                                                                                       elevation: 3.0,
-                                                                                      borderSide: BorderSide(
+                                                                                      borderSide: const BorderSide(
                                                                                         color: Colors.transparent,
                                                                                         width: 1.0,
                                                                                       ),

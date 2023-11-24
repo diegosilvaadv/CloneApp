@@ -1,5 +1,4 @@
 import 'dart:convert';
-import 'dart:typed_data';
 
 import '/flutter_flow/flutter_flow_util.dart';
 import 'api_manager.dart';
@@ -21,15 +20,15 @@ class PixMercadoPagoCall {
   }) async {
     final ffApiRequestBody = '''
 {
-  "transaction_amount": ${amount},
+  "transaction_amount": $amount,
   "payment_method_id": "pix",
   "payer": {
-    "email": "${email}",
-    "first_name": "${firstName}",
-    "last_name": "${lastName}",
+    "email": "$email",
+    "first_name": "$firstName",
+    "last_name": "$lastName",
     "identification": {
-      "type": "${identificationType}",
-      "number": "${numberCpf}"
+      "type": "$identificationType",
+      "number": "$numberCpf"
     }
   }
 }''';
@@ -40,7 +39,7 @@ class PixMercadoPagoCall {
       headers: {
         'Authorization':
             'Bearer APP_USR-2540313967326267-111909-94d7cfcc16413329acb45f48567519c7-433297459',
-        'X-Idempotency-Key': '0d5020ed-1af6-469c-ae06-${chave}',
+        'X-Idempotency-Key': '0d5020ed-1af6-469c-ae06-$chave',
       },
       params: {},
       body: ffApiRequestBody,
@@ -72,7 +71,7 @@ class StatusPixCall {
   }) async {
     return ApiManager.instance.makeApiCall(
       callName: 'Status Pix',
-      apiUrl: 'https://api.mercadopago.com/v1/payments/${idPix}',
+      apiUrl: 'https://api.mercadopago.com/v1/payments/$idPix',
       callType: ApiCallType.GET,
       headers: {
         'Authorization':
@@ -113,14 +112,14 @@ class CriarPagCartaoAPIPagBankCall {
     final ffApiRequestBody = '''
 {
   "customer": {
-    "name": "${nomeCliente}",
-    "email": "${emailCliente}",
-    "tax_id": "${cpf}",
+    "name": "$nomeCliente",
+    "email": "$emailCliente",
+    "tax_id": "$cpf",
     "phones": [
       {
         "country": "55",
-        "area": "${dd}",
-        "number": "${numeroCelular}",
+        "area": "$dd",
+        "number": "$numeroCelular",
         "type": "MOBILE"
       }
     ]
@@ -137,21 +136,21 @@ class CriarPagCartaoAPIPagBankCall {
       "postal_code": "01452002"
     }
   },
-  "reference_id": "${refId}",
+  "reference_id": "$refId",
   "items": [
     {
-      "reference_id": "${refItem}",
-      "name": "${nomeProduto}",
+      "reference_id": "$refItem",
+      "name": "$nomeProduto",
       "quantity": 1,
-      "unit_amount": ${valorProduto}
+      "unit_amount": $valorProduto
     }
   ],
   "charges": [
     {
-      "reference_id": "${nomeProduto}",
+      "reference_id": "$nomeProduto",
       "description": "itens",
       "amount": {
-        "value": ${valorProduto},
+        "value": $valorProduto,
         "currency": "BRL"
       },
       "payment_method": {
@@ -160,14 +159,14 @@ class CriarPagCartaoAPIPagBankCall {
         "capture": true,
         "soft_descriptor": "CopyApp",
         "card": {
-          "security_code": "${securityCode}",
+          "security_code": "$securityCode",
           "holder": {
-            "name": "${nomeImpreCard}"
+            "name": "$nomeImpreCard"
           },
           "store": true,
-          "exp_month": ${expMonth},
-          "exp_year": ${expYear},
-          "number": "${numberCard}"
+          "exp_month": $expMonth,
+          "exp_year": $expYear,
+          "number": "$numberCard"
         }
       }
     }
@@ -181,7 +180,7 @@ class CriarPagCartaoAPIPagBankCall {
         'Authorization': 'Bearer 9610FD2583284F95B9661F0A69CD0389',
         'accept': 'application/json',
         'content-type': 'application/json',
-        'x-idempotency-key': 'f7682128-b120-4498-b60a-${randow}',
+        'x-idempotency-key': 'f7682128-b120-4498-b60a-$randow',
       },
       params: {},
       body: ffApiRequestBody,

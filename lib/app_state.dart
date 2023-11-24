@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
 import '/backend/schema/structs/index.dart';
-import 'backend/api_requests/api_manager.dart';
-import 'backend/supabase/supabase.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 import 'flutter_flow/flutter_flow_util.dart';
 
 class FFAppState extends ChangeNotifier {
@@ -27,8 +24,8 @@ class FFAppState extends ChangeNotifier {
 
   PagamentosStruct _PagRed = PagamentosStruct();
   PagamentosStruct get PagRed => _PagRed;
-  set PagRed(PagamentosStruct _value) {
-    _PagRed = _value;
+  set PagRed(PagamentosStruct value) {
+    _PagRed = value;
   }
 
   void updatePagRedStruct(Function(PagamentosStruct) updateFn) {
@@ -37,15 +34,15 @@ class FFAppState extends ChangeNotifier {
 
   int _cahveAlea = 0;
   int get cahveAlea => _cahveAlea;
-  set cahveAlea(int _value) {
-    _cahveAlea = _value;
+  set cahveAlea(int value) {
+    _cahveAlea = value;
   }
 
   FormasdepagStruct _FormasdePagRef = FormasdepagStruct.fromSerializableMap(
-      jsonDecode('{\"pix\":\"pix\",\"cardaodecredito\":\"cartao\"}'));
+      jsonDecode('{"pix":"pix","cardaodecredito":"cartao"}'));
   FormasdepagStruct get FormasdePagRef => _FormasdePagRef;
-  set FormasdePagRef(FormasdepagStruct _value) {
-    _FormasdePagRef = _value;
+  set FormasdePagRef(FormasdepagStruct value) {
+    _FormasdePagRef = value;
   }
 
   void updateFormasdePagRefStruct(Function(FormasdepagStruct) updateFn) {
@@ -54,8 +51,8 @@ class FFAppState extends ChangeNotifier {
 
   String _FormadePag = 'nada';
   String get FormadePag => _FormadePag;
-  set FormadePag(String _value) {
-    _FormadePag = _value;
+  set FormadePag(String value) {
+    _FormadePag = value;
   }
 }
 
