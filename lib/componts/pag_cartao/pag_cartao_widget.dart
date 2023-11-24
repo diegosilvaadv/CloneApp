@@ -140,8 +140,7 @@ class _PagCartaoWidgetState extends State<PagCartaoWidget> {
                                       .bodyMedium
                                       .override(
                                         fontFamily: 'Readex Pro',
-                                        color: FlutterFlowTheme.of(context)
-                                            .secondary,
+                                        color: const Color(0xFFE13C27),
                                         fontSize: 30.0,
                                         fontWeight: FontWeight.w500,
                                       ),
@@ -1503,16 +1502,16 @@ class _PagCartaoWidgetState extends State<PagCartaoWidget> {
                                       cpf: '12345678909',
                                       dd: '11',
                                       numeroCelular: '999999999',
-                                      refId: '00010',
-                                      refItem: '00010',
-                                      nomeProduto: 'teste teste',
+                                      refId: '00011',
+                                      refItem: '00011',
+                                      nomeProduto: 'teste teste 1',
                                       valorProduto: 7777,
                                       securityCode: '123',
                                       nomeImpreCard: 'Jose da Silva',
                                       expMonth: 12,
                                       expYear: 2028,
                                       numberCard: '4111111111111111',
-                                      randow: '544241354',
+                                      randow: '544241356',
                                     );
                                     if ((_model.validacaoCard?.succeeded ??
                                         true)) {
@@ -1544,7 +1543,12 @@ class _PagCartaoWidgetState extends State<PagCartaoWidget> {
                                         builder: (alertDialogContext) {
                                           return WebViewAware(
                                               child: AlertDialog(
-                                            title: const Text('Erro no Pagamento'),
+                                            title: Text(
+                                                CriarPagCartaoAPIPagBankCall
+                                                    .sucesso(
+                                              (_model.validacaoCard?.jsonBody ??
+                                                  ''),
+                                            ).toString()),
                                             content: Text(
                                                 CriarPagCartaoAPIPagBankCall
                                                     .erroMeng(

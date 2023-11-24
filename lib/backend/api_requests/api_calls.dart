@@ -196,6 +196,10 @@ class CriarPagCartaoAPIPagBankCall {
         response,
         r'''$.error_messages[:].description''',
       );
+  static dynamic sucesso(dynamic response) => getJsonField(
+        response,
+        r'''$.charges[:].payment_response.message''',
+      );
 }
 
 class ApiPagingParams {
