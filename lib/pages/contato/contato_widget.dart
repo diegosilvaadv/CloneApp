@@ -5,15 +5,18 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:page_transition/page_transition.dart';
 import 'package:provider/provider.dart';
 import 'contato_model.dart';
 export 'contato_model.dart';
 
 class ContatoWidget extends StatefulWidget {
-  const ContatoWidget({super.key});
+  const ContatoWidget({Key? key}) : super(key: key);
 
   @override
   _ContatoWidgetState createState() => _ContatoWidgetState();
@@ -34,7 +37,7 @@ class _ContatoWidgetState extends State<ContatoWidget>
           delay: 0.ms,
           duration: 1000.ms,
           hz: 1,
-          offset: const Offset(1.0, 1.0),
+          offset: Offset(1.0, 1.0),
           rotation: 0.017,
         ),
       ],
@@ -112,8 +115,8 @@ class _ContatoWidgetState extends State<ContatoWidget>
           curve: Curves.easeInOut,
           delay: 0.ms,
           duration: 300.ms,
-          begin: const Offset(-40.0, 0.0),
-          end: const Offset(0.0, 0.0),
+          begin: Offset(-40.0, 0.0),
+          end: Offset(0.0, 0.0),
         ),
       ],
     ),
@@ -166,7 +169,7 @@ class _ContatoWidgetState extends State<ContatoWidget>
           backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
           automaticallyImplyLeading: false,
           title: Padding(
-            padding: const EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 20.0, 0.0),
+            padding: EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 20.0, 0.0),
             child: Row(
               mainAxisSize: MainAxisSize.max,
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -209,7 +212,7 @@ class _ContatoWidgetState extends State<ContatoWidget>
                         mainAxisSize: MainAxisSize.max,
                         children: [
                           Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 5.0, 0.0),
                             child: FFButtonWidget(
                               onPressed: () async {
@@ -220,7 +223,7 @@ class _ContatoWidgetState extends State<ContatoWidget>
                                 context.pushNamed(
                                   'HomePage',
                                   extra: <String, dynamic>{
-                                    kTransitionInfoKey: const TransitionInfo(
+                                    kTransitionInfoKey: TransitionInfo(
                                       hasTransition: true,
                                       transitionType: PageTransitionType.fade,
                                     ),
@@ -230,9 +233,9 @@ class _ContatoWidgetState extends State<ContatoWidget>
                               text: 'HOME',
                               options: FFButtonOptions(
                                 height: 40.0,
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     10.0, 0.0, 10.0, 0.0),
-                                iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                iconPadding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 0.0),
                                 color: FlutterFlowTheme.of(context)
                                     .secondaryBackground,
@@ -246,13 +249,13 @@ class _ContatoWidgetState extends State<ContatoWidget>
                                       fontWeight: FontWeight.bold,
                                     ),
                                 elevation: 0.0,
-                                borderSide: const BorderSide(
+                                borderSide: BorderSide(
                                   color: Colors.transparent,
                                   width: 0.0,
                                 ),
                                 borderRadius: BorderRadius.circular(8.0),
-                                hoverColor: const Color(0x00F1F4F8),
-                                hoverBorderSide: const BorderSide(
+                                hoverColor: Color(0x00F1F4F8),
+                                hoverBorderSide: BorderSide(
                                   color: Color(0x00F1F4F8),
                                   width: 0.0,
                                 ),
@@ -265,7 +268,7 @@ class _ContatoWidgetState extends State<ContatoWidget>
                             ),
                           ),
                           Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 5.0, 0.0),
                             child: FFButtonWidget(
                               onPressed: () async {
@@ -276,7 +279,7 @@ class _ContatoWidgetState extends State<ContatoWidget>
                                 context.pushNamed(
                                   'Tutorial',
                                   extra: <String, dynamic>{
-                                    kTransitionInfoKey: const TransitionInfo(
+                                    kTransitionInfoKey: TransitionInfo(
                                       hasTransition: true,
                                       transitionType: PageTransitionType.fade,
                                     ),
@@ -286,9 +289,9 @@ class _ContatoWidgetState extends State<ContatoWidget>
                               text: 'TUTORIAL',
                               options: FFButtonOptions(
                                 height: 40.0,
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     10.0, 0.0, 10.0, 0.0),
-                                iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                iconPadding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 0.0),
                                 color: FlutterFlowTheme.of(context)
                                     .secondaryBackground,
@@ -302,13 +305,13 @@ class _ContatoWidgetState extends State<ContatoWidget>
                                       fontWeight: FontWeight.w500,
                                     ),
                                 elevation: 0.0,
-                                borderSide: const BorderSide(
+                                borderSide: BorderSide(
                                   color: Colors.transparent,
                                   width: 0.0,
                                 ),
                                 borderRadius: BorderRadius.circular(8.0),
-                                hoverColor: const Color(0x00F1F4F8),
-                                hoverBorderSide: const BorderSide(
+                                hoverColor: Color(0x00F1F4F8),
+                                hoverBorderSide: BorderSide(
                                   color: Color(0x00F1F4F8),
                                   width: 0.0,
                                 ),
@@ -321,7 +324,7 @@ class _ContatoWidgetState extends State<ContatoWidget>
                             ),
                           ),
                           Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 5.0, 0.0),
                             child: FFButtonWidget(
                               onPressed: () {
@@ -330,9 +333,9 @@ class _ContatoWidgetState extends State<ContatoWidget>
                               text: 'CONTATO',
                               options: FFButtonOptions(
                                 height: 40.0,
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     10.0, 0.0, 10.0, 0.0),
-                                iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                iconPadding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 0.0),
                                 color: FlutterFlowTheme.of(context)
                                     .secondaryBackground,
@@ -346,13 +349,13 @@ class _ContatoWidgetState extends State<ContatoWidget>
                                       fontWeight: FontWeight.w500,
                                     ),
                                 elevation: 0.0,
-                                borderSide: const BorderSide(
+                                borderSide: BorderSide(
                                   color: Color(0x3F39D2C0),
                                   width: 0.0,
                                 ),
                                 borderRadius: BorderRadius.circular(8.0),
-                                hoverColor: const Color(0x00F1F4F8),
-                                hoverBorderSide: const BorderSide(
+                                hoverColor: Color(0x00F1F4F8),
+                                hoverBorderSide: BorderSide(
                                   color: Color(0x00F1F4F8),
                                   width: 0.0,
                                 ),
@@ -374,7 +377,7 @@ class _ContatoWidgetState extends State<ContatoWidget>
                                 context.pushNamed(
                                   'perfil',
                                   extra: <String, dynamic>{
-                                    kTransitionInfoKey: const TransitionInfo(
+                                    kTransitionInfoKey: TransitionInfo(
                                       hasTransition: true,
                                       transitionType: PageTransitionType.fade,
                                     ),
@@ -384,11 +387,11 @@ class _ContatoWidgetState extends State<ContatoWidget>
                               text: 'PERFIL',
                               options: FFButtonOptions(
                                 height: 40.0,
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     10.0, 0.0, 10.0, 0.0),
-                                iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                iconPadding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 0.0),
-                                color: const Color(0x7C5765F2),
+                                color: Color(0x7C5765F2),
                                 textStyle: FlutterFlowTheme.of(context)
                                     .titleSmall
                                     .override(
@@ -399,13 +402,13 @@ class _ContatoWidgetState extends State<ContatoWidget>
                                       fontWeight: FontWeight.w500,
                                     ),
                                 elevation: 0.0,
-                                borderSide: const BorderSide(
+                                borderSide: BorderSide(
                                   color: Colors.transparent,
                                   width: 0.0,
                                 ),
                                 borderRadius: BorderRadius.circular(8.0),
-                                hoverColor: const Color(0x00F1F4F8),
-                                hoverBorderSide: const BorderSide(
+                                hoverColor: Color(0x00F1F4F8),
+                                hoverBorderSide: BorderSide(
                                   color: Color(0x00F1F4F8),
                                   width: 0.0,
                                 ),
@@ -426,7 +429,7 @@ class _ContatoWidgetState extends State<ContatoWidget>
                                 context.pushNamed(
                                   'login',
                                   extra: <String, dynamic>{
-                                    kTransitionInfoKey: const TransitionInfo(
+                                    kTransitionInfoKey: TransitionInfo(
                                       hasTransition: true,
                                       transitionType: PageTransitionType.fade,
                                     ),
@@ -436,11 +439,11 @@ class _ContatoWidgetState extends State<ContatoWidget>
                               text: 'CRIAR CONTA',
                               options: FFButtonOptions(
                                 height: 40.0,
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     10.0, 0.0, 10.0, 0.0),
-                                iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                iconPadding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 0.0),
-                                color: const Color(0x575765F2),
+                                color: Color(0x575765F2),
                                 textStyle: FlutterFlowTheme.of(context)
                                     .titleSmall
                                     .override(
@@ -451,13 +454,13 @@ class _ContatoWidgetState extends State<ContatoWidget>
                                       fontWeight: FontWeight.w500,
                                     ),
                                 elevation: 0.0,
-                                borderSide: const BorderSide(
+                                borderSide: BorderSide(
                                   color: Colors.transparent,
                                   width: 0.0,
                                 ),
                                 borderRadius: BorderRadius.circular(8.0),
-                                hoverColor: const Color(0x00F1F4F8),
-                                hoverBorderSide: const BorderSide(
+                                hoverColor: Color(0x00F1F4F8),
+                                hoverBorderSide: BorderSide(
                                   color: Color(0x00F1F4F8),
                                   width: 0.0,
                                 ),
@@ -469,7 +472,7 @@ class _ContatoWidgetState extends State<ContatoWidget>
                               animationsMap['buttonOnActionTriggerAnimation5']!,
                             ),
                           Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 20.0, 0.0, 12.0, 0.0),
                             child: InkWell(
                               splashColor: Colors.transparent,
@@ -525,17 +528,17 @@ class _ContatoWidgetState extends State<ContatoWidget>
                                   ),
                                 ),
                                 child: Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       2.0, 2.0, 2.0, 2.0),
                                   child: Stack(
-                                    alignment: const AlignmentDirectional(0.0, 0.0),
+                                    alignment: AlignmentDirectional(0.0, 0.0),
                                     children: [
                                       Align(
                                         alignment:
-                                            const AlignmentDirectional(-0.90, 0.00),
+                                            AlignmentDirectional(-0.90, 0.00),
                                         child: Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   6.0, 0.0, 0.0, 0.0),
                                           child: Icon(
                                             Icons.wb_sunny_rounded,
@@ -545,7 +548,7 @@ class _ContatoWidgetState extends State<ContatoWidget>
                                           ),
                                         ),
                                       ),
-                                      const Align(
+                                      Align(
                                         alignment:
                                             AlignmentDirectional(1.00, 0.00),
                                         child: Padding(
@@ -561,14 +564,14 @@ class _ContatoWidgetState extends State<ContatoWidget>
                                       ),
                                       Align(
                                         alignment:
-                                            const AlignmentDirectional(1.00, 0.00),
+                                            AlignmentDirectional(1.00, 0.00),
                                         child: Container(
                                           width: 36.0,
                                           height: 36.0,
                                           decoration: BoxDecoration(
                                             color: FlutterFlowTheme.of(context)
                                                 .primaryText,
-                                            boxShadow: const [
+                                            boxShadow: [
                                               BoxShadow(
                                                 blurRadius: 4.0,
                                                 color: Color(0x430B0D0F),
@@ -597,7 +600,7 @@ class _ContatoWidgetState extends State<ContatoWidget>
               ],
             ).animateOnPageLoad(animationsMap['rowOnPageLoadAnimation']!),
           ),
-          actions: const [],
+          actions: [],
           centerTitle: false,
           toolbarHeight: 80.0,
           elevation: 10.0,
@@ -605,14 +608,14 @@ class _ContatoWidgetState extends State<ContatoWidget>
         body: SafeArea(
           top: true,
           child: Padding(
-            padding: const EdgeInsetsDirectional.fromSTEB(20.0, 20.0, 20.0, 20.0),
+            padding: EdgeInsetsDirectional.fromSTEB(20.0, 20.0, 20.0, 20.0),
             child: Column(
               mainAxisSize: MainAxisSize.max,
               children: [
                 Row(
                   mainAxisSize: MainAxisSize.max,
                   children: [
-                    const Icon(
+                    Icon(
                       Icons.discord_sharp,
                       color: Color(0xFF5765F2),
                       size: 100.0,
@@ -621,7 +624,7 @@ class _ContatoWidgetState extends State<ContatoWidget>
                       mainAxisSize: MainAxisSize.max,
                       children: [
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               6.0, 0.0, 0.0, 0.0),
                           child: Text(
                             'DISCORD',
@@ -636,7 +639,7 @@ class _ContatoWidgetState extends State<ContatoWidget>
                     ),
                     Padding(
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 0.0, 0.0),
+                          EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 0.0, 0.0),
                       child: FFButtonWidget(
                         onPressed: () async {
                           logFirebaseEvent('CONTATO_PAGE_ENTRAR_BTN_ON_TAP');
@@ -646,18 +649,18 @@ class _ContatoWidgetState extends State<ContatoWidget>
                         text: 'ENTRAR',
                         options: FFButtonOptions(
                           height: 40.0,
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               24.0, 0.0, 24.0, 0.0),
-                          iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                          iconPadding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 0.0, 0.0, 0.0),
-                          color: const Color(0xFF5765F2),
+                          color: Color(0xFF5765F2),
                           textStyle:
                               FlutterFlowTheme.of(context).titleSmall.override(
                                     fontFamily: 'Readex Pro',
                                     color: Colors.white,
                                   ),
                           elevation: 3.0,
-                          borderSide: const BorderSide(
+                          borderSide: BorderSide(
                             color: Colors.transparent,
                             width: 1.0,
                           ),
@@ -678,7 +681,7 @@ class _ContatoWidgetState extends State<ContatoWidget>
                 Row(
                   mainAxisSize: MainAxisSize.max,
                   children: [
-                    const FaIcon(
+                    FaIcon(
                       FontAwesomeIcons.youtube,
                       color: Color(0xFFFD1300),
                       size: 100.0,
@@ -687,7 +690,7 @@ class _ContatoWidgetState extends State<ContatoWidget>
                       mainAxisSize: MainAxisSize.max,
                       children: [
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               6.0, 0.0, 0.0, 0.0),
                           child: Text(
                             'YOUTUBE',
@@ -702,7 +705,7 @@ class _ContatoWidgetState extends State<ContatoWidget>
                     ),
                     Padding(
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 0.0, 0.0),
+                          EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 0.0, 0.0),
                       child: FFButtonWidget(
                         onPressed: () async {
                           logFirebaseEvent('CONTATO_PAGE_ENTRAR_BTN_ON_TAP');
@@ -713,18 +716,18 @@ class _ContatoWidgetState extends State<ContatoWidget>
                         text: 'ENTRAR',
                         options: FFButtonOptions(
                           height: 40.0,
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               24.0, 0.0, 24.0, 0.0),
-                          iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                          iconPadding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 0.0, 0.0, 0.0),
-                          color: const Color(0xFFFD1300),
+                          color: Color(0xFFFD1300),
                           textStyle:
                               FlutterFlowTheme.of(context).titleSmall.override(
                                     fontFamily: 'Readex Pro',
                                     color: Colors.white,
                                   ),
                           elevation: 3.0,
-                          borderSide: const BorderSide(
+                          borderSide: BorderSide(
                             color: Colors.transparent,
                             width: 1.0,
                           ),
@@ -743,7 +746,7 @@ class _ContatoWidgetState extends State<ContatoWidget>
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 50.0, 0.0, 0.0),
+                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 50.0, 0.0, 0.0),
                   child: Row(
                     mainAxisSize: MainAxisSize.max,
                     children: [
@@ -756,7 +759,7 @@ class _ContatoWidgetState extends State<ContatoWidget>
                           borderRadius: BorderRadius.circular(16.0),
                         ),
                         child: Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               8.0, 8.0, 8.0, 8.0),
                           child: SingleChildScrollView(
                             child: Column(
@@ -774,7 +777,7 @@ class _ContatoWidgetState extends State<ContatoWidget>
                                   ],
                                 ),
                                 Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       10.0, 10.0, 10.0, 10.0),
                                   child: Row(
                                     mainAxisSize: MainAxisSize.max,
@@ -832,7 +835,7 @@ class _ContatoWidgetState extends State<ContatoWidget>
                                               CrossAxisAlignment.start,
                                           children: [
                                             Padding(
-                                              padding: const EdgeInsetsDirectional
+                                              padding: EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       10.0, 0.0, 0.0, 0.0),
                                               child: Text(
@@ -846,7 +849,7 @@ class _ContatoWidgetState extends State<ContatoWidget>
                                               mainAxisSize: MainAxisSize.max,
                                               children: [
                                                 Padding(
-                                                  padding: const EdgeInsetsDirectional
+                                                  padding: EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           10.0, 10.0, 0.0, 0.0),
                                                   child: SelectionArea(
@@ -865,7 +868,7 @@ class _ContatoWidgetState extends State<ContatoWidget>
                                                   )),
                                                 ),
                                                 Padding(
-                                                  padding: const EdgeInsetsDirectional
+                                                  padding: EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           6.0, 0.0, 0.0, 0.0),
                                                   child: InkWell(
@@ -883,7 +886,7 @@ class _ContatoWidgetState extends State<ContatoWidget>
                                                       logFirebaseEvent(
                                                           'Icon_copy_to_clipboard');
                                                       await Clipboard.setData(
-                                                          const ClipboardData(
+                                                          ClipboardData(
                                                               text:
                                                                   'DESCONTO50OFF'));
                                                     },
@@ -900,7 +903,7 @@ class _ContatoWidgetState extends State<ContatoWidget>
                                               ],
                                             ),
                                             Padding(
-                                              padding: const EdgeInsetsDirectional
+                                              padding: EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       10.0, 10.0, 0.0, 0.0),
                                               child: FFButtonWidget(
@@ -915,11 +918,11 @@ class _ContatoWidgetState extends State<ContatoWidget>
                                                 text: 'Acessar',
                                                 options: FFButtonOptions(
                                                   height: 40.0,
-                                                  padding: const EdgeInsetsDirectional
+                                                  padding: EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           24.0, 0.0, 24.0, 0.0),
                                                   iconPadding:
-                                                      const EdgeInsetsDirectional
+                                                      EdgeInsetsDirectional
                                                           .fromSTEB(0.0, 0.0,
                                                               0.0, 0.0),
                                                   color: FlutterFlowTheme.of(
@@ -935,7 +938,7 @@ class _ContatoWidgetState extends State<ContatoWidget>
                                                             color: Colors.white,
                                                           ),
                                                   elevation: 3.0,
-                                                  borderSide: const BorderSide(
+                                                  borderSide: BorderSide(
                                                     color: Colors.transparent,
                                                     width: 1.0,
                                                   ),

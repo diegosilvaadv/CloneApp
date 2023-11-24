@@ -4,7 +4,7 @@ import 'package:flutter/foundation.dart';
 Future initFirebase() async {
   if (kIsWeb) {
     await Firebase.initializeApp(
-        options: const FirebaseOptions(
+        options: FirebaseOptions(
             apiKey: "AIzaSyB9aBHaEazC96PHfAKkEVBTqTNhillQ3kM",
             authDomain: "apppizzaria-4afc0.firebaseapp.com",
             projectId: "apppizzaria-4afc0",

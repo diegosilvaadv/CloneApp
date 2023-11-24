@@ -8,9 +8,12 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:page_transition/page_transition.dart';
 import 'package:provider/provider.dart';
 import 'package:webviewx_plus/webviewx_plus.dart';
 import 'detalhe_page_model.dart';
@@ -18,9 +21,9 @@ export 'detalhe_page_model.dart';
 
 class DetalhePageWidget extends StatefulWidget {
   const DetalhePageWidget({
-    super.key,
+    Key? key,
     required this.detlahes,
-  });
+  }) : super(key: key);
 
   final TemplatesRow? detlahes;
 
@@ -108,8 +111,8 @@ class _DetalhePageWidgetState extends State<DetalhePageWidget>
           curve: Curves.easeInOut,
           delay: 0.ms,
           duration: 300.ms,
-          begin: const Offset(-40.0, 0.0),
-          end: const Offset(0.0, 0.0),
+          begin: Offset(-40.0, 0.0),
+          end: Offset(0.0, 0.0),
         ),
       ],
     ),
@@ -171,7 +174,7 @@ class _DetalhePageWidgetState extends State<DetalhePageWidget>
               IconThemeData(color: FlutterFlowTheme.of(context).primaryText),
           automaticallyImplyLeading: true,
           title: Padding(
-            padding: const EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 20.0, 0.0),
+            padding: EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 20.0, 0.0),
             child: Row(
               mainAxisSize: MainAxisSize.max,
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -214,7 +217,7 @@ class _DetalhePageWidgetState extends State<DetalhePageWidget>
                         mainAxisSize: MainAxisSize.max,
                         children: [
                           Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 5.0, 0.0),
                             child: FFButtonWidget(
                               onPressed: () async {
@@ -225,7 +228,7 @@ class _DetalhePageWidgetState extends State<DetalhePageWidget>
                                 context.pushNamed(
                                   'HomePage',
                                   extra: <String, dynamic>{
-                                    kTransitionInfoKey: const TransitionInfo(
+                                    kTransitionInfoKey: TransitionInfo(
                                       hasTransition: true,
                                       transitionType: PageTransitionType.fade,
                                     ),
@@ -235,9 +238,9 @@ class _DetalhePageWidgetState extends State<DetalhePageWidget>
                               text: 'HOME',
                               options: FFButtonOptions(
                                 height: 40.0,
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     10.0, 0.0, 10.0, 0.0),
-                                iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                iconPadding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 0.0),
                                 color: FlutterFlowTheme.of(context)
                                     .secondaryBackground,
@@ -251,13 +254,13 @@ class _DetalhePageWidgetState extends State<DetalhePageWidget>
                                       fontWeight: FontWeight.bold,
                                     ),
                                 elevation: 0.0,
-                                borderSide: const BorderSide(
+                                borderSide: BorderSide(
                                   color: Colors.transparent,
                                   width: 0.0,
                                 ),
                                 borderRadius: BorderRadius.circular(8.0),
-                                hoverColor: const Color(0x00F1F4F8),
-                                hoverBorderSide: const BorderSide(
+                                hoverColor: Color(0x00F1F4F8),
+                                hoverBorderSide: BorderSide(
                                   color: Color(0x00F1F4F8),
                                   width: 0.0,
                                 ),
@@ -270,7 +273,7 @@ class _DetalhePageWidgetState extends State<DetalhePageWidget>
                             ),
                           ),
                           Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 5.0, 0.0),
                             child: FFButtonWidget(
                               onPressed: () async {
@@ -281,7 +284,7 @@ class _DetalhePageWidgetState extends State<DetalhePageWidget>
                                 context.pushNamed(
                                   'Tutorial',
                                   extra: <String, dynamic>{
-                                    kTransitionInfoKey: const TransitionInfo(
+                                    kTransitionInfoKey: TransitionInfo(
                                       hasTransition: true,
                                       transitionType: PageTransitionType.fade,
                                     ),
@@ -291,9 +294,9 @@ class _DetalhePageWidgetState extends State<DetalhePageWidget>
                               text: 'TUTORIAL',
                               options: FFButtonOptions(
                                 height: 40.0,
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     10.0, 0.0, 10.0, 0.0),
-                                iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                iconPadding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 0.0),
                                 color: FlutterFlowTheme.of(context)
                                     .secondaryBackground,
@@ -307,13 +310,13 @@ class _DetalhePageWidgetState extends State<DetalhePageWidget>
                                       fontWeight: FontWeight.w500,
                                     ),
                                 elevation: 0.0,
-                                borderSide: const BorderSide(
+                                borderSide: BorderSide(
                                   color: Colors.transparent,
                                   width: 0.0,
                                 ),
                                 borderRadius: BorderRadius.circular(8.0),
-                                hoverColor: const Color(0x00F1F4F8),
-                                hoverBorderSide: const BorderSide(
+                                hoverColor: Color(0x00F1F4F8),
+                                hoverBorderSide: BorderSide(
                                   color: Color(0x00F1F4F8),
                                   width: 0.0,
                                 ),
@@ -326,7 +329,7 @@ class _DetalhePageWidgetState extends State<DetalhePageWidget>
                             ),
                           ),
                           Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 5.0, 0.0),
                             child: FFButtonWidget(
                               onPressed: () async {
@@ -337,7 +340,7 @@ class _DetalhePageWidgetState extends State<DetalhePageWidget>
                                 context.pushNamed(
                                   'contato',
                                   extra: <String, dynamic>{
-                                    kTransitionInfoKey: const TransitionInfo(
+                                    kTransitionInfoKey: TransitionInfo(
                                       hasTransition: true,
                                       transitionType: PageTransitionType.fade,
                                     ),
@@ -347,9 +350,9 @@ class _DetalhePageWidgetState extends State<DetalhePageWidget>
                               text: 'CONTATO',
                               options: FFButtonOptions(
                                 height: 40.0,
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     10.0, 0.0, 10.0, 0.0),
-                                iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                iconPadding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 0.0),
                                 color: FlutterFlowTheme.of(context)
                                     .secondaryBackground,
@@ -363,13 +366,13 @@ class _DetalhePageWidgetState extends State<DetalhePageWidget>
                                       fontWeight: FontWeight.w500,
                                     ),
                                 elevation: 0.0,
-                                borderSide: const BorderSide(
+                                borderSide: BorderSide(
                                   color: Colors.transparent,
                                   width: 0.0,
                                 ),
                                 borderRadius: BorderRadius.circular(8.0),
-                                hoverColor: const Color(0x00F1F4F8),
-                                hoverBorderSide: const BorderSide(
+                                hoverColor: Color(0x00F1F4F8),
+                                hoverBorderSide: BorderSide(
                                   color: Color(0x00F1F4F8),
                                   width: 0.0,
                                 ),
@@ -391,7 +394,7 @@ class _DetalhePageWidgetState extends State<DetalhePageWidget>
                                 context.pushNamed(
                                   'perfil',
                                   extra: <String, dynamic>{
-                                    kTransitionInfoKey: const TransitionInfo(
+                                    kTransitionInfoKey: TransitionInfo(
                                       hasTransition: true,
                                       transitionType: PageTransitionType.fade,
                                     ),
@@ -401,11 +404,11 @@ class _DetalhePageWidgetState extends State<DetalhePageWidget>
                               text: 'PERFIL',
                               options: FFButtonOptions(
                                 height: 40.0,
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     10.0, 0.0, 10.0, 0.0),
-                                iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                iconPadding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 0.0),
-                                color: const Color(0x7C5765F2),
+                                color: Color(0x7C5765F2),
                                 textStyle: FlutterFlowTheme.of(context)
                                     .titleSmall
                                     .override(
@@ -416,13 +419,13 @@ class _DetalhePageWidgetState extends State<DetalhePageWidget>
                                       fontWeight: FontWeight.w500,
                                     ),
                                 elevation: 0.0,
-                                borderSide: const BorderSide(
+                                borderSide: BorderSide(
                                   color: Colors.transparent,
                                   width: 0.0,
                                 ),
                                 borderRadius: BorderRadius.circular(8.0),
-                                hoverColor: const Color(0x00F1F4F8),
-                                hoverBorderSide: const BorderSide(
+                                hoverColor: Color(0x00F1F4F8),
+                                hoverBorderSide: BorderSide(
                                   color: Color(0x00F1F4F8),
                                   width: 0.0,
                                 ),
@@ -443,7 +446,7 @@ class _DetalhePageWidgetState extends State<DetalhePageWidget>
                                 context.pushNamed(
                                   'login',
                                   extra: <String, dynamic>{
-                                    kTransitionInfoKey: const TransitionInfo(
+                                    kTransitionInfoKey: TransitionInfo(
                                       hasTransition: true,
                                       transitionType: PageTransitionType.fade,
                                     ),
@@ -453,11 +456,11 @@ class _DetalhePageWidgetState extends State<DetalhePageWidget>
                               text: 'CRIAR CONTA',
                               options: FFButtonOptions(
                                 height: 40.0,
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     10.0, 0.0, 10.0, 0.0),
-                                iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                iconPadding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 0.0),
-                                color: const Color(0x575765F2),
+                                color: Color(0x575765F2),
                                 textStyle: FlutterFlowTheme.of(context)
                                     .titleSmall
                                     .override(
@@ -468,13 +471,13 @@ class _DetalhePageWidgetState extends State<DetalhePageWidget>
                                       fontWeight: FontWeight.w500,
                                     ),
                                 elevation: 0.0,
-                                borderSide: const BorderSide(
+                                borderSide: BorderSide(
                                   color: Colors.transparent,
                                   width: 0.0,
                                 ),
                                 borderRadius: BorderRadius.circular(8.0),
-                                hoverColor: const Color(0x00F1F4F8),
-                                hoverBorderSide: const BorderSide(
+                                hoverColor: Color(0x00F1F4F8),
+                                hoverBorderSide: BorderSide(
                                   color: Color(0x00F1F4F8),
                                   width: 0.0,
                                 ),
@@ -486,7 +489,7 @@ class _DetalhePageWidgetState extends State<DetalhePageWidget>
                               animationsMap['buttonOnActionTriggerAnimation5']!,
                             ),
                           Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 20.0, 0.0, 12.0, 0.0),
                             child: InkWell(
                               splashColor: Colors.transparent,
@@ -542,17 +545,17 @@ class _DetalhePageWidgetState extends State<DetalhePageWidget>
                                   ),
                                 ),
                                 child: Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       2.0, 2.0, 2.0, 2.0),
                                   child: Stack(
-                                    alignment: const AlignmentDirectional(0.0, 0.0),
+                                    alignment: AlignmentDirectional(0.0, 0.0),
                                     children: [
                                       Align(
                                         alignment:
-                                            const AlignmentDirectional(-0.90, 0.00),
+                                            AlignmentDirectional(-0.90, 0.00),
                                         child: Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   6.0, 0.0, 0.0, 0.0),
                                           child: Icon(
                                             Icons.wb_sunny_rounded,
@@ -562,7 +565,7 @@ class _DetalhePageWidgetState extends State<DetalhePageWidget>
                                           ),
                                         ),
                                       ),
-                                      const Align(
+                                      Align(
                                         alignment:
                                             AlignmentDirectional(1.00, 0.00),
                                         child: Padding(
@@ -578,14 +581,14 @@ class _DetalhePageWidgetState extends State<DetalhePageWidget>
                                       ),
                                       Align(
                                         alignment:
-                                            const AlignmentDirectional(1.00, 0.00),
+                                            AlignmentDirectional(1.00, 0.00),
                                         child: Container(
                                           width: 36.0,
                                           height: 36.0,
                                           decoration: BoxDecoration(
                                             color: FlutterFlowTheme.of(context)
                                                 .primaryText,
-                                            boxShadow: const [
+                                            boxShadow: [
                                               BoxShadow(
                                                 blurRadius: 4.0,
                                                 color: Color(0x430B0D0F),
@@ -614,7 +617,7 @@ class _DetalhePageWidgetState extends State<DetalhePageWidget>
               ],
             ),
           ),
-          actions: const [],
+          actions: [],
           centerTitle: false,
           toolbarHeight: 80.0,
           elevation: 10.0,
@@ -622,7 +625,7 @@ class _DetalhePageWidgetState extends State<DetalhePageWidget>
         body: SafeArea(
           top: true,
           child: Padding(
-            padding: const EdgeInsetsDirectional.fromSTEB(100.0, 50.0, 100.0, 50.0),
+            padding: EdgeInsetsDirectional.fromSTEB(100.0, 50.0, 100.0, 50.0),
             child: SingleChildScrollView(
               child: Column(
                 mainAxisSize: MainAxisSize.max,
@@ -647,7 +650,7 @@ class _DetalhePageWidgetState extends State<DetalhePageWidget>
                   ),
                   Padding(
                     padding:
-                        const EdgeInsetsDirectional.fromSTEB(0.0, 6.0, 50.0, 0.0),
+                        EdgeInsetsDirectional.fromSTEB(0.0, 6.0, 50.0, 0.0),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
                       mainAxisAlignment: MainAxisAlignment.start,
@@ -671,7 +674,7 @@ class _DetalhePageWidgetState extends State<DetalhePageWidget>
                   ),
                   Padding(
                     padding:
-                        const EdgeInsetsDirectional.fromSTEB(0.0, 6.0, 50.0, 0.0),
+                        EdgeInsetsDirectional.fromSTEB(0.0, 6.0, 50.0, 0.0),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
                       mainAxisAlignment: MainAxisAlignment.start,
@@ -682,7 +685,7 @@ class _DetalhePageWidgetState extends State<DetalhePageWidget>
                           size: 24.0,
                         ),
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               8.0, 0.0, 0.0, 0.0),
                           child: Text(
                             valueOrDefault<String>(
@@ -704,7 +707,7 @@ class _DetalhePageWidgetState extends State<DetalhePageWidget>
                   ),
                   Padding(
                     padding:
-                        const EdgeInsetsDirectional.fromSTEB(0.0, 6.0, 50.0, 0.0),
+                        EdgeInsetsDirectional.fromSTEB(0.0, 6.0, 50.0, 0.0),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
                       mainAxisAlignment: MainAxisAlignment.start,
@@ -715,7 +718,7 @@ class _DetalhePageWidgetState extends State<DetalhePageWidget>
                           size: 24.0,
                         ),
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               8.0, 0.0, 0.0, 0.0),
                           child: Text(
                             valueOrDefault<String>(
@@ -738,7 +741,7 @@ class _DetalhePageWidgetState extends State<DetalhePageWidget>
                   ),
                   Padding(
                     padding:
-                        const EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 10.0),
+                        EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 10.0),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
                       children: [
@@ -766,9 +769,9 @@ class _DetalhePageWidgetState extends State<DetalhePageWidget>
                                   child: FlutterFlowExpandedImageView(
                                     image: CachedNetworkImage(
                                       fadeInDuration:
-                                          const Duration(milliseconds: 500),
+                                          Duration(milliseconds: 500),
                                       fadeOutDuration:
-                                          const Duration(milliseconds: 500),
+                                          Duration(milliseconds: 500),
                                       imageUrl: valueOrDefault<String>(
                                         widget.detlahes?.img,
                                         'https://images.unsplash.com/photo-1480694313141-fce5e697ee25?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NTYyMDF8MHwxfHNlYXJjaHwxfHxhcHB8ZW58MHx8fHwxNzAwNDk5ODg5fDA&ixlib=rb-4.0.3&q=80&w=1080',
@@ -794,8 +797,8 @@ class _DetalhePageWidgetState extends State<DetalhePageWidget>
                               child: ClipRRect(
                                 borderRadius: BorderRadius.circular(16.0),
                                 child: CachedNetworkImage(
-                                  fadeInDuration: const Duration(milliseconds: 500),
-                                  fadeOutDuration: const Duration(milliseconds: 500),
+                                  fadeInDuration: Duration(milliseconds: 500),
+                                  fadeOutDuration: Duration(milliseconds: 500),
                                   imageUrl: valueOrDefault<String>(
                                     widget.detlahes?.img,
                                     'https://images.unsplash.com/photo-1480694313141-fce5e697ee25?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NTYyMDF8MHwxfHNlYXJjaHwxfHxhcHB8ZW58MHx8fHwxNzAwNDk5ODg5fDA&ixlib=rb-4.0.3&q=80&w=1080',
@@ -814,13 +817,13 @@ class _DetalhePageWidgetState extends State<DetalhePageWidget>
                   if (currentUserEmailVerified)
                     Padding(
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 500.0, 0.0),
+                          EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 500.0, 0.0),
                       child: Row(
                         mainAxisSize: MainAxisSize.max,
                         children: [
                           Expanded(
                             child: Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   0.0, 0.0, 8.0, 0.0),
                               child: TextFormField(
                                 controller: _model.textController,
@@ -842,7 +845,7 @@ class _DetalhePageWidgetState extends State<DetalhePageWidget>
                                     borderRadius: BorderRadius.circular(8.0),
                                   ),
                                   focusedBorder: OutlineInputBorder(
-                                    borderSide: const BorderSide(
+                                    borderSide: BorderSide(
                                       color: Color(0xFF875FD0),
                                       width: 2.0,
                                     ),
@@ -874,7 +877,7 @@ class _DetalhePageWidgetState extends State<DetalhePageWidget>
                       ),
                     ),
                   Padding(
-                    padding: const EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
+                    padding: EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -897,7 +900,7 @@ class _DetalhePageWidgetState extends State<DetalhePageWidget>
                                           .primaryText,
                                     ),
                                   ),
-                                  duration: const Duration(milliseconds: 4000),
+                                  duration: Duration(milliseconds: 4000),
                                   backgroundColor:
                                       FlutterFlowTheme.of(context).secondary,
                                 ),
@@ -906,7 +909,7 @@ class _DetalhePageWidgetState extends State<DetalhePageWidget>
                               logFirebaseEvent('Button_bottom_sheet');
                               await showModalBottomSheet(
                                 isScrollControlled: true,
-                                backgroundColor: const Color(0x7A14181B),
+                                backgroundColor: Color(0x7A14181B),
                                 enableDrag: false,
                                 context: context,
                                 builder: (context) {
@@ -919,7 +922,7 @@ class _DetalhePageWidgetState extends State<DetalhePageWidget>
                                         : FocusScope.of(context).unfocus(),
                                     child: Padding(
                                       padding: MediaQuery.viewInsetsOf(context),
-                                      child: const CriarcontaWidget(),
+                                      child: CriarcontaWidget(),
                                     ),
                                   ));
                                 },
@@ -927,17 +930,17 @@ class _DetalhePageWidgetState extends State<DetalhePageWidget>
                             }
                           },
                           text: 'Copiar Código da Página',
-                          icon: const Icon(
+                          icon: Icon(
                             Icons.content_copy,
                             size: 15.0,
                           ),
                           options: FFButtonOptions(
                             height: 40.0,
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 24.0, 0.0, 24.0, 0.0),
-                            iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                            iconPadding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 0.0, 0.0),
-                            color: const Color(0xFF875FD0),
+                            color: Color(0xFF875FD0),
                             textStyle: FlutterFlowTheme.of(context)
                                 .titleSmall
                                 .override(
@@ -946,7 +949,7 @@ class _DetalhePageWidgetState extends State<DetalhePageWidget>
                                   fontSize: 20.0,
                                 ),
                             elevation: 3.0,
-                            borderSide: const BorderSide(
+                            borderSide: BorderSide(
                               color: Colors.transparent,
                               width: 1.0,
                             ),
@@ -959,12 +962,12 @@ class _DetalhePageWidgetState extends State<DetalhePageWidget>
                   ),
                   Padding(
                     padding:
-                        const EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 0.0),
+                        EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 0.0),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
                       children: [
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 0.0, 100.0, 0.0),
                           child: Text(
                             dateTimeFormat('dd/MM/yyyy | kk:mm',

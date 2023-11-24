@@ -6,6 +6,9 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
 import 'package:provider/provider.dart';
 import 'package:webviewx_plus/webviewx_plus.dart';
 import 'pag_cartao_model.dart';
@@ -13,9 +16,9 @@ export 'pag_cartao_model.dart';
 
 class PagCartaoWidget extends StatefulWidget {
   const PagCartaoWidget({
-    super.key,
+    Key? key,
     required this.detalhes,
-  });
+  }) : super(key: key);
 
   final TemplatesRow? detalhes;
 
@@ -79,7 +82,7 @@ class _PagCartaoWidgetState extends State<PagCartaoWidget> {
     context.watch<FFAppState>();
 
     return Align(
-      alignment: const AlignmentDirectional(0.00, 0.00),
+      alignment: AlignmentDirectional(0.00, 0.00),
       child: FutureBuilder<List<UsersRow>>(
         future: UsersTable().querySingleRow(
           queryFn: (q) => q.eq(
@@ -123,13 +126,13 @@ class _PagCartaoWidgetState extends State<PagCartaoWidget> {
                       borderRadius: BorderRadius.circular(12.0),
                     ),
                     child: Padding(
-                      padding: const EdgeInsetsDirectional.fromSTEB(
+                      padding: EdgeInsetsDirectional.fromSTEB(
                           10.0, 10.0, 10.0, 10.0),
                       child: Column(
                         mainAxisSize: MainAxisSize.max,
                         children: [
                           Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 50.0, 0.0, 0.0),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
@@ -142,8 +145,8 @@ class _PagCartaoWidgetState extends State<PagCartaoWidget> {
                                       .override(
                                         fontFamily: 'Readex Pro',
                                         color: FlutterFlowTheme.of(context)
-                                            .secondary,
-                                        fontSize: 30.0,
+                                            .tertiary,
+                                        fontSize: 35.0,
                                         fontWeight: FontWeight.w500,
                                       ),
                                 ),
@@ -151,7 +154,7 @@ class _PagCartaoWidgetState extends State<PagCartaoWidget> {
                             ),
                           ),
                           Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 20.0, 20.0, 20.0, 20.0),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
@@ -171,7 +174,7 @@ class _PagCartaoWidgetState extends State<PagCartaoWidget> {
                                       borderRadius: BorderRadius.circular(12.0),
                                     ),
                                     child: Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           20.0, 20.0, 20.0, 20.0),
                                       child: Column(
                                         mainAxisSize: MainAxisSize.max,
@@ -180,7 +183,7 @@ class _PagCartaoWidgetState extends State<PagCartaoWidget> {
                                             mainAxisSize: MainAxisSize.max,
                                             children: [
                                               Padding(
-                                                padding: const EdgeInsetsDirectional
+                                                padding: EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         10.0, 0.0, 0.0, 0.0),
                                                 child: Row(
@@ -207,7 +210,7 @@ class _PagCartaoWidgetState extends State<PagCartaoWidget> {
                                                 autovalidateMode:
                                                     AutovalidateMode.disabled,
                                                 child: Padding(
-                                                  padding: const EdgeInsetsDirectional
+                                                  padding: EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           8.0, 6.0, 8.0, 0.0),
                                                   child: TextFormField(
@@ -215,7 +218,7 @@ class _PagCartaoWidgetState extends State<PagCartaoWidget> {
                                                         _model.nomeController,
                                                     focusNode:
                                                         _model.nomeFocusNode,
-                                                    autofillHints: const [
+                                                    autofillHints: [
                                                       AutofillHints.name
                                                     ],
                                                     obscureText: false,
@@ -291,7 +294,7 @@ class _PagCartaoWidgetState extends State<PagCartaoWidget> {
                                                       fillColor: FlutterFlowTheme
                                                               .of(context)
                                                           .secondaryBackground,
-                                                      prefixIcon: const Icon(
+                                                      prefixIcon: Icon(
                                                         Icons.person_sharp,
                                                       ),
                                                     ),
@@ -315,13 +318,13 @@ class _PagCartaoWidgetState extends State<PagCartaoWidget> {
                                           ),
                                           Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 15.0, 0.0, 0.0),
                                             child: Column(
                                               mainAxisSize: MainAxisSize.max,
                                               children: [
                                                 Padding(
-                                                  padding: const EdgeInsetsDirectional
+                                                  padding: EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           10.0, 0.0, 0.0, 0.0),
                                                   child: Row(
@@ -348,7 +351,7 @@ class _PagCartaoWidgetState extends State<PagCartaoWidget> {
                                                       AutovalidateMode.disabled,
                                                   child: Padding(
                                                     padding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(8.0, 6.0,
                                                                 8.0, 0.0),
                                                     child: TextFormField(
@@ -441,7 +444,7 @@ class _PagCartaoWidgetState extends State<PagCartaoWidget> {
                                                         fillColor: FlutterFlowTheme
                                                                 .of(context)
                                                             .secondaryBackground,
-                                                        prefixIcon: const Icon(
+                                                        prefixIcon: Icon(
                                                           Icons
                                                               .assignment_ind_rounded,
                                                         ),
@@ -468,13 +471,13 @@ class _PagCartaoWidgetState extends State<PagCartaoWidget> {
                                           ),
                                           Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 15.0, 0.0, 0.0),
                                             child: Column(
                                               mainAxisSize: MainAxisSize.max,
                                               children: [
                                                 Padding(
-                                                  padding: const EdgeInsetsDirectional
+                                                  padding: EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           10.0, 0.0, 0.0, 0.0),
                                                   child: Row(
@@ -501,7 +504,7 @@ class _PagCartaoWidgetState extends State<PagCartaoWidget> {
                                                       AutovalidateMode.disabled,
                                                   child: Padding(
                                                     padding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(8.0, 6.0,
                                                                 8.0, 0.0),
                                                     child: TextFormField(
@@ -594,7 +597,7 @@ class _PagCartaoWidgetState extends State<PagCartaoWidget> {
                                                         fillColor: FlutterFlowTheme
                                                                 .of(context)
                                                             .secondaryBackground,
-                                                        prefixIcon: const Icon(
+                                                        prefixIcon: Icon(
                                                           Icons.credit_card,
                                                         ),
                                                       ),
@@ -620,13 +623,13 @@ class _PagCartaoWidgetState extends State<PagCartaoWidget> {
                                           ),
                                           Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 10.0, 0.0, 0.0),
                                             child: Column(
                                               mainAxisSize: MainAxisSize.max,
                                               children: [
                                                 Padding(
-                                                  padding: const EdgeInsetsDirectional
+                                                  padding: EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           10.0, 0.0, 0.0, 0.0),
                                                   child: Row(
@@ -659,7 +662,7 @@ class _PagCartaoWidgetState extends State<PagCartaoWidget> {
                                                                 .disabled,
                                                         child: Padding(
                                                           padding:
-                                                              const EdgeInsetsDirectional
+                                                              EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       8.0,
                                                                       4.0,
@@ -754,7 +757,7 @@ class _PagCartaoWidgetState extends State<PagCartaoWidget> {
                                                               fillColor: FlutterFlowTheme
                                                                       .of(context)
                                                                   .secondaryBackground,
-                                                              prefixIcon: const Icon(
+                                                              prefixIcon: Icon(
                                                                 Icons
                                                                     .calendar_month,
                                                               ),
@@ -790,7 +793,7 @@ class _PagCartaoWidgetState extends State<PagCartaoWidget> {
                                                                 .disabled,
                                                         child: Padding(
                                                           padding:
-                                                              const EdgeInsetsDirectional
+                                                              EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       8.0,
                                                                       4.0,
@@ -885,7 +888,7 @@ class _PagCartaoWidgetState extends State<PagCartaoWidget> {
                                                               fillColor: FlutterFlowTheme
                                                                       .of(context)
                                                                   .secondaryBackground,
-                                                              prefixIcon: const Icon(
+                                                              prefixIcon: Icon(
                                                                 Icons
                                                                     .calendar_month,
                                                               ),
@@ -921,7 +924,7 @@ class _PagCartaoWidgetState extends State<PagCartaoWidget> {
                                                                 .disabled,
                                                         child: Padding(
                                                           padding:
-                                                              const EdgeInsetsDirectional
+                                                              EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       8.0,
                                                                       4.0,
@@ -1016,7 +1019,7 @@ class _PagCartaoWidgetState extends State<PagCartaoWidget> {
                                                               fillColor: FlutterFlowTheme
                                                                       .of(context)
                                                                   .secondaryBackground,
-                                                              prefixIcon: const Icon(
+                                                              prefixIcon: Icon(
                                                                 Icons
                                                                     .security_sharp,
                                                               ),
@@ -1051,13 +1054,13 @@ class _PagCartaoWidgetState extends State<PagCartaoWidget> {
                                           ),
                                           Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 10.0, 0.0, 0.0),
                                             child: Column(
                                               mainAxisSize: MainAxisSize.max,
                                               children: [
                                                 Padding(
-                                                  padding: const EdgeInsetsDirectional
+                                                  padding: EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           10.0, 10.0, 0.0, 4.0),
                                                   child: Row(
@@ -1090,7 +1093,7 @@ class _PagCartaoWidgetState extends State<PagCartaoWidget> {
                                                                 .disabled,
                                                         child: Padding(
                                                           padding:
-                                                              const EdgeInsetsDirectional
+                                                              EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       8.0,
                                                                       4.0,
@@ -1179,7 +1182,7 @@ class _PagCartaoWidgetState extends State<PagCartaoWidget> {
                                                               fillColor: FlutterFlowTheme
                                                                       .of(context)
                                                                   .secondaryBackground,
-                                                              prefixIcon: const Icon(
+                                                              prefixIcon: Icon(
                                                                 Icons.add_home,
                                                               ),
                                                             ),
@@ -1211,7 +1214,7 @@ class _PagCartaoWidgetState extends State<PagCartaoWidget> {
                                                                 .disabled,
                                                         child: Padding(
                                                           padding:
-                                                              const EdgeInsetsDirectional
+                                                              EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       8.0,
                                                                       4.0,
@@ -1301,7 +1304,7 @@ class _PagCartaoWidgetState extends State<PagCartaoWidget> {
                                                               fillColor: FlutterFlowTheme
                                                                       .of(context)
                                                                   .secondaryBackground,
-                                                              prefixIcon: const Icon(
+                                                              prefixIcon: Icon(
                                                                 Icons.add_home,
                                                               ),
                                                             ),
@@ -1332,13 +1335,13 @@ class _PagCartaoWidgetState extends State<PagCartaoWidget> {
                                           ),
                                           Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 15.0, 0.0, 0.0),
                                             child: Column(
                                               mainAxisSize: MainAxisSize.max,
                                               children: [
                                                 Padding(
-                                                  padding: const EdgeInsetsDirectional
+                                                  padding: EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           10.0, 0.0, 0.0, 0.0),
                                                   child: Row(
@@ -1365,7 +1368,7 @@ class _PagCartaoWidgetState extends State<PagCartaoWidget> {
                                                       AutovalidateMode.disabled,
                                                   child: Padding(
                                                     padding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(8.0, 6.0,
                                                                 8.0, 0.0),
                                                     child: TextFormField(
@@ -1452,7 +1455,7 @@ class _PagCartaoWidgetState extends State<PagCartaoWidget> {
                                                         fillColor: FlutterFlowTheme
                                                                 .of(context)
                                                             .secondaryBackground,
-                                                        prefixIcon: const Icon(
+                                                        prefixIcon: Icon(
                                                           Icons.phone_iphone,
                                                         ),
                                                       ),
@@ -1489,7 +1492,7 @@ class _PagCartaoWidgetState extends State<PagCartaoWidget> {
                             children: [
                               Expanded(
                                 child: Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       12.0, 0.0, 12.0, 0.0),
                                   child: FlutterFlowCreditCardForm(
                                     formKey: _model.creditCardFormKey,
@@ -1525,7 +1528,7 @@ class _PagCartaoWidgetState extends State<PagCartaoWidget> {
                             ],
                           ),
                           Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 20.0, 15.0, 20.0, 20.0),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
@@ -1545,7 +1548,7 @@ class _PagCartaoWidgetState extends State<PagCartaoWidget> {
                                       dd: '11',
                                       numeroCelular: '999999999',
                                       refId: 'referencia da cobranca',
-                                      refItem: '00011',
+                                      refItem: '00012',
                                       nomeProduto: 'nome do item',
                                       valorProduto: 500,
                                       securityCode: '123',
@@ -1553,7 +1556,8 @@ class _PagCartaoWidgetState extends State<PagCartaoWidget> {
                                       expMonth: 12,
                                       expYear: 2028,
                                       numberCard: '4111111111111111',
-                                      randow: '5442413542',
+                                      randow: '5442419542',
+                                      token: '9610FD2583284F95B9661F0A69CD0389',
                                     );
                                     if ((_model.validacaoCard?.succeeded ??
                                         true)) {
@@ -1601,7 +1605,7 @@ class _PagCartaoWidgetState extends State<PagCartaoWidget> {
                                               TextButton(
                                                 onPressed: () => Navigator.pop(
                                                     alertDialogContext),
-                                                child: const Text('Ok'),
+                                                child: Text('Ok'),
                                               ),
                                             ],
                                           ));
@@ -1614,9 +1618,9 @@ class _PagCartaoWidgetState extends State<PagCartaoWidget> {
                                   text: 'Realizar Pagamento',
                                   options: FFButtonOptions(
                                     height: 50.0,
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         24.0, 0.0, 24.0, 0.0),
-                                    iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                    iconPadding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 0.0, 0.0),
                                     color: FlutterFlowTheme.of(context).primary,
                                     textStyle: FlutterFlowTheme.of(context)
@@ -1627,7 +1631,7 @@ class _PagCartaoWidgetState extends State<PagCartaoWidget> {
                                           fontSize: 20.0,
                                         ),
                                     elevation: 10.0,
-                                    borderSide: const BorderSide(
+                                    borderSide: BorderSide(
                                       color: Colors.transparent,
                                       width: 1.0,
                                     ),

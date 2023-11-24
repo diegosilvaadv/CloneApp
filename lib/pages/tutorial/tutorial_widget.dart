@@ -5,14 +5,16 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/flutter_flow_youtube_player.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'tutorial_model.dart';
 export 'tutorial_model.dart';
 
 class TutorialWidget extends StatefulWidget {
-  const TutorialWidget({super.key});
+  const TutorialWidget({Key? key}) : super(key: key);
 
   @override
   _TutorialWidgetState createState() => _TutorialWidgetState();
@@ -33,7 +35,7 @@ class _TutorialWidgetState extends State<TutorialWidget>
           delay: 0.ms,
           duration: 1000.ms,
           hz: 1,
-          offset: const Offset(1.0, 1.0),
+          offset: Offset(1.0, 1.0),
           rotation: 0.017,
         ),
       ],
@@ -111,8 +113,8 @@ class _TutorialWidgetState extends State<TutorialWidget>
           curve: Curves.easeInOut,
           delay: 0.ms,
           duration: 300.ms,
-          begin: const Offset(-40.0, 0.0),
-          end: const Offset(0.0, 0.0),
+          begin: Offset(-40.0, 0.0),
+          end: Offset(0.0, 0.0),
         ),
       ],
     ),
@@ -166,7 +168,7 @@ class _TutorialWidgetState extends State<TutorialWidget>
             backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
             automaticallyImplyLeading: false,
             title: Padding(
-              padding: const EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 20.0, 0.0),
+              padding: EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 20.0, 0.0),
               child: Row(
                 mainAxisSize: MainAxisSize.max,
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -210,7 +212,7 @@ class _TutorialWidgetState extends State<TutorialWidget>
                           mainAxisSize: MainAxisSize.max,
                           children: [
                             Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   0.0, 0.0, 5.0, 0.0),
                               child: FFButtonWidget(
                                 onPressed: () async {
@@ -221,7 +223,7 @@ class _TutorialWidgetState extends State<TutorialWidget>
                                   context.pushNamed(
                                     'HomePage',
                                     extra: <String, dynamic>{
-                                      kTransitionInfoKey: const TransitionInfo(
+                                      kTransitionInfoKey: TransitionInfo(
                                         hasTransition: true,
                                         transitionType: PageTransitionType.fade,
                                       ),
@@ -231,9 +233,9 @@ class _TutorialWidgetState extends State<TutorialWidget>
                                 text: 'HOME',
                                 options: FFButtonOptions(
                                   height: 40.0,
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       10.0, 0.0, 10.0, 0.0),
-                                  iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                  iconPadding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 0.0, 0.0),
                                   color: FlutterFlowTheme.of(context)
                                       .secondaryBackground,
@@ -247,13 +249,13 @@ class _TutorialWidgetState extends State<TutorialWidget>
                                         fontWeight: FontWeight.bold,
                                       ),
                                   elevation: 0.0,
-                                  borderSide: const BorderSide(
+                                  borderSide: BorderSide(
                                     color: Colors.transparent,
                                     width: 0.0,
                                   ),
                                   borderRadius: BorderRadius.circular(8.0),
                                   hoverColor: Colors.transparent,
-                                  hoverBorderSide: const BorderSide(
+                                  hoverBorderSide: BorderSide(
                                     color: Color(0x00F1F4F8),
                                     width: 0.0,
                                   ),
@@ -267,7 +269,7 @@ class _TutorialWidgetState extends State<TutorialWidget>
                               ),
                             ),
                             Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   0.0, 0.0, 5.0, 0.0),
                               child: FFButtonWidget(
                                 onPressed: () {
@@ -276,9 +278,9 @@ class _TutorialWidgetState extends State<TutorialWidget>
                                 text: 'TUTORIAL',
                                 options: FFButtonOptions(
                                   height: 40.0,
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       10.0, 0.0, 10.0, 0.0),
-                                  iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                  iconPadding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 0.0, 0.0),
                                   color: FlutterFlowTheme.of(context)
                                       .secondaryBackground,
@@ -292,13 +294,13 @@ class _TutorialWidgetState extends State<TutorialWidget>
                                         fontWeight: FontWeight.w500,
                                       ),
                                   elevation: 0.0,
-                                  borderSide: const BorderSide(
+                                  borderSide: BorderSide(
                                     color: Color(0x3F39D2C0),
                                     width: 0.0,
                                   ),
                                   borderRadius: BorderRadius.circular(8.0),
-                                  hoverColor: const Color(0x00F1F4F8),
-                                  hoverBorderSide: const BorderSide(
+                                  hoverColor: Color(0x00F1F4F8),
+                                  hoverBorderSide: BorderSide(
                                     color: Color(0x00F1F4F8),
                                     width: 0.0,
                                   ),
@@ -312,7 +314,7 @@ class _TutorialWidgetState extends State<TutorialWidget>
                               ),
                             ),
                             Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   0.0, 0.0, 5.0, 0.0),
                               child: FFButtonWidget(
                                 onPressed: () async {
@@ -323,7 +325,7 @@ class _TutorialWidgetState extends State<TutorialWidget>
                                   context.pushNamed(
                                     'contato',
                                     extra: <String, dynamic>{
-                                      kTransitionInfoKey: const TransitionInfo(
+                                      kTransitionInfoKey: TransitionInfo(
                                         hasTransition: true,
                                         transitionType: PageTransitionType.fade,
                                       ),
@@ -333,9 +335,9 @@ class _TutorialWidgetState extends State<TutorialWidget>
                                 text: 'CONTATO',
                                 options: FFButtonOptions(
                                   height: 40.0,
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       10.0, 0.0, 10.0, 0.0),
-                                  iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                  iconPadding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 0.0, 0.0),
                                   color: FlutterFlowTheme.of(context)
                                       .secondaryBackground,
@@ -349,13 +351,13 @@ class _TutorialWidgetState extends State<TutorialWidget>
                                         fontWeight: FontWeight.w500,
                                       ),
                                   elevation: 0.0,
-                                  borderSide: const BorderSide(
+                                  borderSide: BorderSide(
                                     color: Colors.transparent,
                                     width: 0.0,
                                   ),
                                   borderRadius: BorderRadius.circular(8.0),
-                                  hoverColor: const Color(0x00F1F4F8),
-                                  hoverBorderSide: const BorderSide(
+                                  hoverColor: Color(0x00F1F4F8),
+                                  hoverBorderSide: BorderSide(
                                     color: Color(0x00F1F4F8),
                                     width: 0.0,
                                   ),
@@ -378,7 +380,7 @@ class _TutorialWidgetState extends State<TutorialWidget>
                                   context.pushNamed(
                                     'perfil',
                                     extra: <String, dynamic>{
-                                      kTransitionInfoKey: const TransitionInfo(
+                                      kTransitionInfoKey: TransitionInfo(
                                         hasTransition: true,
                                         transitionType: PageTransitionType.fade,
                                       ),
@@ -388,11 +390,11 @@ class _TutorialWidgetState extends State<TutorialWidget>
                                 text: 'PERFIL',
                                 options: FFButtonOptions(
                                   height: 40.0,
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       10.0, 0.0, 10.0, 0.0),
-                                  iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                  iconPadding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 0.0, 0.0),
-                                  color: const Color(0x7C5765F2),
+                                  color: Color(0x7C5765F2),
                                   textStyle: FlutterFlowTheme.of(context)
                                       .titleSmall
                                       .override(
@@ -403,13 +405,13 @@ class _TutorialWidgetState extends State<TutorialWidget>
                                         fontWeight: FontWeight.w500,
                                       ),
                                   elevation: 0.0,
-                                  borderSide: const BorderSide(
+                                  borderSide: BorderSide(
                                     color: Colors.transparent,
                                     width: 0.0,
                                   ),
                                   borderRadius: BorderRadius.circular(8.0),
-                                  hoverColor: const Color(0x00F1F4F8),
-                                  hoverBorderSide: const BorderSide(
+                                  hoverColor: Color(0x00F1F4F8),
+                                  hoverBorderSide: BorderSide(
                                     color: Color(0x00F1F4F8),
                                     width: 0.0,
                                   ),
@@ -431,7 +433,7 @@ class _TutorialWidgetState extends State<TutorialWidget>
                                   context.pushNamed(
                                     'login',
                                     extra: <String, dynamic>{
-                                      kTransitionInfoKey: const TransitionInfo(
+                                      kTransitionInfoKey: TransitionInfo(
                                         hasTransition: true,
                                         transitionType: PageTransitionType.fade,
                                       ),
@@ -441,11 +443,11 @@ class _TutorialWidgetState extends State<TutorialWidget>
                                 text: 'CRIAR CONTA',
                                 options: FFButtonOptions(
                                   height: 40.0,
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       10.0, 0.0, 10.0, 0.0),
-                                  iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                  iconPadding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 0.0, 0.0),
-                                  color: const Color(0x575765F2),
+                                  color: Color(0x575765F2),
                                   textStyle: FlutterFlowTheme.of(context)
                                       .titleSmall
                                       .override(
@@ -456,13 +458,13 @@ class _TutorialWidgetState extends State<TutorialWidget>
                                         fontWeight: FontWeight.w500,
                                       ),
                                   elevation: 0.0,
-                                  borderSide: const BorderSide(
+                                  borderSide: BorderSide(
                                     color: Colors.transparent,
                                     width: 0.0,
                                   ),
                                   borderRadius: BorderRadius.circular(8.0),
-                                  hoverColor: const Color(0x00F1F4F8),
-                                  hoverBorderSide: const BorderSide(
+                                  hoverColor: Color(0x00F1F4F8),
+                                  hoverBorderSide: BorderSide(
                                     color: Color(0x00F1F4F8),
                                     width: 0.0,
                                   ),
@@ -475,7 +477,7 @@ class _TutorialWidgetState extends State<TutorialWidget>
                                     'buttonOnActionTriggerAnimation5']!,
                               ),
                             Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   20.0, 0.0, 12.0, 0.0),
                               child: InkWell(
                                 splashColor: Colors.transparent,
@@ -532,17 +534,17 @@ class _TutorialWidgetState extends State<TutorialWidget>
                                     ),
                                   ),
                                   child: Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         2.0, 2.0, 2.0, 2.0),
                                     child: Stack(
-                                      alignment: const AlignmentDirectional(0.0, 0.0),
+                                      alignment: AlignmentDirectional(0.0, 0.0),
                                       children: [
                                         Align(
                                           alignment:
-                                              const AlignmentDirectional(-0.90, 0.00),
+                                              AlignmentDirectional(-0.90, 0.00),
                                           child: Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     6.0, 0.0, 0.0, 0.0),
                                             child: Icon(
                                               Icons.wb_sunny_rounded,
@@ -553,7 +555,7 @@ class _TutorialWidgetState extends State<TutorialWidget>
                                             ),
                                           ),
                                         ),
-                                        const Align(
+                                        Align(
                                           alignment:
                                               AlignmentDirectional(1.00, 0.00),
                                           child: Padding(
@@ -569,7 +571,7 @@ class _TutorialWidgetState extends State<TutorialWidget>
                                         ),
                                         Align(
                                           alignment:
-                                              const AlignmentDirectional(1.00, 0.00),
+                                              AlignmentDirectional(1.00, 0.00),
                                           child: Container(
                                             width: 36.0,
                                             height: 36.0,
@@ -577,7 +579,7 @@ class _TutorialWidgetState extends State<TutorialWidget>
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .primaryText,
-                                              boxShadow: const [
+                                              boxShadow: [
                                                 BoxShadow(
                                                   blurRadius: 4.0,
                                                   color: Color(0x430B0D0F),
@@ -606,7 +608,7 @@ class _TutorialWidgetState extends State<TutorialWidget>
                 ],
               ).animateOnPageLoad(animationsMap['rowOnPageLoadAnimation']!),
             ),
-            actions: const [],
+            actions: [],
             centerTitle: false,
             toolbarHeight: 80.0,
             elevation: 10.0,
@@ -614,7 +616,7 @@ class _TutorialWidgetState extends State<TutorialWidget>
           body: SafeArea(
             top: true,
             child: Padding(
-              padding: const EdgeInsetsDirectional.fromSTEB(20.0, 20.0, 20.0, 20.0),
+              padding: EdgeInsetsDirectional.fromSTEB(20.0, 20.0, 20.0, 20.0),
               child: Column(
                 mainAxisSize: MainAxisSize.max,
                 children: [
@@ -626,7 +628,7 @@ class _TutorialWidgetState extends State<TutorialWidget>
                       borderRadius: BorderRadius.circular(16.0),
                     ),
                     child: Padding(
-                      padding: const EdgeInsetsDirectional.fromSTEB(
+                      padding: EdgeInsetsDirectional.fromSTEB(
                           16.0, 16.0, 16.0, 16.0),
                       child: Column(
                         mainAxisSize: MainAxisSize.max,
@@ -642,9 +644,9 @@ class _TutorialWidgetState extends State<TutorialWidget>
                             ],
                           ),
                           Align(
-                            alignment: const AlignmentDirectional(-1.00, 0.00),
+                            alignment: AlignmentDirectional(-1.00, 0.00),
                             child: Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   0.0, 20.0, 0.0, 0.0),
                               child: Card(
                                 clipBehavior: Clip.antiAliasWithSaveLayer,
@@ -654,7 +656,7 @@ class _TutorialWidgetState extends State<TutorialWidget>
                                   borderRadius: BorderRadius.circular(8.0),
                                 ),
                                 child: Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       10.0, 10.0, 10.0, 10.0),
                                   child: FlutterFlowYoutubePlayer(
                                     url: 'https://youtu.be/dhZKFrLG8SU',
@@ -674,7 +676,7 @@ class _TutorialWidgetState extends State<TutorialWidget>
                             ),
                           ),
                           Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 20.0, 0.0, 0.0),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
@@ -694,7 +696,7 @@ class _TutorialWidgetState extends State<TutorialWidget>
                           Row(
                             mainAxisSize: MainAxisSize.max,
                             children: [
-                              const Icon(
+                              Icon(
                                 Icons.discord_sharp,
                                 color: Color(0xFF5765F2),
                                 size: 100.0,
@@ -703,7 +705,7 @@ class _TutorialWidgetState extends State<TutorialWidget>
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         6.0, 0.0, 0.0, 0.0),
                                     child: Text(
                                       'DISCORD',
@@ -719,7 +721,7 @@ class _TutorialWidgetState extends State<TutorialWidget>
                                 ],
                               ),
                               Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     10.0, 0.0, 0.0, 0.0),
                                 child: FFButtonWidget(
                                   onPressed: () async {
@@ -732,11 +734,11 @@ class _TutorialWidgetState extends State<TutorialWidget>
                                   text: 'ENTRAR',
                                   options: FFButtonOptions(
                                     height: 40.0,
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         24.0, 0.0, 24.0, 0.0),
-                                    iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                    iconPadding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 0.0, 0.0),
-                                    color: const Color(0xFF5765F2),
+                                    color: Color(0xFF5765F2),
                                     textStyle: FlutterFlowTheme.of(context)
                                         .titleSmall
                                         .override(
@@ -744,7 +746,7 @@ class _TutorialWidgetState extends State<TutorialWidget>
                                           color: Colors.white,
                                         ),
                                     elevation: 3.0,
-                                    borderSide: const BorderSide(
+                                    borderSide: BorderSide(
                                       color: Colors.transparent,
                                       width: 1.0,
                                     ),
