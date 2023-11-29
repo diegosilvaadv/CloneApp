@@ -6,14 +6,17 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'app_bar_model.dart';
 export 'app_bar_model.dart';
 
 class AppBarWidget extends StatefulWidget {
-  const AppBarWidget({super.key});
+  const AppBarWidget({Key? key}) : super(key: key);
 
   @override
   _AppBarWidgetState createState() => _AppBarWidgetState();
@@ -38,8 +41,8 @@ class _AppBarWidgetState extends State<AppBarWidget>
           curve: Curves.easeInOut,
           delay: 0.ms,
           duration: 820.ms,
-          begin: const Offset(0.0, -32.0),
-          end: const Offset(0.0, 0.0),
+          begin: Offset(0.0, -32.0),
+          end: Offset(0.0, 0.0),
         ),
       ],
     ),
@@ -50,8 +53,8 @@ class _AppBarWidgetState extends State<AppBarWidget>
           curve: Curves.easeInOut,
           delay: 230.ms,
           duration: 600.ms,
-          begin: const Offset(-51.0, 0.0),
-          end: const Offset(0.0, 0.0),
+          begin: Offset(-51.0, 0.0),
+          end: Offset(0.0, 0.0),
         ),
       ],
     ),
@@ -140,8 +143,8 @@ class _AppBarWidgetState extends State<AppBarWidget>
           curve: Curves.easeInOut,
           delay: 0.ms,
           duration: 300.ms,
-          begin: const Offset(-40.0, 0.0),
-          end: const Offset(0.0, 0.0),
+          begin: Offset(-40.0, 0.0),
+          end: Offset(0.0, 0.0),
         ),
       ],
     ),
@@ -187,13 +190,13 @@ class _AppBarWidgetState extends State<AppBarWidget>
         decoration: BoxDecoration(
           color: FlutterFlowTheme.of(context).secondaryBackground,
           border: Border.all(
-            color: const Color(0x004B39EF),
+            color: Color(0x004B39EF),
           ),
         ),
         child: Align(
-          alignment: const AlignmentDirectional(0.00, 0.00),
+          alignment: AlignmentDirectional(0.00, 0.00),
           child: Padding(
-            padding: const EdgeInsetsDirectional.fromSTEB(50.0, 20.0, 50.0, 20.0),
+            padding: EdgeInsetsDirectional.fromSTEB(50.0, 20.0, 50.0, 20.0),
             child: Row(
               mainAxisSize: MainAxisSize.max,
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -240,7 +243,7 @@ class _AppBarWidgetState extends State<AppBarWidget>
                       ),
                       if (currentUserEmailVerified)
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               5.0, 0.0, 0.0, 0.0),
                           child: FutureBuilder<List<UsersRow>>(
                             future: UsersTable().querySingleRow(
@@ -330,7 +333,7 @@ class _AppBarWidgetState extends State<AppBarWidget>
                         mainAxisSize: MainAxisSize.max,
                         children: [
                           Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 5.0, 0.0),
                             child: FFButtonWidget(
                               onPressed: () async {
@@ -345,7 +348,7 @@ class _AppBarWidgetState extends State<AppBarWidget>
                                 context.goNamed(
                                   'HomePage',
                                   extra: <String, dynamic>{
-                                    kTransitionInfoKey: const TransitionInfo(
+                                    kTransitionInfoKey: TransitionInfo(
                                       hasTransition: true,
                                       transitionType: PageTransitionType.fade,
                                       duration: Duration(milliseconds: 0),
@@ -367,9 +370,9 @@ class _AppBarWidgetState extends State<AppBarWidget>
                               ),
                               options: FFButtonOptions(
                                 height: 40.0,
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     10.0, 0.0, 10.0, 0.0),
-                                iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                iconPadding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 0.0),
                                 color: valueOrDefault<Color>(
                                   FFAppState().AppBar == 'home'
@@ -416,7 +419,7 @@ class _AppBarWidgetState extends State<AppBarWidget>
                             ),
                           ),
                           Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 5.0, 0.0),
                             child: FFButtonWidget(
                               onPressed: () async {
@@ -431,7 +434,7 @@ class _AppBarWidgetState extends State<AppBarWidget>
                                 context.goNamed(
                                   'Tutorial',
                                   extra: <String, dynamic>{
-                                    kTransitionInfoKey: const TransitionInfo(
+                                    kTransitionInfoKey: TransitionInfo(
                                       hasTransition: true,
                                       transitionType: PageTransitionType.fade,
                                       duration: Duration(milliseconds: 0),
@@ -453,9 +456,9 @@ class _AppBarWidgetState extends State<AppBarWidget>
                               ),
                               options: FFButtonOptions(
                                 height: 40.0,
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     10.0, 0.0, 10.0, 0.0),
-                                iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                iconPadding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 0.0),
                                 color: valueOrDefault<Color>(
                                   FFAppState().AppBar == 'tutorial'
@@ -502,7 +505,7 @@ class _AppBarWidgetState extends State<AppBarWidget>
                             ),
                           ),
                           Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 5.0, 0.0),
                             child: FFButtonWidget(
                               onPressed: () async {
@@ -517,7 +520,7 @@ class _AppBarWidgetState extends State<AppBarWidget>
                                 context.goNamed(
                                   'contato',
                                   extra: <String, dynamic>{
-                                    kTransitionInfoKey: const TransitionInfo(
+                                    kTransitionInfoKey: TransitionInfo(
                                       hasTransition: true,
                                       transitionType: PageTransitionType.fade,
                                       duration: Duration(milliseconds: 0),
@@ -539,9 +542,9 @@ class _AppBarWidgetState extends State<AppBarWidget>
                               ),
                               options: FFButtonOptions(
                                 height: 40.0,
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     10.0, 0.0, 10.0, 0.0),
-                                iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                iconPadding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 0.0),
                                 color: valueOrDefault<Color>(
                                   FFAppState().AppBar == 'contato'
@@ -589,7 +592,7 @@ class _AppBarWidgetState extends State<AppBarWidget>
                           ),
                           if (currentUserEmailVerified)
                             Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   0.0, 0.0, 5.0, 0.0),
                               child: FFButtonWidget(
                                 onPressed: () async {
@@ -604,7 +607,7 @@ class _AppBarWidgetState extends State<AppBarWidget>
                                   context.goNamed(
                                     'perfil',
                                     extra: <String, dynamic>{
-                                      kTransitionInfoKey: const TransitionInfo(
+                                      kTransitionInfoKey: TransitionInfo(
                                         hasTransition: true,
                                         transitionType: PageTransitionType.fade,
                                         duration: Duration(milliseconds: 0),
@@ -626,9 +629,9 @@ class _AppBarWidgetState extends State<AppBarWidget>
                                 ),
                                 options: FFButtonOptions(
                                   height: 40.0,
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       10.0, 0.0, 10.0, 0.0),
-                                  iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                  iconPadding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 0.0, 0.0),
                                   color: valueOrDefault<Color>(
                                     FFAppState().AppBar == 'perfil'
@@ -686,7 +689,7 @@ class _AppBarWidgetState extends State<AppBarWidget>
                                 context.goNamed(
                                   'login',
                                   extra: <String, dynamic>{
-                                    kTransitionInfoKey: const TransitionInfo(
+                                    kTransitionInfoKey: TransitionInfo(
                                       hasTransition: true,
                                       transitionType: PageTransitionType.scale,
                                       alignment: Alignment.bottomCenter,
@@ -697,11 +700,11 @@ class _AppBarWidgetState extends State<AppBarWidget>
                               text: 'CRIAR CONTA',
                               options: FFButtonOptions(
                                 height: 40.0,
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     10.0, 0.0, 10.0, 0.0),
-                                iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                iconPadding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 0.0),
-                                color: const Color(0x7AE13C27),
+                                color: Color(0x7AE13C27),
                                 textStyle: FlutterFlowTheme.of(context)
                                     .titleSmall
                                     .override(
@@ -712,13 +715,13 @@ class _AppBarWidgetState extends State<AppBarWidget>
                                       fontWeight: FontWeight.w500,
                                     ),
                                 elevation: 0.0,
-                                borderSide: const BorderSide(
+                                borderSide: BorderSide(
                                   color: Colors.transparent,
                                   width: 0.0,
                                 ),
                                 borderRadius: BorderRadius.circular(8.0),
-                                hoverColor: const Color(0x00F1F4F8),
-                                hoverBorderSide: const BorderSide(
+                                hoverColor: Color(0x00F1F4F8),
+                                hoverBorderSide: BorderSide(
                                   color: Color(0x00F1F4F8),
                                   width: 0.0,
                                 ),
@@ -730,7 +733,7 @@ class _AppBarWidgetState extends State<AppBarWidget>
                               animationsMap['buttonOnActionTriggerAnimation5']!,
                             ),
                           Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 20.0, 0.0, 12.0, 0.0),
                             child: InkWell(
                               splashColor: Colors.transparent,
@@ -786,17 +789,17 @@ class _AppBarWidgetState extends State<AppBarWidget>
                                   ),
                                 ),
                                 child: Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       2.0, 2.0, 2.0, 2.0),
                                   child: Stack(
-                                    alignment: const AlignmentDirectional(0.0, 0.0),
+                                    alignment: AlignmentDirectional(0.0, 0.0),
                                     children: [
                                       Align(
                                         alignment:
-                                            const AlignmentDirectional(-0.90, 0.00),
+                                            AlignmentDirectional(-0.90, 0.00),
                                         child: Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   6.0, 0.0, 0.0, 0.0),
                                           child: Icon(
                                             Icons.wb_sunny_rounded,
@@ -806,7 +809,7 @@ class _AppBarWidgetState extends State<AppBarWidget>
                                           ),
                                         ),
                                       ),
-                                      const Align(
+                                      Align(
                                         alignment:
                                             AlignmentDirectional(1.00, 0.00),
                                         child: Padding(
@@ -822,14 +825,14 @@ class _AppBarWidgetState extends State<AppBarWidget>
                                       ),
                                       Align(
                                         alignment:
-                                            const AlignmentDirectional(1.00, 0.00),
+                                            AlignmentDirectional(1.00, 0.00),
                                         child: Container(
                                           width: 36.0,
                                           height: 36.0,
                                           decoration: BoxDecoration(
                                             color: FlutterFlowTheme.of(context)
                                                 .primaryText,
-                                            boxShadow: const [
+                                            boxShadow: [
                                               BoxShadow(
                                                 blurRadius: 4.0,
                                                 color: Color(0x430B0D0F),

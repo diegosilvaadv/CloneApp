@@ -1,14 +1,23 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
+import 'package:go_router/go_router.dart';
+import 'package:page_transition/page_transition.dart';
 import 'package:provider/provider.dart';
 
+import '/backend/schema/structs/index.dart';
 
 import '/backend/supabase/supabase.dart';
 import '/auth/base_auth_user_provider.dart';
 
 import '/index.dart';
+import '/main.dart';
+import '/flutter_flow/flutter_flow_theme.dart';
+import '/flutter_flow/lat_lng.dart';
+import '/flutter_flow/place.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import 'serialization_util.dart';
 
 export 'package:go_router/go_router.dart';
 export 'serialization_util.dart';
@@ -73,18 +82,18 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
       debugLogDiagnostics: true,
       refreshListenable: appStateNotifier,
       errorBuilder: (context, state) =>
-          appStateNotifier.loggedIn ? const HomePageWidget() : const HomePageWidget(),
+          appStateNotifier.loggedIn ? HomePageWidget() : HomePageWidget(),
       routes: [
         FFRoute(
           name: '_initialize',
           path: '/',
           builder: (context, _) =>
-              appStateNotifier.loggedIn ? const HomePageWidget() : const HomePageWidget(),
+              appStateNotifier.loggedIn ? HomePageWidget() : HomePageWidget(),
         ),
         FFRoute(
           name: 'HomePage',
           path: '/homePage',
-          builder: (context, params) => const HomePageWidget(),
+          builder: (context, params) => HomePageWidget(),
         ),
         FFRoute(
           name: 'detalhePage',
@@ -97,34 +106,34 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
         FFRoute(
           name: 'Tutorial',
           path: '/tutorial',
-          builder: (context, params) => const TutorialWidget(),
+          builder: (context, params) => TutorialWidget(),
         ),
         FFRoute(
           name: 'contato',
           path: '/contato',
-          builder: (context, params) => const ContatoWidget(),
+          builder: (context, params) => ContatoWidget(),
         ),
         FFRoute(
           name: 'DashBoard',
           path: '/dashBoard',
           requireAuth: true,
-          builder: (context, params) => const DashBoardWidget(),
+          builder: (context, params) => DashBoardWidget(),
         ),
         FFRoute(
           name: 'templates',
           path: '/templates',
           requireAuth: true,
-          builder: (context, params) => const TemplatesWidget(),
+          builder: (context, params) => TemplatesWidget(),
         ),
         FFRoute(
           name: 'login',
           path: '/login',
-          builder: (context, params) => const LoginWidget(),
+          builder: (context, params) => LoginWidget(),
         ),
         FFRoute(
           name: 'perfil',
           path: '/perfil',
-          builder: (context, params) => const PerfilWidget(),
+          builder: (context, params) => PerfilWidget(),
         ),
         FFRoute(
           name: 'vermais',
@@ -136,7 +145,7 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
         FFRoute(
           name: 'vermaisall',
           path: '/vermaisall',
-          builder: (context, params) => const VermaisallWidget(),
+          builder: (context, params) => VermaisallWidget(),
         ),
         FFRoute(
           name: 'detalhePageApps',
@@ -157,17 +166,17 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
         FFRoute(
           name: 'ConfirmarEmail',
           path: '/confirmarEmail',
-          builder: (context, params) => const ConfirmarEmailWidget(),
+          builder: (context, params) => ConfirmarEmailWidget(),
         ),
         FFRoute(
           name: 'ResetarSenha',
           path: '/resetarsenha',
-          builder: (context, params) => const ResetarSenhaWidget(),
+          builder: (context, params) => ResetarSenhaWidget(),
         ),
         FFRoute(
           name: 'teste',
           path: '/teste',
-          builder: (context, params) => const TesteWidget(),
+          builder: (context, params) => TesteWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
       observers: [routeObserver],
@@ -392,7 +401,7 @@ class TransitionInfo {
   final Duration duration;
   final Alignment? alignment;
 
-  static TransitionInfo appDefault() => const TransitionInfo(hasTransition: false);
+  static TransitionInfo appDefault() => TransitionInfo(hasTransition: false);
 }
 
 class RootPageContext {

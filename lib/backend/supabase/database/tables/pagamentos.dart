@@ -9,7 +9,7 @@ class PagamentosTable extends SupabaseTable<PagamentosRow> {
 }
 
 class PagamentosRow extends SupabaseDataRow {
-  PagamentosRow(super.data);
+  PagamentosRow(Map<String, dynamic> data) : super(data);
 
   @override
   SupabaseTable get table => PagamentosTable();

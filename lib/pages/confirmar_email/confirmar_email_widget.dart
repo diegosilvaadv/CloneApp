@@ -5,12 +5,14 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'confirmar_email_model.dart';
 export 'confirmar_email_model.dart';
 
 class ConfirmarEmailWidget extends StatefulWidget {
-  const ConfirmarEmailWidget({super.key});
+  const ConfirmarEmailWidget({Key? key}) : super(key: key);
 
   @override
   _ConfirmarEmailWidgetState createState() => _ConfirmarEmailWidgetState();
@@ -79,7 +81,7 @@ class _ConfirmarEmailWidgetState extends State<ConfirmarEmailWidget> {
                     desktop: false,
                   ))
                     Align(
-                      alignment: const AlignmentDirectional(0.00, 0.00),
+                      alignment: AlignmentDirectional(0.00, 0.00),
                       child: Container(
                         width: double.infinity,
                         height: MediaQuery.sizeOf(context).height * 0.5,
@@ -91,12 +93,12 @@ class _ConfirmarEmailWidgetState extends State<ConfirmarEmailWidget> {
                         child: Stack(
                           children: [
                             Align(
-                              alignment: const AlignmentDirectional(0.00, 0.00),
+                              alignment: AlignmentDirectional(0.00, 0.00),
                               child: Column(
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 20.0, 20.0, 0.0),
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
@@ -106,7 +108,7 @@ class _ConfirmarEmailWidgetState extends State<ConfirmarEmailWidget> {
                                         Flexible(
                                           child: Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     16.0, 0.0, 0.0, 6.0),
                                             child: Text(
                                               'E-mail confirmado com Sucesso!',
@@ -124,7 +126,7 @@ class _ConfirmarEmailWidgetState extends State<ConfirmarEmailWidget> {
                                     ),
                                   ),
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 20.0, 20.0, 0.0),
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
@@ -134,7 +136,7 @@ class _ConfirmarEmailWidgetState extends State<ConfirmarEmailWidget> {
                                         Flexible(
                                           child: Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     16.0, 0.0, 16.0, 6.0),
                                             child: Text(
                                               'Sua conta foi ativada com sucesso, agora navegue para a página incinal para aproveitar todos os conteúdos.',
@@ -154,7 +156,7 @@ class _ConfirmarEmailWidgetState extends State<ConfirmarEmailWidget> {
                                     ),
                                   ),
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 10.0, 20.0, 0.0),
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
@@ -167,17 +169,17 @@ class _ConfirmarEmailWidgetState extends State<ConfirmarEmailWidget> {
                                             autovalidateMode:
                                                 AutovalidateMode.disabled,
                                             child: Padding(
-                                              padding: const EdgeInsetsDirectional
+                                              padding: EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       16.0, 12.0, 16.0, 0.0),
-                                              child: SizedBox(
+                                              child: Container(
                                                 width: double.infinity,
                                                 child: TextFormField(
                                                   controller: _model
                                                       .seunomeMobileController,
                                                   focusNode: _model
                                                       .seunomeMobileFocusNode,
-                                                  autofillHints: const [
+                                                  autofillHints: [
                                                     AutofillHints.email
                                                   ],
                                                   obscureText: false,
@@ -250,7 +252,7 @@ class _ConfirmarEmailWidgetState extends State<ConfirmarEmailWidget> {
                                                             .of(context)
                                                         .secondaryBackground,
                                                     contentPadding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(
                                                                 24.0,
                                                                 24.0,
@@ -279,7 +281,7 @@ class _ConfirmarEmailWidgetState extends State<ConfirmarEmailWidget> {
                                     ),
                                   ),
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 10.0, 20.0, 0.0),
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
@@ -288,10 +290,10 @@ class _ConfirmarEmailWidgetState extends State<ConfirmarEmailWidget> {
                                       children: [
                                         Align(
                                           alignment:
-                                              const AlignmentDirectional(0.00, 0.00),
+                                              AlignmentDirectional(0.00, 0.00),
                                           child: Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 24.0, 0.0, 0.0),
                                             child: FFButtonWidget(
                                               onPressed: () async {
@@ -304,7 +306,7 @@ class _ConfirmarEmailWidgetState extends State<ConfirmarEmailWidget> {
                                                   'HomePage',
                                                   extra: <String, dynamic>{
                                                     kTransitionInfoKey:
-                                                        const TransitionInfo(
+                                                        TransitionInfo(
                                                       hasTransition: true,
                                                       transitionType:
                                                           PageTransitionType
@@ -317,11 +319,11 @@ class _ConfirmarEmailWidgetState extends State<ConfirmarEmailWidget> {
                                               options: FFButtonOptions(
                                                 width: 270.0,
                                                 height: 50.0,
-                                                padding: const EdgeInsetsDirectional
+                                                padding: EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         0.0, 0.0, 0.0, 0.0),
                                                 iconPadding:
-                                                    const EdgeInsetsDirectional
+                                                    EdgeInsetsDirectional
                                                         .fromSTEB(
                                                             0.0, 0.0, 0.0, 0.0),
                                                 color:
@@ -331,7 +333,7 @@ class _ConfirmarEmailWidgetState extends State<ConfirmarEmailWidget> {
                                                     FlutterFlowTheme.of(context)
                                                         .titleSmall,
                                                 elevation: 3.0,
-                                                borderSide: const BorderSide(
+                                                borderSide: BorderSide(
                                                   color: Colors.transparent,
                                                   width: 1.0,
                                                 ),
@@ -355,7 +357,7 @@ class _ConfirmarEmailWidgetState extends State<ConfirmarEmailWidget> {
                     tablet: false,
                   ))
                     Align(
-                      alignment: const AlignmentDirectional(0.00, 0.00),
+                      alignment: AlignmentDirectional(0.00, 0.00),
                       child: Container(
                         width: MediaQuery.sizeOf(context).width * 0.5,
                         height: MediaQuery.sizeOf(context).height * 0.5,
@@ -367,12 +369,12 @@ class _ConfirmarEmailWidgetState extends State<ConfirmarEmailWidget> {
                         child: Stack(
                           children: [
                             Align(
-                              alignment: const AlignmentDirectional(0.00, 0.00),
+                              alignment: AlignmentDirectional(0.00, 0.00),
                               child: Column(
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 20.0, 20.0, 0.0),
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
@@ -381,7 +383,7 @@ class _ConfirmarEmailWidgetState extends State<ConfirmarEmailWidget> {
                                       children: [
                                         Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   16.0, 0.0, 0.0, 6.0),
                                           child: Text(
                                             'E-mail confirmado com Sucesso!',
@@ -397,7 +399,7 @@ class _ConfirmarEmailWidgetState extends State<ConfirmarEmailWidget> {
                                     ),
                                   ),
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 20.0, 20.0, 0.0),
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
@@ -407,7 +409,7 @@ class _ConfirmarEmailWidgetState extends State<ConfirmarEmailWidget> {
                                         Flexible(
                                           child: Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     16.0, 4.0, 16.0, 6.0),
                                             child: Text(
                                               'Sua conta foi ativada com sucesso, agora navegue para a página incinal para aproveitar todos os conteúdos.',
@@ -426,7 +428,7 @@ class _ConfirmarEmailWidgetState extends State<ConfirmarEmailWidget> {
                                     ),
                                   ),
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 10.0, 20.0, 0.0),
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
@@ -439,17 +441,17 @@ class _ConfirmarEmailWidgetState extends State<ConfirmarEmailWidget> {
                                             autovalidateMode:
                                                 AutovalidateMode.disabled,
                                             child: Padding(
-                                              padding: const EdgeInsetsDirectional
+                                              padding: EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       16.0, 12.0, 16.0, 0.0),
-                                              child: SizedBox(
+                                              child: Container(
                                                 width: double.infinity,
                                                 child: TextFormField(
                                                   controller: _model
                                                       .seunomeDesktopController,
                                                   focusNode: _model
                                                       .seunomeDesktopFocusNode,
-                                                  autofillHints: const [
+                                                  autofillHints: [
                                                     AutofillHints.email
                                                   ],
                                                   obscureText: false,
@@ -522,7 +524,7 @@ class _ConfirmarEmailWidgetState extends State<ConfirmarEmailWidget> {
                                                             .of(context)
                                                         .secondaryBackground,
                                                     contentPadding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(
                                                                 24.0,
                                                                 24.0,
@@ -551,7 +553,7 @@ class _ConfirmarEmailWidgetState extends State<ConfirmarEmailWidget> {
                                     ),
                                   ),
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 10.0, 20.0, 0.0),
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
@@ -560,10 +562,10 @@ class _ConfirmarEmailWidgetState extends State<ConfirmarEmailWidget> {
                                       children: [
                                         Align(
                                           alignment:
-                                              const AlignmentDirectional(0.00, 0.00),
+                                              AlignmentDirectional(0.00, 0.00),
                                           child: Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 24.0, 0.0, 0.0),
                                             child: FFButtonWidget(
                                               onPressed: () async {
@@ -600,7 +602,7 @@ class _ConfirmarEmailWidgetState extends State<ConfirmarEmailWidget> {
                                                   'HomePage',
                                                   extra: <String, dynamic>{
                                                     kTransitionInfoKey:
-                                                        const TransitionInfo(
+                                                        TransitionInfo(
                                                       hasTransition: true,
                                                       transitionType:
                                                           PageTransitionType
@@ -613,11 +615,11 @@ class _ConfirmarEmailWidgetState extends State<ConfirmarEmailWidget> {
                                               options: FFButtonOptions(
                                                 width: 270.0,
                                                 height: 50.0,
-                                                padding: const EdgeInsetsDirectional
+                                                padding: EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         0.0, 0.0, 0.0, 0.0),
                                                 iconPadding:
-                                                    const EdgeInsetsDirectional
+                                                    EdgeInsetsDirectional
                                                         .fromSTEB(
                                                             0.0, 0.0, 0.0, 0.0),
                                                 color:
@@ -627,7 +629,7 @@ class _ConfirmarEmailWidgetState extends State<ConfirmarEmailWidget> {
                                                     FlutterFlowTheme.of(context)
                                                         .titleSmall,
                                                 elevation: 3.0,
-                                                borderSide: const BorderSide(
+                                                borderSide: BorderSide(
                                                   color: Colors.transparent,
                                                   width: 1.0,
                                                 ),

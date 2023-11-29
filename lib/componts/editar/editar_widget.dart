@@ -3,19 +3,22 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'editar_model.dart';
 export 'editar_model.dart';
 
 class EditarWidget extends StatefulWidget {
   const EditarWidget({
-    super.key,
+    Key? key,
     required this.titulo,
     required this.descricao,
     required this.categoria,
     required this.codpag,
     required this.id,
-  });
+  }) : super(key: key);
 
   final String? titulo;
   final String? descricao;
@@ -70,7 +73,7 @@ class _EditarWidgetState extends State<EditarWidget> {
     context.watch<FFAppState>();
 
     return Padding(
-      padding: const EdgeInsetsDirectional.fromSTEB(20.0, 20.0, 20.0, 20.0),
+      padding: EdgeInsetsDirectional.fromSTEB(20.0, 20.0, 20.0, 20.0),
       child: SingleChildScrollView(
         child: Column(
           mainAxisSize: MainAxisSize.max,
@@ -87,7 +90,7 @@ class _EditarWidgetState extends State<EditarWidget> {
                 children: [
                   Padding(
                     padding:
-                        const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 30.0, 0.0),
+                        EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 30.0, 0.0),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
                       mainAxisAlignment: MainAxisAlignment.end,
@@ -103,7 +106,7 @@ class _EditarWidgetState extends State<EditarWidget> {
                             logFirebaseEvent('Icon_bottom_sheet');
                             Navigator.pop(context);
                           },
-                          child: const Icon(
+                          child: Icon(
                             Icons.close_sharp,
                             color: Color(0xFFFF0004),
                             size: 40.0,
@@ -113,7 +116,7 @@ class _EditarWidgetState extends State<EditarWidget> {
                     ),
                   ),
                   Padding(
-                    padding: const EdgeInsetsDirectional.fromSTEB(
+                    padding: EdgeInsetsDirectional.fromSTEB(
                         150.0, 10.0, 150.0, 10.0),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
@@ -121,7 +124,7 @@ class _EditarWidgetState extends State<EditarWidget> {
                       children: [
                         Expanded(
                           child: Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 8.0, 0.0, 8.0, 0.0),
                             child: TextFormField(
                               controller: _model.tituloController,
@@ -174,7 +177,7 @@ class _EditarWidgetState extends State<EditarWidget> {
                     ),
                   ),
                   Padding(
-                    padding: const EdgeInsetsDirectional.fromSTEB(
+                    padding: EdgeInsetsDirectional.fromSTEB(
                         150.0, 10.0, 150.0, 10.0),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
@@ -182,7 +185,7 @@ class _EditarWidgetState extends State<EditarWidget> {
                       children: [
                         Expanded(
                           child: Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 8.0, 0.0, 8.0, 0.0),
                             child: TextFormField(
                               controller: _model.descricaoController,
@@ -236,7 +239,7 @@ class _EditarWidgetState extends State<EditarWidget> {
                     ),
                   ),
                   Padding(
-                    padding: const EdgeInsetsDirectional.fromSTEB(
+                    padding: EdgeInsetsDirectional.fromSTEB(
                         150.0, 10.0, 150.0, 10.0),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
@@ -244,7 +247,7 @@ class _EditarWidgetState extends State<EditarWidget> {
                       children: [
                         Expanded(
                           child: Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 8.0, 0.0, 8.0, 0.0),
                             child: TextFormField(
                               controller: _model.categoriaController,
@@ -297,7 +300,7 @@ class _EditarWidgetState extends State<EditarWidget> {
                     ),
                   ),
                   Padding(
-                    padding: const EdgeInsetsDirectional.fromSTEB(
+                    padding: EdgeInsetsDirectional.fromSTEB(
                         150.0, 10.0, 150.0, 10.0),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
@@ -305,7 +308,7 @@ class _EditarWidgetState extends State<EditarWidget> {
                       children: [
                         Expanded(
                           child: Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 8.0, 0.0, 8.0, 0.0),
                             child: TextFormField(
                               controller: _model.codpagController,
@@ -385,9 +388,9 @@ class _EditarWidgetState extends State<EditarWidget> {
                         text: 'Salvar Alterações',
                         options: FFButtonOptions(
                           height: 40.0,
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               24.0, 0.0, 24.0, 0.0),
-                          iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                          iconPadding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 0.0, 0.0, 0.0),
                           color: FlutterFlowTheme.of(context).primary,
                           textStyle:
@@ -396,7 +399,7 @@ class _EditarWidgetState extends State<EditarWidget> {
                                     color: Colors.white,
                                   ),
                           elevation: 3.0,
-                          borderSide: const BorderSide(
+                          borderSide: BorderSide(
                             color: Colors.transparent,
                             width: 1.0,
                           ),
