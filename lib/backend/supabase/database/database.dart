@@ -5,6 +5,8 @@ export '../supabase.dart';
 export 'row.dart';
 export 'table.dart';
 
+export 'tables/gerar_token.dart';
+export 'tables/users_pagamentos.dart';
 export 'tables/pagamentos.dart';
 export 'tables/users.dart';
 export 'tables/templates.dart';

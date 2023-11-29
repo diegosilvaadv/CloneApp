@@ -7,6 +7,7 @@ import '/flutter_flow/upload_data.dart';
 import 'package:easy_debounce/easy_debounce.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'add_model.dart';
@@ -574,10 +575,9 @@ class _AddWidgetState extends State<AddWidget> {
                           child: SizedBox(
                             width: 50.0,
                             height: 50.0,
-                            child: CircularProgressIndicator(
-                              valueColor: AlwaysStoppedAnimation<Color>(
-                                FlutterFlowTheme.of(context).primary,
-                              ),
+                            child: SpinKitPulse(
+                              color: FlutterFlowTheme.of(context).secondaryText,
+                              size: 50.0,
                             ),
                           ),
                         );

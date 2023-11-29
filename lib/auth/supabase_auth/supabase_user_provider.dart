@@ -5,8 +5,8 @@ import '../base_auth_user_provider.dart';
 
 export '../base_auth_user_provider.dart';
 
-class CopyPageSupabaseUser extends BaseAuthUser {
-  CopyPageSupabaseUser(this.user);
+class CoppyAppSupabaseUser extends BaseAuthUser {
+  CoppyAppSupabaseUser(this.user);
   User? user;
   bool get loggedIn => user != null;
 
@@ -56,7 +56,7 @@ class CopyPageSupabaseUser extends BaseAuthUser {
 /// [SupaFlow.client.auth.onAuthStateChange] does not yield any values until the
 /// user is already authenticated. So we add a default null user to the stream,
 /// if we need to interact with the [currentUser] before logging in.
-Stream<BaseAuthUser> copyPageSupabaseUserStream() {
+Stream<BaseAuthUser> coppyAppSupabaseUserStream() {
   final supabaseAuthStream = SupaFlow.client.auth.onAuthStateChange.debounce(
       (authState) => authState.event == AuthChangeEvent.tokenRefreshed
           ? TimerStream(authState, Duration(seconds: 1))
@@ -66,7 +66,7 @@ Stream<BaseAuthUser> copyPageSupabaseUserStream() {
           : supabaseAuthStream)
       .map<BaseAuthUser>(
     (authState) {
-      currentUser = CopyPageSupabaseUser(authState?.session?.user);
+      currentUser = CoppyAppSupabaseUser(authState?.session?.user);
       return currentUser!;
     },
   );

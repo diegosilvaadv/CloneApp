@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.15)
-project(copy_page LANGUAGES CXX)
+project(coppy_app LANGUAGES CXX)
 
-set(BINARY_NAME "copy_page")
+set(BINARY_NAME "coppy_app")
 
 cmake_policy(SET CMP0063 NEW)
 

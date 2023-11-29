@@ -5,7 +5,7 @@
 
 
     <application
-        android:label="Copy Page"
+        android:label="CoppyApp"
         tools:replace="android:label"
         android:icon="@mipmap/ic_launcher"
         android:requestLegacyExternalStorage="true">
@@ -45,7 +45,7 @@
                 <action android:name="android.intent.action.VIEW" />
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
-                <data android:scheme="copypage" android:host="copypage.com" />
+                <data android:scheme="coppyapp" android:host="coppyapp.com" />
             </intent-filter>
 
         </activity>

@@ -12,3 +12,7 @@ export '/pages/vermaisall/vermaisall_widget.dart' show VermaisallWidget;
 export '/pages/detalhe_page_apps/detalhe_page_apps_widget.dart'
     show DetalhePageAppsWidget;
 export '/pages/pagamento/pagamento_widget.dart' show PagamentoWidget;
+export '/pages/confirmar_email/confirmar_email_widget.dart'
+    show ConfirmarEmailWidget;
+export '/pages/resetar_senha/resetar_senha_widget.dart' show ResetarSenhaWidget;
+export '/teste/teste_widget.dart' show TesteWidget;

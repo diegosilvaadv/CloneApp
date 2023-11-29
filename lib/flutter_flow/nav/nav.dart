@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:go_router/go_router.dart';
 import 'package:page_transition/page_transition.dart';
 import 'package:provider/provider.dart';
@@ -161,6 +162,21 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
             detalhes: params.getParam<TemplatesRow>(
                 'detalhes', ParamType.SupabaseRow),
           ),
+        ),
+        FFRoute(
+          name: 'ConfirmarEmail',
+          path: '/confirmarEmail',
+          builder: (context, params) => ConfirmarEmailWidget(),
+        ),
+        FFRoute(
+          name: 'ResetarSenha',
+          path: '/resetarsenha',
+          builder: (context, params) => ResetarSenhaWidget(),
+        ),
+        FFRoute(
+          name: 'teste',
+          path: '/teste',
+          builder: (context, params) => TesteWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
       observers: [routeObserver],
@@ -343,15 +359,11 @@ class FFRoute {
                 )
               : builder(context, ffParams);
           final child = appStateNotifier.loading
-              ? Center(
-                  child: SizedBox(
-                    width: 50.0,
-                    height: 50.0,
-                    child: CircularProgressIndicator(
-                      valueColor: AlwaysStoppedAnimation<Color>(
-                        FlutterFlowTheme.of(context).primary,
-                      ),
-                    ),
+              ? Container(
+                  color: Colors.transparent,
+                  child: Image.asset(
+                    'assets/images/Music_Desktop_Wallpaper.png',
+                    fit: BoxFit.cover,
                   ),
                 )
               : page;

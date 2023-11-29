@@ -40,4 +40,10 @@ class PagamentosRow extends SupabaseDataRow {
 
   String? get comprado => getField<String>('comprado');
   set comprado(String? value) => setField<String>('comprado', value);
+
+  String? get cartaoFinal => getField<String>('cartao _final');
+  set cartaoFinal(String? value) => setField<String>('cartao _final', value);
+
+  String? get transacionID => getField<String>('transacionID');
+  set transacionID(String? value) => setField<String>('transacionID', value);
 }

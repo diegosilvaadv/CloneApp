@@ -18,12 +18,19 @@ class FFAppState extends ChangeNotifier {
     _instance = FFAppState._internal();
   }
 
-  Future initializePersistedState() async {}
+  Future initializePersistedState() async {
+    prefs = await SharedPreferences.getInstance();
+    _safeInit(() {
+      _nomeUser = prefs.getString('ff_nomeUser') ?? _nomeUser;
+    });
+  }
 
   void update(VoidCallback callback) {
     callback();
     notifyListeners();
   }
+
+  late SharedPreferences prefs;
 
   PagamentosStruct _PagRed = PagamentosStruct();
   PagamentosStruct get PagRed => _PagRed;
@@ -56,6 +63,43 @@ class FFAppState extends ChangeNotifier {
   String get FormadePag => _FormadePag;
   set FormadePag(String _value) {
     _FormadePag = _value;
+  }
+
+  String _GerarUUID = '';
+  String get GerarUUID => _GerarUUID;
+  set GerarUUID(String _value) {
+    _GerarUUID = _value;
+  }
+
+  int _deDoubleToInteger = 0;
+  int get deDoubleToInteger => _deDoubleToInteger;
+  set deDoubleToInteger(int _value) {
+    _deDoubleToInteger = _value;
+  }
+
+  String _AppBar = 'home';
+  String get AppBar => _AppBar;
+  set AppBar(String _value) {
+    _AppBar = _value;
+  }
+
+  String _nomeUser = '';
+  String get nomeUser => _nomeUser;
+  set nomeUser(String _value) {
+    _nomeUser = _value;
+    prefs.setString('ff_nomeUser', _value);
+  }
+
+  String _statusCartaodeCredito = '';
+  String get statusCartaodeCredito => _statusCartaodeCredito;
+  set statusCartaodeCredito(String _value) {
+    _statusCartaodeCredito = _value;
+  }
+
+  String _UsarCartaoSalvo = '0';
+  String get UsarCartaoSalvo => _UsarCartaoSalvo;
+  set UsarCartaoSalvo(String _value) {
+    _UsarCartaoSalvo = _value;
   }
 }
 

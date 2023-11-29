@@ -1,13 +1,18 @@
 import '/auth/supabase_auth/auth_util.dart';
 import '/backend/api_requests/api_calls.dart';
 import '/backend/supabase/supabase.dart';
-import '/flutter_flow/flutter_flow_credit_card_form.dart';
+import '/componts/pag_card_com_sucess/pag_card_com_sucess_widget.dart';
+import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import '/flutter_flow/custom_functions.dart' as functions;
+import '/flutter_flow/random_data_util.dart' as random_data;
 import 'pag_cartao_widget.dart' show PagCartaoWidget;
+import 'package:expandable/expandable.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
 import 'package:provider/provider.dart';
@@ -17,14 +22,22 @@ class PagCartaoModel extends FlutterFlowModel<PagCartaoWidget> {
   ///  State fields for stateful widgets in this component.
 
   final formKey5 = GlobalKey<FormState>();
-  final formKey2 = GlobalKey<FormState>();
+  final formKey1 = GlobalKey<FormState>();
   final formKey8 = GlobalKey<FormState>();
   final formKey6 = GlobalKey<FormState>();
-  final formKey3 = GlobalKey<FormState>();
+  final formKey2 = GlobalKey<FormState>();
   final formKey7 = GlobalKey<FormState>();
   final formKey9 = GlobalKey<FormState>();
   final formKey4 = GlobalKey<FormState>();
-  final formKey1 = GlobalKey<FormState>();
+  final formKey3 = GlobalKey<FormState>();
+  final formKey10 = GlobalKey<FormState>();
+  // State field(s) for Expandable widget.
+  late ExpandableController expandableController;
+
+  // Stores action output result for [Backend Call - API (authenticate CobreFacil)] action in Button widget.
+  ApiCallResponse? resultadoToken;
+  // Stores action output result for [Backend Call - API (Deletar Cartoes CobreFacil )] action in Button widget.
+  ApiCallResponse? aPIdeletadoCard;
   // State field(s) for nome widget.
   FocusNode? nomeFocusNode;
   TextEditingController? nomeController;
@@ -40,6 +53,7 @@ class PagCartaoModel extends FlutterFlowModel<PagCartaoWidget> {
   // State field(s) for cpf widget.
   FocusNode? cpfFocusNode;
   TextEditingController? cpfController;
+  final cpfMask = MaskTextInputFormatter(mask: '###.###.###-##');
   String? Function(BuildContext, String?)? cpfControllerValidator;
   String? _cpfControllerValidator(BuildContext context, String? val) {
     if (val == null || val.isEmpty) {
@@ -56,6 +70,7 @@ class PagCartaoModel extends FlutterFlowModel<PagCartaoWidget> {
   // State field(s) for number_cartao widget.
   FocusNode? numberCartaoFocusNode;
   TextEditingController? numberCartaoController;
+  final numberCartaoMask = MaskTextInputFormatter(mask: '#### #### #### #### ');
   String? Function(BuildContext, String?)? numberCartaoControllerValidator;
   String? _numberCartaoControllerValidator(BuildContext context, String? val) {
     if (val == null || val.isEmpty) {
@@ -106,7 +121,7 @@ class PagCartaoModel extends FlutterFlowModel<PagCartaoWidget> {
   // State field(s) for cvv_card widget.
   FocusNode? cvvCardFocusNode;
   TextEditingController? cvvCardController;
-  final cvvCardMask = MaskTextInputFormatter(mask: '###');
+  final cvvCardMask = MaskTextInputFormatter(mask: '####');
   String? Function(BuildContext, String?)? cvvCardControllerValidator;
   String? _cvvCardControllerValidator(BuildContext context, String? val) {
     if (val == null || val.isEmpty) {
@@ -123,6 +138,7 @@ class PagCartaoModel extends FlutterFlowModel<PagCartaoWidget> {
   // State field(s) for cep widget.
   FocusNode? cepFocusNode;
   TextEditingController? cepController;
+  final cepMask = MaskTextInputFormatter(mask: '#####-###');
   String? Function(BuildContext, String?)? cepControllerValidator;
   String? _cepControllerValidator(BuildContext context, String? val) {
     if (val == null || val.isEmpty) {
@@ -152,30 +168,37 @@ class PagCartaoModel extends FlutterFlowModel<PagCartaoWidget> {
     return null;
   }
 
+  // State field(s) for Complemento widget.
+  FocusNode? complementoFocusNode;
+  TextEditingController? complementoController;
+  String? Function(BuildContext, String?)? complementoControllerValidator;
   // State field(s) for celular widget.
   FocusNode? celularFocusNode;
   TextEditingController? celularController;
+  final celularMask = MaskTextInputFormatter(mask: '(##) #####-####');
   String? Function(BuildContext, String?)? celularControllerValidator;
-  String? _celularControllerValidator(BuildContext context, String? val) {
-    if (val == null || val.isEmpty) {
-      return 'Obrigatório';
-    }
-
-    if (val.length < 15) {
-      return 'Requires at least 15 characters.';
-    }
-    if (val.length > 15) {
-      return 'Maximum 15 characters allowed, currently ${val.length}.';
-    }
-
-    return null;
-  }
-
-  // State field(s) for CreditCardForm widget.
-  final creditCardFormKey = GlobalKey<FormState>();
-  CreditCardModel creditCardInfo = emptyCreditCard();
-  // Stores action output result for [Backend Call - API (Criar Pag Cartao API PagBank)] action in Button widget.
-  ApiCallResponse? validacaoCard;
+  // Stores action output result for [Backend Call - API (authenticate CobreFacil)] action in Button widget.
+  ApiCallResponse? resultadoTokenCriado;
+  // Stores action output result for [Backend Call - API (BUSCARCEP)] action in Button widget.
+  ApiCallResponse? resultadoCep;
+  // Stores action output result for [Backend Call - API (Criar Cliente CobreFacil)] action in Button widget.
+  ApiCallResponse? resultadoCriarCliente;
+  // Stores action output result for [Backend Call - API (Criar Cartao CobreFacil)] action in Button widget.
+  ApiCallResponse? resultadoCartaoCriado;
+  // Stores action output result for [Backend Call - API (Autorizar Cobranca via Cartao CobreFacil )] action in Button widget.
+  ApiCallResponse? resultadoDaCobranca;
+  // Stores action output result for [Backend Call - API (detalhes Cobranca via Cartao CobreFacil )] action in Button widget.
+  ApiCallResponse? consultarAprovacao3;
+  // Stores action output result for [Backend Call - API (Criar Cartao CobreFacil)] action in Button widget.
+  ApiCallResponse? resultadoCartaoCriado2;
+  // Stores action output result for [Backend Call - API (Autorizar Cobranca via Cartao CobreFacil )] action in Button widget.
+  ApiCallResponse? resultadoDaCobranca2;
+  // Stores action output result for [Backend Call - API (detalhes Cobranca via Cartao CobreFacil )] action in Button widget.
+  ApiCallResponse? consultarAprovacao2;
+  // Stores action output result for [Backend Call - API (Autorizar Cobranca via Cartao CobreFacil )] action in Button widget.
+  ApiCallResponse? resultadoCartaoSalvo;
+  // Stores action output result for [Backend Call - API (detalhes Cobranca via Cartao CobreFacil )] action in Button widget.
+  ApiCallResponse? consultarAprovacao;
 
   /// Initialization and disposal methods.
 
@@ -188,10 +211,10 @@ class PagCartaoModel extends FlutterFlowModel<PagCartaoWidget> {
     cvvCardControllerValidator = _cvvCardControllerValidator;
     cepControllerValidator = _cepControllerValidator;
     numeroControllerValidator = _numeroControllerValidator;
-    celularControllerValidator = _celularControllerValidator;
   }
 
   void dispose() {
+    expandableController.dispose();
     nomeFocusNode?.dispose();
     nomeController?.dispose();
 
@@ -215,6 +238,9 @@ class PagCartaoModel extends FlutterFlowModel<PagCartaoWidget> {
 
     numeroFocusNode?.dispose();
     numeroController?.dispose();
+
+    complementoFocusNode?.dispose();
+    complementoController?.dispose();
 
     celularFocusNode?.dispose();
     celularController?.dispose();

@@ -1,4 +1,4 @@
-# Copy Page
+# CoppyApp
 
 A new Flutter project.
 

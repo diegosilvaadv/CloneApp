@@ -50,4 +50,10 @@ class TemplatesRow extends SupabaseDataRow {
   String? get linkTesteProjeto => getField<String>('linkTesteProjeto');
   set linkTesteProjeto(String? value) =>
       setField<String>('linkTesteProjeto', value);
+
+  String? get img2 => getField<String>('img2');
+  set img2(String? value) => setField<String>('img2', value);
+
+  String? get img3 => getField<String>('img3');
+  set img3(String? value) => setField<String>('img3', value);
 }
