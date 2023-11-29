@@ -4,19 +4,16 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/upload_data.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:flutter_spinkit/flutter_spinkit.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'alterarimg_model.dart';
 export 'alterarimg_model.dart';
 
 class AlterarimgWidget extends StatefulWidget {
   const AlterarimgWidget({
-    Key? key,
+    super.key,
     required this.img,
     required this.id,
-  }) : super(key: key);
+  });
 
   final String? img;
   final int? id;
@@ -54,7 +51,7 @@ class _AlterarimgWidgetState extends State<AlterarimgWidget> {
     context.watch<FFAppState>();
 
     return Align(
-      alignment: AlignmentDirectional(0.00, 0.00),
+      alignment: const AlignmentDirectional(0.00, 0.00),
       child: Container(
         width: MediaQuery.sizeOf(context).width * 0.54,
         height: MediaQuery.sizeOf(context).height * 0.646,
@@ -67,7 +64,7 @@ class _AlterarimgWidgetState extends State<AlterarimgWidget> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 10.0),
+              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 10.0),
               child: Row(
                 mainAxisSize: MainAxisSize.max,
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -82,7 +79,7 @@ class _AlterarimgWidgetState extends State<AlterarimgWidget> {
                       logFirebaseEvent('Icon_bottom_sheet');
                       Navigator.pop(context);
                     },
-                    child: Icon(
+                    child: const Icon(
                       Icons.close_sharp,
                       color: Color(0xFFFF0004),
                       size: 40.0,
@@ -164,7 +161,7 @@ class _AlterarimgWidgetState extends State<AlterarimgWidget> {
               ],
             ),
             Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 0.0),
+              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 0.0),
               child: Row(
                 mainAxisSize: MainAxisSize.max,
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -189,9 +186,9 @@ class _AlterarimgWidgetState extends State<AlterarimgWidget> {
                     options: FFButtonOptions(
                       height: 40.0,
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
+                          const EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
                       iconPadding:
-                          EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                          const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                       color: FlutterFlowTheme.of(context).secondary,
                       textStyle:
                           FlutterFlowTheme.of(context).titleSmall.override(
@@ -200,7 +197,7 @@ class _AlterarimgWidgetState extends State<AlterarimgWidget> {
                                 fontSize: 50.0,
                               ),
                       elevation: 3.0,
-                      borderSide: BorderSide(
+                      borderSide: const BorderSide(
                         color: Colors.transparent,
                         width: 1.0,
                       ),

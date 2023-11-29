@@ -1,16 +1,13 @@
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_spinkit/flutter_spinkit.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'teste_model.dart';
 export 'teste_model.dart';
 
 class TesteWidget extends StatefulWidget {
-  const TesteWidget({Key? key}) : super(key: key);
+  const TesteWidget({super.key});
 
   @override
   _TesteWidgetState createState() => _TesteWidgetState();
@@ -74,12 +71,12 @@ class _TesteWidgetState extends State<TesteWidget> {
                       decoration: BoxDecoration(
                         color: FlutterFlowTheme.of(context).secondaryBackground,
                         border: Border.all(
-                          color: Color(0x0039D2C0),
+                          color: const Color(0x0039D2C0),
                           width: 1.0,
                         ),
                       ),
                       child: Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(
+                        padding: const EdgeInsetsDirectional.fromSTEB(
                             20.0, 20.0, 20.0, 20.0),
                         child: Material(
                           color: Colors.transparent,
@@ -107,7 +104,7 @@ class _TesteWidgetState extends State<TesteWidget> {
                       color: FlutterFlowTheme.of(context).secondaryBackground,
                     ),
                     child: Padding(
-                      padding: EdgeInsetsDirectional.fromSTEB(
+                      padding: const EdgeInsetsDirectional.fromSTEB(
                           20.0, 20.0, 20.0, 20.0),
                       child: Material(
                         color: Colors.transparent,

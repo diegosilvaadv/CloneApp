@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import '/backend/schema/structs/index.dart';
-import 'backend/api_requests/api_manager.dart';
-import 'backend/supabase/supabase.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'flutter_flow/flutter_flow_util.dart';
 
@@ -34,8 +32,8 @@ class FFAppState extends ChangeNotifier {
 
   PagamentosStruct _PagRed = PagamentosStruct();
   PagamentosStruct get PagRed => _PagRed;
-  set PagRed(PagamentosStruct _value) {
-    _PagRed = _value;
+  set PagRed(PagamentosStruct value) {
+    _PagRed = value;
   }
 
   void updatePagRedStruct(Function(PagamentosStruct) updateFn) {
@@ -44,15 +42,15 @@ class FFAppState extends ChangeNotifier {
 
   int _cahveAlea = 0;
   int get cahveAlea => _cahveAlea;
-  set cahveAlea(int _value) {
-    _cahveAlea = _value;
+  set cahveAlea(int value) {
+    _cahveAlea = value;
   }
 
   FormasdepagStruct _FormasdePagRef = FormasdepagStruct.fromSerializableMap(
-      jsonDecode('{\"pix\":\"pix\",\"cardaodecredito\":\"cartao\"}'));
+      jsonDecode('{"pix":"pix","cardaodecredito":"cartao"}'));
   FormasdepagStruct get FormasdePagRef => _FormasdePagRef;
-  set FormasdePagRef(FormasdepagStruct _value) {
-    _FormasdePagRef = _value;
+  set FormasdePagRef(FormasdepagStruct value) {
+    _FormasdePagRef = value;
   }
 
   void updateFormasdePagRefStruct(Function(FormasdepagStruct) updateFn) {
@@ -61,45 +59,45 @@ class FFAppState extends ChangeNotifier {
 
   String _FormadePag = 'nada';
   String get FormadePag => _FormadePag;
-  set FormadePag(String _value) {
-    _FormadePag = _value;
+  set FormadePag(String value) {
+    _FormadePag = value;
   }
 
   String _GerarUUID = '';
   String get GerarUUID => _GerarUUID;
-  set GerarUUID(String _value) {
-    _GerarUUID = _value;
+  set GerarUUID(String value) {
+    _GerarUUID = value;
   }
 
   int _deDoubleToInteger = 0;
   int get deDoubleToInteger => _deDoubleToInteger;
-  set deDoubleToInteger(int _value) {
-    _deDoubleToInteger = _value;
+  set deDoubleToInteger(int value) {
+    _deDoubleToInteger = value;
   }
 
   String _AppBar = 'home';
   String get AppBar => _AppBar;
-  set AppBar(String _value) {
-    _AppBar = _value;
+  set AppBar(String value) {
+    _AppBar = value;
   }
 
   String _nomeUser = '';
   String get nomeUser => _nomeUser;
-  set nomeUser(String _value) {
-    _nomeUser = _value;
-    prefs.setString('ff_nomeUser', _value);
+  set nomeUser(String value) {
+    _nomeUser = value;
+    prefs.setString('ff_nomeUser', value);
   }
 
   String _statusCartaodeCredito = '';
   String get statusCartaodeCredito => _statusCartaodeCredito;
-  set statusCartaodeCredito(String _value) {
-    _statusCartaodeCredito = _value;
+  set statusCartaodeCredito(String value) {
+    _statusCartaodeCredito = value;
   }
 
   String _UsarCartaoSalvo = '0';
   String get UsarCartaoSalvo => _UsarCartaoSalvo;
-  set UsarCartaoSalvo(String _value) {
-    _UsarCartaoSalvo = _value;
+  set UsarCartaoSalvo(String value) {
+    _UsarCartaoSalvo = value;
   }
 }
 

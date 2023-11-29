@@ -11,18 +11,16 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'dart:async';
 import 'package:flutter/material.dart';
-import 'package:flutter/scheduler.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'package:webviewx_plus/webviewx_plus.dart';
 import 'templates_model.dart';
 export 'templates_model.dart';
 
 class TemplatesWidget extends StatefulWidget {
-  const TemplatesWidget({Key? key}) : super(key: key);
+  const TemplatesWidget({super.key});
 
   @override
   _TemplatesWidgetState createState() => _TemplatesWidgetState();
@@ -69,8 +67,8 @@ class _TemplatesWidgetState extends State<TemplatesWidget>
           curve: Curves.easeInOut,
           delay: 0.ms,
           duration: 300.ms,
-          begin: Offset(-40.0, 0.0),
-          end: Offset(0.0, 0.0),
+          begin: const Offset(-40.0, 0.0),
+          end: const Offset(0.0, 0.0),
         ),
       ],
     ),
@@ -133,7 +131,7 @@ class _TemplatesWidgetState extends State<TemplatesWidget>
                   color: FlutterFlowTheme.of(context).primaryText),
               automaticallyImplyLeading: false,
               title: Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 20.0, 0.0),
+                padding: const EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 20.0, 0.0),
                 child: FutureBuilder<List<UsersRow>>(
                   future: UsersTable().querySingleRow(
                     queryFn: (q) => q.eq(
@@ -216,7 +214,7 @@ class _TemplatesWidgetState extends State<TemplatesWidget>
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 5.0, 0.0),
                                     child: FFButtonWidget(
                                       onPressed: () async {
@@ -227,7 +225,7 @@ class _TemplatesWidgetState extends State<TemplatesWidget>
                                         context.pushNamed(
                                           'DashBoard',
                                           extra: <String, dynamic>{
-                                            kTransitionInfoKey: TransitionInfo(
+                                            kTransitionInfoKey: const TransitionInfo(
                                               hasTransition: true,
                                               transitionType:
                                                   PageTransitionType.fade,
@@ -238,10 +236,10 @@ class _TemplatesWidgetState extends State<TemplatesWidget>
                                       text: 'DashBoard',
                                       options: FFButtonOptions(
                                         height: 40.0,
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             10.0, 0.0, 10.0, 0.0),
                                         iconPadding:
-                                            EdgeInsetsDirectional.fromSTEB(
+                                            const EdgeInsetsDirectional.fromSTEB(
                                                 0.0, 0.0, 0.0, 0.0),
                                         color: FlutterFlowTheme.of(context)
                                             .secondaryBackground,
@@ -256,13 +254,13 @@ class _TemplatesWidgetState extends State<TemplatesWidget>
                                               fontWeight: FontWeight.bold,
                                             ),
                                         elevation: 0.0,
-                                        borderSide: BorderSide(
+                                        borderSide: const BorderSide(
                                           width: 0.0,
                                         ),
                                         borderRadius:
                                             BorderRadius.circular(8.0),
-                                        hoverColor: Color(0x00F1F4F8),
-                                        hoverBorderSide: BorderSide(
+                                        hoverColor: const Color(0x00F1F4F8),
+                                        hoverBorderSide: const BorderSide(
                                           color: Color(0x00F1F4F8),
                                           width: 0.0,
                                         ),
@@ -277,7 +275,7 @@ class _TemplatesWidgetState extends State<TemplatesWidget>
                                     ),
                                   ),
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 5.0, 0.0),
                                     child: FFButtonWidget(
                                       onPressed: () {
@@ -286,10 +284,10 @@ class _TemplatesWidgetState extends State<TemplatesWidget>
                                       text: 'Templates',
                                       options: FFButtonOptions(
                                         height: 40.0,
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             10.0, 0.0, 10.0, 0.0),
                                         iconPadding:
-                                            EdgeInsetsDirectional.fromSTEB(
+                                            const EdgeInsetsDirectional.fromSTEB(
                                                 0.0, 0.0, 0.0, 0.0),
                                         color: FlutterFlowTheme.of(context)
                                             .secondaryBackground,
@@ -304,14 +302,14 @@ class _TemplatesWidgetState extends State<TemplatesWidget>
                                               fontWeight: FontWeight.w500,
                                             ),
                                         elevation: 0.0,
-                                        borderSide: BorderSide(
+                                        borderSide: const BorderSide(
                                           color: Color(0xFF875FD0),
                                           width: 0.0,
                                         ),
                                         borderRadius:
                                             BorderRadius.circular(8.0),
-                                        hoverColor: Color(0x00F1F4F8),
-                                        hoverBorderSide: BorderSide(
+                                        hoverColor: const Color(0x00F1F4F8),
+                                        hoverBorderSide: const BorderSide(
                                           color: Color(0x00F1F4F8),
                                           width: 0.0,
                                         ),
@@ -326,7 +324,7 @@ class _TemplatesWidgetState extends State<TemplatesWidget>
                                     ),
                                   ),
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         10.0, 0.0, 0.0, 0.0),
                                     child: FlutterFlowIconButton(
                                       borderColor: FlutterFlowTheme.of(context)
@@ -366,7 +364,7 @@ class _TemplatesWidgetState extends State<TemplatesWidget>
                                                 padding:
                                                     MediaQuery.viewInsetsOf(
                                                         context),
-                                                child: AddWidget(),
+                                                child: const AddWidget(),
                                               ),
                                             ));
                                           },
@@ -375,7 +373,7 @@ class _TemplatesWidgetState extends State<TemplatesWidget>
                                     ),
                                   ),
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         20.0, 0.0, 12.0, 0.0),
                                     child: InkWell(
                                       splashColor: Colors.transparent,
@@ -435,17 +433,17 @@ class _TemplatesWidgetState extends State<TemplatesWidget>
                                         ),
                                         child: Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   2.0, 2.0, 2.0, 2.0),
                                           child: Stack(
                                             alignment:
-                                                AlignmentDirectional(0.0, 0.0),
+                                                const AlignmentDirectional(0.0, 0.0),
                                             children: [
                                               Align(
-                                                alignment: AlignmentDirectional(
+                                                alignment: const AlignmentDirectional(
                                                     -0.90, 0.00),
                                                 child: Padding(
-                                                  padding: EdgeInsetsDirectional
+                                                  padding: const EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           6.0, 0.0, 0.0, 0.0),
                                                   child: Icon(
@@ -457,7 +455,7 @@ class _TemplatesWidgetState extends State<TemplatesWidget>
                                                   ),
                                                 ),
                                               ),
-                                              Align(
+                                              const Align(
                                                 alignment: AlignmentDirectional(
                                                     1.00, 0.00),
                                                 child: Padding(
@@ -472,7 +470,7 @@ class _TemplatesWidgetState extends State<TemplatesWidget>
                                                 ),
                                               ),
                                               Align(
-                                                alignment: AlignmentDirectional(
+                                                alignment: const AlignmentDirectional(
                                                     1.00, 0.00),
                                                 child: Container(
                                                   width: 36.0,
@@ -481,7 +479,7 @@ class _TemplatesWidgetState extends State<TemplatesWidget>
                                                     color: FlutterFlowTheme.of(
                                                             context)
                                                         .primaryText,
-                                                    boxShadow: [
+                                                    boxShadow: const [
                                                       BoxShadow(
                                                         blurRadius: 4.0,
                                                         color:
@@ -515,7 +513,7 @@ class _TemplatesWidgetState extends State<TemplatesWidget>
                   },
                 ),
               ),
-              actions: [],
+              actions: const [],
               centerTitle: false,
               toolbarHeight: 80.0,
               elevation: 10.0,
@@ -524,7 +522,7 @@ class _TemplatesWidgetState extends State<TemplatesWidget>
               top: true,
               child: Padding(
                 padding:
-                    EdgeInsetsDirectional.fromSTEB(100.0, 50.0, 100.0, 16.0),
+                    const EdgeInsetsDirectional.fromSTEB(100.0, 50.0, 100.0, 16.0),
                 child: FutureBuilder<List<UsersRow>>(
                   future:
                       (_model.requestCompleter ??= Completer<List<UsersRow>>()
@@ -559,17 +557,17 @@ class _TemplatesWidgetState extends State<TemplatesWidget>
                         if (columnUsersRow?.adm ?? true)
                           Expanded(
                             child: Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   0.0, 20.0, 0.0, 0.0),
                               child: Column(
                                 children: [
                                   Align(
-                                    alignment: Alignment(0.0, 0),
+                                    alignment: const Alignment(0.0, 0),
                                     child: FlutterFlowButtonTabBar(
                                       useToggleButtonStyle: true,
                                       labelStyle: FlutterFlowTheme.of(context)
                                           .titleMedium,
-                                      unselectedLabelStyle: TextStyle(),
+                                      unselectedLabelStyle: const TextStyle(),
                                       labelColor: FlutterFlowTheme.of(context)
                                           .primaryText,
                                       unselectedLabelColor:
@@ -589,11 +587,11 @@ class _TemplatesWidgetState extends State<TemplatesWidget>
                                       borderRadius: 8.0,
                                       elevation: 0.0,
                                       buttonMargin:
-                                          EdgeInsetsDirectional.fromSTEB(
+                                          const EdgeInsetsDirectional.fromSTEB(
                                               8.0, 0.0, 8.0, 0.0),
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           10.0, 10.0, 10.0, 10.0),
-                                      tabs: [
+                                      tabs: const [
                                         Tab(
                                           text: 'Todas as Categorias',
                                         ),
@@ -661,7 +659,7 @@ class _TemplatesWidgetState extends State<TemplatesWidget>
                                                               listViewIndex];
                                                       return Padding(
                                                         padding:
-                                                            EdgeInsetsDirectional
+                                                            const EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     0.0,
                                                                     0.0,
@@ -689,7 +687,7 @@ class _TemplatesWidgetState extends State<TemplatesWidget>
                                                                     .center,
                                                             children: [
                                                               Padding(
-                                                                padding: EdgeInsetsDirectional
+                                                                padding: const EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         10.0,
                                                                         0.0,
@@ -768,7 +766,7 @@ class _TemplatesWidgetState extends State<TemplatesWidget>
                                                                     Expanded(
                                                                       child:
                                                                           Padding(
-                                                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                                                             10.0,
                                                                             0.0,
                                                                             0.0,
@@ -781,7 +779,7 @@ class _TemplatesWidgetState extends State<TemplatesWidget>
                                                                               CrossAxisAlignment.start,
                                                                           children: [
                                                                             Padding(
-                                                                              padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 8.0),
+                                                                              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 8.0),
                                                                               child: Row(
                                                                                 mainAxisSize: MainAxisSize.max,
                                                                                 children: [
@@ -802,7 +800,7 @@ class _TemplatesWidgetState extends State<TemplatesWidget>
                                                                               children: [
                                                                                 Expanded(
                                                                                   child: Padding(
-                                                                                    padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 8.0),
+                                                                                    padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 8.0),
                                                                                     child: Text(
                                                                                       listViewTemplatesRow.descricao!,
                                                                                       style: FlutterFlowTheme.of(context).bodyMedium,
@@ -832,7 +830,7 @@ class _TemplatesWidgetState extends State<TemplatesWidget>
                                                                       ),
                                                                     ),
                                                                     Padding(
-                                                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                                                           10.0,
                                                                           0.0,
                                                                           0.0,
@@ -845,7 +843,7 @@ class _TemplatesWidgetState extends State<TemplatesWidget>
                                                                             MainAxisAlignment.center,
                                                                         children: [
                                                                           Padding(
-                                                                            padding: EdgeInsetsDirectional.fromSTEB(
+                                                                            padding: const EdgeInsetsDirectional.fromSTEB(
                                                                                 10.0,
                                                                                 0.0,
                                                                                 10.0,
@@ -866,7 +864,7 @@ class _TemplatesWidgetState extends State<TemplatesWidget>
                                                                                       onTap: () => _model.unfocusNode.canRequestFocus ? FocusScope.of(context).requestFocus(_model.unfocusNode) : FocusScope.of(context).unfocus(),
                                                                                       child: Padding(
                                                                                         padding: MediaQuery.viewInsetsOf(context),
-                                                                                        child: Container(
+                                                                                        child: SizedBox(
                                                                                           height: 750.0,
                                                                                           child: EditarWidget(
                                                                                             titulo: listViewTemplatesRow.titulo!,
@@ -884,15 +882,15 @@ class _TemplatesWidgetState extends State<TemplatesWidget>
                                                                               text: 'EDITAR',
                                                                               options: FFButtonOptions(
                                                                                 height: 40.0,
-                                                                                padding: EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
-                                                                                iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                                                                padding: const EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
+                                                                                iconPadding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                                                                                 color: FlutterFlowTheme.of(context).secondary,
                                                                                 textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                                                                                       fontFamily: 'Readex Pro',
                                                                                       color: Colors.white,
                                                                                     ),
                                                                                 elevation: 3.0,
-                                                                                borderSide: BorderSide(
+                                                                                borderSide: const BorderSide(
                                                                                   color: Colors.transparent,
                                                                                   width: 1.0,
                                                                                 ),
@@ -901,7 +899,7 @@ class _TemplatesWidgetState extends State<TemplatesWidget>
                                                                             ),
                                                                           ),
                                                                           Padding(
-                                                                            padding: EdgeInsetsDirectional.fromSTEB(
+                                                                            padding: const EdgeInsetsDirectional.fromSTEB(
                                                                                 10.0,
                                                                                 0.0,
                                                                                 10.0,
@@ -916,16 +914,16 @@ class _TemplatesWidgetState extends State<TemplatesWidget>
                                                                                       builder: (alertDialogContext) {
                                                                                         return WebViewAware(
                                                                                             child: AlertDialog(
-                                                                                          title: Text('DELETAR ESSA PAG?'),
-                                                                                          content: Text('tem certeza?'),
+                                                                                          title: const Text('DELETAR ESSA PAG?'),
+                                                                                          content: const Text('tem certeza?'),
                                                                                           actions: [
                                                                                             TextButton(
                                                                                               onPressed: () => Navigator.pop(alertDialogContext, false),
-                                                                                              child: Text('Cancelar'),
+                                                                                              child: const Text('Cancelar'),
                                                                                             ),
                                                                                             TextButton(
                                                                                               onPressed: () => Navigator.pop(alertDialogContext, true),
-                                                                                              child: Text('Confirmar'),
+                                                                                              child: const Text('Confirmar'),
                                                                                             ),
                                                                                           ],
                                                                                         ));
@@ -950,15 +948,15 @@ class _TemplatesWidgetState extends State<TemplatesWidget>
                                                                               text: 'EXCLUIR',
                                                                               options: FFButtonOptions(
                                                                                 height: 40.0,
-                                                                                padding: EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
-                                                                                iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                                                                color: Color(0xFFFF0004),
+                                                                                padding: const EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
+                                                                                iconPadding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                                                                color: const Color(0xFFFF0004),
                                                                                 textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                                                                                       fontFamily: 'Readex Pro',
                                                                                       color: Colors.white,
                                                                                     ),
                                                                                 elevation: 3.0,
-                                                                                borderSide: BorderSide(
+                                                                                borderSide: const BorderSide(
                                                                                   color: Colors.transparent,
                                                                                   width: 1.0,
                                                                                 ),
@@ -1031,7 +1029,7 @@ class _TemplatesWidgetState extends State<TemplatesWidget>
                                                               listViewIndex];
                                                       return Padding(
                                                         padding:
-                                                            EdgeInsetsDirectional
+                                                            const EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     0.0,
                                                                     0.0,
@@ -1059,7 +1057,7 @@ class _TemplatesWidgetState extends State<TemplatesWidget>
                                                                     .center,
                                                             children: [
                                                               Padding(
-                                                                padding: EdgeInsetsDirectional
+                                                                padding: const EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         10.0,
                                                                         0.0,
@@ -1138,7 +1136,7 @@ class _TemplatesWidgetState extends State<TemplatesWidget>
                                                                     Expanded(
                                                                       child:
                                                                           Padding(
-                                                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                                                             10.0,
                                                                             0.0,
                                                                             0.0,
@@ -1151,7 +1149,7 @@ class _TemplatesWidgetState extends State<TemplatesWidget>
                                                                               CrossAxisAlignment.start,
                                                                           children: [
                                                                             Padding(
-                                                                              padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 8.0),
+                                                                              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 8.0),
                                                                               child: Row(
                                                                                 mainAxisSize: MainAxisSize.max,
                                                                                 children: [
@@ -1172,7 +1170,7 @@ class _TemplatesWidgetState extends State<TemplatesWidget>
                                                                               children: [
                                                                                 Expanded(
                                                                                   child: Padding(
-                                                                                    padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 8.0),
+                                                                                    padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 8.0),
                                                                                     child: Text(
                                                                                       listViewTemplatesRow.descricao!,
                                                                                       style: FlutterFlowTheme.of(context).bodyMedium,
@@ -1202,7 +1200,7 @@ class _TemplatesWidgetState extends State<TemplatesWidget>
                                                                       ),
                                                                     ),
                                                                     Padding(
-                                                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                                                           10.0,
                                                                           0.0,
                                                                           0.0,
@@ -1215,7 +1213,7 @@ class _TemplatesWidgetState extends State<TemplatesWidget>
                                                                             MainAxisAlignment.center,
                                                                         children: [
                                                                           Padding(
-                                                                            padding: EdgeInsetsDirectional.fromSTEB(
+                                                                            padding: const EdgeInsetsDirectional.fromSTEB(
                                                                                 10.0,
                                                                                 0.0,
                                                                                 10.0,
@@ -1236,7 +1234,7 @@ class _TemplatesWidgetState extends State<TemplatesWidget>
                                                                                       onTap: () => _model.unfocusNode.canRequestFocus ? FocusScope.of(context).requestFocus(_model.unfocusNode) : FocusScope.of(context).unfocus(),
                                                                                       child: Padding(
                                                                                         padding: MediaQuery.viewInsetsOf(context),
-                                                                                        child: Container(
+                                                                                        child: SizedBox(
                                                                                           height: 750.0,
                                                                                           child: EditarWidget(
                                                                                             titulo: listViewTemplatesRow.titulo!,
@@ -1254,15 +1252,15 @@ class _TemplatesWidgetState extends State<TemplatesWidget>
                                                                               text: 'EDITAR',
                                                                               options: FFButtonOptions(
                                                                                 height: 40.0,
-                                                                                padding: EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
-                                                                                iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                                                                padding: const EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
+                                                                                iconPadding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                                                                                 color: FlutterFlowTheme.of(context).secondary,
                                                                                 textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                                                                                       fontFamily: 'Readex Pro',
                                                                                       color: Colors.white,
                                                                                     ),
                                                                                 elevation: 3.0,
-                                                                                borderSide: BorderSide(
+                                                                                borderSide: const BorderSide(
                                                                                   color: Colors.transparent,
                                                                                   width: 1.0,
                                                                                 ),
@@ -1271,7 +1269,7 @@ class _TemplatesWidgetState extends State<TemplatesWidget>
                                                                             ),
                                                                           ),
                                                                           Padding(
-                                                                            padding: EdgeInsetsDirectional.fromSTEB(
+                                                                            padding: const EdgeInsetsDirectional.fromSTEB(
                                                                                 10.0,
                                                                                 0.0,
                                                                                 10.0,
@@ -1286,16 +1284,16 @@ class _TemplatesWidgetState extends State<TemplatesWidget>
                                                                                       builder: (alertDialogContext) {
                                                                                         return WebViewAware(
                                                                                             child: AlertDialog(
-                                                                                          title: Text('DELETAR ESSA PAG?'),
-                                                                                          content: Text('tem certeza?'),
+                                                                                          title: const Text('DELETAR ESSA PAG?'),
+                                                                                          content: const Text('tem certeza?'),
                                                                                           actions: [
                                                                                             TextButton(
                                                                                               onPressed: () => Navigator.pop(alertDialogContext, false),
-                                                                                              child: Text('Cancelar'),
+                                                                                              child: const Text('Cancelar'),
                                                                                             ),
                                                                                             TextButton(
                                                                                               onPressed: () => Navigator.pop(alertDialogContext, true),
-                                                                                              child: Text('Confirmar'),
+                                                                                              child: const Text('Confirmar'),
                                                                                             ),
                                                                                           ],
                                                                                         ));
@@ -1317,15 +1315,15 @@ class _TemplatesWidgetState extends State<TemplatesWidget>
                                                                               text: 'EXCLUIR',
                                                                               options: FFButtonOptions(
                                                                                 height: 40.0,
-                                                                                padding: EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
-                                                                                iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                                                                color: Color(0xFFFF0004),
+                                                                                padding: const EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
+                                                                                iconPadding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                                                                color: const Color(0xFFFF0004),
                                                                                 textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                                                                                       fontFamily: 'Readex Pro',
                                                                                       color: Colors.white,
                                                                                     ),
                                                                                 elevation: 3.0,
-                                                                                borderSide: BorderSide(
+                                                                                borderSide: const BorderSide(
                                                                                   color: Colors.transparent,
                                                                                   width: 1.0,
                                                                                 ),
@@ -1398,7 +1396,7 @@ class _TemplatesWidgetState extends State<TemplatesWidget>
                                                               listViewIndex];
                                                       return Padding(
                                                         padding:
-                                                            EdgeInsetsDirectional
+                                                            const EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     0.0,
                                                                     0.0,
@@ -1426,7 +1424,7 @@ class _TemplatesWidgetState extends State<TemplatesWidget>
                                                                     .center,
                                                             children: [
                                                               Padding(
-                                                                padding: EdgeInsetsDirectional
+                                                                padding: const EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         10.0,
                                                                         0.0,
@@ -1505,7 +1503,7 @@ class _TemplatesWidgetState extends State<TemplatesWidget>
                                                                     Expanded(
                                                                       child:
                                                                           Padding(
-                                                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                                                             10.0,
                                                                             0.0,
                                                                             0.0,
@@ -1518,7 +1516,7 @@ class _TemplatesWidgetState extends State<TemplatesWidget>
                                                                               CrossAxisAlignment.start,
                                                                           children: [
                                                                             Padding(
-                                                                              padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 8.0),
+                                                                              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 8.0),
                                                                               child: Row(
                                                                                 mainAxisSize: MainAxisSize.max,
                                                                                 children: [
@@ -1539,7 +1537,7 @@ class _TemplatesWidgetState extends State<TemplatesWidget>
                                                                               children: [
                                                                                 Expanded(
                                                                                   child: Padding(
-                                                                                    padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 8.0),
+                                                                                    padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 8.0),
                                                                                     child: Text(
                                                                                       listViewTemplatesRow.descricao!,
                                                                                       style: FlutterFlowTheme.of(context).bodyMedium,
@@ -1569,7 +1567,7 @@ class _TemplatesWidgetState extends State<TemplatesWidget>
                                                                       ),
                                                                     ),
                                                                     Padding(
-                                                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                                                           10.0,
                                                                           0.0,
                                                                           0.0,
@@ -1582,7 +1580,7 @@ class _TemplatesWidgetState extends State<TemplatesWidget>
                                                                             MainAxisAlignment.center,
                                                                         children: [
                                                                           Padding(
-                                                                            padding: EdgeInsetsDirectional.fromSTEB(
+                                                                            padding: const EdgeInsetsDirectional.fromSTEB(
                                                                                 10.0,
                                                                                 0.0,
                                                                                 10.0,
@@ -1603,7 +1601,7 @@ class _TemplatesWidgetState extends State<TemplatesWidget>
                                                                                       onTap: () => _model.unfocusNode.canRequestFocus ? FocusScope.of(context).requestFocus(_model.unfocusNode) : FocusScope.of(context).unfocus(),
                                                                                       child: Padding(
                                                                                         padding: MediaQuery.viewInsetsOf(context),
-                                                                                        child: Container(
+                                                                                        child: SizedBox(
                                                                                           height: 750.0,
                                                                                           child: EditarWidget(
                                                                                             titulo: listViewTemplatesRow.titulo!,
@@ -1621,15 +1619,15 @@ class _TemplatesWidgetState extends State<TemplatesWidget>
                                                                               text: 'EDITAR',
                                                                               options: FFButtonOptions(
                                                                                 height: 40.0,
-                                                                                padding: EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
-                                                                                iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                                                                padding: const EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
+                                                                                iconPadding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                                                                                 color: FlutterFlowTheme.of(context).secondary,
                                                                                 textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                                                                                       fontFamily: 'Readex Pro',
                                                                                       color: Colors.white,
                                                                                     ),
                                                                                 elevation: 3.0,
-                                                                                borderSide: BorderSide(
+                                                                                borderSide: const BorderSide(
                                                                                   color: Colors.transparent,
                                                                                   width: 1.0,
                                                                                 ),
@@ -1638,7 +1636,7 @@ class _TemplatesWidgetState extends State<TemplatesWidget>
                                                                             ),
                                                                           ),
                                                                           Padding(
-                                                                            padding: EdgeInsetsDirectional.fromSTEB(
+                                                                            padding: const EdgeInsetsDirectional.fromSTEB(
                                                                                 10.0,
                                                                                 0.0,
                                                                                 10.0,
@@ -1653,16 +1651,16 @@ class _TemplatesWidgetState extends State<TemplatesWidget>
                                                                                       builder: (alertDialogContext) {
                                                                                         return WebViewAware(
                                                                                             child: AlertDialog(
-                                                                                          title: Text('DELETAR ESSA PAG?'),
-                                                                                          content: Text('tem certeza?'),
+                                                                                          title: const Text('DELETAR ESSA PAG?'),
+                                                                                          content: const Text('tem certeza?'),
                                                                                           actions: [
                                                                                             TextButton(
                                                                                               onPressed: () => Navigator.pop(alertDialogContext, false),
-                                                                                              child: Text('Cancelar'),
+                                                                                              child: const Text('Cancelar'),
                                                                                             ),
                                                                                             TextButton(
                                                                                               onPressed: () => Navigator.pop(alertDialogContext, true),
-                                                                                              child: Text('Confirmar'),
+                                                                                              child: const Text('Confirmar'),
                                                                                             ),
                                                                                           ],
                                                                                         ));
@@ -1684,15 +1682,15 @@ class _TemplatesWidgetState extends State<TemplatesWidget>
                                                                               text: 'EXCLUIR',
                                                                               options: FFButtonOptions(
                                                                                 height: 40.0,
-                                                                                padding: EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
-                                                                                iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                                                                color: Color(0xFFFF0004),
+                                                                                padding: const EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
+                                                                                iconPadding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                                                                color: const Color(0xFFFF0004),
                                                                                 textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                                                                                       fontFamily: 'Readex Pro',
                                                                                       color: Colors.white,
                                                                                     ),
                                                                                 elevation: 3.0,
-                                                                                borderSide: BorderSide(
+                                                                                borderSide: const BorderSide(
                                                                                   color: Colors.transparent,
                                                                                   width: 1.0,
                                                                                 ),
@@ -1765,7 +1763,7 @@ class _TemplatesWidgetState extends State<TemplatesWidget>
                                                               listViewIndex];
                                                       return Padding(
                                                         padding:
-                                                            EdgeInsetsDirectional
+                                                            const EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     0.0,
                                                                     0.0,
@@ -1793,7 +1791,7 @@ class _TemplatesWidgetState extends State<TemplatesWidget>
                                                                     .center,
                                                             children: [
                                                               Padding(
-                                                                padding: EdgeInsetsDirectional
+                                                                padding: const EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         10.0,
                                                                         0.0,
@@ -1872,7 +1870,7 @@ class _TemplatesWidgetState extends State<TemplatesWidget>
                                                                     Expanded(
                                                                       child:
                                                                           Padding(
-                                                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                                                             10.0,
                                                                             0.0,
                                                                             0.0,
@@ -1885,7 +1883,7 @@ class _TemplatesWidgetState extends State<TemplatesWidget>
                                                                               CrossAxisAlignment.start,
                                                                           children: [
                                                                             Padding(
-                                                                              padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 8.0),
+                                                                              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 8.0),
                                                                               child: Row(
                                                                                 mainAxisSize: MainAxisSize.max,
                                                                                 children: [
@@ -1906,7 +1904,7 @@ class _TemplatesWidgetState extends State<TemplatesWidget>
                                                                               children: [
                                                                                 Expanded(
                                                                                   child: Padding(
-                                                                                    padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 8.0),
+                                                                                    padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 8.0),
                                                                                     child: Text(
                                                                                       listViewTemplatesRow.descricao!,
                                                                                       style: FlutterFlowTheme.of(context).bodyMedium,
@@ -1936,7 +1934,7 @@ class _TemplatesWidgetState extends State<TemplatesWidget>
                                                                       ),
                                                                     ),
                                                                     Padding(
-                                                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                                                           10.0,
                                                                           0.0,
                                                                           0.0,
@@ -1949,7 +1947,7 @@ class _TemplatesWidgetState extends State<TemplatesWidget>
                                                                             MainAxisAlignment.center,
                                                                         children: [
                                                                           Padding(
-                                                                            padding: EdgeInsetsDirectional.fromSTEB(
+                                                                            padding: const EdgeInsetsDirectional.fromSTEB(
                                                                                 10.0,
                                                                                 0.0,
                                                                                 10.0,
@@ -1970,7 +1968,7 @@ class _TemplatesWidgetState extends State<TemplatesWidget>
                                                                                       onTap: () => _model.unfocusNode.canRequestFocus ? FocusScope.of(context).requestFocus(_model.unfocusNode) : FocusScope.of(context).unfocus(),
                                                                                       child: Padding(
                                                                                         padding: MediaQuery.viewInsetsOf(context),
-                                                                                        child: Container(
+                                                                                        child: SizedBox(
                                                                                           height: 750.0,
                                                                                           child: EditarWidget(
                                                                                             titulo: listViewTemplatesRow.titulo!,
@@ -1988,15 +1986,15 @@ class _TemplatesWidgetState extends State<TemplatesWidget>
                                                                               text: 'EDITAR',
                                                                               options: FFButtonOptions(
                                                                                 height: 40.0,
-                                                                                padding: EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
-                                                                                iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                                                                padding: const EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
+                                                                                iconPadding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                                                                                 color: FlutterFlowTheme.of(context).secondary,
                                                                                 textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                                                                                       fontFamily: 'Readex Pro',
                                                                                       color: Colors.white,
                                                                                     ),
                                                                                 elevation: 3.0,
-                                                                                borderSide: BorderSide(
+                                                                                borderSide: const BorderSide(
                                                                                   color: Colors.transparent,
                                                                                   width: 1.0,
                                                                                 ),
@@ -2005,7 +2003,7 @@ class _TemplatesWidgetState extends State<TemplatesWidget>
                                                                             ),
                                                                           ),
                                                                           Padding(
-                                                                            padding: EdgeInsetsDirectional.fromSTEB(
+                                                                            padding: const EdgeInsetsDirectional.fromSTEB(
                                                                                 10.0,
                                                                                 0.0,
                                                                                 10.0,
@@ -2020,16 +2018,16 @@ class _TemplatesWidgetState extends State<TemplatesWidget>
                                                                                       builder: (alertDialogContext) {
                                                                                         return WebViewAware(
                                                                                             child: AlertDialog(
-                                                                                          title: Text('DELETAR ESSA PAG?'),
-                                                                                          content: Text('tem certeza?'),
+                                                                                          title: const Text('DELETAR ESSA PAG?'),
+                                                                                          content: const Text('tem certeza?'),
                                                                                           actions: [
                                                                                             TextButton(
                                                                                               onPressed: () => Navigator.pop(alertDialogContext, false),
-                                                                                              child: Text('Cancelar'),
+                                                                                              child: const Text('Cancelar'),
                                                                                             ),
                                                                                             TextButton(
                                                                                               onPressed: () => Navigator.pop(alertDialogContext, true),
-                                                                                              child: Text('Confirmar'),
+                                                                                              child: const Text('Confirmar'),
                                                                                             ),
                                                                                           ],
                                                                                         ));
@@ -2051,15 +2049,15 @@ class _TemplatesWidgetState extends State<TemplatesWidget>
                                                                               text: 'EXCLUIR',
                                                                               options: FFButtonOptions(
                                                                                 height: 40.0,
-                                                                                padding: EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
-                                                                                iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                                                                color: Color(0xFFFF0004),
+                                                                                padding: const EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
+                                                                                iconPadding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                                                                color: const Color(0xFFFF0004),
                                                                                 textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                                                                                       fontFamily: 'Readex Pro',
                                                                                       color: Colors.white,
                                                                                     ),
                                                                                 elevation: 3.0,
-                                                                                borderSide: BorderSide(
+                                                                                borderSide: const BorderSide(
                                                                                   color: Colors.transparent,
                                                                                   width: 1.0,
                                                                                 ),
@@ -2132,7 +2130,7 @@ class _TemplatesWidgetState extends State<TemplatesWidget>
                                                               listViewIndex];
                                                       return Padding(
                                                         padding:
-                                                            EdgeInsetsDirectional
+                                                            const EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     0.0,
                                                                     0.0,
@@ -2160,7 +2158,7 @@ class _TemplatesWidgetState extends State<TemplatesWidget>
                                                                     .center,
                                                             children: [
                                                               Padding(
-                                                                padding: EdgeInsetsDirectional
+                                                                padding: const EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         10.0,
                                                                         0.0,
@@ -2239,7 +2237,7 @@ class _TemplatesWidgetState extends State<TemplatesWidget>
                                                                     Expanded(
                                                                       child:
                                                                           Padding(
-                                                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                                                             10.0,
                                                                             0.0,
                                                                             0.0,
@@ -2252,7 +2250,7 @@ class _TemplatesWidgetState extends State<TemplatesWidget>
                                                                               CrossAxisAlignment.start,
                                                                           children: [
                                                                             Padding(
-                                                                              padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 8.0),
+                                                                              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 8.0),
                                                                               child: Row(
                                                                                 mainAxisSize: MainAxisSize.max,
                                                                                 children: [
@@ -2273,7 +2271,7 @@ class _TemplatesWidgetState extends State<TemplatesWidget>
                                                                               children: [
                                                                                 Expanded(
                                                                                   child: Padding(
-                                                                                    padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 8.0),
+                                                                                    padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 8.0),
                                                                                     child: Text(
                                                                                       listViewTemplatesRow.descricao!,
                                                                                       style: FlutterFlowTheme.of(context).bodyMedium,
@@ -2303,7 +2301,7 @@ class _TemplatesWidgetState extends State<TemplatesWidget>
                                                                       ),
                                                                     ),
                                                                     Padding(
-                                                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                                                           10.0,
                                                                           0.0,
                                                                           0.0,
@@ -2316,7 +2314,7 @@ class _TemplatesWidgetState extends State<TemplatesWidget>
                                                                             MainAxisAlignment.center,
                                                                         children: [
                                                                           Padding(
-                                                                            padding: EdgeInsetsDirectional.fromSTEB(
+                                                                            padding: const EdgeInsetsDirectional.fromSTEB(
                                                                                 10.0,
                                                                                 0.0,
                                                                                 10.0,
@@ -2337,7 +2335,7 @@ class _TemplatesWidgetState extends State<TemplatesWidget>
                                                                                       onTap: () => _model.unfocusNode.canRequestFocus ? FocusScope.of(context).requestFocus(_model.unfocusNode) : FocusScope.of(context).unfocus(),
                                                                                       child: Padding(
                                                                                         padding: MediaQuery.viewInsetsOf(context),
-                                                                                        child: Container(
+                                                                                        child: SizedBox(
                                                                                           height: 750.0,
                                                                                           child: EditarWidget(
                                                                                             titulo: listViewTemplatesRow.titulo!,
@@ -2355,15 +2353,15 @@ class _TemplatesWidgetState extends State<TemplatesWidget>
                                                                               text: 'EDITAR',
                                                                               options: FFButtonOptions(
                                                                                 height: 40.0,
-                                                                                padding: EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
-                                                                                iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                                                                padding: const EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
+                                                                                iconPadding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                                                                                 color: FlutterFlowTheme.of(context).secondary,
                                                                                 textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                                                                                       fontFamily: 'Readex Pro',
                                                                                       color: Colors.white,
                                                                                     ),
                                                                                 elevation: 3.0,
-                                                                                borderSide: BorderSide(
+                                                                                borderSide: const BorderSide(
                                                                                   color: Colors.transparent,
                                                                                   width: 1.0,
                                                                                 ),
@@ -2372,7 +2370,7 @@ class _TemplatesWidgetState extends State<TemplatesWidget>
                                                                             ),
                                                                           ),
                                                                           Padding(
-                                                                            padding: EdgeInsetsDirectional.fromSTEB(
+                                                                            padding: const EdgeInsetsDirectional.fromSTEB(
                                                                                 10.0,
                                                                                 0.0,
                                                                                 10.0,
@@ -2387,16 +2385,16 @@ class _TemplatesWidgetState extends State<TemplatesWidget>
                                                                                       builder: (alertDialogContext) {
                                                                                         return WebViewAware(
                                                                                             child: AlertDialog(
-                                                                                          title: Text('DELETAR ESSA PAG?'),
-                                                                                          content: Text('tem certeza?'),
+                                                                                          title: const Text('DELETAR ESSA PAG?'),
+                                                                                          content: const Text('tem certeza?'),
                                                                                           actions: [
                                                                                             TextButton(
                                                                                               onPressed: () => Navigator.pop(alertDialogContext, false),
-                                                                                              child: Text('Cancelar'),
+                                                                                              child: const Text('Cancelar'),
                                                                                             ),
                                                                                             TextButton(
                                                                                               onPressed: () => Navigator.pop(alertDialogContext, true),
-                                                                                              child: Text('Confirmar'),
+                                                                                              child: const Text('Confirmar'),
                                                                                             ),
                                                                                           ],
                                                                                         ));
@@ -2418,15 +2416,15 @@ class _TemplatesWidgetState extends State<TemplatesWidget>
                                                                               text: 'EXCLUIR',
                                                                               options: FFButtonOptions(
                                                                                 height: 40.0,
-                                                                                padding: EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
-                                                                                iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                                                                color: Color(0xFFFF0004),
+                                                                                padding: const EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
+                                                                                iconPadding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                                                                color: const Color(0xFFFF0004),
                                                                                 textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                                                                                       fontFamily: 'Readex Pro',
                                                                                       color: Colors.white,
                                                                                     ),
                                                                                 elevation: 3.0,
-                                                                                borderSide: BorderSide(
+                                                                                borderSide: const BorderSide(
                                                                                   color: Colors.transparent,
                                                                                   width: 1.0,
                                                                                 ),
@@ -2460,20 +2458,20 @@ class _TemplatesWidgetState extends State<TemplatesWidget>
                           ),
                         if (columnUsersRow?.adm == false)
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 0.0, 50.0, 0.0, 0.0),
                             child: Column(
                               mainAxisSize: MainAxisSize.max,
                               children: [
                                 Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       0.0, 100.0, 0.0, 0.0),
                                   child: Row(
                                     mainAxisSize: MainAxisSize.max,
                                     mainAxisAlignment: MainAxisAlignment.center,
                                     children: [
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             0.0, 0.0, 10.0, 0.0),
                                         child: Icon(
                                           Icons.report_problem,
@@ -2491,7 +2489,7 @@ class _TemplatesWidgetState extends State<TemplatesWidget>
                                   ),
                                 ),
                                 Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       0.0, 10.0, 0.0, 0.0),
                                   child: Row(
                                     mainAxisSize: MainAxisSize.max,
@@ -2508,7 +2506,7 @@ class _TemplatesWidgetState extends State<TemplatesWidget>
                                             'HomePage',
                                             extra: <String, dynamic>{
                                               kTransitionInfoKey:
-                                                  TransitionInfo(
+                                                  const TransitionInfo(
                                                 hasTransition: true,
                                                 transitionType:
                                                     PageTransitionType.fade,
@@ -2520,10 +2518,10 @@ class _TemplatesWidgetState extends State<TemplatesWidget>
                                         options: FFButtonOptions(
                                           height: 40.0,
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   24.0, 0.0, 24.0, 0.0),
                                           iconPadding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 0.0, 0.0, 0.0),
                                           color: FlutterFlowTheme.of(context)
                                               .primary,
@@ -2535,7 +2533,7 @@ class _TemplatesWidgetState extends State<TemplatesWidget>
                                                     color: Colors.white,
                                                   ),
                                           elevation: 3.0,
-                                          borderSide: BorderSide(
+                                          borderSide: const BorderSide(
                                             color: Colors.transparent,
                                             width: 1.0,
                                           ),

@@ -4,16 +4,13 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:flutter_spinkit/flutter_spinkit.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'package:webviewx_plus/webviewx_plus.dart';
 import 'esqueceu_senha_model.dart';
 export 'esqueceu_senha_model.dart';
 
 class EsqueceuSenhaWidget extends StatefulWidget {
-  const EsqueceuSenhaWidget({Key? key}) : super(key: key);
+  const EsqueceuSenhaWidget({super.key});
 
   @override
   _EsqueceuSenhaWidgetState createState() => _EsqueceuSenhaWidgetState();
@@ -57,7 +54,7 @@ class _EsqueceuSenhaWidgetState extends State<EsqueceuSenhaWidget> {
         tablet: false,
       ),
       child: Align(
-        alignment: AlignmentDirectional(0.00, 0.00),
+        alignment: const AlignmentDirectional(0.00, 0.00),
         child: Container(
           width: MediaQuery.sizeOf(context).width * 0.5,
           height: MediaQuery.sizeOf(context).height * 0.5,
@@ -68,19 +65,19 @@ class _EsqueceuSenhaWidgetState extends State<EsqueceuSenhaWidget> {
           child: Stack(
             children: [
               Align(
-                alignment: AlignmentDirectional(0.00, 0.00),
+                alignment: const AlignmentDirectional(0.00, 0.00),
                 child: Column(
                   mainAxisSize: MainAxisSize.max,
                   children: [
                     Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 20.0, 0.0),
+                          const EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 20.0, 0.0),
                       child: Row(
                         mainAxisSize: MainAxisSize.max,
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 16.0, 0.0, 0.0, 6.0),
                             child: Text(
                               'Redefinir Senha',
@@ -118,14 +115,14 @@ class _EsqueceuSenhaWidgetState extends State<EsqueceuSenhaWidget> {
                     ),
                     Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 20.0, 0.0),
+                          const EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 20.0, 0.0),
                       child: Row(
                         mainAxisSize: MainAxisSize.max,
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Flexible(
                             child: Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   16.0, 4.0, 16.0, 6.0),
                               child: Text(
                                 'Iremos lhe enviar um e-mail com um link para redefinir sua senha, digite o e-mail associado à sua conta abaixo.',
@@ -143,7 +140,7 @@ class _EsqueceuSenhaWidgetState extends State<EsqueceuSenhaWidget> {
                     ),
                     Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 20.0, 0.0),
+                          const EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 20.0, 0.0),
                       child: Row(
                         mainAxisSize: MainAxisSize.max,
                         mainAxisAlignment: MainAxisAlignment.center,
@@ -153,14 +150,14 @@ class _EsqueceuSenhaWidgetState extends State<EsqueceuSenhaWidget> {
                               key: _model.formKey,
                               autovalidateMode: AutovalidateMode.disabled,
                               child: Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     16.0, 12.0, 16.0, 0.0),
-                                child: Container(
+                                child: SizedBox(
                                   width: double.infinity,
                                   child: TextFormField(
                                     controller: _model.senhaDeskController,
                                     focusNode: _model.senhaDeskFocusNode,
-                                    autofillHints: [AutofillHints.email],
+                                    autofillHints: const [AutofillHints.email],
                                     obscureText: false,
                                     decoration: InputDecoration(
                                       labelText: 'Seu E-mail',
@@ -208,7 +205,7 @@ class _EsqueceuSenhaWidgetState extends State<EsqueceuSenhaWidget> {
                                       fillColor: FlutterFlowTheme.of(context)
                                           .secondaryBackground,
                                       contentPadding:
-                                          EdgeInsetsDirectional.fromSTEB(
+                                          const EdgeInsetsDirectional.fromSTEB(
                                               24.0, 24.0, 20.0, 24.0),
                                     ),
                                     style:
@@ -230,15 +227,15 @@ class _EsqueceuSenhaWidgetState extends State<EsqueceuSenhaWidget> {
                     ),
                     Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 20.0, 0.0),
+                          const EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 20.0, 0.0),
                       child: Row(
                         mainAxisSize: MainAxisSize.max,
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Align(
-                            alignment: AlignmentDirectional(0.00, 0.00),
+                            alignment: const AlignmentDirectional(0.00, 0.00),
                             child: Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   0.0, 24.0, 0.0, 0.0),
                               child: FFButtonWidget(
                                 onPressed: () async {
@@ -247,7 +244,7 @@ class _EsqueceuSenhaWidgetState extends State<EsqueceuSenhaWidget> {
                                   logFirebaseEvent('Button-Login_auth');
                                   if (_model.senhaDeskController.text.isEmpty) {
                                     ScaffoldMessenger.of(context).showSnackBar(
-                                      SnackBar(
+                                      const SnackBar(
                                         content: Text(
                                           'Email required!',
                                         ),
@@ -265,15 +262,15 @@ class _EsqueceuSenhaWidgetState extends State<EsqueceuSenhaWidget> {
                                     builder: (alertDialogContext) {
                                       return WebViewAware(
                                           child: AlertDialog(
-                                        title: Text(
+                                        title: const Text(
                                             'Link enviado para seu E-mail!'),
-                                        content: Text(
+                                        content: const Text(
                                             'Acesse seu e-mail e clique no link para redefinir sua senha...'),
                                         actions: [
                                           TextButton(
                                             onPressed: () => Navigator.pop(
                                                 alertDialogContext),
-                                            child: Text('Ok'),
+                                            child: const Text('Ok'),
                                           ),
                                         ],
                                       ));
@@ -284,15 +281,15 @@ class _EsqueceuSenhaWidgetState extends State<EsqueceuSenhaWidget> {
                                 options: FFButtonOptions(
                                   width: 270.0,
                                   height: 50.0,
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 0.0, 0.0),
-                                  iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                  iconPadding: const EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 0.0, 0.0),
                                   color: FlutterFlowTheme.of(context).primary,
                                   textStyle:
                                       FlutterFlowTheme.of(context).titleSmall,
                                   elevation: 3.0,
-                                  borderSide: BorderSide(
+                                  borderSide: const BorderSide(
                                     color: Colors.transparent,
                                     width: 1.0,
                                   ),

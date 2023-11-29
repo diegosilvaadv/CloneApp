@@ -10,10 +10,7 @@ import '/flutter_flow/custom_functions.dart' as functions;
 import '/flutter_flow/random_data_util.dart' as random_data;
 import 'package:expandable/expandable.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
 import 'package:provider/provider.dart';
 import 'package:webviewx_plus/webviewx_plus.dart';
 import 'pag_cartao_model.dart';
@@ -21,9 +18,9 @@ export 'pag_cartao_model.dart';
 
 class PagCartaoWidget extends StatefulWidget {
   const PagCartaoWidget({
-    Key? key,
+    super.key,
     required this.detalhes,
-  }) : super(key: key);
+  });
 
   final TemplatesRow? detalhes;
 
@@ -91,7 +88,7 @@ class _PagCartaoWidgetState extends State<PagCartaoWidget> {
     context.watch<FFAppState>();
 
     return Align(
-      alignment: AlignmentDirectional(0.00, 0.00),
+      alignment: const AlignmentDirectional(0.00, 0.00),
       child: FutureBuilder<List<UsersRow>>(
         future: UsersTable().querySingleRow(
           queryFn: (q) => q.eq(
@@ -159,7 +156,7 @@ class _PagCartaoWidgetState extends State<PagCartaoWidget> {
                           borderRadius: BorderRadius.circular(12.0),
                         ),
                         child: Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               10.0, 10.0, 10.0, 10.0),
                           child: FutureBuilder<List<UsersPagamentosRow>>(
                             future: UsersPagamentosTable().querySingleRow(
@@ -199,7 +196,7 @@ class _PagCartaoWidgetState extends State<PagCartaoWidget> {
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         0.0, 10.0, 0.0, 0.0),
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
@@ -207,7 +204,7 @@ class _PagCartaoWidgetState extends State<PagCartaoWidget> {
                                       children: [
                                         Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 0.0, 10.0, 0.0),
                                           child: FlutterFlowIconButton(
                                             borderColor:
@@ -216,8 +213,8 @@ class _PagCartaoWidgetState extends State<PagCartaoWidget> {
                                             borderRadius: 20.0,
                                             borderWidth: 1.0,
                                             buttonSize: 40.0,
-                                            fillColor: Color(0xFFE13C27),
-                                            icon: Icon(
+                                            fillColor: const Color(0xFFE13C27),
+                                            icon: const Icon(
                                               Icons.close,
                                               color: Colors.white,
                                               size: 24.0,
@@ -257,7 +254,7 @@ class _PagCartaoWidgetState extends State<PagCartaoWidget> {
                                   if (columnUsersPagamentosRow?.userId ==
                                       currentUserUid)
                                     Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           0.0, 20.0, 0.0, 0.0),
                                       child: Row(
                                         mainAxisSize: MainAxisSize.max,
@@ -266,7 +263,7 @@ class _PagCartaoWidgetState extends State<PagCartaoWidget> {
                                         children: [
                                           Expanded(
                                             child: Padding(
-                                              padding: EdgeInsetsDirectional
+                                              padding: const EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       200.0, 0.0, 200.0, 0.0),
                                               child: Material(
@@ -288,7 +285,7 @@ class _PagCartaoWidgetState extends State<PagCartaoWidget> {
                                                   ),
                                                   child: Padding(
                                                     padding:
-                                                        EdgeInsetsDirectional
+                                                        const EdgeInsetsDirectional
                                                             .fromSTEB(
                                                                 10.0,
                                                                 10.0,
@@ -305,7 +302,7 @@ class _PagCartaoWidgetState extends State<PagCartaoWidget> {
                                                         child: ExpandablePanel(
                                                           header: Padding(
                                                             padding:
-                                                                EdgeInsetsDirectional
+                                                                const EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         0.0,
                                                                         10.0,
@@ -343,7 +340,7 @@ class _PagCartaoWidgetState extends State<PagCartaoWidget> {
                                                                       .max,
                                                               children: [
                                                                 Padding(
-                                                                  padding: EdgeInsetsDirectional
+                                                                  padding: const EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           20.0,
                                                                           0.0,
@@ -462,7 +459,7 @@ class _PagCartaoWidgetState extends State<PagCartaoWidget> {
                                                                             .max,
                                                                     children: [
                                                                       Padding(
-                                                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                                                             0.0,
                                                                             10.0,
                                                                             0.0,
@@ -478,7 +475,7 @@ class _PagCartaoWidgetState extends State<PagCartaoWidget> {
                                                                               mainAxisSize: MainAxisSize.max,
                                                                               children: [
                                                                                 Padding(
-                                                                                  padding: EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 0.0, 0.0),
+                                                                                  padding: const EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 0.0, 0.0),
                                                                                   child: Text(
                                                                                     'Cartão com final: ',
                                                                                     style: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -502,7 +499,7 @@ class _PagCartaoWidgetState extends State<PagCartaoWidget> {
                                                                               mainAxisAlignment: MainAxisAlignment.end,
                                                                               children: [
                                                                                 Padding(
-                                                                                  padding: EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 20.0, 0.0),
+                                                                                  padding: const EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 20.0, 0.0),
                                                                                   child: FFButtonWidget(
                                                                                     onPressed: () async {
                                                                                       logFirebaseEvent('PAG_CARTAO_COMP_SELECIONAR_BTN_ON_TAP');
@@ -544,15 +541,15 @@ class _PagCartaoWidgetState extends State<PagCartaoWidget> {
                                                                                     text: 'Selecionar',
                                                                                     options: FFButtonOptions(
                                                                                       height: 35.0,
-                                                                                      padding: EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
-                                                                                      iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                                                                      padding: const EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
+                                                                                      iconPadding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                                                                                       color: FlutterFlowTheme.of(context).primary,
                                                                                       textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                                                                                             fontFamily: 'Readex Pro',
                                                                                             color: Colors.white,
                                                                                           ),
                                                                                       elevation: 3.0,
-                                                                                      borderSide: BorderSide(
+                                                                                      borderSide: const BorderSide(
                                                                                         color: Colors.transparent,
                                                                                         width: 1.0,
                                                                                       ),
@@ -561,27 +558,27 @@ class _PagCartaoWidgetState extends State<PagCartaoWidget> {
                                                                                   ),
                                                                                 ),
                                                                                 Padding(
-                                                                                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 10.0, 0.0),
+                                                                                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 10.0, 0.0),
                                                                                   child: FFButtonWidget(
                                                                                     onPressed: () async {
                                                                                       logFirebaseEvent('PAG_CARTAO_COMP_EXCLUIR_BTN_ON_TAP');
-                                                                                      var _shouldSetState = false;
+                                                                                      var shouldSetState = false;
                                                                                       logFirebaseEvent('Button_alert_dialog');
                                                                                       var confirmDialogResponse = await showDialog<bool>(
                                                                                             context: context,
                                                                                             builder: (alertDialogContext) {
                                                                                               return WebViewAware(
                                                                                                   child: AlertDialog(
-                                                                                                title: Text('Deseja realmente Excluir esse Cartão?'),
-                                                                                                content: Text('Depois de excluido você não conseguirar fazer pagamento com o mesmo.'),
+                                                                                                title: const Text('Deseja realmente Excluir esse Cartão?'),
+                                                                                                content: const Text('Depois de excluido você não conseguirar fazer pagamento com o mesmo.'),
                                                                                                 actions: [
                                                                                                   TextButton(
                                                                                                     onPressed: () => Navigator.pop(alertDialogContext, false),
-                                                                                                    child: Text('Cancelar'),
+                                                                                                    child: const Text('Cancelar'),
                                                                                                   ),
                                                                                                   TextButton(
                                                                                                     onPressed: () => Navigator.pop(alertDialogContext, true),
-                                                                                                    child: Text('Confirmar'),
+                                                                                                    child: const Text('Confirmar'),
                                                                                                   ),
                                                                                                 ],
                                                                                               ));
@@ -594,7 +591,7 @@ class _PagCartaoWidgetState extends State<PagCartaoWidget> {
                                                                                           secret: '9011ce6bfba714d91df6a0365d167a7a6848f1b7',
                                                                                           appId: '6565e1414cfb9',
                                                                                         );
-                                                                                        _shouldSetState = true;
+                                                                                        shouldSetState = true;
                                                                                         if ((_model.resultadoToken?.succeeded ?? true)) {
                                                                                           logFirebaseEvent('Button_backend_call');
                                                                                           _model.aPIdeletadoCard = await DeletarCartoesCobreFacilCall.call(
@@ -603,7 +600,7 @@ class _PagCartaoWidgetState extends State<PagCartaoWidget> {
                                                                                             ).toString(),
                                                                                             cardID: listViewUsersPagamentosRow.idCartao,
                                                                                           );
-                                                                                          _shouldSetState = true;
+                                                                                          shouldSetState = true;
                                                                                           if ((_model.aPIdeletadoCard?.succeeded ?? true)) {
                                                                                             logFirebaseEvent('Button_backend_call');
                                                                                             await UsersPagamentosTable().delete(
@@ -623,11 +620,11 @@ class _PagCartaoWidgetState extends State<PagCartaoWidget> {
                                                                                               builder: (alertDialogContext) {
                                                                                                 return WebViewAware(
                                                                                                     child: AlertDialog(
-                                                                                                  title: Text('Cartão deletado com sucesso!'),
+                                                                                                  title: const Text('Cartão deletado com sucesso!'),
                                                                                                   actions: [
                                                                                                     TextButton(
                                                                                                       onPressed: () => Navigator.pop(alertDialogContext),
-                                                                                                      child: Text('Ok'),
+                                                                                                      child: const Text('Ok'),
                                                                                                     ),
                                                                                                   ],
                                                                                                 ));
@@ -640,12 +637,12 @@ class _PagCartaoWidgetState extends State<PagCartaoWidget> {
                                                                                               builder: (alertDialogContext) {
                                                                                                 return WebViewAware(
                                                                                                     child: AlertDialog(
-                                                                                                  title: Text('Erro ao tentar deletar cartão!'),
-                                                                                                  content: Text('entre em contato com nossa equipe!'),
+                                                                                                  title: const Text('Erro ao tentar deletar cartão!'),
+                                                                                                  content: const Text('entre em contato com nossa equipe!'),
                                                                                                   actions: [
                                                                                                     TextButton(
                                                                                                       onPressed: () => Navigator.pop(alertDialogContext),
-                                                                                                      child: Text('Ok'),
+                                                                                                      child: const Text('Ok'),
                                                                                                     ),
                                                                                                   ],
                                                                                                 ));
@@ -653,24 +650,24 @@ class _PagCartaoWidgetState extends State<PagCartaoWidget> {
                                                                                             );
                                                                                           }
                                                                                         } else {
-                                                                                          if (_shouldSetState) setState(() {});
+                                                                                          if (shouldSetState) setState(() {});
                                                                                           return;
                                                                                         }
                                                                                       }
-                                                                                      if (_shouldSetState) setState(() {});
+                                                                                      if (shouldSetState) setState(() {});
                                                                                     },
                                                                                     text: 'Excluir',
                                                                                     options: FFButtonOptions(
                                                                                       height: 35.0,
-                                                                                      padding: EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
-                                                                                      iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                                                                      padding: const EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
+                                                                                      iconPadding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                                                                                       color: FlutterFlowTheme.of(context).error,
                                                                                       textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                                                                                             fontFamily: 'Readex Pro',
                                                                                             color: Colors.white,
                                                                                           ),
                                                                                       elevation: 3.0,
-                                                                                      borderSide: BorderSide(
+                                                                                      borderSide: const BorderSide(
                                                                                         color: Colors.transparent,
                                                                                         width: 1.0,
                                                                                       ),
@@ -725,7 +722,7 @@ class _PagCartaoWidgetState extends State<PagCartaoWidget> {
                                     ),
                                   if (FFAppState().UsarCartaoSalvo != '0')
                                     Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           0.0, 20.0, 0.0, 20.0),
                                       child: Row(
                                         mainAxisSize: MainAxisSize.max,
@@ -747,10 +744,10 @@ class _PagCartaoWidgetState extends State<PagCartaoWidget> {
                                                 'Adicionar Novo Cartão de Crédito',
                                             options: FFButtonOptions(
                                               height: 40.0,
-                                              padding: EdgeInsetsDirectional
+                                              padding: const EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       24.0, 0.0, 24.0, 0.0),
-                                              iconPadding: EdgeInsetsDirectional
+                                              iconPadding: const EdgeInsetsDirectional
                                                   .fromSTEB(0.0, 0.0, 0.0, 0.0),
                                               color:
                                                   FlutterFlowTheme.of(context)
@@ -765,7 +762,7 @@ class _PagCartaoWidgetState extends State<PagCartaoWidget> {
                                                         fontSize: 20.0,
                                                       ),
                                               elevation: 3.0,
-                                              borderSide: BorderSide(
+                                              borderSide: const BorderSide(
                                                 color: Colors.transparent,
                                                 width: 1.0,
                                               ),
@@ -778,7 +775,7 @@ class _PagCartaoWidgetState extends State<PagCartaoWidget> {
                                     ),
                                   if (FFAppState().UsarCartaoSalvo == '0')
                                     Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           20.0, 20.0, 20.0, 20.0),
                                       child: Row(
                                         mainAxisSize: MainAxisSize.max,
@@ -802,7 +799,7 @@ class _PagCartaoWidgetState extends State<PagCartaoWidget> {
                                                     BorderRadius.circular(12.0),
                                               ),
                                               child: Padding(
-                                                padding: EdgeInsetsDirectional
+                                                padding: const EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         20.0, 20.0, 20.0, 20.0),
                                                 child: Column(
@@ -815,7 +812,7 @@ class _PagCartaoWidgetState extends State<PagCartaoWidget> {
                                                       children: [
                                                         Padding(
                                                           padding:
-                                                              EdgeInsetsDirectional
+                                                              const EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       10.0,
                                                                       0.0,
@@ -848,7 +845,7 @@ class _PagCartaoWidgetState extends State<PagCartaoWidget> {
                                                                   .disabled,
                                                           child: Padding(
                                                             padding:
-                                                                EdgeInsetsDirectional
+                                                                const EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         8.0,
                                                                         6.0,
@@ -860,7 +857,7 @@ class _PagCartaoWidgetState extends State<PagCartaoWidget> {
                                                                   .nomeController,
                                                               focusNode: _model
                                                                   .nomeFocusNode,
-                                                              autofillHints: [
+                                                              autofillHints: const [
                                                                 AutofillHints
                                                                     .name
                                                               ],
@@ -949,7 +946,7 @@ class _PagCartaoWidgetState extends State<PagCartaoWidget> {
                                                                         context)
                                                                     .secondaryBackground,
                                                                 prefixIcon:
-                                                                    Icon(
+                                                                    const Icon(
                                                                   Icons
                                                                       .person_sharp,
                                                                 ),
@@ -977,7 +974,7 @@ class _PagCartaoWidgetState extends State<PagCartaoWidget> {
                                                     ),
                                                     Padding(
                                                       padding:
-                                                          EdgeInsetsDirectional
+                                                          const EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   0.0,
                                                                   15.0,
@@ -989,7 +986,7 @@ class _PagCartaoWidgetState extends State<PagCartaoWidget> {
                                                         children: [
                                                           Padding(
                                                             padding:
-                                                                EdgeInsetsDirectional
+                                                                const EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         10.0,
                                                                         0.0,
@@ -1023,7 +1020,7 @@ class _PagCartaoWidgetState extends State<PagCartaoWidget> {
                                                                     .disabled,
                                                             child: Padding(
                                                               padding:
-                                                                  EdgeInsetsDirectional
+                                                                  const EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           8.0,
                                                                           6.0,
@@ -1120,7 +1117,7 @@ class _PagCartaoWidgetState extends State<PagCartaoWidget> {
                                                                           context)
                                                                       .secondaryBackground,
                                                                   prefixIcon:
-                                                                      Icon(
+                                                                      const Icon(
                                                                     Icons
                                                                         .assignment_ind_rounded,
                                                                   ),
@@ -1152,7 +1149,7 @@ class _PagCartaoWidgetState extends State<PagCartaoWidget> {
                                                     ),
                                                     Padding(
                                                       padding:
-                                                          EdgeInsetsDirectional
+                                                          const EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   0.0,
                                                                   15.0,
@@ -1164,7 +1161,7 @@ class _PagCartaoWidgetState extends State<PagCartaoWidget> {
                                                         children: [
                                                           Padding(
                                                             padding:
-                                                                EdgeInsetsDirectional
+                                                                const EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         10.0,
                                                                         0.0,
@@ -1198,7 +1195,7 @@ class _PagCartaoWidgetState extends State<PagCartaoWidget> {
                                                                     .disabled,
                                                             child: Padding(
                                                               padding:
-                                                                  EdgeInsetsDirectional
+                                                                  const EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           8.0,
                                                                           6.0,
@@ -1295,7 +1292,7 @@ class _PagCartaoWidgetState extends State<PagCartaoWidget> {
                                                                           context)
                                                                       .secondaryBackground,
                                                                   prefixIcon:
-                                                                      Icon(
+                                                                      const Icon(
                                                                     Icons
                                                                         .credit_card,
                                                                   ),
@@ -1328,7 +1325,7 @@ class _PagCartaoWidgetState extends State<PagCartaoWidget> {
                                                     ),
                                                     Padding(
                                                       padding:
-                                                          EdgeInsetsDirectional
+                                                          const EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   0.0,
                                                                   10.0,
@@ -1340,7 +1337,7 @@ class _PagCartaoWidgetState extends State<PagCartaoWidget> {
                                                         children: [
                                                           Padding(
                                                             padding:
-                                                                EdgeInsetsDirectional
+                                                                const EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         10.0,
                                                                         0.0,
@@ -1380,7 +1377,7 @@ class _PagCartaoWidgetState extends State<PagCartaoWidget> {
                                                                           .disabled,
                                                                   child:
                                                                       Padding(
-                                                                    padding: EdgeInsetsDirectional
+                                                                    padding: const EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             8.0,
                                                                             4.0,
@@ -1465,7 +1462,7 @@ class _PagCartaoWidgetState extends State<PagCartaoWidget> {
                                                                         fillColor:
                                                                             FlutterFlowTheme.of(context).secondaryBackground,
                                                                         prefixIcon:
-                                                                            Icon(
+                                                                            const Icon(
                                                                           Icons
                                                                               .calendar_month,
                                                                         ),
@@ -1503,7 +1500,7 @@ class _PagCartaoWidgetState extends State<PagCartaoWidget> {
                                                                           .disabled,
                                                                   child:
                                                                       Padding(
-                                                                    padding: EdgeInsetsDirectional
+                                                                    padding: const EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             8.0,
                                                                             4.0,
@@ -1588,7 +1585,7 @@ class _PagCartaoWidgetState extends State<PagCartaoWidget> {
                                                                         fillColor:
                                                                             FlutterFlowTheme.of(context).secondaryBackground,
                                                                         prefixIcon:
-                                                                            Icon(
+                                                                            const Icon(
                                                                           Icons
                                                                               .calendar_month,
                                                                         ),
@@ -1626,7 +1623,7 @@ class _PagCartaoWidgetState extends State<PagCartaoWidget> {
                                                                           .disabled,
                                                                   child:
                                                                       Padding(
-                                                                    padding: EdgeInsetsDirectional
+                                                                    padding: const EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             8.0,
                                                                             4.0,
@@ -1711,7 +1708,7 @@ class _PagCartaoWidgetState extends State<PagCartaoWidget> {
                                                                         fillColor:
                                                                             FlutterFlowTheme.of(context).secondaryBackground,
                                                                         prefixIcon:
-                                                                            Icon(
+                                                                            const Icon(
                                                                           Icons
                                                                               .security_sharp,
                                                                         ),
@@ -1747,7 +1744,7 @@ class _PagCartaoWidgetState extends State<PagCartaoWidget> {
                                                     ),
                                                     Padding(
                                                       padding:
-                                                          EdgeInsetsDirectional
+                                                          const EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   0.0,
                                                                   10.0,
@@ -1759,7 +1756,7 @@ class _PagCartaoWidgetState extends State<PagCartaoWidget> {
                                                         children: [
                                                           Padding(
                                                             padding:
-                                                                EdgeInsetsDirectional
+                                                                const EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         10.0,
                                                                         10.0,
@@ -1787,7 +1784,7 @@ class _PagCartaoWidgetState extends State<PagCartaoWidget> {
                                                           ),
                                                           Padding(
                                                             padding:
-                                                                EdgeInsetsDirectional
+                                                                const EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         0.0,
                                                                         0.0,
@@ -1807,7 +1804,7 @@ class _PagCartaoWidgetState extends State<PagCartaoWidget> {
                                                                             .disabled,
                                                                     child:
                                                                         Padding(
-                                                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                                                           8.0,
                                                                           4.0,
                                                                           8.0,
@@ -1877,7 +1874,7 @@ class _PagCartaoWidgetState extends State<PagCartaoWidget> {
                                                                           fillColor:
                                                                               FlutterFlowTheme.of(context).secondaryBackground,
                                                                           prefixIcon:
-                                                                              Icon(
+                                                                              const Icon(
                                                                             Icons.add_home,
                                                                           ),
                                                                         ),
@@ -1909,7 +1906,7 @@ class _PagCartaoWidgetState extends State<PagCartaoWidget> {
                                                                             .disabled,
                                                                     child:
                                                                         Padding(
-                                                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                                                           8.0,
                                                                           4.0,
                                                                           8.0,
@@ -1979,7 +1976,7 @@ class _PagCartaoWidgetState extends State<PagCartaoWidget> {
                                                                           fillColor:
                                                                               FlutterFlowTheme.of(context).secondaryBackground,
                                                                           prefixIcon:
-                                                                              Icon(
+                                                                              const Icon(
                                                                             Icons.add_home,
                                                                           ),
                                                                         ),
@@ -2015,7 +2012,7 @@ class _PagCartaoWidgetState extends State<PagCartaoWidget> {
                                                                           .disabled,
                                                                   child:
                                                                       Padding(
-                                                                    padding: EdgeInsetsDirectional
+                                                                    padding: const EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             8.0,
                                                                             4.0,
@@ -2096,7 +2093,7 @@ class _PagCartaoWidgetState extends State<PagCartaoWidget> {
                                                                         fillColor:
                                                                             FlutterFlowTheme.of(context).secondaryBackground,
                                                                         prefixIcon:
-                                                                            Icon(
+                                                                            const Icon(
                                                                           Icons
                                                                               .add_home,
                                                                         ),
@@ -2128,7 +2125,7 @@ class _PagCartaoWidgetState extends State<PagCartaoWidget> {
                                                     ),
                                                     Padding(
                                                       padding:
-                                                          EdgeInsetsDirectional
+                                                          const EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   0.0,
                                                                   15.0,
@@ -2140,7 +2137,7 @@ class _PagCartaoWidgetState extends State<PagCartaoWidget> {
                                                         children: [
                                                           Padding(
                                                             padding:
-                                                                EdgeInsetsDirectional
+                                                                const EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         10.0,
                                                                         0.0,
@@ -2180,7 +2177,7 @@ class _PagCartaoWidgetState extends State<PagCartaoWidget> {
                                                                           .disabled,
                                                                   child:
                                                                       Padding(
-                                                                    padding: EdgeInsetsDirectional
+                                                                    padding: const EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             8.0,
                                                                             4.0,
@@ -2261,7 +2258,7 @@ class _PagCartaoWidgetState extends State<PagCartaoWidget> {
                                                                         fillColor:
                                                                             FlutterFlowTheme.of(context).secondaryBackground,
                                                                         prefixIcon:
-                                                                            Icon(
+                                                                            const Icon(
                                                                           Icons
                                                                               .add_call,
                                                                         ),
@@ -2304,7 +2301,7 @@ class _PagCartaoWidgetState extends State<PagCartaoWidget> {
                                       ),
                                     ),
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         20.0, 15.0, 20.0, 20.0),
                                     child:
                                         FutureBuilder<List<UsersPagamentosRow>>(
@@ -2353,7 +2350,7 @@ class _PagCartaoWidgetState extends State<PagCartaoWidget> {
                                               onPressed: () async {
                                                 logFirebaseEvent(
                                                     'PAG_CARTAO_REALIZAR_PAGAMENTO_BTN_ON_TAP');
-                                                var _shouldSetState = false;
+                                                var shouldSetState = false;
                                                 logFirebaseEvent(
                                                     'Button_backend_call');
                                                 _model.resultadoTokenCriado =
@@ -2364,7 +2361,7 @@ class _PagCartaoWidgetState extends State<PagCartaoWidget> {
                                                   appId: containerGerarTokenRow
                                                       ?.appId,
                                                 );
-                                                _shouldSetState = true;
+                                                shouldSetState = true;
                                                 if ((_model.resultadoTokenCriado
                                                         ?.succeeded ??
                                                     true)) {
@@ -2384,7 +2381,7 @@ class _PagCartaoWidgetState extends State<PagCartaoWidget> {
                                                       cep: _model
                                                           .cepController.text,
                                                     );
-                                                    _shouldSetState = true;
+                                                    shouldSetState = true;
                                                     if ((_model.resultadoCep
                                                             ?.succeeded ??
                                                         true)) {
@@ -2445,7 +2442,7 @@ class _PagCartaoWidgetState extends State<PagCartaoWidget> {
                                                               ''),
                                                         ).toString(),
                                                       );
-                                                      _shouldSetState = true;
+                                                      shouldSetState = true;
                                                       if ((_model
                                                               .resultadoCriarCliente
                                                               ?.succeeded ??
@@ -2486,7 +2483,7 @@ class _PagCartaoWidgetState extends State<PagCartaoWidget> {
                                                               .cvvCardController
                                                               .text,
                                                         );
-                                                        _shouldSetState = true;
+                                                        shouldSetState = true;
                                                         if ((_model
                                                                 .resultadoCartaoCriado
                                                                 ?.succeeded ??
@@ -2596,7 +2593,7 @@ class _PagCartaoWidgetState extends State<PagCartaoWidget> {
                                                               true,
                                                             ),
                                                           );
-                                                          _shouldSetState =
+                                                          shouldSetState =
                                                               true;
                                                           if ((_model
                                                                   .resultadoDaCobranca
@@ -2628,7 +2625,7 @@ class _PagCartaoWidgetState extends State<PagCartaoWidget> {
                                                                     ''),
                                                               ).toString(),
                                                             );
-                                                            _shouldSetState =
+                                                            shouldSetState =
                                                                 true;
                                                             if (DetalhesCobrancaViaCartaoCobreFacilCall
                                                                     .statusPag(
@@ -2643,7 +2640,7 @@ class _PagCartaoWidgetState extends State<PagCartaoWidget> {
                                                                 isScrollControlled:
                                                                     true,
                                                                 backgroundColor:
-                                                                    Color(
+                                                                    const Color(
                                                                         0xA1000000),
                                                                 enableDrag:
                                                                     false,
@@ -2691,16 +2688,16 @@ class _PagCartaoWidgetState extends State<PagCartaoWidget> {
                                                                   return WebViewAware(
                                                                       child:
                                                                           AlertDialog(
-                                                                    title: Text(
+                                                                    title: const Text(
                                                                         'Cartão Recusado!'),
-                                                                    content: Text(
+                                                                    content: const Text(
                                                                         'Tente um outro cartão de Crédito.'),
                                                                     actions: [
                                                                       TextButton(
                                                                         onPressed:
                                                                             () =>
                                                                                 Navigator.pop(alertDialogContext),
-                                                                        child: Text(
+                                                                        child: const Text(
                                                                             'Tentar Novamente'),
                                                                       ),
                                                                     ],
@@ -2709,8 +2706,9 @@ class _PagCartaoWidgetState extends State<PagCartaoWidget> {
                                                               );
                                                             }
 
-                                                            if (_shouldSetState)
+                                                            if (shouldSetState) {
                                                               setState(() {});
+                                                            }
                                                             return;
                                                           } else {
                                                             logFirebaseEvent(
@@ -2722,7 +2720,7 @@ class _PagCartaoWidgetState extends State<PagCartaoWidget> {
                                                                 return WebViewAware(
                                                                     child:
                                                                         AlertDialog(
-                                                                  title: Text(
+                                                                  title: const Text(
                                                                       'ERRO AO EFETUAR A COMPRA COM O CARTÃO INFORMADO!'),
                                                                   content: Text(
                                                                       AutorizarCobrancaViaCartaoCobreFacilCall
@@ -2736,15 +2734,16 @@ class _PagCartaoWidgetState extends State<PagCartaoWidget> {
                                                                       onPressed:
                                                                           () =>
                                                                               Navigator.pop(alertDialogContext),
-                                                                      child: Text(
+                                                                      child: const Text(
                                                                           'Tentar Novamente'),
                                                                     ),
                                                                   ],
                                                                 ));
                                                               },
                                                             );
-                                                            if (_shouldSetState)
+                                                            if (shouldSetState) {
                                                               setState(() {});
+                                                            }
                                                             return;
                                                           }
                                                         } else {
@@ -2757,7 +2756,7 @@ class _PagCartaoWidgetState extends State<PagCartaoWidget> {
                                                               return WebViewAware(
                                                                   child:
                                                                       AlertDialog(
-                                                                title: Text(
+                                                                title: const Text(
                                                                     'ERRO AO TENTAR CRIAR CARTÃO!'),
                                                                 content: Text(
                                                                     CriarCartaoCobreFacilCall
@@ -2771,15 +2770,16 @@ class _PagCartaoWidgetState extends State<PagCartaoWidget> {
                                                                     onPressed: () =>
                                                                         Navigator.pop(
                                                                             alertDialogContext),
-                                                                    child: Text(
+                                                                    child: const Text(
                                                                         'Tentar Novamente'),
                                                                   ),
                                                                 ],
                                                               ));
                                                             },
                                                           );
-                                                          if (_shouldSetState)
+                                                          if (shouldSetState) {
                                                             setState(() {});
+                                                          }
                                                           return;
                                                         }
                                                       } else {
@@ -2814,7 +2814,7 @@ class _PagCartaoWidgetState extends State<PagCartaoWidget> {
                                                               .cvvCardController
                                                               .text,
                                                         );
-                                                        _shouldSetState = true;
+                                                        shouldSetState = true;
                                                         if ((_model
                                                                 .resultadoCartaoCriado2
                                                                 ?.succeeded ??
@@ -2915,7 +2915,7 @@ class _PagCartaoWidgetState extends State<PagCartaoWidget> {
                                                               true,
                                                             ),
                                                           );
-                                                          _shouldSetState =
+                                                          shouldSetState =
                                                               true;
                                                           if ((_model
                                                                   .resultadoDaCobranca2
@@ -2947,7 +2947,7 @@ class _PagCartaoWidgetState extends State<PagCartaoWidget> {
                                                                     ''),
                                                               ).toString(),
                                                             );
-                                                            _shouldSetState =
+                                                            shouldSetState =
                                                                 true;
                                                             if (DetalhesCobrancaViaCartaoCobreFacilCall
                                                                     .statusPag(
@@ -2962,7 +2962,7 @@ class _PagCartaoWidgetState extends State<PagCartaoWidget> {
                                                                 isScrollControlled:
                                                                     true,
                                                                 backgroundColor:
-                                                                    Color(
+                                                                    const Color(
                                                                         0xA1000000),
                                                                 enableDrag:
                                                                     false,
@@ -3010,16 +3010,16 @@ class _PagCartaoWidgetState extends State<PagCartaoWidget> {
                                                                   return WebViewAware(
                                                                       child:
                                                                           AlertDialog(
-                                                                    title: Text(
+                                                                    title: const Text(
                                                                         'Cartão Recusado!'),
-                                                                    content: Text(
+                                                                    content: const Text(
                                                                         'Tente um outro cartão de Crédito.'),
                                                                     actions: [
                                                                       TextButton(
                                                                         onPressed:
                                                                             () =>
                                                                                 Navigator.pop(alertDialogContext),
-                                                                        child: Text(
+                                                                        child: const Text(
                                                                             'Tentar Novamente'),
                                                                       ),
                                                                     ],
@@ -3028,8 +3028,9 @@ class _PagCartaoWidgetState extends State<PagCartaoWidget> {
                                                               );
                                                             }
 
-                                                            if (_shouldSetState)
+                                                            if (shouldSetState) {
                                                               setState(() {});
+                                                            }
                                                             return;
                                                           } else {
                                                             logFirebaseEvent(
@@ -3041,7 +3042,7 @@ class _PagCartaoWidgetState extends State<PagCartaoWidget> {
                                                                 return WebViewAware(
                                                                     child:
                                                                         AlertDialog(
-                                                                  title: Text(
+                                                                  title: const Text(
                                                                       'ERRO AO EFETUAR A COMPRA COM O CARTÃO INFORMADO!'),
                                                                   content: Text(
                                                                       AutorizarCobrancaViaCartaoCobreFacilCall
@@ -3055,15 +3056,16 @@ class _PagCartaoWidgetState extends State<PagCartaoWidget> {
                                                                       onPressed:
                                                                           () =>
                                                                               Navigator.pop(alertDialogContext),
-                                                                      child: Text(
+                                                                      child: const Text(
                                                                           'Tentar Novamente'),
                                                                     ),
                                                                   ],
                                                                 ));
                                                               },
                                                             );
-                                                            if (_shouldSetState)
+                                                            if (shouldSetState) {
                                                               setState(() {});
+                                                            }
                                                             return;
                                                           }
                                                         } else {
@@ -3076,7 +3078,7 @@ class _PagCartaoWidgetState extends State<PagCartaoWidget> {
                                                               return WebViewAware(
                                                                   child:
                                                                       AlertDialog(
-                                                                title: Text(
+                                                                title: const Text(
                                                                     'ERRO AO TENTAR ADICIONAR CARTÃO!'),
                                                                 content: Text(
                                                                     CriarCartaoCobreFacilCall
@@ -3090,15 +3092,16 @@ class _PagCartaoWidgetState extends State<PagCartaoWidget> {
                                                                     onPressed: () =>
                                                                         Navigator.pop(
                                                                             alertDialogContext),
-                                                                    child: Text(
+                                                                    child: const Text(
                                                                         'Tentar Novamente'),
                                                                   ),
                                                                 ],
                                                               ));
                                                             },
                                                           );
-                                                          if (_shouldSetState)
+                                                          if (shouldSetState) {
                                                             setState(() {});
+                                                          }
                                                           return;
                                                         }
                                                       }
@@ -3112,9 +3115,9 @@ class _PagCartaoWidgetState extends State<PagCartaoWidget> {
                                                           return WebViewAware(
                                                               child:
                                                                   AlertDialog(
-                                                            title: Text(
+                                                            title: const Text(
                                                                 'CEP INVÁLIDO!'),
-                                                            content: Text(
+                                                            content: const Text(
                                                                 'Adicione um cep Válido!'),
                                                             actions: [
                                                               TextButton(
@@ -3122,14 +3125,15 @@ class _PagCartaoWidgetState extends State<PagCartaoWidget> {
                                                                     Navigator.pop(
                                                                         alertDialogContext),
                                                                 child:
-                                                                    Text('Ok'),
+                                                                    const Text('Ok'),
                                                               ),
                                                             ],
                                                           ));
                                                         },
                                                       );
-                                                      if (_shouldSetState)
+                                                      if (shouldSetState) {
                                                         setState(() {});
+                                                      }
                                                       return;
                                                     }
                                                   } else {
@@ -3166,7 +3170,7 @@ class _PagCartaoWidgetState extends State<PagCartaoWidget> {
                                                         true,
                                                       ),
                                                     );
-                                                    _shouldSetState = true;
+                                                    shouldSetState = true;
                                                     if ((_model
                                                             .resultadoCartaoSalvo
                                                             ?.succeeded ??
@@ -3197,7 +3201,7 @@ class _PagCartaoWidgetState extends State<PagCartaoWidget> {
                                                               ''),
                                                         ).toString(),
                                                       );
-                                                      _shouldSetState = true;
+                                                      shouldSetState = true;
                                                       if (DetalhesCobrancaViaCartaoCobreFacilCall
                                                               .statusPag(
                                                             (_model.consultarAprovacao
@@ -3211,7 +3215,7 @@ class _PagCartaoWidgetState extends State<PagCartaoWidget> {
                                                           isScrollControlled:
                                                               true,
                                                           backgroundColor:
-                                                              Color(0xA1000000),
+                                                              const Color(0xA1000000),
                                                           enableDrag: false,
                                                           context: context,
                                                           builder: (context) {
@@ -3254,16 +3258,16 @@ class _PagCartaoWidgetState extends State<PagCartaoWidget> {
                                                             return WebViewAware(
                                                                 child:
                                                                     AlertDialog(
-                                                              title: Text(
+                                                              title: const Text(
                                                                   'Cartão Recusado!'),
-                                                              content: Text(
+                                                              content: const Text(
                                                                   'Tente um outro cartão de Crédito.'),
                                                               actions: [
                                                                 TextButton(
                                                                   onPressed: () =>
                                                                       Navigator.pop(
                                                                           alertDialogContext),
-                                                                  child: Text(
+                                                                  child: const Text(
                                                                       'Tentar Novamente'),
                                                                 ),
                                                               ],
@@ -3272,8 +3276,9 @@ class _PagCartaoWidgetState extends State<PagCartaoWidget> {
                                                         );
                                                       }
 
-                                                      if (_shouldSetState)
+                                                      if (shouldSetState) {
                                                         setState(() {});
+                                                      }
                                                       return;
                                                     } else {
                                                       logFirebaseEvent(
@@ -3285,7 +3290,7 @@ class _PagCartaoWidgetState extends State<PagCartaoWidget> {
                                                           return WebViewAware(
                                                               child:
                                                                   AlertDialog(
-                                                            title: Text(
+                                                            title: const Text(
                                                                 'ERRO AO EFETUAR A COMPRA COM O CARTÃO SALVO!'),
                                                             content: Text(
                                                                 AutorizarCobrancaViaCartaoCobreFacilCall
@@ -3299,15 +3304,16 @@ class _PagCartaoWidgetState extends State<PagCartaoWidget> {
                                                                 onPressed: () =>
                                                                     Navigator.pop(
                                                                         alertDialogContext),
-                                                                child: Text(
+                                                                child: const Text(
                                                                     'Tentar Novamente'),
                                                               ),
                                                             ],
                                                           ));
                                                         },
                                                       );
-                                                      if (_shouldSetState)
+                                                      if (shouldSetState) {
                                                         setState(() {});
+                                                      }
                                                       return;
                                                     }
                                                   }
@@ -3320,37 +3326,45 @@ class _PagCartaoWidgetState extends State<PagCartaoWidget> {
                                                         (alertDialogContext) {
                                                       return WebViewAware(
                                                           child: AlertDialog(
-                                                        title: Text(
+                                                        title: const Text(
                                                             'ERRO AO CRIAR TOKEN!'),
-                                                        content: Text(
+                                                        content: const Text(
                                                             'ERRO INTERNO, ENTRE EM CONTATO COM A NOSSA EQUIPE.'),
                                                         actions: [
                                                           TextButton(
                                                             onPressed: () =>
                                                                 Navigator.pop(
                                                                     alertDialogContext),
-                                                            child: Text('Ok'),
+                                                            child: Text(
+                                                                AuthenticateCobreFacilCall
+                                                                    .errroToken(
+                                                              (_model.resultadoTokenCriado
+                                                                      ?.jsonBody ??
+                                                                  ''),
+                                                            ).toString()),
                                                           ),
                                                         ],
                                                       ));
                                                     },
                                                   );
-                                                  if (_shouldSetState)
+                                                  if (shouldSetState) {
                                                     setState(() {});
+                                                  }
                                                   return;
                                                 }
 
-                                                if (_shouldSetState)
+                                                if (shouldSetState) {
                                                   setState(() {});
+                                                }
                                               },
                                               text: 'Realizar Pagamento',
                                               options: FFButtonOptions(
                                                 height: 50.0,
-                                                padding: EdgeInsetsDirectional
+                                                padding: const EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         24.0, 0.0, 24.0, 0.0),
                                                 iconPadding:
-                                                    EdgeInsetsDirectional
+                                                    const EdgeInsetsDirectional
                                                         .fromSTEB(
                                                             0.0, 0.0, 0.0, 0.0),
                                                 color:
@@ -3366,7 +3380,7 @@ class _PagCartaoWidgetState extends State<PagCartaoWidget> {
                                                           fontSize: 20.0,
                                                         ),
                                                 elevation: 10.0,
-                                                borderSide: BorderSide(
+                                                borderSide: const BorderSide(
                                                   color: Colors.transparent,
                                                   width: 1.0,
                                                 ),

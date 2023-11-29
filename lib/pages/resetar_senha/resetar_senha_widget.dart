@@ -5,15 +5,13 @@ import '/flutter_flow/flutter_flow_widgets.dart';
 import '/custom_code/actions/index.dart' as actions;
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_spinkit/flutter_spinkit.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'package:webviewx_plus/webviewx_plus.dart';
 import 'resetar_senha_model.dart';
 export 'resetar_senha_model.dart';
 
 class ResetarSenhaWidget extends StatefulWidget {
-  const ResetarSenhaWidget({Key? key}) : super(key: key);
+  const ResetarSenhaWidget({super.key});
 
   @override
   _ResetarSenhaWidgetState createState() => _ResetarSenhaWidgetState();
@@ -82,7 +80,7 @@ class _ResetarSenhaWidgetState extends State<ResetarSenhaWidget> {
                     desktop: false,
                   ))
                     Align(
-                      alignment: AlignmentDirectional(0.00, 0.00),
+                      alignment: const AlignmentDirectional(0.00, 0.00),
                       child: Container(
                         width: double.infinity,
                         height: MediaQuery.sizeOf(context).height * 0.5,
@@ -94,12 +92,12 @@ class _ResetarSenhaWidgetState extends State<ResetarSenhaWidget> {
                         child: Stack(
                           children: [
                             Align(
-                              alignment: AlignmentDirectional(0.00, 0.00),
+                              alignment: const AlignmentDirectional(0.00, 0.00),
                               child: Column(
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         0.0, 20.0, 20.0, 0.0),
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
@@ -109,7 +107,7 @@ class _ResetarSenhaWidgetState extends State<ResetarSenhaWidget> {
                                         Flexible(
                                           child: Padding(
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     16.0, 0.0, 0.0, 6.0),
                                             child: Text(
                                               'E-mail confirmado com Sucesso!',
@@ -127,7 +125,7 @@ class _ResetarSenhaWidgetState extends State<ResetarSenhaWidget> {
                                     ),
                                   ),
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         0.0, 20.0, 20.0, 0.0),
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
@@ -137,7 +135,7 @@ class _ResetarSenhaWidgetState extends State<ResetarSenhaWidget> {
                                         Flexible(
                                           child: Padding(
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     16.0, 0.0, 16.0, 6.0),
                                             child: Text(
                                               'Sua conta foi ativada com sucesso, agora navegue para a página incinal para aproveitar todos os conteúdos.',
@@ -157,7 +155,7 @@ class _ResetarSenhaWidgetState extends State<ResetarSenhaWidget> {
                                     ),
                                   ),
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         0.0, 10.0, 20.0, 0.0),
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
@@ -170,17 +168,17 @@ class _ResetarSenhaWidgetState extends State<ResetarSenhaWidget> {
                                             autovalidateMode:
                                                 AutovalidateMode.disabled,
                                             child: Padding(
-                                              padding: EdgeInsetsDirectional
+                                              padding: const EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       16.0, 12.0, 16.0, 0.0),
-                                              child: Container(
+                                              child: SizedBox(
                                                 width: double.infinity,
                                                 child: TextFormField(
                                                   controller: _model
                                                       .seunomeMobileController,
                                                   focusNode: _model
                                                       .seunomeMobileFocusNode,
-                                                  autofillHints: [
+                                                  autofillHints: const [
                                                     AutofillHints.email
                                                   ],
                                                   obscureText: false,
@@ -253,7 +251,7 @@ class _ResetarSenhaWidgetState extends State<ResetarSenhaWidget> {
                                                             .of(context)
                                                         .secondaryBackground,
                                                     contentPadding:
-                                                        EdgeInsetsDirectional
+                                                        const EdgeInsetsDirectional
                                                             .fromSTEB(
                                                                 24.0,
                                                                 24.0,
@@ -282,7 +280,7 @@ class _ResetarSenhaWidgetState extends State<ResetarSenhaWidget> {
                                     ),
                                   ),
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         0.0, 10.0, 20.0, 0.0),
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
@@ -291,10 +289,10 @@ class _ResetarSenhaWidgetState extends State<ResetarSenhaWidget> {
                                       children: [
                                         Align(
                                           alignment:
-                                              AlignmentDirectional(0.00, 0.00),
+                                              const AlignmentDirectional(0.00, 0.00),
                                           child: Padding(
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 24.0, 0.0, 0.0),
                                             child: FFButtonWidget(
                                               onPressed: () async {
@@ -307,7 +305,7 @@ class _ResetarSenhaWidgetState extends State<ResetarSenhaWidget> {
                                                   'HomePage',
                                                   extra: <String, dynamic>{
                                                     kTransitionInfoKey:
-                                                        TransitionInfo(
+                                                        const TransitionInfo(
                                                       hasTransition: true,
                                                       transitionType:
                                                           PageTransitionType
@@ -320,11 +318,11 @@ class _ResetarSenhaWidgetState extends State<ResetarSenhaWidget> {
                                               options: FFButtonOptions(
                                                 width: 270.0,
                                                 height: 50.0,
-                                                padding: EdgeInsetsDirectional
+                                                padding: const EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         0.0, 0.0, 0.0, 0.0),
                                                 iconPadding:
-                                                    EdgeInsetsDirectional
+                                                    const EdgeInsetsDirectional
                                                         .fromSTEB(
                                                             0.0, 0.0, 0.0, 0.0),
                                                 color:
@@ -334,7 +332,7 @@ class _ResetarSenhaWidgetState extends State<ResetarSenhaWidget> {
                                                     FlutterFlowTheme.of(context)
                                                         .titleSmall,
                                                 elevation: 3.0,
-                                                borderSide: BorderSide(
+                                                borderSide: const BorderSide(
                                                   color: Colors.transparent,
                                                   width: 1.0,
                                                 ),
@@ -358,7 +356,7 @@ class _ResetarSenhaWidgetState extends State<ResetarSenhaWidget> {
                     tablet: false,
                   ))
                     Align(
-                      alignment: AlignmentDirectional(0.00, 0.00),
+                      alignment: const AlignmentDirectional(0.00, 0.00),
                       child: Container(
                         width: MediaQuery.sizeOf(context).width * 0.5,
                         height: MediaQuery.sizeOf(context).height * 0.5,
@@ -370,12 +368,12 @@ class _ResetarSenhaWidgetState extends State<ResetarSenhaWidget> {
                         child: Stack(
                           children: [
                             Align(
-                              alignment: AlignmentDirectional(0.00, 0.00),
+                              alignment: const AlignmentDirectional(0.00, 0.00),
                               child: Column(
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         0.0, 20.0, 20.0, 0.0),
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
@@ -384,7 +382,7 @@ class _ResetarSenhaWidgetState extends State<ResetarSenhaWidget> {
                                       children: [
                                         Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   16.0, 0.0, 0.0, 6.0),
                                           child: Text(
                                             'Redefinir Senha',
@@ -400,7 +398,7 @@ class _ResetarSenhaWidgetState extends State<ResetarSenhaWidget> {
                                     ),
                                   ),
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         0.0, 20.0, 20.0, 0.0),
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
@@ -410,7 +408,7 @@ class _ResetarSenhaWidgetState extends State<ResetarSenhaWidget> {
                                         Flexible(
                                           child: Padding(
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     16.0, 4.0, 16.0, 6.0),
                                             child: Text(
                                               'Altere sua senha preenchendo o campo abaixo!',
@@ -429,7 +427,7 @@ class _ResetarSenhaWidgetState extends State<ResetarSenhaWidget> {
                                     ),
                                   ),
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         0.0, 10.0, 20.0, 0.0),
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
@@ -442,17 +440,17 @@ class _ResetarSenhaWidgetState extends State<ResetarSenhaWidget> {
                                             autovalidateMode:
                                                 AutovalidateMode.disabled,
                                             child: Padding(
-                                              padding: EdgeInsetsDirectional
+                                              padding: const EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       16.0, 12.0, 16.0, 0.0),
-                                              child: Container(
+                                              child: SizedBox(
                                                 width: double.infinity,
                                                 child: TextFormField(
                                                   controller: _model
                                                       .senhaDeskController,
                                                   focusNode:
                                                       _model.senhaDeskFocusNode,
-                                                  autofillHints: [
+                                                  autofillHints: const [
                                                     AutofillHints.email
                                                   ],
                                                   obscureText: false,
@@ -525,7 +523,7 @@ class _ResetarSenhaWidgetState extends State<ResetarSenhaWidget> {
                                                             .of(context)
                                                         .secondaryBackground,
                                                     contentPadding:
-                                                        EdgeInsetsDirectional
+                                                        const EdgeInsetsDirectional
                                                             .fromSTEB(
                                                                 24.0,
                                                                 24.0,
@@ -554,7 +552,7 @@ class _ResetarSenhaWidgetState extends State<ResetarSenhaWidget> {
                                     ),
                                   ),
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         0.0, 10.0, 20.0, 0.0),
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
@@ -563,10 +561,10 @@ class _ResetarSenhaWidgetState extends State<ResetarSenhaWidget> {
                                       children: [
                                         Align(
                                           alignment:
-                                              AlignmentDirectional(0.00, 0.00),
+                                              const AlignmentDirectional(0.00, 0.00),
                                           child: Padding(
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 24.0, 0.0, 0.0),
                                             child: FFButtonWidget(
                                               onPressed: () async {
@@ -585,7 +583,7 @@ class _ResetarSenhaWidgetState extends State<ResetarSenhaWidget> {
                                                   await showModalBottomSheet(
                                                     isScrollControlled: true,
                                                     backgroundColor:
-                                                        Color(0x81000000),
+                                                        const Color(0x81000000),
                                                     enableDrag: false,
                                                     context: context,
                                                     builder: (context) {
@@ -607,7 +605,7 @@ class _ResetarSenhaWidgetState extends State<ResetarSenhaWidget> {
                                                               .viewInsetsOf(
                                                                   context),
                                                           child:
-                                                              DirecionarSenhaWidget(),
+                                                              const DirecionarSenhaWidget(),
                                                         ),
                                                       ));
                                                     },
@@ -621,11 +619,11 @@ class _ResetarSenhaWidgetState extends State<ResetarSenhaWidget> {
                                               options: FFButtonOptions(
                                                 width: 270.0,
                                                 height: 50.0,
-                                                padding: EdgeInsetsDirectional
+                                                padding: const EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         0.0, 0.0, 0.0, 0.0),
                                                 iconPadding:
-                                                    EdgeInsetsDirectional
+                                                    const EdgeInsetsDirectional
                                                         .fromSTEB(
                                                             0.0, 0.0, 0.0, 0.0),
                                                 color:
@@ -635,7 +633,7 @@ class _ResetarSenhaWidgetState extends State<ResetarSenhaWidget> {
                                                     FlutterFlowTheme.of(context)
                                                         .titleSmall,
                                                 elevation: 3.0,
-                                                borderSide: BorderSide(
+                                                borderSide: const BorderSide(
                                                   color: Colors.transparent,
                                                   width: 1.0,
                                                 ),

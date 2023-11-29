@@ -8,6 +8,7 @@ export '../base_auth_user_provider.dart';
 class CoppyAppSupabaseUser extends BaseAuthUser {
   CoppyAppSupabaseUser(this.user);
   User? user;
+  @override
   bool get loggedIn => user != null;
 
   @override
@@ -59,7 +60,7 @@ class CoppyAppSupabaseUser extends BaseAuthUser {
 Stream<BaseAuthUser> coppyAppSupabaseUserStream() {
   final supabaseAuthStream = SupaFlow.client.auth.onAuthStateChange.debounce(
       (authState) => authState.event == AuthChangeEvent.tokenRefreshed
-          ? TimerStream(authState, Duration(seconds: 1))
+          ? TimerStream(authState, const Duration(seconds: 1))
           : Stream.value(authState));
   return (!loggedIn
           ? Stream<AuthState?>.value(null).concatWith([supabaseAuthStream])

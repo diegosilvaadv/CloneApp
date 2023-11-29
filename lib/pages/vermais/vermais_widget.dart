@@ -3,21 +3,19 @@ import '/components/app_bar_widget.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'vermais_model.dart';
 export 'vermais_model.dart';
 
 class VermaisWidget extends StatefulWidget {
   const VermaisWidget({
-    Key? key,
+    super.key,
     required this.tag,
-  }) : super(key: key);
+  });
 
   final String? tag;
 
@@ -77,14 +75,14 @@ class _VermaisWidgetState extends State<VermaisWidget> {
                   wrapWithModel(
                     model: _model.appBarModel,
                     updateCallback: () => setState(() {}),
-                    child: AppBarWidget(),
+                    child: const AppBarWidget(),
                   ),
                   Row(
                     mainAxisSize: MainAxisSize.max,
                     children: [
                       Expanded(
                         child: Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               12.0, 12.0, 12.0, 12.0),
                           child: Material(
                             color: Colors.transparent,
@@ -106,7 +104,7 @@ class _VermaisWidgetState extends State<VermaisWidget> {
                                   mainAxisSize: MainAxisSize.max,
                                   children: [
                                     Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           15.0, 2.0, 0.0, 2.0),
                                       child: FlutterFlowIconButton(
                                         borderColor: Colors.transparent,
@@ -129,7 +127,7 @@ class _VermaisWidgetState extends State<VermaisWidget> {
                                             'HomePage',
                                             extra: <String, dynamic>{
                                               kTransitionInfoKey:
-                                                  TransitionInfo(
+                                                  const TransitionInfo(
                                                 hasTransition: true,
                                                 transitionType:
                                                     PageTransitionType.fade,
@@ -142,7 +140,7 @@ class _VermaisWidgetState extends State<VermaisWidget> {
                                       ),
                                     ),
                                     Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           12.0, 0.0, 12.0, 0.0),
                                       child: Icon(
                                         Icons.chevron_right_rounded,
@@ -153,11 +151,11 @@ class _VermaisWidgetState extends State<VermaisWidget> {
                                     ),
                                     Container(
                                       height: 100.0,
-                                      decoration: BoxDecoration(),
+                                      decoration: const BoxDecoration(),
                                       alignment:
-                                          AlignmentDirectional(0.00, 0.00),
+                                          const AlignmentDirectional(0.00, 0.00),
                                       child: Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             16.0, 0.0, 16.0, 0.0),
                                         child: Text(
                                           widget.tag!,
@@ -175,13 +173,13 @@ class _VermaisWidgetState extends State<VermaisWidget> {
                                       ),
                                     ),
                                     Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           0.0, 0.0, 16.0, 0.0),
                                       child: Container(
                                         height: 100.0,
-                                        decoration: BoxDecoration(),
+                                        decoration: const BoxDecoration(),
                                         alignment:
-                                            AlignmentDirectional(0.00, 0.00),
+                                            const AlignmentDirectional(0.00, 0.00),
                                       ),
                                     ),
                                   ],
@@ -211,14 +209,14 @@ class _VermaisWidgetState extends State<VermaisWidget> {
                               mainAxisSize: MainAxisSize.max,
                               children: [
                                 Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       10.0, 10.0, 10.0, 10.0),
                                   child: Column(
                                     mainAxisSize: MainAxisSize.max,
                                     children: [
                                       Align(
                                         alignment:
-                                            AlignmentDirectional(0.00, 0.00),
+                                            const AlignmentDirectional(0.00, 0.00),
                                         child:
                                             FutureBuilder<List<TemplatesRow>>(
                                           future: TemplatesTable().queryRows(
@@ -259,7 +257,7 @@ class _VermaisWidgetState extends State<VermaisWidget> {
                                                     listViewTemplatesRowList[
                                                         listViewIndex];
                                                 return Padding(
-                                                  padding: EdgeInsetsDirectional
+                                                  padding: const EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           0.0, 0.0, 0.0, 10.0),
                                                   child: InkWell(
@@ -290,7 +288,7 @@ class _VermaisWidgetState extends State<VermaisWidget> {
                                                         extra: <String,
                                                             dynamic>{
                                                           kTransitionInfoKey:
-                                                              TransitionInfo(
+                                                              const TransitionInfo(
                                                             hasTransition: true,
                                                             transitionType:
                                                                 PageTransitionType
@@ -322,7 +320,7 @@ class _VermaisWidgetState extends State<VermaisWidget> {
                                                         children: [
                                                           Padding(
                                                             padding:
-                                                                EdgeInsetsDirectional
+                                                                const EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         20.0,
                                                                         20.0,
@@ -356,12 +354,12 @@ class _VermaisWidgetState extends State<VermaisWidget> {
                                                                 Expanded(
                                                                   child: Align(
                                                                     alignment:
-                                                                        AlignmentDirectional(
+                                                                        const AlignmentDirectional(
                                                                             0.00,
                                                                             0.00),
                                                                     child:
                                                                         Padding(
-                                                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                                                           20.0,
                                                                           0.0,
                                                                           0.0,
@@ -393,7 +391,7 @@ class _VermaisWidgetState extends State<VermaisWidget> {
                                                                             ],
                                                                           ),
                                                                           Padding(
-                                                                            padding: EdgeInsetsDirectional.fromSTEB(
+                                                                            padding: const EdgeInsetsDirectional.fromSTEB(
                                                                                 0.0,
                                                                                 6.0,
                                                                                 50.0,
@@ -416,7 +414,7 @@ class _VermaisWidgetState extends State<VermaisWidget> {
                                                                             ),
                                                                           ),
                                                                           Padding(
-                                                                            padding: EdgeInsetsDirectional.fromSTEB(
+                                                                            padding: const EdgeInsetsDirectional.fromSTEB(
                                                                                 0.0,
                                                                                 10.0,
                                                                                 0.0,
@@ -426,7 +424,7 @@ class _VermaisWidgetState extends State<VermaisWidget> {
                                                                               mainAxisSize: MainAxisSize.max,
                                                                               children: [
                                                                                 Padding(
-                                                                                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 6.0, 50.0, 0.0),
+                                                                                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 6.0, 50.0, 0.0),
                                                                                   child: Row(
                                                                                     mainAxisSize: MainAxisSize.max,
                                                                                     mainAxisAlignment: MainAxisAlignment.start,
@@ -437,7 +435,7 @@ class _VermaisWidgetState extends State<VermaisWidget> {
                                                                                         size: 24.0,
                                                                                       ),
                                                                                       Padding(
-                                                                                        padding: EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 0.0, 0.0),
+                                                                                        padding: const EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 0.0, 0.0),
                                                                                         child: Text(
                                                                                           listViewTemplatesRow.categoria!,
                                                                                           style: FlutterFlowTheme.of(context).labelSmall.override(
@@ -455,7 +453,7 @@ class _VermaisWidgetState extends State<VermaisWidget> {
                                                                             ),
                                                                           ),
                                                                           Padding(
-                                                                            padding: EdgeInsetsDirectional.fromSTEB(
+                                                                            padding: const EdgeInsetsDirectional.fromSTEB(
                                                                                 0.0,
                                                                                 6.0,
                                                                                 50.0,
@@ -471,7 +469,7 @@ class _VermaisWidgetState extends State<VermaisWidget> {
                                                                                   size: 24.0,
                                                                                 ),
                                                                                 Padding(
-                                                                                  padding: EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 0.0, 0.0),
+                                                                                  padding: const EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 0.0, 0.0),
                                                                                   child: Text(
                                                                                     listViewTemplatesRow.criadoPor!,
                                                                                     style: FlutterFlowTheme.of(context).labelSmall.override(

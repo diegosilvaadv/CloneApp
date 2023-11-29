@@ -9,7 +9,7 @@ class TemplatesTable extends SupabaseTable<TemplatesRow> {
 }
 
 class TemplatesRow extends SupabaseDataRow {
-  TemplatesRow(Map<String, dynamic> data) : super(data);
+  TemplatesRow(super.data);
 
   @override
   SupabaseTable get table => TemplatesTable();

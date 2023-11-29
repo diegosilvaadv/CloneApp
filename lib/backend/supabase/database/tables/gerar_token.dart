@@ -9,7 +9,7 @@ class GerarTokenTable extends SupabaseTable<GerarTokenRow> {
 }
 
 class GerarTokenRow extends SupabaseDataRow {
-  GerarTokenRow(Map<String, dynamic> data) : super(data);
+  GerarTokenRow(super.data);
 
   @override
   SupabaseTable get table => GerarTokenTable();
